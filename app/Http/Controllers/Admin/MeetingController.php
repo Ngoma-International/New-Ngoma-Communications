@@ -11,4 +11,9 @@ class MeetingController extends Controller
     {
         return view('admin.meetings');
     }
+
+    public function create(Request $request)
+    {
+        return view('admin.meetings-create');
+    }
 }

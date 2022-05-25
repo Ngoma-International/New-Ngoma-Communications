@@ -122,7 +122,7 @@
                     <li><a href="#"><i></i><span> Users and Partners</span><span></span></a> </li>
                     <li><a href="{{ route('ticket_verifier')}}"><i></i><span> Ticket Verifier</span><span></span></a> </li>
                     <li><a href="{{ route('all_bookings') }}"><i></i><span> Bookings</span><span></span></a> </li>
-                    <li><a href="{{ route('meetings') }}"><i></i><span> Create Online Room</span><span></span></a> </li>
+                    <li><a href="{{ route('meetings.create') }}"><i></i><span> Create Online Room</span><span></span></a> </li>
                     <li><a href="{{ route('meetings') }}"><i></i><span> Booked Online Room</span><span></span></a> </li>
             </section>
         </aside>
