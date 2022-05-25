@@ -118,7 +118,7 @@
                     <li><a href="{{ route('dashboard_seminars') }}"><i></i><span> Seminars</span>
                             <span< /span>
                         </a> </li>
-                    <li><a href="podcasts.html"><i></i><span> Podcasts</span><span></span></a> </li>
+                    <li><a href="{{ route('dashboard_podcasts') }}"><i></i><span> Podcasts</span><span></span></a> </li>
                     <li><a href="users.html"><i></i><span> Users and Partners</span><span></span></a> </li>
                     <li><a href="ticket.html"><i></i><span> Ticket Verifier</span><span></span></a> </li>
                     <li><a href="bookings.html"><i></i><span> Bookings</span><span></span></a> </li>
