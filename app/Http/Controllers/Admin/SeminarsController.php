@@ -11,4 +11,14 @@ class SeminarsController extends Controller
     {
         return view('admin.seminars');
     }
+
+    public function ticket_verifier(Request $request)
+    {
+        return view('admin.ticket');
+    }
+
+    public function all_bookings(Request $request)
+    {
+        return view('admin.bookings');
+    }
 }
