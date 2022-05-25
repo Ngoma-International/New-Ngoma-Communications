@@ -105,7 +105,7 @@
                 <!-- Sidebar Menu-->
                 <ul class="sidebar-menu" id="nav-accordion">
                     <p class="centered">
-                        <a href="profile.html">
+                        <a href="{{ route('dashboard_home') }}">
                             <img src="{{ asset('admin/assets/images/avatar-1.png') }}" alt="Profile"
                                 class="img-circle" style="width: 140px; height: 120px; margin-left: 20px;">
                         </a>
@@ -114,8 +114,8 @@
                     <li class="treeview">
 
                     <li class="nav-level"> <span></span></li>
-                    <li><a href="profile.html"><i></i><span> Profile</span><span></span></a> </li>
-                    <li><a href="seminars.html"><i></i><span> Seminars</span>
+                    <li><a href="{{ route('dashboard_home') }}"><i></i><span> Profile</span><span></span></a> </li>
+                    <li><a href="{{ route('dashboard_seminars') }}"><i></i><span> Seminars</span>
                             <span< /span>
                         </a> </li>
                     <li><a href="podcasts.html"><i></i><span> Podcasts</span><span></span></a> </li>
@@ -137,6 +137,7 @@
         </aside>
         <div class="content-wrapper">
             <div class="container-fluid">
+                @yield('content')
             </div>
         </div>
 

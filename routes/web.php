@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\SeminarsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,4 @@ Route::get('/', function () {
 // Dashboard Routes
 
 Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard_home');
+Route::get('dashboard/seminars', [SeminarsController::class, 'index'])->name('dashboard_seminars');
