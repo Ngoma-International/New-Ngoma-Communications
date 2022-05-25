@@ -99,7 +99,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="Dashboard/seminars.html">
+                        <a href="{{ route('dashboard_home') }}">
                             <span class="icon la la-user"></span>
                             <span class="link">Admin</span>
                         </a>
