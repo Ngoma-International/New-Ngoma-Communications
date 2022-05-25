@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\PodcastsController;
+use App\Http\Controllers\Admin\SeminarsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+// Dashboard Routes
+
+Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard_home');
+Route::get('dashboard/seminars', [SeminarsController::class, 'index'])->name('dashboard_seminars');
+Route::get('dashboard/podcasts', [PodcastsController::class, 'index'])->name('dashboard_podcasts');
