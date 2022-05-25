@@ -25,3 +25,4 @@ Route::get('/', function () {
 Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard_home');
 Route::get('dashboard/seminars', [SeminarsController::class, 'index'])->name('dashboard_seminars');
 Route::get('dashboard/podcasts', [PodcastsController::class, 'index'])->name('dashboard_podcasts');
+Route::get('dashboard/ticket', [SeminarsController::class, 'ticket_verifier'])->name('ticket_verifier');

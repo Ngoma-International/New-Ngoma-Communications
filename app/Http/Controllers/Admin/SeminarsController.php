@@ -11,4 +11,9 @@ class SeminarsController extends Controller
     {
         return view('admin.seminars');
     }
+
+    public function ticket_verifier()
+    {
+        return view('admin.ticket');
+    }
 }
