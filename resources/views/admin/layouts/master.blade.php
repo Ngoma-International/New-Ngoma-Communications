@@ -121,7 +121,7 @@
                     <li><a href="{{ route('dashboard_podcasts') }}"><i></i><span> Podcasts</span><span></span></a> </li>
                     <li><a href="#"><i></i><span> Users and Partners</span><span></span></a> </li>
                     <li><a href="{{ route('ticket_verifier')}}"><i></i><span> Ticket Verifier</span><span></span></a> </li>
-                    <li><a href="bookings.html"><i></i><span> Bookings</span><span></span></a> </li>
+                    <li><a href="{{ route('all_bookings') }}"><i></i><span> Bookings</span><span></span></a> </li>
                     <li><a href="create.html"><i></i><span> Create Online Room</span><span></span></a> </li>
                     <li><a href="booked.html"><i></i><span> Booked Online Room</span><span></span></a> </li>
                     <ul class="treeview-menu active">

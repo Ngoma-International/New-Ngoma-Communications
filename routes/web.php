@@ -26,3 +26,4 @@ Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard_home'
 Route::get('dashboard/seminars', [SeminarsController::class, 'index'])->name('dashboard_seminars');
 Route::get('dashboard/podcasts', [PodcastsController::class, 'index'])->name('dashboard_podcasts');
 Route::get('dashboard/ticket', [SeminarsController::class, 'ticket_verifier'])->name('ticket_verifier');
+Route::get('dashboard/bookings', [SeminarsController::class, 'all_bookings'])->name('all_bookings');
