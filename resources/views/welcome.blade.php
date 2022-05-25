@@ -5,9 +5,6 @@
 
 <head>
 
-    <!--
-		Basic
-	-->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>TriplexLeadershipAcademy</title>
@@ -77,7 +74,7 @@
 
             <!-- logo -->
             <div class="logo">
-                <a href="#" class="logo"><img class="img-fluid able-logo" src="{{asset('assets/images/logo.png')}}" width="44px" height="57px"></a>
+                <a href="{{ route('home') }}" class="logo"><img class="img-fluid able-logo" src="{{asset('assets/images/logo.png')}}" width="44px" height="57px"></a>
             </div>
 
             <!-- menu -->
