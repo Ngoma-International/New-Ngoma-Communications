@@ -616,7 +616,7 @@
 
       var layoutMode = this.options.layoutMode;
 
-      // layout logic
+      // layouts logic
       this[ '_' +  layoutMode + 'Layout' ]( $elems );
 
       // set the size of the container
@@ -631,7 +631,7 @@
     },
 
     _processStyleQueue : function( $elems, callback ) {
-      // are we animating the layout arrangement?
+      // are we animating the layouts arrangement?
       // use plugin-ish syntax for css or animate
       var styleFn = !this.isLaidOut ? 'css' : (
             this.isUsingJQueryAnimation ? 'animate' : 'css'
@@ -751,7 +751,7 @@
       }
     },
 
-    // convienence method for adding elements properly to any layout
+    // convienence method for adding elements properly to any layouts
     // positions items, hides them, then animates them back in <--- very sezzy
     insert : function( $content, callback ) {
       // position items
@@ -919,7 +919,7 @@
     // ====================== Masonry ======================
 
     _masonryReset : function() {
-      // layout-specific props
+      // layouts-specific props
       this.masonry = {};
       // FIXME shouldn't have to call this again
       this._getSegments();
@@ -1109,7 +1109,7 @@
     // ====================== masonryHorizontal ======================
 
     _masonryHorizontalReset : function() {
-      // layout-specific props
+      // layouts-specific props
       this.masonryHorizontal = {};
       // FIXME shouldn't have to call this again
       this._getSegments( true );

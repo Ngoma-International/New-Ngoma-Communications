@@ -338,7 +338,7 @@
                         'forms,iframe,image,newpage,removeformat,' +
                         'smiley,specialchar,stylescombo,templates';
 
-                // Rearrange the toolbar layout.
+                // Rearrange the toolbar layouts.
                 editor.config.toolbarGroups = [{
                     name: 'editing',
                     groups: ['basicstyles', 'links']
