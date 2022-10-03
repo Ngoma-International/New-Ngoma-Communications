@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Enums;
+namespace App\Http\Controllers\Backend\Podcast\Enums;
 
-enum PodcastEnum: string
+enum PodcastEnums: string
 {
     case Podcast_video = 'video';
 

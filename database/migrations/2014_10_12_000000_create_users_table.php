@@ -19,14 +19,10 @@ return new class extends Migration
             $table->string('images')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('profession')->nullable();
             $table->longText('about')->nullable();
             $table->string('status')->default(1);
-            $table->enum('role', [
-                RoleEnum::Role_Admin,
-                RoleEnum::Role_Advisor,
-                RoleEnum::Role_Facilitators,
-                RoleEnum::Role_partners
-            ])->default(RoleEnum::Role_partners);
+            $table->integer('role_id')->default(1);
             $table->rememberToken();
             $table->timestamps();
         });

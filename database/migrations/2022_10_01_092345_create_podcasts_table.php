@@ -19,9 +19,9 @@ return new class extends Migration
                 ->cascadeOnDelete();
             $table->string('podcast_title');
             $table->enum('postcast_type', [
-                PodcastEnum::Podcast_audio,
-                PodcastEnum::Podcast_video
-            ])->default(PodcastEnum::Podcast_audio);
+                'audio',
+                'video'
+            ])->default('audio');
             $table->string('podcast_offering');
             $table->string('thumbnail');
             $table->string('podcast_file');

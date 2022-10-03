@@ -16,13 +16,11 @@ return new class extends Migration
             $table->foreignIdFor(User::class)
                 ->constrained()
                 ->cascadeOnDelete();
-            $table->string('room_iD');
-            $table->string('room_otp');
+            $table->string('room_id');
             $table->string('room_name');
             $table->string('facilitator_id');
             $table->integer('room_pin');
             $table->string('student_id');
-            $table->string('module_id');
             $table->integer('student_pin');
             $table->date('scheduled_date');
             $table->time('start_time');
