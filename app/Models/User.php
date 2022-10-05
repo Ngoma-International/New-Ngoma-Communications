@@ -33,8 +33,28 @@ class User extends Authenticatable
     ];
 
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'email_verified_at' => 'datetime'
     ];
+
+    public function renderImages(): string
+    {
+        return asset('storage/'. $this->images);
+    }
+
+    public function editUsers(): string
+    {
+        return route('admins.users.edit', $this->id);
+    }
+
+    public function getRoleUsers(): string
+    {
+        return match($this->role_id) {
+            1 => "Admin",
+            2 => "advisor",
+            3 => 'facilitator'
+        };
+    }
+
 
     public function classes(): HasMany
     {

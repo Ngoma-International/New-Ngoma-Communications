@@ -11,6 +11,4 @@ enum RoleEnum: string
     case Role_Advisor = 'advisor';
 
     case Role_Facilitators = "facilitator";
-
-    case Role_partners = "partners";
 }

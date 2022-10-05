@@ -16,13 +16,13 @@ return new class extends Migration
             $table->foreignIdFor(Seminary::class)
                 ->constrained()
                 ->cascadeOnDelete();
-            $table->string('ticket_buyer');
-            $table->string('ticket_buyer_email');
-            $table->string('buyer_phone');
-            $table->integer('ticket_code');
-            $table->date('ticket_date_purchased');
+            $table->string('ticket_buyer')->nullable();
+            $table->string('ticket_buyer_email')->nullable();
+            $table->string('buyer_phone')->nullable();
+            $table->integer('ticket_code')->nullable();
+            $table->date('ticket_date_purchased')->nullable();
             $table->boolean('ticket_status')->default(0);
-            $table->string('ticket_contact');
+            $table->string('ticket_contact')->nullable();
             $table->timestamps();
         });
     }

@@ -32,7 +32,7 @@ serve: vendor/autoload.php ## lance, le serve de development
 
 .PHONE: create
 create: vendor/autoload.php # creer un administrateur
-	php artisan karibu:add-user
+	php artisan ngoma:add-user
 
 .PHONE: generate
 generate: vendor/autoload.php ## Generate Ide models

@@ -16,9 +16,9 @@ return new class extends Migration
             $table->foreignIdFor(User::class)
                 ->constrained()
                 ->cascadeOnDelete();
-            $table->string('description');
-            $table->string('offerings');
-            $table->string('images');
+            $table->string('description')->nullable();
+            $table->string('offerings')->nullable();
+            $table->string('images')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
         });

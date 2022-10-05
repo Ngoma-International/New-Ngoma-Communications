@@ -67,5 +67,6 @@
     <script src="{{ asset('admin/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
     <script src="{{ asset('admin/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('admin/assets/pages/data-table.js') }}"></script>
+    @routes
 </body>
 </html>

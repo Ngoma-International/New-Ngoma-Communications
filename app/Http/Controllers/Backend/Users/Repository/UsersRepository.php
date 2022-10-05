@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Backend\Users\Repository;
 
-use App\Enums\RoleEnum;
 use App\Events\AdminEvent;
 use App\Events\AdminUpdateEvent;
 use App\Events\AdvisorEvent;
@@ -16,7 +15,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
-use function PHPUnit\Framework\at;
 
 final class UsersRepository
 {
@@ -31,17 +29,13 @@ final class UsersRepository
 
     public function store($attributes): Model|Builder
     {
-        $role  = $attributes->input('role');
-        if ($role == RoleEnum::Role_Advisor) {
-            $partners = $this->storeAdvisors($attributes);
-            session()->flash('success', 'New advisor as added');
-        } elseif ($role === RoleEnum::Role_Facilitators) {
-            $partners = $this->storeFacilitator($attributes);
-            session()->flash('success', 'New facilitator as added');
-        } else {
-            $partners = $this->storeAdmin($attributes);
-            session()->flash('success', 'New admin as added');
-        }
+        $partners = match((int)$attributes->input('role'))  {
+            2 => $this->storeAdvisors($attributes),
+            3 => $this->storeFacilitator($attributes),
+            1 => $this->storeAdmin($attributes),
+            'default' => throw new \Exception('')
+        };
+        session()->flash('success', 'New admin as added');
         return $partners;
     }
 
@@ -55,7 +49,7 @@ final class UsersRepository
     public function update(Model $model, $attributes)
     {
         $user = $this->show($model);
-        $this->removePathOfImages($user);
+        $user->images !== null ? $this->removePathOfImages($user) : null;
         $user->update([
             'name' => $attributes->input('name'),
             'email' => $attributes->input('email'),
@@ -114,7 +108,7 @@ final class UsersRepository
             ->create([
                 'images' => self::uploadFiles($attributes),
                 'description' => $attributes->input('about'),
-                'users' => $advisor->id
+                'user_id' => $advisor->id
             ]);
         AdvisorEvent::dispatch($advisor);
 
@@ -139,7 +133,7 @@ final class UsersRepository
             ->create([
                 'images' => self::uploadFiles($attributes),
                 'description' => $attributes->input('about'),
-                'users' => $facilitator->id
+                'user_id' => $facilitator->id,
             ]);
         AdvisorEvent::dispatch($facilitator);
 

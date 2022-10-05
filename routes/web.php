@@ -24,6 +24,8 @@ Route::group([
 ], function () {
     Route::get('backend', HomeBackendController::class)->name('backend.name');
 
+    // users
+
     Route::resource('users', UsersBackendController::class);
     Route::resource('seminary', SeminaryBackendController::class);
     Route::resource('podcast', PodcastBackendController::class);

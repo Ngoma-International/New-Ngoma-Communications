@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use App\Enums\PodcastEnum;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -21,10 +20,10 @@ return new class extends Migration
             $table->enum('postcast_type', [
                 'audio',
                 'video'
-            ])->default('audio');
-            $table->string('podcast_offering');
-            $table->string('thumbnail');
-            $table->string('podcast_file');
+            ])->default('audio')->nullable();
+            $table->string('podcast_offering')->nullable();
+            $table->string('thumbnail')->nullable();
+            $table->string('podcast_file')->nullable();
             $table->timestamps();
         });
     }
