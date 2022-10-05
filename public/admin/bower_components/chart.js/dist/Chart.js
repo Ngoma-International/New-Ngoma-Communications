@@ -1442,11 +1442,11 @@ for (var func in conversions) {
   // export rgb2hsl and ["rgb"]["hsl"]
   convert[from] = convert[from] || {};
 
-  convert[from][to] = convert[func] = (function(func) {
+  convert[from][to] = convert[func] = (function(func) { 
     return function(arg) {
       if (typeof arg == "number")
         arg = Array.prototype.slice.call(arguments);
-
+      
       var val = conversions[func](arg);
       if (typeof val == "string" || val === undefined)
         return val; // keyword
@@ -1474,12 +1474,12 @@ Converter.prototype.routeSpace = function(space, args) {
    }
    // color.rgb(10, 10, 10)
    if (typeof values == "number") {
-      values = Array.prototype.slice.call(args);
+      values = Array.prototype.slice.call(args);        
    }
 
    return this.setValues(space, values);
 };
-
+  
 /* Set the values for a space, invalidating cache */
 Converter.prototype.setValues = function(space, values) {
    this.space = space;
@@ -5950,13 +5950,13 @@ module.exports = function(Chart) {
 
 	var helpers = Chart.helpers;
 
-	// The layouts service is very self explanatory.  It's responsible for the layouts within a chart.
-	// Scales, Legends and Plugins all rely on the layouts service and can easily register to be placed anywhere they need
-	// It is this service's responsibility of carrying out that layouts.
+	// The layout service is very self explanatory.  It's responsible for the layout within a chart.
+	// Scales, Legends and Plugins all rely on the layout service and can easily register to be placed anywhere they need
+	// It is this service's responsibility of carrying out that layout.
 	Chart.layoutService = {
 		defaults: {},
 
-		// Register a box to a chartInstance. A box is simply a reference to an object that requires layouts. eg. Scales, Legend, Plugins.
+		// Register a box to a chartInstance. A box is simply a reference to an object that requires layout. eg. Scales, Legend, Plugins.
 		addBox: function(chartInstance, box) {
 			if (!chartInstance.boxes) {
 				chartInstance.boxes = [];
@@ -6037,7 +6037,7 @@ module.exports = function(Chart) {
 			// 1. Determine the minimum size of the chart area.
 			// 2. Split the remaining width equally between each vertical axis
 			// 3. Split the remaining height equally between each horizontal axis
-			// 4. Give each layouts the maximum size it can be. The layouts will return it's minimum size
+			// 4. Give each layout the maximum size it can be. The layout will return it's minimum size
 			// 5. Adjust the sizes of each axis based on it's minimum reported size.
 			// 6. Refit each axis
 			// 7. Position each axis in the final location
@@ -6155,10 +6155,10 @@ module.exports = function(Chart) {
 				}
 			}
 
-			// Let the left layouts know the final margin
+			// Let the left layout know the final margin
 			helpers.each(leftBoxes.concat(rightBoxes), finalFitVerticalBox);
 
-			// Recalculate because the size of each layouts might have changed slightly due to the margins (label rotation for instance)
+			// Recalculate because the size of each layout might have changed slightly due to the margins (label rotation for instance)
 			totalLeftBoxesWidth = xPadding;
 			totalRightBoxesWidth = xPadding;
 			totalTopBoxesHeight = yPadding;
@@ -6179,7 +6179,7 @@ module.exports = function(Chart) {
 				totalBottomBoxesHeight += box.height;
 			});
 
-			// Figure out if our chart area changed. This would occur if the dataset layouts label rotation
+			// Figure out if our chart area changed. This would occur if the dataset layout label rotation
 			// changed due to the application of the margins in step 6. Since we can only get bigger, this is safe to do
 			// without calling `fit` again
 			var newMaxChartAreaHeight = height - totalTopBoxesHeight - totalBottomBoxesHeight;

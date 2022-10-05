@@ -5,14 +5,18 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Backend\Podcast\Repository;
 
 use App\Http\Controllers\Backend\Podcast\Repository\PodcastRepositoryInterface;
+use App\Models\Podcast;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
-final class PodcastRepository implements PodcastRepositoryInterface
+final class PodcastRepository
 {
 
-    public function getElements()
+    public function getElements(): Collection|array
     {
-        // TODO: Implement getElements() method.
+        return Podcast::query()
+            ->orderByDesc('created_at')
+            ->get();
     }
 
     public function store($attributes)

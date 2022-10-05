@@ -1,3 +1,4 @@
+@php use App\Models\Podcast;use App\Models\Seminary;use App\Models\Ticket;use App\Models\User; @endphp
 @extends('backend.layouts.base')
 
 @section('title')
@@ -10,23 +11,23 @@
     @endcomponent
     <div class="row dashboard-header">
         @include('backend.component._card', [
-            'name' => "",
-            'count' => 0,
+            'name' => "Seminaries",
+            'count' => Seminary::count(),
             'icons' => "ti-gift text-primary-color"
         ])
         @include('backend.component._card', [
-            'name' => "",
-            'count' => 0,
+            'name' => "Podcast",
+            'count' => Podcast::count(),
             'icons' => "ti-gift text-primary-color"
         ])
         @include('backend.component._card', [
-            'name' => "",
-            'count' => 0,
+            'name' => "Booking",
+            'count' => Ticket::count(),
             'icons' => "ti-gift text-primary-color"
         ])
         @include('backend.component._card', [
-            'name' => "",
-            'count' => 0,
+            'name' => "Users",
+            'count' => User::count(),
             'icons' => "ti-gift text-primary-color"
         ])
     </div>

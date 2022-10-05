@@ -45,9 +45,9 @@ var Lightbox = (function ($) {
 			key: 'Default',
 
 			/**
-
+    
       Class properties:
-
+    
     _$element: null -> the <a> element currently being displayed
     _$modal: The bootstrap modal generated
        _$modalDialog: The .modal-dialog
@@ -308,7 +308,7 @@ var Lightbox = (function ($) {
 				return string && string.indexOf('instagram') > 0 ? string : false;
 			}
 
-			// layouts private methods
+			// layout private methods
 		}, {
 			key: '_toggleLoading',
 			value: function _toggleLoading(show) {

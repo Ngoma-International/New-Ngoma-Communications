@@ -4,13 +4,17 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Backend\Seminary\Repository;
 
+use App\Models\Seminary;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
-final class SeminaryRepository implements SeminaryRepositoryInterface
+final class SeminaryRepository
 {
-    public function getElements()
+    public function getElements(): Collection|array
     {
-        // TODO: Implement getElements() method.
+        return Seminary::query()
+            ->orderByDesc('created_at')
+            ->get();
     }
 
     public function store($attributes)

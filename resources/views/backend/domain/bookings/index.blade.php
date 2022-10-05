@@ -11,7 +11,7 @@
 
     @component('backend.shared.content')
         <div class="card-block">
-            <table id="advanced-table" class="table dt-responsive table-striped table-bordered nowrap">
+            <table id="simpletable" class="table dt-responsive table-striped table-bordered nowrap">
                 <thead>
                 <tr>
                     <th>Name</th>

@@ -7,10 +7,16 @@
 @section('content')
     @component('backend.component.brandcrump')
         room
+        <div class="mt-4">
+            <a href="{{ route('admins.class-room.create') }}" class="btn btn-primary mt-3">
+                <i class="fa fa-plus"></i>
+                Back
+            </a>
+        </div>
     @endcomponent
     @component('backend.shared.content')
         <div class="card-block">
-            <table id="advanced-table" class="table dt-responsive table-striped table-bordered nowrap">
+            <table id="simpletable" class="table dt-responsive table-striped table-bordered nowrap">
                 <thead>
                 <tr>
                     <th>Name</th>

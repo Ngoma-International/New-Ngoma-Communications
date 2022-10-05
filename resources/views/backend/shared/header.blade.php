@@ -1,5 +1,5 @@
 <header class="main-header-top hidden-print">
-    <a href="" class="logo">
+    <a href="{{ route('admins.backend.name') }}" class="logo">
         <img
             class="img-fluid able-logo"
             src=""
@@ -45,24 +45,18 @@
                         <span>
                             <img
                                 class="img-circle "
-                                src=""
+                                src="{{ asset('storage/'. auth()->user()->images) }}"
                                 style="width:40px;"
                                 alt="User Image">
                         </span>
                         <span>
-                            John <b>Doe</b>
+                             <b>{{ auth()->user()->name }}</b>
                             <i class=" icofont icofont-simple-down"></i>
                         </span>
                     </a>
                     <ul class="dropdown-menu settings-menu">
                         <li>
-                            <a href="#!">
-                                <i class="icon-settings"></i>
-                                Settings
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                            <a href="{{ route('admins.profile.index') }}">
                                 <i class="icon-user"></i>
                                 Profile
                             </a>
@@ -71,10 +65,13 @@
                             <div class="dropdown-divider m-0"></div>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="icon-logout"></i>
                                 Logout
                             </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </li>
                     </ul>
                 </li>
