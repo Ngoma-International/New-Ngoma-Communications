@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Enums\RoleEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -22,7 +23,7 @@ return new class extends Migration
             $table->string('profession')->nullable();
             $table->longText('about')->nullable();
             $table->string('status')->default(1);
-            $table->integer('role_id')->default(1);
+            $table->integer('role_id')->default(RoleEnum::Role_Admin);
             $table->rememberToken();
             $table->timestamps();
         });

@@ -16,25 +16,38 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::group(['middleware' => ['auth']], function () {
+    Route::group([
+        'prefix' => 'admins',
+        'as' => 'admins.',
+        'middleware' => ['administration'],
+    ], function () {
+        Route::get('backend', HomeBackendController::class)->name('backend.index');
+        Route::resource('users', UsersBackendController::class);
+        Route::resource('seminary', SeminaryBackendController::class);
+        Route::resource('podcast', PodcastBackendController::class);
+        Route::get('booking', BookingBackendController::class)->name('booking.name');
+        Route::get('ticket', TicketBackendController::class)->name('ticket.index');
+        Route::resource('class-room', ClassRoomBackendController::class);
+        Route::get('profile', ProfileBackendController::class)->name('profile.index');
+    });
 
-Route::group([
-    'prefix' => 'admins',
-    'as' => 'admins.',
-    'middleware' => ['auth'],
-], function () {
-    Route::get('backend', HomeBackendController::class)->name('backend.index');
+    Route::group([
+        'prefix' => 'facilitator',
+        'as' => 'facilitator.',
+        'middleware' => ['facilitator'],
+    ], function () {
 
-    // users
+    });
 
-    Route::resource('users', UsersBackendController::class);
-    Route::resource('seminary', SeminaryBackendController::class);
-    Route::resource('podcast', PodcastBackendController::class);
-    Route::get('booking', BookingBackendController::class)->name('booking.name');
-    Route::get('ticket', TicketBackendController::class)->name('ticket.index');
-    Route::resource('class-room', ClassRoomBackendController::class);
+    Route::group([
+        'prefix' => 'advisor',
+        'as' => 'advisor.',
+        'middleware' => ['advisor'],
+    ], function () {
 
-    Route::get('profile', ProfileBackendController::class)->name('profile.index');
+    });
+
 });
-
 Route::get('/', HomeFrontendController::class)->name('app.name');
 
