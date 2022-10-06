@@ -6,9 +6,6 @@ namespace App\Http\Controllers\Backend\Users\Repository;
 
 use App\Events\AdminEvent;
 use App\Events\AdminUpdateEvent;
-use App\Events\AdvisorEvent;
-use App\Models\Advisor;
-use App\Models\Facilitator;
 use App\Models\User;
 use App\Traits\ImagesUploadsTrait;
 use Illuminate\Database\Eloquent\Builder;
@@ -29,12 +26,7 @@ final class UsersRepository
 
     public function store($attributes): Model|Builder
     {
-        $partners = match((int)$attributes->input('role'))  {
-            2 => $this->storeAdvisors($attributes),
-            3 => $this->storeFacilitator($attributes),
-            1 => $this->storeAdmin($attributes),
-            'default' => throw new \Exception('')
-        };
+        $partners = $this->storeAdmin($attributes);
         session()->flash('success', 'New admin as added');
         return $partners;
     }
@@ -49,7 +41,7 @@ final class UsersRepository
     public function update(Model $model, $attributes)
     {
         $user = $this->show($model);
-        $user->images !== null ? $this->removePathOfImages($user) : null;
+        $user->images !== null ? $this->removePathOfImages($user) : "";
         $user->update([
             'name' => $attributes->input('name'),
             'email' => $attributes->input('email'),
@@ -67,6 +59,7 @@ final class UsersRepository
     public function delete(Model $model)
     {
         $user = $this->show($model);
+        $user->images !== null ? $this->removePathOfImages($user) : "";
         $user->delete();
         session()->flash('success', 'User updated with successfuly');
         return $user;
@@ -88,55 +81,5 @@ final class UsersRepository
             ]);
         AdminEvent::dispatch($admin);
         return $admin;
-    }
-
-    private function storeAdvisors($attributes): Model|Builder
-    {
-        $advisor = User::query()
-            ->create([
-                'name' => $attributes->input('name'),
-                'email' => $attributes->input('email'),
-                'images' => self::uploadFiles($attributes),
-                'profession' => $attributes->input('profession'),
-                'phone_number' => $attributes->input('phone_number'),
-                'about' => $attributes->input('about'),
-                'role_id' => $attributes->input('role'),
-                'status' => 1,
-                'password' => Hash::make($attributes->input('profession'))
-            ]);
-        Advisor::query()
-            ->create([
-                'images' => self::uploadFiles($attributes),
-                'description' => $attributes->input('about'),
-                'user_id' => $advisor->id
-            ]);
-        AdvisorEvent::dispatch($advisor);
-
-        return $advisor;
-    }
-
-    private function storeFacilitator($attributes): Model|Builder
-    {
-        $facilitator = User::query()
-            ->create([
-                'name' => $attributes->input('name'),
-                'email' => $attributes->input('email'),
-                'images' => self::uploadFiles($attributes),
-                'profession' => $attributes->input('profession'),
-                'phone_number' => $attributes->input('phone_number'),
-                'about' => $attributes->input('about'),
-                'role_id' => $attributes->input('role'),
-                'status' => 1,
-                'password' => Hash::make($attributes->input('profession'))
-            ]);
-        Facilitator::query()
-            ->create([
-                'images' => self::uploadFiles($attributes),
-                'description' => $attributes->input('about'),
-                'user_id' => $facilitator->id,
-            ]);
-        AdvisorEvent::dispatch($facilitator);
-
-        return $facilitator;
     }
 }

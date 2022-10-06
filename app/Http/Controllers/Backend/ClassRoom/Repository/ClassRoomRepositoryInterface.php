@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 interface ClassRoomRepositoryInterface
 {
-    public function getElements();
+    public function getClassRoomRepositoryInterface();
 
     public function store($attributes);
 

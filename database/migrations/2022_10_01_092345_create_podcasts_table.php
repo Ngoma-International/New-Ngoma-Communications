@@ -16,14 +16,14 @@ return new class extends Migration
             $table->foreignIdFor(User::class)
                 ->constrained()
                 ->cascadeOnDelete();
-            $table->string('podcast_title');
-            $table->enum('postcast_type', [
+            $table->string('title');
+            $table->enum('type', [
                 'audio',
                 'video'
             ])->default('audio')->nullable();
-            $table->string('podcast_offering')->nullable();
+            $table->string('offering')->nullable();
             $table->string('thumbnail')->nullable();
-            $table->string('podcast_file')->nullable();
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }

@@ -20,20 +20,20 @@ return new class extends Migration
             $table->foreignIdFor(User::class)
                 ->constrained()
                 ->cascadeOnDelete();
-            $table->string('seminar_name');
-            $table->string('seminar_photo');
-            $table->string('seminar_price');
-            $table->time('seminar_startTime');
-            $table->time('seminar_endTime');
-            $table->integer('seminar_duration');
-            $table->date('seminar_date');
-            $table->longText('seminar_description')->nullable();
-            $table->longText('seminar_target')->nullable();
-            $table->string('seminar_outline')->nullable();
-            $table->string('seminar_avenue')->nullable();
-            $table->string('seminar_country')->nullable();
-            $table->string('seminar_city')->nullable();
-            $table->string('seminar_offering')->nullable();
+            $table->string('name');
+            $table->string('photo');
+            $table->string('price');
+            $table->time('start_time');
+            $table->time('end_time');
+            $table->integer('duration');
+            $table->date('date');
+            $table->longText('description')->nullable();
+            $table->longText('target')->nullable();
+            $table->string('outline')->nullable();
+            $table->string('avenue')->nullable();
+            $table->string('country')->nullable();
+            $table->string('city')->nullable();
+            $table->string('offering')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
         });

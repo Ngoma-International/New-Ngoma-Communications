@@ -32,4 +32,9 @@ final class ClassRoomRepository implements ClassRoomRepositoryInterface
     {
         // TODO: Implement delete() method.
     }
+
+    public function getClassRoomRepositoryInterface()
+    {
+        // TODO: Implement getClassRoomRepositoryInterface() method.
+    }
 }

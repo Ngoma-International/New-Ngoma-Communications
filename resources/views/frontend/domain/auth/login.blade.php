@@ -1,73 +1,86 @@
 @extends('frontend.layouts.auth')
 
 @section('title')
-    Authentification
+    Connexion
 @endsection
 
 @section('content')
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="login-card card-block">
-                <form method="POST" action="{{ route('login') }}" class="md-float-material">
+    <div class="nk-split nk-split-page nk-split-md">
+        <div class="nk-split-content nk-block-area nk-block-area-column nk-auth-container bg-white">
+            <div class="nk-block nk-block-middle nk-auth-body">
+                <div class="brand-logo pb-5">
+                    <a href="{{ route('app.name') }}" class="logo-link">
+                        <img
+                            class="logo-light logo-img logo-img-lg"
+                            src=""
+                            srcset=""
+                            alt="logo">
+                    </a>
+                </div>
+                <div class="nk-block-head">
+                    <div class="nk-block-head-content">
+                        <h5 class="nk-block-title">Ngoma communication</h5>
+                    </div>
+                </div>
+                <form  method="POST" action="{{ route('login') }}">
                     @csrf
-                    <div class="text-center">
-                        <img src="" alt="Ngoma Communication">
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <label class="form-label" for="email">Email or Username</label>
+                        </div>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email address or username"
+                            name="email"
+                            value="{{ old('email') }}"
+                            required
+                            autocomplete="email"
+                            autofocus
+                            class="form-control form-control-lg @error('email') error @enderror"
+                        >
                     </div>
-                    <h3 class="text-center txt-primary">
-                        {{ __('Login') }}
-                    </h3>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="md-input-wrapper">
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    value="{{ old('email') }}"
-                                    autocomplete="email"
-                                    autofocus
-                                    class="md-form-control @error('email') error @enderror"
-                                    required="required"/>
-                                <label>{{ __('Email Address') }}</label>
-                            </div>
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <label class="form-label" for="password">Passcode</label>
                         </div>
-                        <div class="col-md-12">
-                            <div class="md-input-wrapper">
-                                <input
-                                    class="md-form-control @error('password') error @enderror"
-                                    id="password"
-                                    type="password"
-                                    name="password"
-                                    required
-                                    autocomplete="current-password"
-                                />
-                                <label>{{ __('Password') }}</label>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-xs-12">
-                            <div class="rkmd-checkbox checkbox-rotate checkbox-ripple m-b-25">
-                                <label class="input-checkbox checkbox-primary">
-                                    <input
-                                        class="form-check-input"
-                                        type="checkbox"
-                                        name="remember"
-                                        id="remember"
-                                        {{ old('remember') ? 'checked' : '' }}
-                                    >
-                                    <span class="checkbox"></span>
-                                </label>
-                                <div class="captions">{{ __('Remember Me') }}</div>
-                            </div>
+                        <div class="form-control-wrap">
+                            <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch" data-target="password">
+                                <em class="passcode-icon icon-show icon ni ni-eye"></em>
+                                <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
+                            </a>
+                            <input
+                                class="form-control form-control-lg @error('email') error @enderror"
+                                type="password"
+                                id="password"
+                                placeholder="Enter your passcode"
+                                name="password"
+                                required
+                                autocomplete="current-password"
+                            >
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-10 offset-xs-1">
-                            <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">
-                                {{ __('Login') }}
-                            </button>
-                        </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block">Sign in</button>
                     </div>
                 </form>
+            </div>
+        </div>
+        <div class="nk-split-content nk-split-stretch bg-lighter">
+            <div class="slider-wrap w-100 w-max-550px p-2 p-sm-5 m-auto">
+                <div class="slider-init">
+                    <div class="slider-item">
+                        <div class="nk-feature nk-feature-center">
+                            <div class="nk-feature-img">
+                                <img
+                                    class="round"
+                                    src="{{ asset('assets/images/profile.jpg') }}"
+                                    srcset="{{ asset('assets/images/profile.jpg') }} 2x"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

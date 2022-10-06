@@ -1,7 +1,3 @@
-<div class="row">
-    <div class="col-sm-12">
-        <div class="card">
-            {{ $slot }}
-        </div>
-    </div>
+<div class="nk-block-head-content">
+    <h3 class="nk-block-title page-title">{{ $slot }}</h3>
 </div>

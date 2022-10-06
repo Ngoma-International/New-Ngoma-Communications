@@ -1,51 +1,33 @@
 const mix = require('laravel-mix');
+const path = require('path')
+require('laravel-mix-purgecss');
 
-mix.styles([
-    'public/admin/assets/icon/themify-icons/themify-icons.css',
-    'public/admin/assets/icon/icofont/css/icofont.css',
-    'public/admin/assets/icon/simple-line-icons/css/simple-line-icons.css',
-    'public/admin/bower_components/bootstrap/dist/css/bootstrap.min.css',
-    'public/admin/bower_components/chartist/dist/chartist.css',
-    'public/admin/assets/css/svg-weather.css',
-    'public/admin/assets/css/main.css',
-    'public/admin/assets/css/responsive.css',
-    'public/admin/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css',
-    'public/admin/assets/plugins/data-table/css/buttons.dataTables.min.css',
-    'public/admin/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css',
-    'public/admin/assets/css/font-awesome.min.css',
-], 'public/assets/app.css');
+mix
+    .js('resources/js/app.js', 'public/frontend/js/')
+    .js('resources/js/backend/app.js', 'public/backend/js')
+    .options({
+        processCssUrls: false,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-env'],
+            },
+        },
+    })
+    .webpackConfig({
+        stats: {
+            children: true,
+        },
+    })
+    .css('resources/css/backend/app.css', 'public/backend/css')
+
+mix.alias({
+    ziggy: path.resolve('vendor/tightenco/ziggy/dist')
+})
 
 mix.scripts([
-    'public/admin/bower_components/Jquery/dist/jquery.min.js',
-    'public/admin/bower_components/jquery-ui/jquery-ui.min.js',
-    'public/admin/bower_components/tether/dist/js/tether.min.js',
-    'public/admin/bower_components/bootstrap/dist/js/bootstrap.min.js',
-    'public/admin/bower_components/jquery-slimscroll/jquery.slimscroll.js',
-    'public/admin/bower_components/jquery.nicescroll/dist/jquery.nicescroll.min.js',
-    'public/admin/bower_components/classie/classie.js',
-    'public/admin/assets/plugins/notification/js/bootstrap-growl.min.js',
-    'public/admin/bower_components/jquery-sparkline/dist/jquery.sparkline.js',
-    'public/admin/bower_components/waypoints/lib/jquery.waypoints.min.js',
-    'public/admin/assets/plugins/countdown/js/jquery.counterup.js',
-    'public/admin/assets/plugins/charts/echarts/js/echarts-all.js',
-    'public/admin/assets/js/main.min.js',
-    'public/admin/assets/pages/dashboard.js',
-    'public/admin/assets/pages/elements.js',
-    'public/admin/assets/js/menu.min.js',
-    'public/admin/bower_components/Waves/dist/waves.min.js',
-    'public/admin/bower_components/jquery-slimscroll/jquery.slimscroll.js',
-    'public/admin/bower_components/jquery.nicescroll/dist/jquery.nicescroll.min.js',
-    'public/admin/bower_components/classie/classie.js',
-    'public/admin/assets/plugins/notification/js/bootstrap-growl.min.js',
-    'public/admin/bower_components/datatables.net/js/jquery.dataTables.min.js',
-    'public/admin/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js',
-    'public/admin/assets/plugins/data-table/js/jszip.min.js',
-    'public/admin/assets/plugins/data-table/js/pdfmake.min.js',
-    'public/admin/assets/plugins/data-table/js/vfs_fonts.js',
-    'public/admin/bower_components/datatables.net-buttons/js/buttons.print.min.js',
-    'public/admin/bower_components/datatables.net-buttons/js/buttons.html5.min.js',
-    'public/admin/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js',
-    'public/admin/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js',
-    'public/admin/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js',
-    'public/admin/assets/pages/data-table.js',
-], 'public/assets/app.js')
+    'public/backend/js/bundle.js',
+    'public/backend/js/scripts.js'
+], 'public/backend/script.js')
+
+mix.version()
