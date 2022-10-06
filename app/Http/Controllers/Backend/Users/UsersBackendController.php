@@ -22,12 +22,12 @@ class UsersBackendController extends Controller
     {
         $users = $this->repository->getElements();
 
-        return view('backend.domain.patners.index', compact('users'));
+        return view('backend.domain.facilitator.index', compact('users'));
     }
 
     public function create(): Renderable
     {
-        return view('backend.domain.patners.create');
+        return view('backend.domain.facilitator.create');
     }
 
     public function store(UserRequest $request): RedirectResponse
@@ -39,7 +39,7 @@ class UsersBackendController extends Controller
 
     public function edit(User $user): Renderable
     {
-        return view('backend.domain.patners.edit', compact('user'));
+        return view('backend.domain.facilitator.edit', compact('user'));
     }
 
     public function update(User $user, UpdateUserRequest $request): RedirectResponse

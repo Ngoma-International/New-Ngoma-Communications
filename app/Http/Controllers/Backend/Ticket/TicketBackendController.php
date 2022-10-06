@@ -13,6 +13,7 @@ class TicketBackendController extends Controller
 {
     public function __invoke(): Factory|View|Application
     {
+
         return view('backend.domain.ticket.index');
     }
 }

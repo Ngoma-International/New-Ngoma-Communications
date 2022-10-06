@@ -22,7 +22,7 @@ Route::group([
     'as' => 'admins.',
     'middleware' => ['auth'],
 ], function () {
-    Route::get('backend', HomeBackendController::class)->name('backend.name');
+    Route::get('backend', HomeBackendController::class)->name('backend.index');
 
     // users
 

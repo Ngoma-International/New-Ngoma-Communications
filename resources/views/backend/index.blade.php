@@ -7,20 +7,24 @@
 @section('content')
     <div class="nk-content-inner">
         <div class="nk-content-body">
-            <div class="nk-block-head nk-block-head-sm">
-                <div class="nk-block-between">
-                    @component('backend.shared.content')
-                        Pannel Administrateur
-                    @endcomponent
-                </div>
-            </div>
             <div class="nk-block">
                 <div class="row g-gs mb-2">
                     @include('backend.shared._statistic', [
-                        'username' => "Nos salles",
+                        'username' => "Facilitators",
                         'amount' => \App\Models\User::count()
                     ])
-
+                    @include('backend.shared._statistic', [
+                        'username' => "Podcast",
+                        'amount' => \App\Models\User::count()
+                    ])
+                    @include('backend.shared._statistic', [
+                        'username' => "Seminars",
+                        'amount' => \App\Models\User::count()
+                    ])
+                    @include('backend.shared._statistic', [
+                        'username' => "Bookings",
+                        'amount' => \App\Models\User::count()
+                    ])
                 </div>
                 <div class="row g-gs">
                     <div class="col-xxl-6 mb-2">

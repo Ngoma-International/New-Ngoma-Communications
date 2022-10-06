@@ -13,6 +13,7 @@ class BookingBackendController extends Controller
 {
     public function __invoke(): Factory|View|Application
     {
-        return view('backend.domain.bookings.index');
+        $bookings = [];
+        return view('backend.domain.booking.index', compact('bookings'));
     }
 }
