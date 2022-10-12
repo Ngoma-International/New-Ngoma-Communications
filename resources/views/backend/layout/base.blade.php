@@ -8,7 +8,7 @@
     <meta name="description" content="Une partie d'administration pour la gestion d'un">
     <link rel="shortcut icon" href="{{ asset('frontend/images/icon.png') }}">
     <title>Ngoma Communication | @yield('title')</title>
-    <link rel="stylesheet" href="{{ asset('backend/css/dashlite.css') }}" >
+    <link rel="stylesheet" href="{{ asset('backend/css/app.css') }}" >
     @yield('styles')
 </head>
 
@@ -27,8 +27,7 @@
         </div>
     </div>
 </div>
-<script src="{{ asset('backend/js/bundle.js') }}"></script>
-<script src="{{ asset('backend/js/scripts.js') }}"></script>
+<script src="{{ mix('backend/js/app.js') }}"></script>
 @include('sweetalert::alert')
 @yield('scripts')
 </body>

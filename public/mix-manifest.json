@@ -1,4 +1,6 @@
 {
-    "/assets/app.css": "/assets/app.css",
-    "/assets/app.js": "/assets/app.js"
+    "/frontend/js/app.js": "/frontend/js/app.js?id=e4e4e6f3de771d640ce26e15373c62c8",
+    "/backend/js/app.js": "/backend/js/app.js?id=c35131086ab45d48cd7686468c11116a",
+    "/backend/css/app.css": "/backend/css/app.css?id=d661b5ea714d63f4928f0f585738af6d",
+    "/backend/script.js": "/backend/script.js?id=2911f1114d8c6b08458c94ba4bfe73d4"
 }

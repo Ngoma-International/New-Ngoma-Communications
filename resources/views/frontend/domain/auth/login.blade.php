@@ -22,6 +22,7 @@
                         <h5 class="nk-block-title">Ngoma communication</h5>
                     </div>
                 </div>
+                @include('backend.shared._alert')
                 <form  method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group">
@@ -37,7 +38,7 @@
                             required
                             autocomplete="email"
                             autofocus
-                            class="form-control form-control-lg @error('email') error @enderror"
+                            class="form-control @error('email') error @enderror"
                         >
                     </div>
                     <div class="form-group">
@@ -50,7 +51,7 @@
                                 <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
                             </a>
                             <input
-                                class="form-control form-control-lg @error('email') error @enderror"
+                                class="form-control @error('email') error @enderror"
                                 type="password"
                                 id="password"
                                 placeholder="Enter your passcode"
@@ -61,7 +62,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-lg btn-primary btn-block">Sign in</button>
+                        <button class="btn btn-dim btn-outline-primary btn-block">Sign in</button>
                     </div>
                 </form>
             </div>
@@ -73,10 +74,10 @@
                         <div class="nk-feature nk-feature-center">
                             <div class="nk-feature-img">
                                 <img
-                                    class="round"
+                                    class="round img-full"
                                     src="{{ asset('assets/images/profile.jpg') }}"
                                     srcset="{{ asset('assets/images/profile.jpg') }} 2x"
-                                    alt="">
+                                    alt="images">
                             </div>
                         </div>
                     </div>

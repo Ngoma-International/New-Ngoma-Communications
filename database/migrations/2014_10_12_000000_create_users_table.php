@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('profession')->nullable();
             $table->longText('about')->nullable();
             $table->string('status')->default(1);
-            $table->integer('role_id')->default(RoleEnum::Role_Admin);
+            $table->integer('role_id')->default(1);
             $table->rememberToken();
             $table->timestamps();
         });
