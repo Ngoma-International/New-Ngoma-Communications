@@ -26,9 +26,13 @@ final class UsersRepository
 
     public function store($attributes): Model|Builder
     {
-        $partners = $this->storeAdmin($attributes);
-        session()->flash('success', 'New admin as added');
-        return $partners;
+        try {
+            $partners = $this->storeAdmin($attributes);
+            session()->flash('success', 'New admin as added');
+            return $partners;
+        } catch (\Exception $exception) {
+
+        }
     }
 
     public function show(Model $model)
