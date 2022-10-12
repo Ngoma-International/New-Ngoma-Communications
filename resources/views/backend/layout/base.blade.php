@@ -7,14 +7,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="Une partie d'administration pour la gestion d'un">
     <link rel="shortcut icon" href="{{ asset('frontend/images/icon.png') }}">
-    <title>Ngoma Communication | @yield('title')</title>
-    <link rel="stylesheet" href="{{ asset('backend/css/app.css') }}" >
+    <title>Ngoma-Communication | @yield('title')</title>
+    <link rel="stylesheet" href="{{ asset('backend/css/app.css') }}">
     @yield('styles')
 </head>
 
 <body class="nk-body bg-lighter npc-default has-sidebar no-touch nk-nio-theme ui-bordered light-mode">
 <div class="nk-app-root">
-    <div class="nk-main ">
+    <div class="nk-main">
         @include('backend.component.sidebar')
         <div class="nk-wrap">
             @include('backend.component.header')
@@ -27,7 +27,8 @@
         </div>
     </div>
 </div>
-<script src="{{ mix('backend/js/app.js') }}"></script>
+<script src="{{ asset('backend/js/bundle.js') }}" data-turbolinks-track="true"></script>
+<script src="{{ asset('backend/js/scripts.js') }}" data-turbolinks-track="true"></script>
 @include('sweetalert::alert')
 @yield('scripts')
 </body>

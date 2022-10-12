@@ -21,7 +21,7 @@
             </div>
         </div>
     </div>
-    <script src="{{ asset('backend/js/bundle.js') }}"></script>
-    <script src="{{ asset('backend/js/scripts.js') }}"></script>
+    <script src="{{ asset('backend/js/bundle.js') }}" data-turbolinks-track="true"></script>
+    <script src="{{ asset('backend/js/scripts.js') }}" data-turbolinks-track="true"></script>
 </body>
 </html>

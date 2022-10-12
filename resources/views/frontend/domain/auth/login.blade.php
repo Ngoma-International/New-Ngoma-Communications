@@ -1,7 +1,7 @@
 @extends('frontend.layouts.auth')
 
 @section('title')
-    Connexion
+    {{ __('frontend.login') }}
 @endsection
 
 @section('content')
@@ -11,23 +11,30 @@
                 <div class="brand-logo pb-5">
                     <a href="{{ route('app.name') }}" class="logo-link">
                         <img
-                            class="logo-light logo-img logo-img-lg"
-                            src=""
-                            srcset=""
-                            alt="logo">
+                            src="{{ asset('assets/images/logo.png')  }}"
+                            alt="logo"
+                            class="h-16">
                     </a>
                 </div>
                 <div class="nk-block-head">
                     <div class="nk-block-head-content">
-                        <h5 class="nk-block-title">Ngoma communication</h5>
+                        <h5 class="nk-block-title">{{ __('frontend.ngoma.communication') }}</h5>
                     </div>
                 </div>
-                @include('backend.shared._alert')
+                @if ($errors->any())
+                    <div class="flex bg-red-100 rounded-lg p-4 mb-4 text-sm text-red-700 mt-2" role="alert">
+                        <div>
+                            @foreach ($errors->all() as $error)
+                                {{ $error }}. <br>
+                            @endforeach
+                        </div>
+                    </div>
+                @endif
                 <form  method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group">
                         <div class="form-label-group">
-                            <label class="form-label" for="email">Email or Username</label>
+                            <label class="form-label" for="email">{{ __('frontend.email') }}</label>
                         </div>
                         <input
                             type="email"
@@ -43,7 +50,7 @@
                     </div>
                     <div class="form-group">
                         <div class="form-label-group">
-                            <label class="form-label" for="password">Passcode</label>
+                            <label class="form-label" for="password">{{ __('frontend.password') }}</label>
                         </div>
                         <div class="form-control-wrap">
                             <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch" data-target="password">
@@ -54,7 +61,7 @@
                                 class="form-control @error('email') error @enderror"
                                 type="password"
                                 id="password"
-                                placeholder="Enter your passcode"
+                                placeholder="Enter your password"
                                 name="password"
                                 required
                                 autocomplete="current-password"
@@ -62,7 +69,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-dim btn-outline-primary btn-block">Sign in</button>
+                        <button class="btn btn-dim btn-outline-primary btn-block">{{ __('frontend.login') }}</button>
                     </div>
                 </form>
             </div>
