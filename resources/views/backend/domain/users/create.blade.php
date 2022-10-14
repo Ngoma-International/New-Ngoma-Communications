@@ -1,7 +1,7 @@
 @extends('backend.layout.base')
 
 @section('title')
-    Editer Manager
+    Create Manager
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
         <div class="nk-block-head nk-block-head-sm">
             <div class="nk-block-between g-3">
                 @component('backend.shared.content')
-                    Editer un manager
+                    Ajouter un manager
                 @endcomponent
 
                 @component('backend.shared.banner')
@@ -28,7 +28,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         @include('backend.shared._alert')
-                        @include('backend.domain.facilitator._edit')
+                        @include('backend.domain.users._form')
                     </div>
                 </div>
             </div>

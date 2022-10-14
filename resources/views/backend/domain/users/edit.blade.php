@@ -1,7 +1,7 @@
 @extends('backend.layout.base')
 
 @section('title')
-    Create Seminars
+    Editer Manager
 @endsection
 
 @section('content')
@@ -9,12 +9,12 @@
         <div class="nk-block-head nk-block-head-sm">
             <div class="nk-block-between g-3">
                 @component('backend.shared.content')
-                    Ajouter Seminars
+                    Editer un manager
                 @endcomponent
 
                 @component('backend.shared.banner')
                     <div class="nk-block-head-content">
-                        <a href="{{ route('admins.seminary.index') }}"
+                        <a href="{{ route('admins.users.index') }}"
                            class="btn btn-outline-light btn-sm bg-white d-none d-sm-inline-flex">
                             <em class="icon ni ni-arrow-left"></em>
                             <span>Back</span>
@@ -28,7 +28,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         @include('backend.shared._alert')
-                        @include('backend.domain.seminary._form')
+                        @include('backend.domain.users._edit')
                     </div>
                 </div>
             </div>

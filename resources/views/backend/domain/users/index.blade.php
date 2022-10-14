@@ -1,7 +1,7 @@
 @extends('backend.layout.base')
 
 @section('title')
-    Advisors
+    Gestion managers
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@
             <div class="nk-block-head nk-block-head-sm">
                 <div class="nk-block-between">
                     @component('backend.shared.content')
-                        Advisors
+                        Liste des managers
                     @endcomponent
 
                     @component('backend.shared.banner')
@@ -28,22 +28,22 @@
                         <thead>
                         <tr class="nk-tb-item nk-tb-head text-center">
                             <th class="nk-tb-col tb-col-mb">
+                                <span class="sub-text">Id</span>
+                            </th>
+                            <th class="nk-tb-col tb-col-md">
                                 <span class="sub-text">Images</span>
                             </th>
                             <th class="nk-tb-col tb-col-md">
                                 <span class="sub-text">Nom</span>
                             </th>
                             <th class="nk-tb-col tb-col-md">
-                                <span class="sub-text">Prénom</span>
-                            </th>
-                            <th class="nk-tb-col tb-col-md">
-                                <span class="sub-text">Email</span>
+                                <span class="sub-text">Prenom</span>
                             </th>
                             <th class="nk-tb-col tb-col-md">
                                 <span class="sub-text">N° Telephone</span>
                             </th>
                             <th class="nk-tb-col tb-col-md">
-                                <span class="sub-text">Profession</span>
+                                <span class="sub-text">Email</span>
                             </th>
                             <th class="nk-tb-col">
                                 <span class="sub-text">Actions</span>
@@ -74,7 +74,7 @@
                                     <span>{{ $user->phone_number ?? "" }}</span>
                                 </td>
                                 <td class="nk-tb-col tb-col-md">
-                                    <span>{{ ucfirst($user->profession) ?? "" }}</span>
+                                    <span>{{ $user->email ?? "" }}</span>
                                 </td>
                                 <td class="nk-tb-col">
                                     <span class="tb-lead text-center">
