@@ -3,15 +3,31 @@
     <div class="row g-gs">
         <div class="col-md-6">
             <div class="form-group">
-                <label class="form-label" for="username">Votre nom</label>
+                <label class="form-label" for="name">Votre nom</label>
                 <div class="form-control-wrap">
                     <input
                         type="text"
-                        class="form-control @error('username') error @enderror"
-                        id="username"
-                        name="username"
-                        value="{{ old('username') }}"
-                        placeholder="Enter username"
+                        class="form-control @error('name') error @enderror"
+                        id="name"
+                        name="name"
+                        value="{{ old('name') }}"
+                        placeholder="Enter name"
+                        required>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-label" for="firstname">Votre prenom</label>
+                <div class="form-control-wrap">
+                    <input
+                        type="text"
+                        class="form-control @error('firstname') error @enderror"
+                        id="firstname"
+                        name="firstname"
+                        value="{{ old('firstname') }}"
+                        placeholder="Enter firstname"
                         required>
                 </div>
             </div>
@@ -36,31 +52,15 @@
 
         <div class="col-md-6">
             <div class="form-group">
-                <label class="form-label" for="profession">Profession</label>
+                <label class="form-label" for="phone_number">Phone number</label>
                 <div class="form-control-wrap">
                     <input
                         type="text"
-                        class="form-control @error('profession') error @enderror"
-                        id="profession"
-                        name="profession"
-                        value="{{ old('profession') }}"
-                        placeholder="Enter profession"
-                        required>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="form-group">
-                <label class="form-label" for="offerings">Offerings</label>
-                <div class="form-control-wrap">
-                    <input
-                        type="text"
-                        class="form-control @error('offerings') error @enderror"
-                        id="offerings"
-                        name="offerings"
-                        value="{{ old('offerings') }}"
-                        placeholder="Enter offerings"
+                        class="form-control @error('phone_number') error @enderror"
+                        id="phone_number"
+                        name="phone_number"
+                        value="{{ old('phone_number') }}"
+                        placeholder="Enter your phone_number"
                         required>
                 </div>
             </div>
@@ -84,19 +84,51 @@
 
         <div class="col-md-6">
             <div class="form-group">
-                <label class="form-label" for="type">User type</label>
+                <label class="form-label" for="profession">Profession</label>
+                <div class="form-control-wrap">
+                    <input
+                        type="text"
+                        class="form-control @error('profession') error @enderror"
+                        id="profession"
+                        name="profession"
+                        value="{{ old('profession') }}"
+                        placeholder="Enter profession"
+                        required>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-label" for="role">User type</label>
                 <div class="form-control-wrap">
                     <select
-                        class="form-control js-select2 select2-hidden-accessible @error('type') error @enderror"
-                        id="type"
+                        class="form-control js-select2 select2-hidden-accessible @error('role') error @enderror"
+                        id="role"
                         data-search="on"
-                        name="type"
+                        name="role"
                         data-placeholder="Select a type"
                         required>
-                        <option value="facilitator">Facilitator</option>
-                        <option value="coach">Coach</option>
-                        <option value="keynote">Keynote Speaker</option>
+                        <option value="3">Facilitator</option>
+                        <option value="2">Coach</option>
+                        <option value="1">Admin</option>
                     </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-label" for="password">Password</label>
+                <div class="form-control-wrap">
+                    <input
+                        type="password"
+                        class="form-control @error('password') error @enderror"
+                        id="password"
+                        name="password"
+                        value="{{ old('password') }}"
+                        placeholder="Enter password"
+                        required>
                 </div>
             </div>
         </div>
@@ -117,7 +149,9 @@
 
         <div class="col-md-12">
             <div class="form-group text-center">
-                <button type="submit" class="btn btn-md btn-primary">Save</button>
+                <button type="submit" class="btn btn-md btn-primary">
+                    Save
+                </button>
             </div>
         </div>
     </div>

@@ -20,31 +20,6 @@
             <div class="nk-sidebar-menu" data-simplebar>
                 <ul class="nk-menu">
                     @include('backend.shared._link', [
-                         'route' => route('admins.seminary.index'),
-                         'icons' => "ni-block-over",
-                         'name' => "Seminaire"
-                    ])
-                    @include('backend.shared._link', [
-                        'route' => route('admins.podcast.index'),
-                        'icons' => "ni-mic",
-                        'name' => "Podcast"
-                    ])
-                    @include('backend.shared._link', [
-                        'route' => route('admins.ticket.index'),
-                        'icons' => "ni-loader",
-                        'name' => "Verification ticket"
-                    ])
-                    @include('backend.shared._link', [
-                        'route' => route('admins.booking.name'),
-                        'icons' => "ni-download",
-                        'name' => "Reservation"
-                    ])
-                    @include('backend.shared._link', [
-                        'route' => route('admins.class-room.index'),
-                        'icons' => "ni-video",
-                        'name' => "Cree un salon"
-                    ])
-                    @include('backend.shared._link', [
                         'route' => route('admins.users.index'),
                         'icons' => "ni-user-alt",
                         'name' => "Utilisateur"

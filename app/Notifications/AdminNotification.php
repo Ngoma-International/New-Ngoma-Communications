@@ -10,7 +10,6 @@ use Illuminate\Notifications\Notification;
 
 class AdminNotification extends Notification
 {
-
     use Queueable;
 
     public function __construct(public $users)
@@ -25,7 +24,7 @@ class AdminNotification extends Notification
 
     public function toMail($notifiable): MailMessage
     {
-        return (new MailMessage)
+        return (new MailMessage())
             ->line('The introduction to the notification.')
             ->action('Notification Action', url('/'))
             ->line('Thank you for using our application!');

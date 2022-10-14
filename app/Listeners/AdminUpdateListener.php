@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Notification;
 
 class AdminUpdateListener
 {
-
     public function __construct()
     {
         //

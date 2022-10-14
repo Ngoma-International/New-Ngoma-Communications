@@ -24,7 +24,7 @@
                 <label class="form-label" for="facilitator">Facilitator</label>
                 <div class="form-control-wrap">
                     <select
-                        class="form-control js-select2 select2-hidden-accessible @error('facilitator') error @enderror"
+                        class="form-control js-select2 select2-hidden-accessible @error('users') error @enderror"
                         id="facilitator"
                         data-search="on"
                         name="facilitator"

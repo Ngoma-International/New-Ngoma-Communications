@@ -20,9 +20,9 @@ class AdminListener
     public function handle($event): void
     {
         $partners = User::query()
-            ->where('id', '=', $event->user->id)
-            ->firstOrFail();
+            ->where('id', '=', $event->admin->id)
+            ->first();
 
-        Notification::sendNow($partners, new  AdminNotification($event->user));
+        Notification::sendNow($partners, new  AdminNotification($event->admin));
     }
 }

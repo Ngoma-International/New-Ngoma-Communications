@@ -17,13 +17,45 @@ class UpdateUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => ['required', 'string', 'min:3'],
-            "email" => ['required', 'email', 'regex:/(.+)@(.+)\.(.+)/i'],
-            "phone_number" => ['required', 'regex:/^([0-9\s\-\+\(\)]*)$/', 'min:10'],
-            "profession" => ['required', 'string', 'min:4'],
-            "images" => ['required', 'image', 'mimes:jpeg,jpg,png'],
-            "role" => ['required', 'int', Rule::in('1','2','3')],
-            "about" => ['required', 'string']
+            "name" => [
+                'required',
+                'string',
+                'min:3'
+            ],
+            "firstname" => [
+                'required',
+                'string',
+                'min:3'
+            ],
+            "email" => [
+                'required',
+                'email',
+                'regex:/(.+)@(.+)\.(.+)/i',
+            ],
+            "phone_number" => [
+                'required',
+                'regex:/^([0-9\s\-\+\(\)]*)$/',
+                'min:10',
+            ],
+            "profession" => [
+                'required',
+                'string',
+                'min:4'
+            ],
+            "role" => [
+                'required',
+                'int',
+                Rule::in('1', '2', '3')
+            ],
+            "images" => [
+                'required',
+                'image',
+                'mimes:jpeg,jpg,png'
+            ],
+            "description" => [
+                'nullable',
+                'string'
+            ]
         ];
     }
 }

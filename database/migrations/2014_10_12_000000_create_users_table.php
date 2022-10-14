@@ -21,9 +21,9 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('profession')->nullable();
-            $table->longText('about')->nullable();
-            $table->string('status')->default(1);
-            $table->integer('role_id')->default(1);
+            $table->longText('description')->nullable();
+            $table->unsignedInteger('status')->default(1);
+            $table->enum('role_id', [1, 2, 3])->default(1);
             $table->rememberToken();
             $table->timestamps();
         });

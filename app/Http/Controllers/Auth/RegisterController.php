@@ -8,13 +8,18 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use App\Traits\RedirectRoute;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Contracts\Validation\Validator as Validation;
 
 class RegisterController extends Controller
 {
-    use RegistersUsers, RedirectRoute;
+    use RegistersUsers;
+    use RedirectRoute;
 
     protected string $redirectTo = RouteServiceProvider::HOME;
 
@@ -23,7 +28,14 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    protected function validator(array $data): \Illuminate\Contracts\Validation\Validator|\Illuminate\Validation\Validator
+
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param array<array> $data
+     * @return Validation|\Illuminate\Validation\Validator
+     */
+    protected function validator(array $data): Validation|\Illuminate\Validation\Validator
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
@@ -32,12 +44,17 @@ class RegisterController extends Controller
         ]);
     }
 
-    protected function create(array $data)
+    /**
+     * @param array<Request> $data
+     * @return Model|Builder
+     */
+    protected function create(array $data): Model|Builder
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        return User::query()
+            ->create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make((string)$data['password']),
+            ]);
     }
 }

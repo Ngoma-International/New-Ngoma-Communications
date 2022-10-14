@@ -38,6 +38,10 @@ create: vendor/autoload.php # creer un administrateur
 generate: vendor/autoload.php ## Generate Ide models
 	php artisan ide:models
 
+.PHONE: linter
+linter: vendor/autoload.php
+	php artisan lint:code app/
+
 .PHONY: watch
 watch: vendor/autoload.php ## lance, le serve de development
 	npm run watch

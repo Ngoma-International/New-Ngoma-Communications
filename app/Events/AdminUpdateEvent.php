@@ -14,9 +14,11 @@ use Illuminate\Queue\SerializesModels;
 
 class AdminUpdateEvent
 {
-    use Dispatchable, InteractsWithSockets, SerializesModels;
+    use Dispatchable;
+    use InteractsWithSockets;
+    use SerializesModels;
 
-    public function __construct(public $partners)
+    public function __construct(public object $user)
     {
         //
     }

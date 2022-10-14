@@ -28,7 +28,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         @include('backend.shared._alert')
-                        @include('backend.domain.facilitator._edit')
+                        @include('backend.domain.users._edit')
                     </div>
                 </div>
             </div>

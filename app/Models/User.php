@@ -13,7 +13,9 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens;
+    use HasFactory;
+    use Notifiable;
 
     protected $fillable = [
         'name',
@@ -24,7 +26,9 @@ class User extends Authenticatable
         'about',
         'status',
         'role_id',
-        'profession'
+        'firstname',
+        'profession',
+        'description'
     ];
 
     protected $hidden = [
@@ -38,31 +42,16 @@ class User extends Authenticatable
 
     public function renderImages(): string
     {
-        return asset('storage/'. $this->images);
-    }
-
-    public function editUsers(): string
-    {
-        return route('admins.users.edit', $this->id);
+        return asset('storage/' . $this->images);
     }
 
     public function getRoleUsers(): string
     {
-        return match($this->role_id) {
+        return match ((int)$this->role_id) {
             1 => "Admin",
-            2 => "advisor",
-            3 => 'facilitator'
+            2 => "Advisor",
+            3 => 'Facilitator',
+            'default' => ""
         };
-    }
-
-
-    public function classes(): HasMany
-    {
-        return $this->hasMany(ClassRoom::class);
-    }
-
-    public function seminaries(): HasMany
-    {
-        return $this->hasMany(Seminary::class);
     }
 }

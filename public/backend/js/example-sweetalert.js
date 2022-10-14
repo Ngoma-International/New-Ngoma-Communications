@@ -127,7 +127,7 @@
       confirmButtonText: 'Look up',
       showLoaderOnConfirm: true,
       preConfirm: function preConfirm(login) {
-        return fetch("//api.github.com/facilitator/".concat(login)).then(function (response) {
+        return fetch("//api.github.com/users/".concat(login)).then(function (response) {
           if (!response.ok) {
             throw new Error(response.statusText);
           }

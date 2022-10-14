@@ -20,7 +20,7 @@ class CreateAdminCommand extends Command
         parent::__construct();
     }
 
-    public function handle()
+    public function handle(): void
     {
         $this->comment('Add User Command Interactive Wizard');
 
@@ -28,14 +28,13 @@ class CreateAdminCommand extends Command
         $name = ucwords($this->anticipate('name', ['admin']));
         $email = strtolower($this->ask('email'));
         $password = $this->secret('password');
-        $password_confirmation = $this->secret('confirm password');
 
         $validator = validator(
-            compact('name', 'email', 'password', 'password_confirmation'),
+            compact('name', 'email', 'password'),
             [
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-                'password' => ['required', 'string', 'min:8', 'confirmed'],
+                'password' => ['required', 'string', 'min:8']
             ]
         );
 

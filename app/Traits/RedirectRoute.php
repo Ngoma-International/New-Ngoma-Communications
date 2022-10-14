@@ -11,17 +11,17 @@ trait RedirectRoute
 {
     public function redirectTo(): string
     {
-        switch(Auth::user()->role_id) {
+        switch (Auth::user()->role_id) {
             case RoleEnum::Role_Admin:
-                $this->redirectTo = route('admin.dashboard.index');
+                $this->redirectTo = route('admins.backend.index');
                 return $this->redirectTo;
                 break;
             case RoleEnum::Role_Advisor:
-                $this->redirectTo = route('manager.dashboard.index');
+                $this->redirectTo = route('advisor.backend.index');
                 return $this->redirectTo;
                 break;
             case RoleEnum::Role_Facilitators:
-                $this->redirectTo = route('home.index');
+                $this->redirectTo = route('users.backend.index');
                 return $this->redirectTo;
                 break;
             default:

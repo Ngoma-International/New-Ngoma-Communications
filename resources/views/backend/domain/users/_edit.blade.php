@@ -20,6 +20,22 @@
 
         <div class="col-md-6">
             <div class="form-group">
+                <label class="form-label" for="firstname">Votre prenom</label>
+                <div class="form-control-wrap">
+                    <input
+                        type="text"
+                        class="form-control @error('firstname') error @enderror"
+                        id="firstname"
+                        name="firstname"
+                        value="{{ old('firstname') ?? $user->firstname }}"
+                        placeholder="Enter firstname"
+                        required>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
                 <label class="form-label" for="email">Email</label>
                 <div class="form-control-wrap">
                     <input
@@ -37,31 +53,15 @@
 
         <div class="col-md-6">
             <div class="form-group">
-                <label class="form-label" for="profession">Profession</label>
+                <label class="form-label" for="phone_number">Phone number</label>
                 <div class="form-control-wrap">
                     <input
                         type="text"
-                        class="form-control @error('profession') error @enderror"
-                        id="profession"
-                        name="profession"
-                        value="{{ old('profession') ?? $user->profession }}"
-                        placeholder="Enter profession"
-                        required>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="form-group">
-                <label class="form-label" for="offerings">Offerings</label>
-                <div class="form-control-wrap">
-                    <input
-                        type="text"
-                        class="form-control @error('offerings') error @enderror"
-                        id="offerings"
-                        name="offerings"
-                        value="{{ old('offerings') ?? $user->offerings }}"
-                        placeholder="Enter offerings"
+                        class="form-control @error('phone_number') error @enderror"
+                        id="phone_number"
+                        name="phone_number"
+                        value="{{ old('phone_number') ?? $user->phone_number }}"
+                        placeholder="Enter your phone_number"
                         required>
                 </div>
             </div>
@@ -85,18 +85,34 @@
 
         <div class="col-md-6">
             <div class="form-group">
-                <label class="form-label" for="type">User type</label>
+                <label class="form-label" for="profession">Profession</label>
+                <div class="form-control-wrap">
+                    <input
+                        type="text"
+                        class="form-control @error('profession') error @enderror"
+                        id="profession"
+                        name="profession"
+                        value="{{ old('profession') ?? $user->profession }}"
+                        placeholder="Enter profession"
+                        required>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-label" for="role">User type</label>
                 <div class="form-control-wrap">
                     <select
-                        class="form-control js-select2 select2-hidden-accessible @error('type') error @enderror"
-                        id="type"
+                        class="form-control js-select2 select2-hidden-accessible @error('role') error @enderror"
+                        id="role"
                         data-search="on"
-                        name="type"
+                        name="role"
                         data-placeholder="Select a type"
                         required>
-                        <option value="facilitator">Facilitator</option>
-                        <option value="coach">Coach</option>
-                        <option value="keynote">Keynote Speaker</option>
+                        <option value="3">Facilitator</option>
+                        <option value="2">Coach</option>
+                        <option value="1">Admin</option>
                     </select>
                 </div>
             </div>
@@ -118,7 +134,9 @@
 
         <div class="col-md-12">
             <div class="form-group text-center">
-                <button type="submit" class="btn btn-md btn-primary">Save</button>
+                <button type="submit" class="btn btn-md btn-primary">
+                    Save
+                </button>
             </div>
         </div>
     </div>
