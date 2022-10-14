@@ -1,11 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Podcast extends Model
+class TypePodcast extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name'
+    ];
 }
