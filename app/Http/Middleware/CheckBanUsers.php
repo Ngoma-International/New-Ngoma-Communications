@@ -16,7 +16,9 @@ class CheckBanUsers
             $request->session()->invalidate();
             $request->session()->regenerateToken();
 
-            return redirect()->route('login')->with('danger', 'Desoler votre compte a ete suspendue, Contactez l\'administrateur');
+            return redirect()
+                ->route('login')
+                ->with('danger', "Vous avez ete bani sur la plateforme");
         }
 
         return $next($request);

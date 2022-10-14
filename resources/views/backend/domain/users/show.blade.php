@@ -55,7 +55,6 @@
                                 </form>
                             </li>
                         @endif
-
                     @endcomponent
                 </div>
             </div>
@@ -126,6 +125,18 @@
                                 <div class="profile-ud wider">
                                     <span class="profile-ud-label">Profession</span>
                                     <span class="profile-ud-value">{{ $user->profession ?? "" }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nk-divider divider md"></div>
+                    <div class="nk-block">
+                        <div class="bq-note">
+                            <div class="bq-note-item">
+                                <div class="bq-note-text">
+                                    <p>
+                                        {{ $user->description }}
+                                    </p>
                                 </div>
                             </div>
                         </div>
