@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\Backend\HomeBackendController;
+use App\Http\Controllers\Backend\Podcast\PodcastBackendController;
 use App\Http\Controllers\Backend\ProfileBackendController;
 use App\Http\Controllers\Backend\Users\UsersBackendController;
 use App\Http\Controllers\Frontend\HomeFrontendController;
@@ -19,6 +20,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('backend', HomeBackendController::class)->name('backend.index');
         Route::resource('users', UsersBackendController::class);
         Route::get('profile', ProfileBackendController::class)->name('profile.index');
+        Route::resource('podcasts', PodcastBackendController::class);
     });
 
     Route::group([

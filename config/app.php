@@ -168,6 +168,8 @@ return [
          * Package Services Providers...
          */
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Clockwork\Support\Laravel\ClockworkServiceProvider::class,
         /*
          * Application Services Providers...
          */
@@ -192,6 +194,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,
     ])->toArray(),
 
 ];

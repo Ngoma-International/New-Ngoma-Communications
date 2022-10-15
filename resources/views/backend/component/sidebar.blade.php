@@ -21,8 +21,13 @@
                 <ul class="nk-menu">
                     @include('backend.shared._link', [
                         'route' => route('admins.users.index'),
-                        'icons' => "ni-user-alt",
+                        'icons' => "ni-users",
                         'name' => "Utilisateur"
+                    ])
+                    @include('backend.shared._link', [
+                        'route' => route('admins.podcasts.index'),
+                        'icons' => "ni-mic",
+                        'name' => "Podcast"
                     ])
                 </ul>
             </div>

@@ -6,8 +6,12 @@ namespace App\Providers;
 
 use App\Events\AdminEvent;
 use App\Events\AdminUpdateEvent;
+use App\Events\UpdatePodcastEvent;
 use App\Listeners\AdminListener;
 use App\Listeners\AdminUpdateListener;
+use App\Listeners\CreatePodcastListener;
+use App\Listeners\UpdatePodcastListener;
+use App\ViewModels\Podcast\CreatePodcast;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -23,6 +27,12 @@ class EventServiceProvider extends ServiceProvider
         ],
         AdminUpdateEvent::class => [
             AdminUpdateListener::class
+        ],
+        CreatePodcast::class => [
+            CreatePodcastListener::class
+        ],
+        UpdatePodcastEvent::class => [
+            UpdatePodcastListener::class
         ]
     ];
 
