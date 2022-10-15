@@ -90,7 +90,7 @@ class Seminar extends Model
 
     public function renderPoster(): string
     {
-        return asset('storage/'.$this->images);
+        return asset('storage/' . $this->images);
     }
 
     public function category(): BelongsTo

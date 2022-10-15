@@ -53,7 +53,7 @@ class SeminarRepository
     public function update(UpdateSeminarRequest $request, Seminar $seminar): Seminar
     {
         $event = $request->all();
-        $seminar->images !== null ? $this->removePathOfImages(model: $seminar): null;
+        $seminar->images !== null ? $this->removePathOfImages(model: $seminar) : null;
         $event['images'] = self::uploadFiles($request);
         $event['duration'] = $this->getDiffInMinutes($request);
         $event['start_time'] = Carbon::createFromFormat('H:i A', $request->input('start_time'));
@@ -65,7 +65,7 @@ class SeminarRepository
 
     public function delete(Seminar $seminar): Seminar
     {
-        $seminar->images !== null ? $this->removePathOfImages(model: $seminar): null;
+        $seminar->images !== null ? $this->removePathOfImages(model: $seminar) : null;
         $seminar->delete();
         return $seminar;
     }

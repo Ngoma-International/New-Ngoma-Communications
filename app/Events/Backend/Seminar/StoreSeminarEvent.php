@@ -11,9 +11,11 @@ use Illuminate\Queue\SerializesModels;
 
 class StoreSeminarEvent
 {
-    use Dispatchable, InteractsWithSockets, SerializesModels;
+    use Dispatchable;
+    use InteractsWithSockets;
+    use SerializesModels;
 
-    public function __construct(public  $seminar)
+    public function __construct(public $seminar)
     {
         //
     }

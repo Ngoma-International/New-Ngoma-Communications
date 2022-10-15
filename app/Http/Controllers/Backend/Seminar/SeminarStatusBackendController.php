@@ -14,8 +14,7 @@ class SeminarStatusBackendController extends Controller
     public function __invoke(
         SeminarStatusRequest $request,
         SeminarStatusRepository $repository
-    ): JsonResponse
-    {
+    ): JsonResponse {
         $seminar = $repository->handle($request);
 
         return response()->json([
