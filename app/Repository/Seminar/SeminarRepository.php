@@ -72,8 +72,8 @@ class SeminarRepository
 
     private function getDiffInMinutes(StoreSeminarRequest|UpdateSeminarRequest $request): int
     {
-        $to = Carbon::createFromFormat('h:i A', $request->input('start_time'));
+        $timeStart = Carbon::createFromFormat('h:i A', $request->input('start_time'));
         $from = Carbon::createFromFormat('h:i A', $request->input('end_time'));
-        return $from->diffInMinutes($to);
+        return $from->diffInMinutes($timeStart);
     }
 }
