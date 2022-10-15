@@ -9,6 +9,7 @@ use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 
 /**
@@ -27,6 +28,8 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Category whereName($value)
  * @method static Builder|Category whereUpdatedAt($value)
  * @mixin Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Seminar[] $seminars
+ * @property-read int|null $seminars_count
  */
 class Category extends Model
 {
@@ -35,4 +38,9 @@ class Category extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function seminars(): HasMany
+    {
+        return $this->hasMany(Seminar::class);
+    }
 }

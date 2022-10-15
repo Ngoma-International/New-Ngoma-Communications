@@ -5,6 +5,8 @@ declare(strict_types=1);
 use App\Http\Controllers\Backend\HomeBackendController;
 use App\Http\Controllers\Backend\Podcast\PodcastBackendController;
 use App\Http\Controllers\Backend\ProfileBackendController;
+use App\Http\Controllers\Backend\Seminar\SeminarBackendController;
+use App\Http\Controllers\Backend\Seminar\SeminarStatusBackendController;
 use App\Http\Controllers\Backend\Users\UsersBackendController;
 use App\Http\Controllers\Frontend\HomeFrontendController;
 use Illuminate\Support\Facades\Auth;
@@ -19,8 +21,13 @@ Route::group(['middleware' => ['auth']], function () {
     ], function () {
         Route::get('backend', HomeBackendController::class)->name('backend.index');
         Route::resource('users', UsersBackendController::class);
-        Route::get('profile', ProfileBackendController::class)->name('profile.index');
         Route::resource('podcasts', PodcastBackendController::class);
+        Route::resource('seminar', SeminarBackendController::class);
+        Route::post('seminar-status', SeminarStatusBackendController::class);
+
+
+
+        Route::get('profile', ProfileBackendController::class)->name('profile.index');
     });
 
     Route::group([

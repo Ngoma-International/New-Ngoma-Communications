@@ -8,6 +8,7 @@ use Database\Factories\SeminaryTypeFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 
 /**
@@ -26,6 +27,8 @@ use Illuminate\Support\Carbon;
  * @method static Builder|SeminaryType whereName($value)
  * @method static Builder|SeminaryType whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Seminar[] $seminars
+ * @property-read int|null $seminars_count
  */
 class SeminaryType extends Model
 {
@@ -34,4 +37,9 @@ class SeminaryType extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function seminars(): HasMany
+    {
+        return $this->hasMany(Seminar::class);
+    }
 }

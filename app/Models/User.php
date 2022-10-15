@@ -61,6 +61,8 @@ use Laravel\Sanctum\PersonalAccessToken;
  * @method static Builder|User whereStatus($value)
  * @method static Builder|User whereUpdatedAt($value)
  * @mixin Eloquent
+ * @property-read Collection|\App\Models\Seminar[] $seminars
+ * @property-read int|null $seminars_count
  */
 class User extends Authenticatable
 {
@@ -104,5 +106,10 @@ class User extends Authenticatable
             3 => 'Facilitator',
             'default' => ""
         };
+    }
+
+    public function seminars(): HasMany
+    {
+        return $this->hasMany(Seminar::class);
     }
 }

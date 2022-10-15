@@ -20,15 +20,22 @@
             <div class="nk-sidebar-menu" data-simplebar>
                 <ul class="nk-menu">
                     @include('backend.shared._link', [
-                        'route' => route('admins.users.index'),
-                        'icons' => "ni-users",
-                        'name' => "Utilisateur"
+                        'route' => route('admins.seminar.index'),
+                        'icons' => "ni-share-alt",
+                        'name' => "Seminars"
                     ])
                     @include('backend.shared._link', [
                         'route' => route('admins.podcasts.index'),
                         'icons' => "ni-mic",
-                        'name' => "Podcast"
+                        'name' => "Podcasts"
                     ])
+                    @include('backend.shared._link', [
+                        'route' => route('admins.users.index'),
+                        'icons' => "ni-users",
+                        'name' => "Users & Partners"
+                    ])
+
+
                 </ul>
             </div>
         </div>

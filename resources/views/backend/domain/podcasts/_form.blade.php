@@ -1,4 +1,5 @@
-<form action="{{ route('admins.podcasts.store') }}" method="post" class="form-validate mt-2" enctype="multipart/form-data">
+<form action="{{ route('admins.podcasts.store') }}" method="post" class="form-validate mt-2"
+      enctype="multipart/form-data">
     @csrf
     <div class="row g-gs">
         <div class="col-md-6">
