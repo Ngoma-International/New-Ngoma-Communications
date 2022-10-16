@@ -38,10 +38,8 @@ class PodcastBackendRepository
         $validate = $request->all();
         $validate['thumbnail'] = $this->uploadThumbnail($request);
         $validate['images_video'] = $this->uploadAudioOrVideo($request);
-        $podcast = Podcast::query()
+        return Podcast::query()
             ->create($validate);
-        //CreatePodcastEvent::dispatch($podcast);
-        return $podcast;
     }
 
     public function update(Podcast $podcast, UpdatePodcastRequest $request): Podcast

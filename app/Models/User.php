@@ -61,7 +61,7 @@ use Laravel\Sanctum\PersonalAccessToken;
  * @method static Builder|User whereStatus($value)
  * @method static Builder|User whereUpdatedAt($value)
  * @mixin Eloquent
- * @property-read Collection|\App\Models\Seminar[] $seminars
+ * @property-read Collection|Seminar[] $seminars
  * @property-read int|null $seminars_count
  */
 class User extends Authenticatable
@@ -104,12 +104,23 @@ class User extends Authenticatable
             1 => "Admin",
             2 => "Advisor",
             3 => 'Facilitator',
-            'default' => ""
+            'default' => "Not Role possible"
         };
     }
 
     public function seminars(): HasMany
     {
         return $this->hasMany(Seminar::class);
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function setId(int $id): User
+    {
+        $this->id = $id;
+        return $this;
     }
 }

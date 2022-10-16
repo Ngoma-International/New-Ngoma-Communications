@@ -4,9 +4,13 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use Database\Factories\BookingFactory;
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 
 /**
  * App\Models\Booking
@@ -22,27 +26,27 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property string|null $booking_at
  * @property int $transaction_code
  * @property int $ticket_number
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Seminar $seminar
- * @method static \Database\Factories\BookingFactory factory(...$parameters)
- * @method static \Illuminate\Database\Eloquent\Builder|Booking newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Booking newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Booking query()
- * @method static \Illuminate\Database\Eloquent\Builder|Booking whereBookingAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Booking whereCountry($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Booking whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Booking whereEmail($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Booking whereFirstname($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Booking whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Booking wherePhoneNumber($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Booking whereSeminarId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Booking whereStatus($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Booking whereTicketNumber($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Booking whereTransactionCode($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Booking whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Booking whereUsername($value)
- * @mixin \Eloquent
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property-read Seminar $seminar
+ * @method static BookingFactory factory(...$parameters)
+ * @method static Builder|Booking newModelQuery()
+ * @method static Builder|Booking newQuery()
+ * @method static Builder|Booking query()
+ * @method static Builder|Booking whereBookingAt($value)
+ * @method static Builder|Booking whereCountry($value)
+ * @method static Builder|Booking whereCreatedAt($value)
+ * @method static Builder|Booking whereEmail($value)
+ * @method static Builder|Booking whereFirstname($value)
+ * @method static Builder|Booking whereId($value)
+ * @method static Builder|Booking wherePhoneNumber($value)
+ * @method static Builder|Booking whereSeminarId($value)
+ * @method static Builder|Booking whereStatus($value)
+ * @method static Builder|Booking whereTicketNumber($value)
+ * @method static Builder|Booking whereTransactionCode($value)
+ * @method static Builder|Booking whereUpdatedAt($value)
+ * @method static Builder|Booking whereUsername($value)
+ * @mixin Eloquent
  */
 class Booking extends Model
 {

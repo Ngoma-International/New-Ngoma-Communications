@@ -36,7 +36,7 @@ class UserRepository
             ->get();
     }
 
-    public function store($attributes): Model|Builder
+    public function store($attributes): Model
     {
         $partners = $this->storeFacilitator($attributes);
         session()->flash('success', 'New admin as added');
@@ -52,6 +52,7 @@ class UserRepository
 
     public function update(Model $model, $attributes): Model
     {
+        /**@var User $model  */
         $model->images !== null ? $this->removePathOfImages($model) : "";
         $manage = $attributes->all();
         $manage['images'] = self::uploadFiles($attributes);
@@ -65,12 +66,13 @@ class UserRepository
 
     public function delete(Model $model): Model
     {
+        /**@var User $model  */
         $model->images !== null ? $this->removePathOfImages($model) : "";
         $model->delete();
         return $model;
     }
 
-    private function storeFacilitator($attributes): Model|Builder
+    private function storeFacilitator($attributes): Model
     {
         $manager = $attributes->all();
         $manager['images'] = self::uploadFiles($attributes);

@@ -48,7 +48,7 @@ class PodcastBackendController extends BaseController
 
         $this->services->success(
             'success',
-            "$podcast->title a ete ajouter avec success"
+            "Un nouveau podcast a ete ajouter avec success"
         );
 
         return redirect()->route('admins.podcasts.index');

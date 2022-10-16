@@ -13,17 +13,17 @@ class CreatePodcastNotification extends Notification
 {
     use Queueable;
 
-    public function __construct(public $podcast)
+    public function __construct(public object $podcast)
     {
         //
     }
 
-    public function via($notifiable): array
+    public function via(mixed $notifiable): array
     {
         return ['database'];
     }
 
-    public function toMail($notifiable): MailMessage
+    public function toMail(mixed $notifiable): MailMessage
     {
         return (new MailMessage())
                     ->line('The introduction to the notification.')
@@ -31,7 +31,7 @@ class CreatePodcastNotification extends Notification
                     ->line('Thank you for using our application!');
     }
 
-    public function toArray($notifiable): array
+    public function toArray(mixed $notifiable): array
     {
         return [
             'title' => $this->podcast->title,

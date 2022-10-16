@@ -12,17 +12,17 @@ class AdminNotification extends Notification
 {
     use Queueable;
 
-    public function __construct(public $users)
+    public function __construct(public object $users)
     {
         //
     }
 
-    public function via($notifiable): array
+    public function via(mixed $notifiable): array
     {
         return ['database'];
     }
 
-    public function toMail($notifiable): MailMessage
+    public function toMail(mixed $notifiable): MailMessage
     {
         return (new MailMessage())
             ->line('The introduction to the notification.')
@@ -30,7 +30,7 @@ class AdminNotification extends Notification
             ->line('Thank you for using our application!');
     }
 
-    public function toArray($notifiable): array
+    public function toArray(mixed $notifiable): array
     {
         return [
             'name' => $this->users->name,

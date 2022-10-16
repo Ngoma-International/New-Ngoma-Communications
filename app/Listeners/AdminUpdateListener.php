@@ -17,7 +17,7 @@ class AdminUpdateListener
         //
     }
 
-    public function handle($event): void
+    public function handle(object $event): void
     {
         $partners = User::query()
             ->where('id', '=', $event->user->id)

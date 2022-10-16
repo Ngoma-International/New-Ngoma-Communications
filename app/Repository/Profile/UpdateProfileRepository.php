@@ -9,16 +9,16 @@ use App\Models\ProfileUser;
 use App\Models\TemporaryImage;
 use App\Models\User;
 use App\Traits\ImagesUploadsTrait;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class UpdateProfileRepository
 {
     use ImagesUploadsTrait;
 
-    public function updateUser(UpdateProfileRequest $request, User $user)
+    public function updateUser(UpdateProfileRequest $request, User $user): User
     {
         $profile = $this->getProfileUser($user);
+        /**@var TemporaryImage|Model $temporary */
         $temporary = $this->getTemporaryImages($user);
         $profile !== null ? $this->updateProfile($request, $user) : $this->createProfile($user, $request);
 
@@ -39,14 +39,14 @@ class UpdateProfileRepository
         return $user;
     }
 
-    private function getProfileUser(User $user): Model|Builder|null
+    private function getProfileUser(User $user): Model|null
     {
         return ProfileUser::query()
             ->where('user_id', '=', $user->id)
             ->first();
     }
 
-    private function updateProfile(UpdateProfileRequest $request, $user): Model|Builder|null
+    private function updateProfile(UpdateProfileRequest $request, $user): Model|null
     {
         $profile = $this->getProfileUser($user);
         $profile->update([
@@ -62,7 +62,7 @@ class UpdateProfileRepository
         return $profile;
     }
 
-    private function createProfile(User $user, UpdateProfileRequest $request): Model|Builder
+    private function createProfile(User $user, UpdateProfileRequest $request): Model
     {
         $profile = $request->all();
         $profile['user_id'] = $user->id;
@@ -70,7 +70,7 @@ class UpdateProfileRepository
             ->create($profile);
     }
 
-    private function getTemporaryImages(User $user): Model|Builder|null
+    private function getTemporaryImages(User $user): Model|null
     {
         return TemporaryImage::query()
             ->where('user_id', '=', $user->id)

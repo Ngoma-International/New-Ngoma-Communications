@@ -11,21 +11,21 @@ use Illuminate\Support\Facades\Auth;
 
 class AdministrationMiddleware
 {
-    public function handle(Request $request, Closure $next): mixed
+    public function handle(Request $request, Closure $next)
     {
         if (! Auth::check()) {
             return redirect()->route('login');
         }
 
-        if (Auth::user()->role_id == RoleEnum::Role_Advisor) {
+        if (Auth::user()->role_id = RoleEnum::Role_Advisor) {
             return redirect()->route('advisor.backend.index');
         }
 
-        if (Auth::user()->role_id == RoleEnum::Role_Facilitators) {
+        if (Auth::user()->role_id = RoleEnum::Role_Facilitators) {
             return redirect()->route('users.backend.index');
         }
 
-        if (\auth()->user()->role_id === RoleEnum::Role_Admin) {
+        if (Auth::user()->role_id = RoleEnum::Role_Admin) {
             return $next($request);
         }
     }

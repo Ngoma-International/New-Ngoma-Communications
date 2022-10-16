@@ -60,7 +60,7 @@ class UsersBackendController extends Controller
     {
         $user = $this->repository->update($user, $request);
 
-        $this->flashMessagesServices->success('success', "$user->name a ete mise a jours");
+        $this->flashMessagesServices->success('success', "L'utilisateur a ete mise a jours");
 
         return redirect()->route('admins.users.index');
     }
@@ -69,7 +69,7 @@ class UsersBackendController extends Controller
     {
         $user = $this->repository->delete($user);
 
-        $this->flashMessagesServices->success('success', "$user->name a ete supprimer");
+        $this->flashMessagesServices->success('success', "L'utilisateur a ete supprimer");
 
         return redirect()->route('admins.users.index');
     }

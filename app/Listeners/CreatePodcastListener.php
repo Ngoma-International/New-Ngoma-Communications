@@ -17,7 +17,7 @@ class CreatePodcastListener
         //
     }
 
-    public function handle($event): void
+    public function handle(object $event): void
     {
         $podcast = Podcast::query()
             ->where("id", '=', $event->podcast->id)
