@@ -20,6 +20,11 @@
             <div class="nk-sidebar-menu" data-simplebar>
                 <ul class="nk-menu">
                     @include('backend.shared._link', [
+                        'route' => route('admins.profile.index'),
+                        'icons' => "ni-user-alt",
+                        'name' => "Profile"
+                    ])
+                    @include('backend.shared._link', [
                         'route' => route('admins.seminar.index'),
                         'icons' => "ni-share-alt",
                         'name' => "Seminars"
@@ -28,6 +33,16 @@
                         'route' => route('admins.podcasts.index'),
                         'icons' => "ni-mic",
                         'name' => "Podcasts"
+                    ])
+                    @include('backend.shared._link', [
+                        'route' => route('admins.ticket.search'),
+                        'icons' => "ni-search",
+                        'name' => "Ticket verify"
+                    ])
+                    @include('backend.shared._link', [
+                        'route' => route('admins.booking.index'),
+                        'icons' => "ni-calendar-booking",
+                        'name' => "Bookings"
                     ])
                     @include('backend.shared._link', [
                         'route' => route('admins.users.index'),

@@ -6,6 +6,7 @@ namespace App\Events\Backend\Seminar;
 
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
@@ -15,7 +16,7 @@ class StoreSeminarEvent
     use InteractsWithSockets;
     use SerializesModels;
 
-    public function __construct(public $seminar)
+    public function __construct(public Model $seminar)
     {
         //
     }

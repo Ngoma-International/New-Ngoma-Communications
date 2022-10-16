@@ -1,1 +1,5 @@
 # NGOMA COMMUNICATION
+
+
+# Leader 
+# 
