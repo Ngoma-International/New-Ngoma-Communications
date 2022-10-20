@@ -6,7 +6,9 @@ use App\Http\Controllers\Backend\Booking\BookingBackendController;
 use App\Http\Controllers\Backend\Booking\SearchBookingBackendController;
 use App\Http\Controllers\Backend\HomeBackendController;
 use App\Http\Controllers\Backend\Podcast\PodcastBackendController;
+use App\Http\Controllers\Backend\Profile\PasswordUpdateBackendController;
 use App\Http\Controllers\Backend\Profile\ProfileBackendController;
+use App\Http\Controllers\Backend\Profile\UpdateProfileBackendController;
 use App\Http\Controllers\Backend\Profile\UploadImageBackendController;
 use App\Http\Controllers\Backend\Seminar\SeminarBackendController;
 use App\Http\Controllers\Backend\Seminar\SeminarStatusBackendController;
@@ -35,22 +37,11 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('profile', ProfileBackendController::class)->name('profile.index');
         Route::post('profile/upload', UploadImageBackendController::class)->name('profile.upload');
         Route::put('profile/{user}/update', [ProfileBackendController::class, 'update'])->name('profile.update');
+        Route::get('profile/password', PasswordUpdateBackendController::class)->name('profile.password');
+        Route::get('profile/edit', UpdateProfileBackendController::class)->name('profile.edit');
+        Route::get('profile/security', [ProfileBackendController::class, 'security'])->name('profile.security');
+        Route::get('profile/cursus', [ProfileBackendController::class, 'cursus'])->name('profile.cursus');
     });
 
-    Route::group([
-        'prefix' => 'users',
-        'as' => 'users.',
-        'middleware' => ['users'],
-    ], function () {
-        Route::get('backend', HomeBackendController::class)->name('backend.index');
-    });
-
-    Route::group([
-        'prefix' => 'advisor',
-        'as' => 'advisor.',
-        'middleware' => ['advisor'],
-    ], function () {
-        Route::get('backend', HomeBackendController::class)->name('backend.index');
-    });
 });
 Route::get('/', HomeFrontendController::class)->name('app.name');

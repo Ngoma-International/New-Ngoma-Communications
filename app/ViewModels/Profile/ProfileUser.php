@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\ViewModels\Profile;
 
 use App\Http\Controllers\Backend\Profile\ProfileBackendController;
+use App\Http\Controllers\Backend\Profile\UpdateProfileBackendController;
 use App\Models\User;
 use App\Models\ProfileUser as Profile;
 use Illuminate\Database\Eloquent\Builder;
@@ -17,7 +18,7 @@ class ProfileUser extends ViewModel
 
     public function __construct(public User $user)
     {
-        $this->updateUrl = action([ProfileBackendController::class, 'update'], $this->user);
+        $this->updateUrl = action([UpdateProfileBackendController::class, 'update'], $this->user);
     }
 
     public function user(): User

@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use Database\Factories\TemporaryImageFactory;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 
 /**
  * App\Models\TemporaryImage
@@ -14,18 +17,18 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $id
  * @property string $images
  * @property int $user_id
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\User $user
- * @method static \Database\Factories\TemporaryImageFactory factory(...$parameters)
- * @method static \Illuminate\Database\Eloquent\Builder|TemporaryImage newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|TemporaryImage newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|TemporaryImage query()
- * @method static \Illuminate\Database\Eloquent\Builder|TemporaryImage whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TemporaryImage whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TemporaryImage whereImages($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TemporaryImage whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TemporaryImage whereUserId($value)
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property-read User $user
+ * @method static TemporaryImageFactory factory(...$parameters)
+ * @method static Builder|TemporaryImage newModelQuery()
+ * @method static Builder|TemporaryImage newQuery()
+ * @method static Builder|TemporaryImage query()
+ * @method static Builder|TemporaryImage whereCreatedAt($value)
+ * @method static Builder|TemporaryImage whereId($value)
+ * @method static Builder|TemporaryImage whereImages($value)
+ * @method static Builder|TemporaryImage whereUpdatedAt($value)
+ * @method static Builder|TemporaryImage whereUserId($value)
  * @mixin \Eloquent
  */
 class TemporaryImage extends Model

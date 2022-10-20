@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace App\Console\Commands;
 
 use App\Events\AdminEvent;
+use App\Models\ProfileUser;
 use App\Models\User;
 use Illuminate\Console\Command;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
+use LaravelIdea\Helper\App\Models\_IH_User_QB;
 
 class CreateAdminCommand extends Command
 {
@@ -46,6 +49,7 @@ class CreateAdminCommand extends Command
                     ->create(compact('name', 'email', 'password'));
 
                 $user->save();
+                $this->createProfile($user);
                 $this->info(sprintf('User %s <%s> created', $name, $email));
                 exit();
             } catch (\Exception $exception) {
@@ -56,5 +60,13 @@ class CreateAdminCommand extends Command
             $this->table(['Errors'], $validator->errors()->messages());
             goto process;
         }
+    }
+
+    private function createProfile(User $user): void
+    {
+        ProfileUser::query()
+            ->create([
+                'user_id' => $user->id
+            ]);
     }
 }

@@ -7,6 +7,7 @@ namespace App\Models;
 use Database\Factories\SeminarFactory;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -64,7 +65,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Seminar whereUpdatedAt($value)
  * @method static Builder|Seminar whereUserId($value)
  * @mixin Eloquent
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Booking[] $bookings
+ * @property-read Collection|Booking[] $bookings
  * @property-read int|null $bookings_count
  */
 class Seminar extends Model

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Models;
 
 use Database\Factories\TypePodcastFactory;
+use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -25,7 +26,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|TypePodcast whereId($value)
  * @method static Builder|TypePodcast whereName($value)
  * @method static Builder|TypePodcast whereUpdatedAt($value)
- * @mixin \Eloquent
+ * @mixin Eloquent
  */
 class TypePodcast extends Model
 {

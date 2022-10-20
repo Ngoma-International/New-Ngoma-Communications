@@ -6,6 +6,7 @@ namespace App\Repository\User;
 
 use App\Events\AdminEvent;
 use App\Events\AdminUpdateEvent;
+use App\Models\ProfileUser;
 use App\Models\User;
 use App\Traits\ImagesUploadsTrait;
 use Illuminate\Database\Eloquent\Builder;
@@ -39,7 +40,7 @@ class UserRepository
     public function store($attributes): Model
     {
         $partners = $this->storeFacilitator($attributes);
-        session()->flash('success', 'New admin as added');
+        $this->createProfile($partners);
         return $partners;
     }
 
@@ -84,5 +85,13 @@ class UserRepository
             ->create($manager);
         AdminEvent::dispatch($admin);
         return $admin;
+    }
+
+    private function createProfile(Model $partners): void
+    {
+        ProfileUser::query()
+            ->create([
+                'user_id' => $partners->id
+            ]);
     }
 }

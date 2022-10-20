@@ -4,9 +4,13 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use Database\Factories\ProfileUserFactory;
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 
 /**
  * App\Models\ProfileUser
@@ -21,26 +25,26 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property string|null $role_enterprise
  * @property string|null $department
  * @property string|null $sector
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\User $user
- * @method static \Database\Factories\ProfileUserFactory factory(...$parameters)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileUser newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileUser newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileUser query()
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileUser whereBirthdays($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileUser whereCity($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileUser whereCountry($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileUser whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileUser whereDepartment($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileUser whereEnterprise($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileUser whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileUser whereRoleEnterprise($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileUser whereSector($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileUser whereTown($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileUser whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProfileUser whereUserId($value)
- * @mixin \Eloquent
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property-read User $user
+ * @method static ProfileUserFactory factory(...$parameters)
+ * @method static Builder|ProfileUser newModelQuery()
+ * @method static Builder|ProfileUser newQuery()
+ * @method static Builder|ProfileUser query()
+ * @method static Builder|ProfileUser whereBirthdays($value)
+ * @method static Builder|ProfileUser whereCity($value)
+ * @method static Builder|ProfileUser whereCountry($value)
+ * @method static Builder|ProfileUser whereCreatedAt($value)
+ * @method static Builder|ProfileUser whereDepartment($value)
+ * @method static Builder|ProfileUser whereEnterprise($value)
+ * @method static Builder|ProfileUser whereId($value)
+ * @method static Builder|ProfileUser whereRoleEnterprise($value)
+ * @method static Builder|ProfileUser whereSector($value)
+ * @method static Builder|ProfileUser whereTown($value)
+ * @method static Builder|ProfileUser whereUpdatedAt($value)
+ * @method static Builder|ProfileUser whereUserId($value)
+ * @mixin Eloquent
  */
 class ProfileUser extends Model
 {

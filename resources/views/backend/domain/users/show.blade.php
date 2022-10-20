@@ -16,7 +16,7 @@
 
                     @component('backend.shared.banner')
                         <li class="preview-item">
-                            <a class="btn btn-primary btn-dim btn-sm" href="{{ route('admins.users.index') }}">
+                            <a class="btn btn-outline-primary btn-sm" href="{{ route('admins.users.index') }}">
                                 <em class="icon ni ni-arrow-long-left"></em>
                                 <span>Tout les utilisateurs</span>
                             </a>
@@ -24,7 +24,7 @@
                         <li class="preview-item">
                             <a
                                 href="{{ route('admins.users.edit', $user->id) }}"
-                                class="btn btn-dim btn-primary btn-sm">
+                                class="btn btn-outline-primary btn-sm">
                                 <em class="icon ni ni-edit mr-1"></em>
                                 Editer
                             </a>
@@ -33,7 +33,7 @@
                             <li class="preview-item">
                                 <a
                                     href=""
-                                    class="btn btn-dim btn-secondary btn-sm">
+                                    class="btn btn-outline-secondary btn-sm">
                                     <em class="icon ni ni-user-c mr-1"></em>
                                     Voir profile
                                 </a>
@@ -48,7 +48,7 @@
                                 >
                                     @method('DELETE')
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    <button type="submit" class="btn btn-dim btn-danger btn-sm">
+                                    <button type="submit" class="btn btn-outline-danger btn-sm">
                                         <em class="icon ni ni-trash-empty-fill"></em>
                                         Supprimer l'utilisateur
                                     </button>
@@ -99,12 +99,12 @@
                                 <div class="profile-ud wider">
                                     <span class="profile-ud-label">Status manager</span>
                                     <span class="profile-ud-value">
-                                            @if($user->status)
+                                        @if($user->status)
                                             <span class="badge badge-success ms-0">Activée</span>
                                         @else
                                             <span class="badge badge-danger ms-0">Désactivée</span>
                                         @endif
-                                        </span>
+                                    </span>
                                 </div>
                             </div>
                             <div class="profile-ud-item">

@@ -13,21 +13,213 @@
                         <div class="card-aside-wrap">
                             <div class="card-inner card-inner-lg">
                                 <div class="nk-block-head nk-block-head-lg">
-                                    <div class="nk-block-between">
-                                        <div class="nk-block-head-content">
-                                            <h4 class="nk-block-title">Mettre à jour vos informations personnelles</h4>
-                                            <div class="nk-block-des">
-                                                <p>Ces paramètres vous aident à assurer la sécurité de votre compte.</p>
+                                    <div class="nk-block-head nk-block-head-lg">
+                                        <div class="nk-block-between">
+                                            <div class="nk-block-head-content">
+                                                <h4 class="nk-block-title">
+                                                    Personal Information
+                                                </h4>
+                                                <div class="nk-block-des">
+                                                    <p>Basic info, like your name and address, that you use on Nio Platform.</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="nk-block">
-                                    <div class="card border border-light">
-                                        <div class="card-inner-group">
-                                            <div class="card-body">
-                                                @include('backend.shared._alert')
-                                                @include('backend.domain.profile._form')
+                                    <div class="nk-block">
+                                        <div class="card border border-light">
+                                            <div class="card-inner-group">
+                                                <div class="nk-data data-list">
+                                                    <div class="card-inner">
+                                                        <div class="data-item pb-1 pt-0">
+                                                            <div class="data-col">
+                                                                <span class="data-label font-weight-bold">Name</span>
+                                                            </div>
+                                                            <div class="data-col data-col-end">
+                                                                <span class="data-value">
+                                                                    {{ ucfirst($viewModel->user->name) ?? "" }}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="data-item pb-1 pt-1">
+                                                            <div class="data-col">
+                                                                <span class="data-label font-weight-bold">Firstname</span>
+                                                            </div>
+                                                            <div class="data-col data-col-end">
+                                                                <span class="data-value">
+                                                                    {{ ucfirst($viewModel->user->firstname) ?? "" }}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="data-item pb-1 pt-1">
+                                                            <div class="data-col">
+                                                                <span class="data-label font-weight-bold">Email</span>
+                                                            </div>
+                                                            <div class="data-col data-col-end">
+                                                                <span class="data-value">
+                                                                    {{ $viewModel->user->email ?? "" }}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="data-item pb-1 pt-1">
+                                                            <div class="data-col">
+                                                                <span class="data-label font-weight-bold">Phone Number</span>
+                                                            </div>
+                                                            <div class="data-col data-col-end">
+                                                                <span class="data-value">
+                                                                    {{ $viewModel->user->phone_number ?? "" }}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="data-item pb-1 pt-1">
+                                                            <div class="data-col">
+                                                                <span class="data-label font-weight-bold">Profession</span>
+                                                            </div>
+                                                            <div class="data-col data-col-end">
+                                                                <span class="data-value">
+                                                                    {{ $viewModel->user->profession ?? "" }}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="data-item pb-1 pt-1">
+                                                            <div class="data-col">
+                                                                <span class="data-label font-weight-bold">Status</span>
+                                                            </div>
+                                                            <div class="data-col data-col-end">
+                                                                <span class="data-value">
+                                                                    @if($viewModel->user->status )
+                                                                        <span class="badge badge-success ms-0">Activée</span>
+                                                                    @else
+                                                                        <span class="badge badge-danger ms-0">Désactivée</span>
+                                                                    @endif
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="data-item pb-1 pt-1">
+                                                            <div class="data-col">
+                                                                <span class="data-label font-weight-bold">Birthdays</span>
+                                                            </div>
+                                                            <div class="data-col data-col-end">
+                                                                <span class="data-value">
+                                                                    {{ $viewModel->profile->birthdays ?? "" }}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="data-item pb-1 pt-1">
+                                                            <div class="data-col">
+                                                                <span class="data-label font-weight-bold">Country</span>
+                                                            </div>
+                                                            <div class="data-col data-col-end">
+                                                                <span class="data-value">
+                                                                    {{ $viewModel->profile->country ?? "" }}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="data-item pb-1 pt-1">
+                                                            <div class="data-col">
+                                                                <span class="data-label font-weight-bold">City</span>
+                                                            </div>
+                                                            <div class="data-col data-col-end">
+                                                                <span class="data-value">
+                                                                    {{ $viewModel->profile->city ?? "" }}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="data-item pb-1 pt-1">
+                                                            <div class="data-col">
+                                                                <span class="data-label font-weight-bold">Town</span>
+                                                            </div>
+                                                            <div class="data-col data-col-end">
+                                                                <span class="data-value">
+                                                                    {{ $viewModel->profile->town ?? "" }}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="data-item pb-1 pt-1">
+                                                            <div class="data-col">
+                                                                <span class="data-label font-weight-bold">Enterprise</span>
+                                                            </div>
+                                                            <div class="data-col data-col-end">
+                                                                <span class="data-value">
+                                                                    {{ $viewModel->profile->enterprise ?? "" }}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="data-item pb-1 pt-1">
+                                                            <div class="data-col">
+                                                                <span class="data-label font-weight-bold">Role entreprise</span>
+                                                            </div>
+                                                            <div class="data-col data-col-end">
+                                                                <span class="data-value">
+                                                                    {{ $viewModel->profile->role_enterprise ?? "" }}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="data-item pb-1 pt-1">
+                                                            <div class="data-col">
+                                                                <span class="data-label font-weight-bold">Department</span>
+                                                            </div>
+                                                            <div class="data-col data-col-end">
+                                                                <span class="data-value">
+                                                                    {{ $viewModel->profile->department ?? "" }}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="data-item pb-0 pt-1">
+                                                            <div class="data-col">
+                                                                <span class="data-label font-weight-bold">Sector</span>
+                                                            </div>
+                                                            <div class="data-col data-col-end">
+                                                                <span class="data-value">
+                                                                    {{ $viewModel->profile->section ?? "" }}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card border border-light">
+                                            <div class="card-inner-group">
+                                                <div class="card-inner">
+                                                    <div class="between-center flex-wrap g-3">
+                                                        <div class="nk-block-text">
+                                                            <h6>Mot de passe</h6>
+                                                            <p>
+                                                                Définissez un mot de passe unique pour protéger votre compte.
+                                                            </p>
+                                                        </div>
+                                                        <div class="nk-block-actions flex-shrink-sm-0">
+                                                            <ul class="align-center flex-wrap flex-sm-nowrap gx-3 gy-2">
+                                                                <li>
+                                                                    <a href="{{ route('admins.profile.password') }}" class="btn btn-outline-primary">
+                                                                        <em class="icon ni ni-edit-alt mr-2"></em>
+                                                                        Modifier le mot de passe
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-inner">
+                                                    <div class="between-center flex-wrap g-3">
+                                                        <div class="nk-block-text">
+                                                            <h6>Modifier le profile</h6>
+                                                            <p>
+                                                                Définissez un mot de passe unique pour protéger votre compte.
+                                                            </p>
+                                                        </div>
+                                                        <div class="nk-block-actions flex-shrink-sm-0">
+                                                            <ul class="align-center flex-wrap flex-sm-nowrap gx-3 gy-2">
+                                                                <li>
+                                                                    <a href="{{ route('admins.profile.edit') }}" class="btn btn-outline-primary">
+                                                                        <em class="icon ni ni-edit-alt mr-2"></em>
+                                                                        Modifier le profile
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -40,26 +232,4 @@
             @endcomponent
         </div>
     </div>
-@endsection
-
-@section('styles')
-    <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
-@endsection
-
-@section('scripts')
-    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
-    <script>
-        const inputElement = document.querySelector('input[id="images"]');
-        let _token = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-
-        const pont = FilePond.create(inputElement);
-        pont.setOptions({
-            server: {
-                url: '/admins/profile/upload',
-                headers: {
-                    'X-CSRF-Token': _token
-                }
-            }
-        })
-    </script>
 @endsection

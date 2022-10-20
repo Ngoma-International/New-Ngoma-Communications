@@ -15,7 +15,7 @@
 
                     @component('backend.shared.banner')
                         <li class="preview-item">
-                            <a href="{{ route('admins.users.create') }}" class="btn btn-dim btn-primary btn-sm">
+                            <a href="{{ route('admins.users.create') }}" class="btn btn-outline-primary btn-sm">
                                 <em class="icon ni ni-plus mr-1"></em> Create
                             </a>
                         </li>
@@ -84,7 +84,7 @@
                                 </td>
                                 <td class="nk-tb-col">
                                     <div class="tb-lead justify-content-center">
-                                        <a href="{{ route('admins.users.show', $user->id) }}" class="btn btn-dim btn-primary btn-sm" title="">
+                                        <a href="{{ route('admins.users.show', $user->id) }}" class="btn btn-outline-primary btn-sm" title="">
                                             <em class="icon ni ni-eye-alt-fill"></em>
                                             <span>Detail utilisateur</span>
                                         </a>

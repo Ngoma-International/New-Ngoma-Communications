@@ -14,9 +14,8 @@
 
                 @component('backend.shared.banner')
                     <div class="nk-block-head-content">
-                        <a href="{{ route('admins.users.index') }}"
-                           class="btn btn-outline-light btn-sm bg-white d-none d-sm-inline-flex">
-                            <em class="icon ni ni-arrow-left"></em>
+                        <a href="{{ route('admins.users.index') }}" class="btn btn-outline-light btn-sm bg-white d-none d-sm-inline-flex">
+                            <em class="icon ni ni-arrow-long-left"></em>
                             <span>Back</span>
                         </a>
                     </div>

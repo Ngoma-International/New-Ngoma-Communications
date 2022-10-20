@@ -149,7 +149,8 @@
 
         <div class="col-md-12">
             <div class="form-group text-center">
-                <button type="submit" class="btn btn-md btn-primary">
+                <button type="submit" class="btn btn-outline-primary">
+                    <em class="icon ni ni-save mr-2"></em>
                     Save
                 </button>
             </div>
