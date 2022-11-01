@@ -35,11 +35,16 @@ Route::group(['middleware' => ['auth']], function () {
 
 
         Route::get('profile', ProfileBackendController::class)->name('profile.index');
+        // upload images
         Route::post('profile/upload', UploadImageBackendController::class)->name('profile.upload');
         Route::put('profile/{user}/update', [ProfileBackendController::class, 'update'])->name('profile.update');
+        // update password
         Route::get('profile/password', PasswordUpdateBackendController::class)->name('profile.password');
         Route::put('profile/password/{user}/update', [PasswordUpdateBackendController::class, 'update'])->name('password.update');
+        //update profile
         Route::get('profile/edit', UpdateProfileBackendController::class)->name('profile.edit');
+        Route::put('profile/edit/{user}/update', [UpdateProfileBackendController::class, 'update'])->name('profile.update');
+
         Route::get('profile/security', [ProfileBackendController::class, 'security'])->name('profile.security');
         Route::get('profile/cursus', [ProfileBackendController::class, 'cursus'])->name('profile.cursus');
     });

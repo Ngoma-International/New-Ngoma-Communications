@@ -227,7 +227,9 @@
     </div>
     <div class="col-md-12 text-center mt-3">
         <div class="form-group ">
-            <button type="submit" class="btn btn-md btn-primary">Save</button>
+            <button type="submit" class="btn btn-md btn-outline-primary">
+                Update Profile
+            </button>
         </div>
     </div>
 </form>

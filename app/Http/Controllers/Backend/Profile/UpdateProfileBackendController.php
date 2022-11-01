@@ -10,6 +10,9 @@ use App\Models\User;
 use App\Repository\Profile\UpdateProfileRepository;
 use App\Services\FlashMessagesServices;
 use App\ViewModels\Profile\ProfileUser;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 
 class UpdateProfileBackendController extends BaseController
@@ -21,7 +24,7 @@ class UpdateProfileBackendController extends BaseController
         parent::__construct($this->services);
     }
 
-    public function __invoke()
+    public function __invoke(): Factory|View|Application
     {
         $viewModel = new ProfileUser(auth()->user());
 
@@ -37,6 +40,6 @@ class UpdateProfileBackendController extends BaseController
             'Votre mise a jours e ete effectuer avec success'
         );
 
-        return back();
+        return to_route('admins.profile.index');
     }
 }
