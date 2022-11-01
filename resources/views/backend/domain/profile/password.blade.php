@@ -41,25 +41,3 @@
         </div>
     </div>
 @endsection
-
-@section('styles')
-    <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
-@endsection
-
-@section('scripts')
-    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
-    <script>
-        const inputElement = document.querySelector('input[id="images"]');
-        let _token = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-
-        const pont = FilePond.create(inputElement);
-        pont.setOptions({
-            server: {
-                url: '/admins/profile/upload',
-                headers: {
-                    'X-CSRF-Token': _token
-                }
-            }
-        })
-    </script>
-@endsection

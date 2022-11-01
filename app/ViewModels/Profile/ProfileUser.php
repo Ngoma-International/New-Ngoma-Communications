@@ -18,7 +18,7 @@ class ProfileUser extends ViewModel
 
     public function __construct(public User $user)
     {
-        $this->updateUrl = action([UpdateProfileBackendController::class, 'update'], $this->user);
+        $this->updateUrl = action([UpdateProfileBackendController::class]);
     }
 
     public function user(): User

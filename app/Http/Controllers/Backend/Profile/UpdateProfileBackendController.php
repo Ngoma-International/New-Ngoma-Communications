@@ -39,5 +39,4 @@ class UpdateProfileBackendController extends BaseController
 
         return back();
     }
-
 }

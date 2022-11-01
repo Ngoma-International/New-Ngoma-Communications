@@ -11,9 +11,10 @@
                 <div class="brand-logo pb-5">
                     <a href="{{ route('app.name') }}" class="logo-link">
                         <img
-                            src="{{ asset('assets/images/logo.png')  }}"
+                            src="{{ asset('assets/images/Triplex 3.svg')  }}"
                             alt="logo"
-                            class="h-16">
+                            style="height: 40%; width: 40%;"
+                            class="img-fluid text-center">
                     </a>
                 </div>
                 <div class="nk-block-head">
@@ -69,7 +70,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-dim btn-outline-primary btn-block">{{ __('frontend.login') }}</button>
+                        <button class="btn btn-outline-primary btn-block">{{ __('frontend.login') }}</button>
                     </div>
                 </form>
             </div>
@@ -82,8 +83,8 @@
                             <div class="nk-feature-img">
                                 <img
                                     class="round img-full"
-                                    src="{{ asset('assets/images/profile.jpg') }}"
-                                    srcset="{{ asset('assets/images/profile.jpg') }} 2x"
+                                    src=""
+                                    srcset=" 2x"
                                     alt="images">
                             </div>
                         </div>
