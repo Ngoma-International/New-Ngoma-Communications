@@ -1,0 +1,35 @@
+{
+    "name": "scott/file-pont",
+    "description": "Helps to upload images in drag and drop system",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "scott Tresor",
+            "email": "scotttresor@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Scott\\FilePont\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Scott\\FilePont\\Tests": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Scott\\FilePont\\FilePontServiceProvider"
+            ],
+            "aliases": {
+                "FilePont": "Scott\\FilePont\\Facades\\FilePont"
+            }
+        }
+    },
+    "require": {
+        "php": "^8.1"
+    }
+}
