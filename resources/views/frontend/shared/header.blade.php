@@ -1,43 +1,103 @@
-<header class="header">
-    <div class="logo">
-        <a href="#"><span>P</span></a>
-    </div>
-    <div class="top-menu">
-        <ul>
-            <li class="active">
-                <a href="#home-card">
-                    <span class="icon la la-home"></span>
-                    <span class="link">Home</span>
-                </a>
-            </li>
-            <li>
-                <a href="#about-card">
-                    <span class="icon la la-info-circle"></span>
-                    <span class="link">About</span>
-                </a>
-            </li>
-            <li>
-                <a href="#contacts-card">
-                    <span class="icon la la-envelope"></span>
-                    <span class="link">Contacts</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('login') }}">
-                    <span class="icon la la-user"></span>
-                    <span class="link">Admin</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div class="social">
-        <a target="_blank" href="https://dribbble.com/"><span class="icon la la-dribbble"></span></a>
-        <a target="_blank" href="https://facebook.com/"><span class="icon la la-facebook"></span></a>
-        <a target="_blank" href="https://github.com/"><span class="icon la la-github"></span></a>
-        <a target="_blank" href="https://stackoverflow.com/"><span class="icon la la-stack-overflow"></span></a>
-    </div>
-    <span class="menu-btn">
-        <span class="m-line"></span>
-    </span>
+<div class="{{ Request::url() === route('app.name') ? "top_sm_wrapper darkblue_gradient" : "header_v1_wrapper ds darkblue_gradient background_cover" }}">
+    @if(Request::url() === route('app.name'))
+        <div class="transparent_wrapper">
+            @include('frontend.component.wrapper')
+            <header class="page_header header_v2 header_darkgrey darkblue_gradient toggler_relative">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="header_mainmenu">
+                                <nav class="mainmenu_wrapper">
+                                    <ul class="mainmenu nav sf-menu">
+                                        @include('frontend.component._link', [
+                                            'route' => route('app.name'),
+                                            'name' => "Home"
+                                        ])
+                                        @include('frontend.component._link', [
+                                            'route' => route('seminar.index'),
+                                            'name' => "Seminar"
+                                        ])
+                                        @include('frontend.component._link', [
+                                            'route' => route('podcast.index'),
+                                            'name' => "Podcasts"
+                                        ])
+                                        @include('frontend.component._link', [
+                                            'route' => route('app.name'),
+                                            'name' => "Ours Members"
+                                        ])
+                                        @include('frontend.component._link', [
+                                            'route' => route('about.index'),
+                                            'name' => "About us"
+                                        ])
+                                        @include('frontend.component._link', [
+                                            'route' => route('login'),
+                                            'name' => "Login"
+                                        ])
+                                        @include('frontend.component._link', [
+                                            'route' => route('register'),
+                                            'name' => "Register"
+                                        ])
+                                    </ul>
+                                </nav>
+                                <span class="toggle_menu">
+                                <span></span>
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+    @else
+        @include('frontend.component.wrapper')
+        <header class="page_header header_v2 header_darkgrey darkblue_gradient toggler_relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="header_mainmenu">
+                            <nav class="mainmenu_wrapper">
+                                <ul class="mainmenu nav sf-menu">
+                                    @include('frontend.component._link', [
+                                        'route' => route('app.name'),
+                                        'name' => "Home"
+                                    ])
+                                    @include('frontend.component._link', [
+                                        'route' => route('seminar.index'),
+                                        'name' => "Seminar"
+                                    ])
+                                    @include('frontend.component._link', [
+                                        'route' => route('podcast.index'),
+                                        'name' => "Podcasts"
+                                    ])
+                                    @include('frontend.component._link', [
+                                        'route' => route('membre.index'),
+                                        'name' => "Ours Members"
+                                    ])
+                                    @include('frontend.component._link', [
+                                        'route' => route('about.index'),
+                                        'name' => "About us"
+                                    ])
+                                    @include('frontend.component._link', [
+                                        'route' => route('login'),
+                                        'name' => "Login"
+                                    ])
+                                    @include('frontend.component._link', [
+                                        'route' => route('register'),
+                                        'name' => "Register"
+                                    ])
+                                </ul>
+                            </nav>
+                            <span class="toggle_menu">
+                                <span></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    @endif
 
-</header>
+    @if(Request::url() === route('app.name'))
+        @include('frontend.component.mainslider')
+    @endif
+</div>

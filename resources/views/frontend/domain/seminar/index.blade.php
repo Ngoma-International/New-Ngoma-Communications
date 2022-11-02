@@ -5,31 +5,6 @@
 @endsection
 
 @section('content')
-    <section id="features" class="cs fluid_padding_0 columns_padding_0 columns_margin_0">
-        <div class="container-fluid">
-            <div class="row flex-wrap v-content-equalize">
-                <div class="col-xs-12 col-sm-6 col-md-4 text-center text-sm-left">
-                    <div class="with_padding big-padding bg_teaser after_cover gradient_bg_color1">
-                        <img src="" alt="">
-                        <h3 class="topmargin_0">Private Finance<br> <span class="thin big">Services</span></h3>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 text-center text-sm-left">
-                    <div class="with_padding big-padding bg_teaser after_cover gradient_bg_color2">
-                        <img src="" alt="">
-                        <h3 class="topmargin_0">Commercial Banking<br> <span class="thin big">Solutions</span></h3>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-4 text-center text-sm-left">
-                    <div class="with_padding big-padding bg_teaser after_cover gradient_bg_color3">
-                        <img src="" alt="">
-                        <h3 class="topmargin_0">Financial Markets<br> <span class="thin big">Research</span></h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="ls section_padding_top_130 section_padding_bottom_130">
         <div class="container">
             <div class="row">
@@ -56,6 +31,12 @@
                                                 <time datetime="2017-10-03T08:50:40+00:00">jun 14, 2018</time>
                                             </a>
                                         </span>
+                                        <span>
+                                            <a href="" class="post-comments">
+                                                <span class="count">4</span>
+                                                comments
+                                            </a>
+                                        </span>
                                     </div>
                                     <h3 class="entry-title">
                                         <a href="">Getting Started with Consulting</a>
@@ -76,12 +57,18 @@
                                 </div>
                                 <div class="item-content">
                                     <div class="entry-meta small-text inline-content with_dividers highlight highlightlinks">
-                                        <span>
-                                            By <a href="">Wise</a>
+                                        <span>By
+                                            <a href="">Wise</a>
                                         </span>
                                         <span>
                                             <a href="">
                                                 <time datetime="2017-10-03T08:50:40+00:00">jun 15, 2018</time>
+                                            </a>
+                                        </span>
+                                        <span>
+                                            <a href="" class="post-comments">
+                                                <span class="count">4</span>
+                                                comments
                                             </a>
                                         </span>
                                     </div>
@@ -91,6 +78,27 @@
                                 </div>
                             </article>
                         </div>
+                    </div>
+                    <div class="topmargin_50 text-center">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#">
+                                    <span class="sr-only">Prev</span>
+                                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#">
+                                    <span class="sr-only">Next</span>
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

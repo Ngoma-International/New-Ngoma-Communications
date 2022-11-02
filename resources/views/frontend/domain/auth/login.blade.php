@@ -75,22 +75,7 @@
                 </form>
             </div>
         </div>
-        <div class="nk-split-content nk-split-stretch bg-lighter">
-            <div class="slider-wrap w-100 w-max-550px p-2 p-sm-5 m-auto">
-                <div class="slider-init">
-                    <div class="slider-item">
-                        <div class="nk-feature nk-feature-center">
-                            <div class="nk-feature-img">
-                                <img
-                                    class="round img-full"
-                                    src=""
-                                    srcset=" 2x"
-                                    alt="images">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="nk-split-content nk-split-stretch bg-abstract"></div>
         </div>
     </div>
 @endsection

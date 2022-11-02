@@ -14,6 +14,9 @@ use App\Http\Controllers\Backend\Seminar\SeminarBackendController;
 use App\Http\Controllers\Backend\Seminar\SeminarStatusBackendController;
 use App\Http\Controllers\Backend\Users\UsersBackendController;
 use App\Http\Controllers\Frontend\HomeFrontendController;
+use App\Http\Controllers\Frontend\MemberFrontendController;
+use App\Http\Controllers\Frontend\PodcastFrontendController;
+use App\Http\Controllers\Frontend\SeminarFrontendController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -50,4 +53,9 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
 });
+
+Route::get('podcast', PodcastFrontendController::class)->name('podcast.index');
+Route::get('seminar', SeminarFrontendController::class)->name('seminar.index');
+Route::get('member', MemberFrontendController::class)->name('membre.index');
+Route::get('about', fn() => view('frontend.domain.about.index'))->name('about.index');
 Route::get('/', HomeFrontendController::class)->name('app.name');
