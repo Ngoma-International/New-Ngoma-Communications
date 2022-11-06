@@ -29,12 +29,12 @@ class UsersBackendController extends Controller
     {
         $users = $this->repository->getElements();
 
-        return view('backend.domain.users.index', compact('users'));
+        return view('admin.domain.users.index', compact('users'));
     }
 
     public function create(): Renderable
     {
-        return view('backend.domain.users.create');
+        return view('admin.domain.users.create');
     }
 
     public function store(UserRequest $request): RedirectResponse
@@ -48,17 +48,17 @@ class UsersBackendController extends Controller
 
     public function show(User $user): Factory|View|Application
     {
-        return view('backend.domain.users.show', compact('user'));
+        return view('admin.domain.users.show', compact('user'));
     }
 
     public function edit(User $user): Renderable
     {
-        return view('backend.domain.users.edit', compact('user'));
+        return view('admin.domain.users.edit', compact('user'));
     }
 
     public function update(User $user, UpdateUserRequest $request): RedirectResponse
     {
-        $user = $this->repository->update($user, $request);
+        $this->repository->update($user, $request);
 
         $this->flashMessagesServices->success('success', "L'utilisateur a ete mise a jours");
 
@@ -67,7 +67,7 @@ class UsersBackendController extends Controller
 
     public function destroy(User $user): RedirectResponse
     {
-        $user = $this->repository->delete($user);
+        $this->repository->delete($user);
 
         $this->flashMessagesServices->success('success', "L'utilisateur a ete supprimer");
 

@@ -32,14 +32,14 @@ class PodcastBackendController extends BaseController
     {
         $podcasts = $this->backendRepository->getPodcasts();
 
-        return view('backend.domain.podcasts.index', compact('podcasts'));
+        return view('admin.domain.podcasts.index', compact('podcasts'));
     }
 
     public function create(): Factory|View|Application
     {
         $viewModels = new CreatePodcast();
 
-        return view('backend.domain.podcasts.create', compact('viewModels'));
+        return view('admin.domain.podcasts.create', compact('viewModels'));
     }
 
     public function store(StorePodcastRequest $request): RedirectResponse
@@ -58,14 +58,14 @@ class PodcastBackendController extends BaseController
     {
         $postViewModel = new ShowPodcast($podcast);
 
-        return view('backend.domain.podcasts.show', compact('postViewModel'));
+        return view('admin.domain.podcasts.show', compact('postViewModel'));
     }
 
     public function edit(Podcast $podcast): Factory|View|Application
     {
         $viewModels = new EditePodcast($podcast);
 
-        return view('backend.domain.podcasts.edit', compact('viewModels'));
+        return view('admin.domain.podcasts.edit', compact('viewModels'));
     }
 
     public function update(Podcast $podcast, UpdatePodcastRequest $request): RedirectResponse

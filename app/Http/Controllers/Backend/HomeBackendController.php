@@ -11,6 +11,6 @@ class HomeBackendController extends Controller
 {
     public function __invoke(): Renderable
     {
-        return  view('backend.index');
+        return  view('admin.index');
     }
 }

@@ -16,7 +16,9 @@
         "postcss": "^8.1.14"
     },
     "dependencies": {
+        "alpinejs": "^3.10.5",
         "axios": "^1.1.2",
-        "laravel-mix-purgecss": "^6.0.0"
+        "laravel-mix-purgecss": "^6.0.0",
+        "sweetalert2": "^11.6.5"
     }
 }

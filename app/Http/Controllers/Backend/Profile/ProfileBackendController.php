@@ -17,16 +17,16 @@ class ProfileBackendController extends Controller
     {
         $viewModel = new ProfileUser(auth()->user());
 
-        return view('backend.domain.profile.index', compact('viewModel'));
+        return view('admin.domain.profile.index', compact('viewModel'));
     }
 
     public function security(): Factory|View|Application
     {
-        return view('backend.domain.profile.security');
+        return view('admin.domain.profile.security');
     }
 
     public function cursus(): Factory|View|Application
     {
-        return view('backend.domain.profile.cursus');
+        return view('admin.domain.profile.cursus');
     }
 }

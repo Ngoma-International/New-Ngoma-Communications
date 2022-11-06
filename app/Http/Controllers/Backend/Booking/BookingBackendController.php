@@ -19,13 +19,13 @@ class BookingBackendController extends Controller
     {
         $bookings =  $repository->bookings();
 
-        return view('backend.domain.booking.index', compact('bookings'));
+        return view('admin.domain.booking.index', compact('bookings'));
     }
 
     public function show(Booking $booking): Factory|View|Application
     {
         $viewModels = new ShowBooking($booking);
 
-        return view('backend.domain.booking.show', compact('viewModels'));
+        return view('admin.domain.booking.show', compact('viewModels'));
     }
 }

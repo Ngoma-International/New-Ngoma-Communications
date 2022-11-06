@@ -10,7 +10,7 @@ use App\Events\Backend\Seminar\UpdateSeminarSeminarEvent;
 use App\Http\Requests\Backend\Seminar\StoreSeminarRequest;
 use App\Http\Requests\Backend\Seminar\UpdateSeminarRequest;
 use App\Models\Seminar;
-use App\Traits\ImagesUploadsTrait;
+use App\Traits\HasImagesUploads;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SeminarRepository
 {
-    use ImagesUploadsTrait;
+    use HasImagesUploads;
 
     public function getSeminars(): Collection|array
     {

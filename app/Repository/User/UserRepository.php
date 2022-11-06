@@ -8,7 +8,7 @@ use App\Events\AdminEvent;
 use App\Events\AdminUpdateEvent;
 use App\Models\ProfileUser;
 use App\Models\User;
-use App\Traits\ImagesUploadsTrait;
+use App\Traits\HasImagesUploads;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserRepository
 {
-    use ImagesUploadsTrait;
+    use HasImagesUploads;
 
     /**
      * @return Collection

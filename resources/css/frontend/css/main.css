@@ -54,10 +54,10 @@
   - template parallax sections
   - footer styles
   - copyrights styles
-  - google map 
+  - google map
   - intro slider inside content
 * Intro Section Styles
-* Main Menu 
+* Main Menu
   - Desktop menu
   - Mobile menu
   - Mobile menu toggler
@@ -89,7 +89,7 @@
   - teasers
   - testimonials
   - thumbnail
-  - price tables 
+  - price tables
   - contact forms
   - partners_carousel
 * Social Icons
@@ -112,12 +112,12 @@ Background color for dark muted section (.ds.ms): #000000
 Border colors for elements in light section (and .with_border elements): #e8e8e8, rgba(39, 45, 52, 0.2)
 Background color for elements in light section (.with_background): #f6f6f6
 
-Dark section (.ds) colors: 
+Dark section (.ds) colors:
 Text color in dark section: #f9f9fa
 Border colors for elements in dark section: rgba(255, 255, 255, 0.2)
 Background color for elements in dark section (.with_background): #313942
 
-Color section (.cs) colors: 
+Color section (.cs) colors:
 Border colors for elements in color section: rgba(255, 255, 255, 0.5)
 
 */
@@ -4163,8 +4163,8 @@ div.ppt {
 	margin-top: 0;
 }
 
-/* 
-** Time Table 
+/*
+** Time Table
 */
 #timetable span {
 	display: block;
@@ -4200,7 +4200,7 @@ div.ppt {
 	color: #272d34;
 }
 
-/* 
+/*
 ** toTop
 */
 #toTop {
@@ -12007,7 +12007,7 @@ body.active-side-header.slide-right .page_header_side {
 	display: none;
 }
 
-/* 
+/*
 ** Intro Section Styles
 */
 @media (min-width: 992px) {
@@ -16243,8 +16243,8 @@ ul .size_normal {
 	padding: 0 15px;
 }
 
-/* 
-** Testimonials 
+/*
+** Testimonials
 */
 @media (max-width: 600px) {
 	.blockquote-big {

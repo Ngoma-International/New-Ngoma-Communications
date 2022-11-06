@@ -32,14 +32,14 @@ class SeminarBackendController extends BaseController
     {
         $seminars = $this->repository->getSeminars();
 
-        return view('backend.domain.seminar.index', compact('seminars'));
+        return view('admin.domain.seminar.index', compact('seminars'));
     }
 
     public function create(): Factory|View|Application
     {
         $viewModels = new CreateSeminar();
 
-        return view('backend.domain.seminar.create', compact('viewModels'));
+        return view('admin.domain.seminar.create', compact('viewModels'));
     }
 
     public function store(StoreSeminarRequest $request): RedirectResponse
@@ -58,14 +58,14 @@ class SeminarBackendController extends BaseController
     {
         $viewModels = new ShowSeminar($seminar);
 
-        return view('backend.domain.seminar.show', compact('viewModels'));
+        return view('admin.domain.seminar.show', compact('viewModels'));
     }
 
     public function edit(Seminar $seminar): Factory|View|Application
     {
         $viewModels = new EditSeminar($seminar);
 
-        return view('backend.domain.seminar.edit', compact('viewModels'));
+        return view('admin.domain.seminar.edit', compact('viewModels'));
     }
 
     public function update(UpdateSeminarRequest $request, Seminar $seminar): RedirectResponse

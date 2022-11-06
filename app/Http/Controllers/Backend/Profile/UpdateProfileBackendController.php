@@ -28,7 +28,7 @@ class UpdateProfileBackendController extends BaseController
     {
         $viewModel = new ProfileUser(auth()->user());
 
-        return view('backend.domain.profile.edit', compact('viewModel'));
+        return view('admin.domain.profile.edit', compact('viewModel'));
     }
 
     public function update(User $user, UpdateProfileRequest $request): RedirectResponse

@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('title')->unique();
             $table->string('thumbnail')->nullable();
             $table->string('images_video');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

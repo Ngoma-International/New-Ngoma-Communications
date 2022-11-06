@@ -9,14 +9,14 @@ use App\Events\UpdatePodcastEvent;
 use App\Http\Requests\Backend\Podcast\StorePodcastRequest;
 use App\Http\Requests\Backend\Podcast\UpdatePodcastRequest;
 use App\Models\Podcast;
-use App\Traits\ImagesUploadsTrait;
+use App\Traits\HasImagesUploads;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 class PodcastBackendRepository
 {
-    use ImagesUploadsTrait;
+    use HasImagesUploads;
 
     public function getPodcasts(): Collection|array
     {

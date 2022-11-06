@@ -7,13 +7,13 @@ namespace App\Http\Controllers\Backend\Profile;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\Profile\UploadImageRequest;
 use App\Models\TemporaryImage;
-use App\Traits\ImagesUploadsTrait;
+use App\Traits\HasImagesUploads;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class UploadImageBackendController extends Controller
 {
-    use ImagesUploadsTrait;
+    use HasImagesUploads;
 
     public function __invoke(UploadImageRequest $request): TemporaryImage
     {

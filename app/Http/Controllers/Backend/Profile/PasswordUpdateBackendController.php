@@ -22,7 +22,7 @@ class PasswordUpdateBackendController extends BaseController
     }
     public function __invoke(): Renderable
     {
-        return view('backend.domain.security.index');
+        return view('admin.domain.security.index');
     }
 
     public function update(UpdatePasswordRequest $request, User $user): RedirectResponse
@@ -34,6 +34,7 @@ class PasswordUpdateBackendController extends BaseController
             "Votre mot de passe a ete mise a jours"
         );
 
-        return to_route('admins.profile.index');
+        return to_route('admins.profile.index')
+            ->with('success', "Votre mot de passe a ete mise a jours");
     }
 }

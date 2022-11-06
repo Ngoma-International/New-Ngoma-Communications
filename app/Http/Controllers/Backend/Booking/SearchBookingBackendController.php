@@ -11,6 +11,6 @@ class SearchBookingBackendController extends Controller
 {
     public function __invoke(): Renderable
     {
-        return view('backend.domain.search.index');
+        return view('admin.domain.search.index');
     }
 }

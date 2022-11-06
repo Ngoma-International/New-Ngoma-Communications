@@ -8,12 +8,12 @@ use App\Http\Requests\Backend\Profile\UpdateProfileRequest;
 use App\Models\ProfileUser;
 use App\Models\TemporaryImage;
 use App\Models\User;
-use App\Traits\ImagesUploadsTrait;
+use App\Traits\HasImagesUploads;
 use Illuminate\Database\Eloquent\Model;
 
-class UpdateProfileRepository
+final class UpdateProfileRepository
 {
-    use ImagesUploadsTrait;
+    use HasImagesUploads;
 
     public function updateUser(UpdateProfileRequest $request, User $user): User
     {
@@ -25,16 +25,13 @@ class UpdateProfileRepository
         if ($user->images !== null) {
             $this->removePathOfImages($user);
         }
+        $users  = $request->validated();
         if ($temporary) {
-            $user->update([
-                'name' => $request->input('name'),
-                'firstname' => $request->input('firstname'),
-                'email' => $request->input('email'),
-                'phone_number' => $request->input('phone_number'),
-                'description' => $request->input('description'),
-                'images' => $temporary->images
-            ]);
+            $users['images'] = $temporary->images;
+            $user->update($users);
             $temporary->delete();
+        }else {
+            $user->update($users);
         }
         return $user;
     }
@@ -49,16 +46,7 @@ class UpdateProfileRepository
     private function updateProfile(UpdateProfileRequest $request, $user): Model|null
     {
         $profile = $this->getProfileUser($user);
-        $profile->update([
-            'birthdays' => $request->input('birthdays'),
-            'country' => $request->input('country'),
-            'city' => $request->input('city'),
-            'town' => $request->input('town'),
-            'enterprise' => $request->input('enterprise'),
-            'role_enterprise' => $request->input('role_enterprise'),
-            'department' => $request->input('department'),
-            'sector' => $request->input('sector'),
-        ]);
+        $profile->update($request->validated());
         return $profile;
     }
 

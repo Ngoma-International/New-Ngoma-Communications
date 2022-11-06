@@ -71,12 +71,6 @@
         ]
 
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url":  "../packages/FilePont"
-        }
-    ],
     "extra": {
         "laravel": {
             "dont-discover": [
