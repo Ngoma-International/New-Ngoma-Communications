@@ -14,7 +14,7 @@
 
                 @component('admin.shared.banner')
                     <div class="nk-block-head-content">
-                        <a class="btn btn-primary btn-dim btn-sm" href="{{ $viewModels->indexUrl }}">
+                        <a class="btn btn-outline-primary btn-sm" href="{{ $viewModels->indexUrl }}">
                             <em class="icon ni ni-arrow-long-left"></em>
                             <span>Tout les events</span>
                         </a>

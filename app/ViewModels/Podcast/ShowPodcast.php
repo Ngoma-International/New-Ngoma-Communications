@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\ViewModels\Podcast;
 
-use App\Http\Controllers\Backend\Podcast\PodcastBackendController;
+use App\Http\Controllers\Admin\Podcast\PodcastBackendController;
 use App\Models\Podcast;
 use App\Models\PodcastOffering;
 use App\Models\TypePodcast;

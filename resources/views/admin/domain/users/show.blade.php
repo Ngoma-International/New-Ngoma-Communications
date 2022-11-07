@@ -21,10 +21,26 @@
                                 <span>Tout les utilisateurs</span>
                             </a>
                         </li>
+                        @if(auth()->id() === $user->id)
+                        @else
+                            <li class="preview-item">
+                                <div class="custom-control custom-control-md custom-switch">
+                                    <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        name="activated"
+                                        data-id="{{ $user->id }}"
+                                        @checked($user->status)
+                                        onclick="changeUserStatus(event.target, {{ $user->id }});"
+                                        id="activated">
+                                    <label class="custom-control-label" for="activated"></label>
+                                </div>
+                            </li>
+                        @endif
                         <li class="preview-item">
                             <a
-                                    href="{{ route('admins.users.edit', $user->id) }}"
-                                    class="btn btn-outline-primary btn-sm">
+                                href="{{ route('admins.users.edit', $user->id) }}"
+                                class="btn btn-outline-primary btn-sm">
                                 <em class="icon ni ni-edit mr-1"></em>
                                 Editer
                             </a>
@@ -165,4 +181,35 @@
             @endcomponent
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        let changeUserStatus = async (_this, id) => {
+            const status = $(_this).prop('checked') === true ? 1 : 0;
+            let _token = $('meta[name="csrf-token"]').attr('content');
+            let data = {
+                status: status,
+                user: id
+            }
+            let headers = {
+                'Content-type': 'application/json; charset=UTF-8',
+                'x-csrf-token': _token,
+            }
+
+            await fetch('{{ route('admins.users.status') }}', {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: headers
+            })
+                .then(response => response.json())
+                .then((data) => {
+                    var result = Object.values(data)
+                    Swal.fire(`Status ${result[1].name}`, `${result[0]}`, 'success')
+                })
+                .catch((error) => {
+                    Swal.fire("Bonne nouvelle", "Operation executez avec success", "success")
+                })
+        }
+    </script>
 @endsection

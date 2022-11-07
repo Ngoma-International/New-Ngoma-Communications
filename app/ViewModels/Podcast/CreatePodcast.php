@@ -3,7 +3,7 @@
 namespace App\ViewModels\Podcast;
 
 use App\Enums\RoleEnum;
-use App\Http\Controllers\Backend\Podcast\PodcastBackendController;
+use App\Http\Controllers\Admin\Podcast\PodcastBackendController;
 use App\Models\PodcastOffering;
 use App\Models\TypePodcast;
 use App\Models\User;

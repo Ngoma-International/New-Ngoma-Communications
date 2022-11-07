@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\App;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Support\Renderable;
 
-class SeminarFrontendController extends Controller
+class MemberFrontendController extends Controller
 {
     public function __invoke(): Renderable
     {
-        return  view('frontend.domain.seminar.index');
+        return view('frontend.domain.membre.index');
     }
 }

@@ -15,7 +15,7 @@
 
                     @component('admin.shared.banner')
                         <li class="preview-item">
-                            <a href="{{ route('admins.seminar.create') }}" class="btn btn-dim btn-primary btn-sm">
+                            <a href="{{ route('admins.seminar.create') }}" class="btn btn-outline-primary btn-sm">
                                 <em class="icon ni ni-plus mr-1"></em> Create
                             </a>
                         </li>

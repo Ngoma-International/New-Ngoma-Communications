@@ -258,7 +258,7 @@
 
         <div class="col-md-12">
             <div class="form-group text-center">
-                <button type="submit" class="btn btn-md btn-primary">
+                <button type="submit" class="btn btn-md btn-outline-primary">
                     <em class="icon ni ni-save-fill mr-2"></em>
                     Save
                 </button>

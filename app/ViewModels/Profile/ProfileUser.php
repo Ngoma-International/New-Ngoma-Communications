@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\ViewModels\Profile;
 
-use App\Http\Controllers\Backend\Profile\ProfileBackendController;
-use App\Http\Controllers\Backend\Profile\UpdateProfileBackendController;
+use App\Http\Controllers\Admin\Profile\ProfileBackendController;
+use App\Http\Controllers\Admin\Profile\UpdateProfileBackendController;
 use App\Models\User;
 use App\Models\ProfileUser as Profile;
 use Illuminate\Database\Eloquent\Builder;

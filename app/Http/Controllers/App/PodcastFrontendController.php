@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Backend\Booking;
+namespace App\Http\Controllers\App;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Support\Renderable;
 
-class SearchBookingBackendController extends Controller
+class PodcastFrontendController extends Controller
 {
     public function __invoke(): Renderable
     {
-        return view('admin.domain.search.index');
+        return view('frontend.domain.podcast.index');
     }
 }

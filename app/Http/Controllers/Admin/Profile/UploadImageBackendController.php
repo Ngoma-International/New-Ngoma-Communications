@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Backend\Profile;
+namespace App\Http\Controllers\Admin\Profile;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\Profile\UploadImageRequest;

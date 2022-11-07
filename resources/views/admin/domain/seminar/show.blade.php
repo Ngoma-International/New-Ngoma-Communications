@@ -15,8 +15,14 @@
 
                     @component('admin.shared.banner')
                         <li class="preview-item">
-                            <div class="custom-control custom-control-md custom-switch">
-                                <input
+                            <a class="btn btn-outline-primary btn-sm" href="{{ $viewModels->indexUrl }}">
+                                <em class="icon ni ni-arrow-long-left"></em>
+                                <span>All Seminars</span>
+                            </a>
+                        </li>
+                            <li class="preview-item">
+                                <div class="custom-control custom-control-md custom-switch">
+                                    <input
                                         type="checkbox"
                                         class="custom-control-input"
                                         name="activated"
@@ -24,19 +30,13 @@
                                         {{ $viewModels->seminar->status ? "checked" : "" }}
                                         onclick="changeRoomStatus(event.target, {{ $viewModels->seminar->id }});"
                                         id="activated">
-                                <label class="custom-control-label" for="activated"></label>
-                            </div>
-                        </li>
-                        <li class="preview-item">
-                            <a class="btn btn-primary btn-dim btn-sm" href="{{ $viewModels->indexUrl }}">
-                                <em class="icon ni ni-arrow-long-left"></em>
-                                <span>All Seminars</span>
-                            </a>
-                        </li>
+                                    <label class="custom-control-label" for="activated"></label>
+                                </div>
+                            </li>
                         <li class="preview-item">
                             <a
                                     href="{{ $viewModels->editUrl }}"
-                                    class="btn btn-dim btn-primary btn-sm">
+                                    class="btn btn-outline-primary btn-sm">
                                 <em class="icon ni ni-edit mr-1"></em>
                                 Editer
                             </a>
@@ -50,7 +50,7 @@
                             >
                                 @method('DELETE')
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <button type="submit" class="btn btn-dim btn-danger btn-sm">
+                                <button type="submit" class="btn btn-outline-danger btn-sm">
                                     <em class="icon ni ni-trash-empty-fill"></em>
                                     Delete Seminar
                                 </button>

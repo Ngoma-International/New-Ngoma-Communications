@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\ViewModels\Seminar;
 
 use App\Enums\RoleEnum;
-use App\Http\Controllers\Backend\Seminar\SeminarBackendController;
+use App\Http\Controllers\Admin\Seminar\SeminarBackendController;
 use App\Models\Category;
 use App\Models\Seminar;
 use App\Models\SeminaryType;

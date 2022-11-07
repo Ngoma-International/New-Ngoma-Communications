@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Backend\Seminar;
+namespace App\Http\Controllers\Admin\Seminar;
 
 use App\Http\Controllers\BaseController;
 use App\Http\Requests\Backend\Seminar\StoreSeminarRequest;

@@ -2,7 +2,7 @@
 
 namespace App\ViewModels\Booking;
 
-use App\Http\Controllers\Backend\Booking\BookingBackendController;
+use App\Http\Controllers\Admin\Booking\BookingBackendController;
 use App\Models\Booking;
 use App\Models\Seminar;
 use Illuminate\Database\Eloquent\Builder;

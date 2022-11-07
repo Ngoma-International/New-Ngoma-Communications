@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Backend\Podcast;
+namespace App\Http\Controllers\Admin\Podcast;
 
 use App\Http\Controllers\BaseController;
 use App\Http\Requests\Backend\Podcast\StorePodcastRequest;

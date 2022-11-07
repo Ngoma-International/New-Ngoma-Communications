@@ -12,13 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('curricula', function (Blueprint $table) {
-            $table->id();
-            $table->uuid('id')->index();
+            $table->uuid('id');
             $table->foreignIdFor(User::class)
                 ->constrained()
                 ->cascadeOnDelete();
-            $table->json('competence')->default('[]');
-            $table->json('experience')->default('[]');
+            $table->string('title')->nullable();
+            $table->json('address')->default('[]')->nullable();
+            $table->json('contact')->default('[]')->nullable();
+            $table->json('experience')->default('[]')->nullable();
+            $table->json('formation')->default('[]')->nullable();
+            $table->json('competence')->default('[]')->nullable();
+            $table->json('language')->default('[]')->nullable();
             $table->timestamps();
         });
     }

@@ -2,21 +2,22 @@
 
 declare(strict_types=1);
 
-use App\Http\Controllers\Backend\Booking\BookingBackendController;
-use App\Http\Controllers\Backend\Booking\SearchBookingBackendController;
-use App\Http\Controllers\Backend\HomeBackendController;
-use App\Http\Controllers\Backend\Podcast\PodcastBackendController;
-use App\Http\Controllers\Backend\Profile\PasswordUpdateBackendController;
-use App\Http\Controllers\Backend\Profile\ProfileBackendController;
-use App\Http\Controllers\Backend\Profile\UpdateProfileBackendController;
-use App\Http\Controllers\Backend\Profile\UploadImageBackendController;
-use App\Http\Controllers\Backend\Seminar\SeminarBackendController;
-use App\Http\Controllers\Backend\Seminar\SeminarStatusBackendController;
-use App\Http\Controllers\Backend\Users\UsersBackendController;
-use App\Http\Controllers\Frontend\HomeFrontendController;
-use App\Http\Controllers\Frontend\MemberFrontendController;
-use App\Http\Controllers\Frontend\PodcastFrontendController;
-use App\Http\Controllers\Frontend\SeminarFrontendController;
+use App\Http\Controllers\Admin\Booking\BookingBackendController;
+use App\Http\Controllers\Admin\Booking\SearchBookingBackendController;
+use App\Http\Controllers\Admin\HomeBackendController;
+use App\Http\Controllers\Admin\Podcast\PodcastBackendController;
+use App\Http\Controllers\Admin\Profile\PasswordUpdateBackendController;
+use App\Http\Controllers\Admin\Profile\ProfileBackendController;
+use App\Http\Controllers\Admin\Profile\UpdateProfileBackendController;
+use App\Http\Controllers\Admin\Profile\UploadImageBackendController;
+use App\Http\Controllers\Admin\Seminar\SeminarBackendController;
+use App\Http\Controllers\Admin\Seminar\SeminarStatusBackendController;
+use App\Http\Controllers\Admin\Users\StatusUserBackendController;
+use App\Http\Controllers\Admin\Users\UsersBackendController;
+use App\Http\Controllers\App\HomeFrontendController;
+use App\Http\Controllers\App\MemberFrontendController;
+use App\Http\Controllers\App\PodcastFrontendController;
+use App\Http\Controllers\App\SeminarFrontendController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,7 @@ Route::group(['middleware' => ['auth']], function () {
     ], function () {
         Route::get('backend', HomeBackendController::class)->name('backend.index');
         Route::resource('users', UsersBackendController::class);
+        Route::post('user-status', StatusUserBackendController::class)->name('users.status');
         Route::resource('podcasts', PodcastBackendController::class);
         Route::resource('seminar', SeminarBackendController::class);
         Route::post('seminar-status', SeminarStatusBackendController::class);

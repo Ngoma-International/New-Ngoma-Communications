@@ -30,7 +30,7 @@ final class UpdateProfileRepository
             $users['images'] = $temporary->images;
             $user->update($users);
             $temporary->delete();
-        }else {
+        } else {
             $user->update($users);
         }
         return $user;

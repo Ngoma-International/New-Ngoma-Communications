@@ -175,54 +175,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card border border-light">
-                                            <div class="card-inner-group">
-                                                <div class="card-inner">
-                                                    <div class="between-center flex-wrap g-3">
-                                                        <div class="nk-block-text">
-                                                            <h6>Mot de passe</h6>
-                                                            <p>
-                                                                Définissez un mot de passe unique pour protéger votre
-                                                                compte.
-                                                            </p>
-                                                        </div>
-                                                        <div class="nk-block-actions flex-shrink-sm-0">
-                                                            <ul class="align-center flex-wrap flex-sm-nowrap gx-3 gy-2">
-                                                                <li>
-                                                                    <a href="{{ route('admins.profile.password') }}"
-                                                                       class="btn btn-outline-primary">
-                                                                        <em class="icon ni ni-edit-alt mr-2"></em>
-                                                                        Modifier le mot de passe
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="card-inner">
-                                                    <div class="between-center flex-wrap g-3">
-                                                        <div class="nk-block-text">
-                                                            <h6>Modifier le profile</h6>
-                                                            <p>
-                                                                Définissez un mot de passe unique pour protéger votre
-                                                                compte.
-                                                            </p>
-                                                        </div>
-                                                        <div class="nk-block-actions flex-shrink-sm-0">
-                                                            <ul class="align-center flex-wrap flex-sm-nowrap gx-3 gy-2">
-                                                                <li>
-                                                                    <a href="{{ route('admins.profile.edit') }}"
-                                                                       class="btn btn-outline-primary">
-                                                                        <em class="icon ni ni-edit-alt mr-2"></em>
-                                                                        Modifier le profile
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

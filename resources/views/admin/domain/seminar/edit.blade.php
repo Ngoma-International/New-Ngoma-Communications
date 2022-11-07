@@ -15,7 +15,7 @@
                 @component('admin.shared.banner')
                     <div class="nk-block-head-content">
                         <a href="{{ $viewModels->indexUrl }}"
-                           class="btn btn-outline-light btn-sm bg-white d-none d-sm-inline-flex">
+                           class="btn btn-outline-primary btn-sm bg-white d-none d-sm-inline-flex">
                             <em class="icon ni ni-arrow-left"></em>
                             <span>Tous les podcasts</span>
                         </a>

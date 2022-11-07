@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Support\Renderable;
 
-class HomeFrontendController extends Controller
+class HomeBackendController extends Controller
 {
     public function __invoke(): Renderable
     {
-        return view('frontend.home');
+        return  view('admin.index');
     }
 }

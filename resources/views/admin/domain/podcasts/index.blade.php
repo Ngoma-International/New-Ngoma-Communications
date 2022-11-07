@@ -56,9 +56,9 @@
                                 <td class="nk-tb-col tb-col-sm">
                                     <span class="tb-product text-center">
                                         <img
-                                                src="{{ $podcast->renderThumbnail() }}"
-                                                alt="{{ $podcast->title }}"
-                                                class="thumb">
+                                            src="{{ $podcast->renderThumbnail() }}"
+                                            alt="{{ $podcast->title }}"
+                                            class="thumb">
                                     </span>
                                 </td>
                                 <td class="nk-tb-col tb-col-md">
@@ -72,8 +72,10 @@
                                 </td>
                                 <td class="nk-tb-col">
                                     <div class="tb-lead justify-content-center">
-                                        <a href="{{ route('admins.podcasts.show', $podcast->id) }}"
-                                           class="btn btn-dim btn-primary btn-sm" title="">
+                                        <a
+                                            href="{{ route('admins.podcasts.show', $podcast->id) }}"
+                                            class="btn btn-dim btn-primary btn-sm"
+                                            title="{{ $podcast->title }}">
                                             <em class="icon ni ni-eye-alt-fill"></em>
                                             <span>Detail podcast</span>
                                         </a>

@@ -16,6 +16,7 @@
         "postcss": "^8.1.14"
     },
     "dependencies": {
+        "@toast-ui/editor": "^3.2.1",
         "alpinejs": "^3.10.5",
         "axios": "^1.1.2",
         "laravel-mix-purgecss": "^6.0.0",
