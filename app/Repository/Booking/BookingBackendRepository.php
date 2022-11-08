@@ -12,15 +12,14 @@ class BookingBackendRepository
     public function bookings(): Collection|array
     {
         return Booking::query()
-            ->select([
+            ->with('seminar')
+            ->orderByDesc('created_at')
+            ->get([
                 'id',
                 'seminar_id',
                 'username',
                 'ticket_number',
                 'status'
-            ])
-            ->with('seminar')
-            ->orderByDesc('created_at')
-            ->get();
+            ]);
     }
 }

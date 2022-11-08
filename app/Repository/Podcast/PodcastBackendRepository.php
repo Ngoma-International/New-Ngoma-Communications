@@ -21,16 +21,15 @@ class PodcastBackendRepository
     public function getPodcasts(): Collection|array
     {
         return Podcast::query()
-            ->select([
+            ->with(['type:id,name', 'offering:id,name'])
+            ->orderByDesc('created_at')
+            ->get([
                 'id',
                 'thumbnail',
                 'title',
                 'type_podcast_id',
                 'podcast_offering_id'
-            ])
-            ->with(['type:id,name', 'offering:id,name'])
-            ->orderByDesc('created_at')
-            ->get();
+            ]);
     }
 
     public function store(StorePodcastRequest $request): Model|Builder

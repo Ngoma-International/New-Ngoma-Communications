@@ -5,5 +5,4 @@ parameters:
     paths:
         - app
     level: 9
-    checkMissingIterableValueType: false
-    checkGenericClassInNonGenericObjectType: false
+    checkMissingIterableValueType: true

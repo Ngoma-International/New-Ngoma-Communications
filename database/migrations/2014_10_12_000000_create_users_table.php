@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('images')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('profession')->nullable();
             $table->longText('description')->nullable();
             $table->unsignedInteger('status')->default(1);
             $table->enum('role_id', [1, 2, 3])->default(1);

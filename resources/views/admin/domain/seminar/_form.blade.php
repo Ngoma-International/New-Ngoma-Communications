@@ -196,15 +196,15 @@
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="form-group">
                 <label class="form-label" for="images">
                     Seminar Poster
                 </label>
-                <div class="form-control-wrap">
+                <div class="">
                     <input
                             type="file"
-                            class="form-control @error('images') error @enderror"
+                            class=" @error('images') error @enderror"
                             id="images"
                             name="images"
                             value="{{ old('images') }}"

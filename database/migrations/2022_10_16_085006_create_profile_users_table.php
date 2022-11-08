@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('town')->nullable();
             $table->string('enterprise')->nullable();
-            $table->string('role_enterprise')->nullable();
+            $table->string('role')->nullable();
             $table->string('department')->nullable();
             $table->string('sector')->nullable();
             $table->timestamps();

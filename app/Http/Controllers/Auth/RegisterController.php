@@ -7,7 +7,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
-use App\Traits\RedirectRoute;
+use App\Traits\HasRoute;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -19,7 +19,7 @@ use Illuminate\Contracts\Validation\Validator as Validation;
 class RegisterController extends Controller
 {
     use RegistersUsers;
-    use RedirectRoute;
+    use HasRoute;
 
     protected string $redirectTo = RouteServiceProvider::HOME;
 

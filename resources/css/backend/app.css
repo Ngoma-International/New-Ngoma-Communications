@@ -1,2 +1,12 @@
 @import "dashlite.css"; /** 01. FONTS */
-@import '@toast-ui/editor/dist/toastui-editor.css';
+@import 'filepond/dist/filepond.min.css';
+@import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css";
+.ck-editor__editable[role="textbox"] {
+    /* editing area */
+    min-height: 200px;
+}
+.ck-content .image {
+    /* block images */
+    max-width: 80%;
+    margin: 20px auto;
+}

@@ -7,7 +7,7 @@ namespace App\Traits;
 use App\Enums\RoleEnum;
 use Illuminate\Support\Facades\Auth;
 
-trait RedirectRoute
+trait HasRoute
 {
     public function redirectTo(): string
     {

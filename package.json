@@ -16,10 +16,14 @@
         "postcss": "^8.1.14"
     },
     "dependencies": {
-        "@toast-ui/editor": "^3.2.1",
+        "@ckeditor/ckeditor5-editor-classic": "^35.3.0",
         "alpinejs": "^3.10.5",
         "axios": "^1.1.2",
+        "ckeditor4": "^4.20.0",
+        "filepond": "^4.30.4",
+        "filepond-plugin-image-preview": "^4.6.11",
         "laravel-mix-purgecss": "^6.0.0",
+        "simplemde": "^1.11.2",
         "sweetalert2": "^11.6.5"
     }
 }

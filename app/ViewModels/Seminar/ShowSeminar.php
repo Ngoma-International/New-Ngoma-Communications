@@ -13,6 +13,13 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\ViewModels\ViewModel;
 
+/**
+ * @template T
+ *
+ * @class ShowSeminar
+ *
+ * @author scotttresor <scotttresor@gmail.com>
+ */
 class ShowSeminar extends ViewModel
 {
     public string $indexUrl;
@@ -31,21 +38,31 @@ class ShowSeminar extends ViewModel
         return $this->seminar;
     }
 
-    public function getCategory(): Builder|Category|null
+    /**
+     * @return Category|null
+     */
+    public function getCategory(): Category|null
     {
         return Category::query()
             ->where('id', '=', $this->seminar->category_id)
             ->first();
     }
 
-    public function getAuthor(): Model|Builder|null
+
+    /**
+     * @return User|null
+     */
+    public function getAuthor(): User|null
     {
         return User::query()
             ->where('id', '=', $this->seminar->user_id)
             ->first();
     }
 
-    public function getSeminarType(): Model|Builder|null
+    /**
+     * @return SeminaryType|null
+     */
+    public function getSeminarType(): SeminaryType|null
     {
         return SeminaryType::query()
             ->where('id', '=', $this->seminar->seminary_type_id)

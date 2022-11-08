@@ -24,7 +24,8 @@ class UserRepository
     public function getElements(): Collection
     {
         return User::query()
-            ->select([
+            ->orderByDesc('created_at')
+            ->get([
                 'id',
                 'name',
                 'firstname',
@@ -32,9 +33,7 @@ class UserRepository
                 'phone_number',
                 'images',
                 'role_id'
-            ])
-            ->orderByDesc('created_at')
-            ->get();
+            ]);
     }
 
     public function store($attributes): Model

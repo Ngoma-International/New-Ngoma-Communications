@@ -42,6 +42,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('profile', ProfileBackendController::class)->name('profile.index');
         // upload images
         Route::post('profile/upload', UploadImageBackendController::class)->name('profile.upload');
+        Route::delete('profile/remove', [UploadImageBackendController::class, 'remove']);
         Route::put('profile/{user}/update', [ProfileBackendController::class, 'update'])->name('profile.update');
         // update password
         Route::get('profile/password', PasswordUpdateBackendController::class)->name('profile.password');

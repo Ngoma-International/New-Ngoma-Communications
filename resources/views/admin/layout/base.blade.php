@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="{{ asset('frontend/images/icon.png') }}">
     <title>Ngoma-Communication | @yield('title')</title>
     <link rel="stylesheet" href="{{ asset('backend/css/app.css') }}">
+    <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
     @yield('styles')
 </head>
 

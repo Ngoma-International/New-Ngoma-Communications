@@ -23,7 +23,8 @@ class SeminarRepository
     public function getSeminars(): Collection|array
     {
         return Seminar::query()
-            ->select([
+            ->orderByDesc('created_at')
+            ->get([
                 'id',
                 'name',
                 'date',
@@ -31,9 +32,7 @@ class SeminarRepository
                 'status',
                 'images',
                 'duration'
-            ])
-            ->orderByDesc('created_at')
-            ->get();
+            ]);
     }
 
     public function create(StoreSeminarRequest $request): Model|Builder

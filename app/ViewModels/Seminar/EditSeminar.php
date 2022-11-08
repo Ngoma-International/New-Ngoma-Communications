@@ -42,6 +42,9 @@ class EditSeminar extends ViewModel
             ->get();
     }
 
+    /**
+     * @return Collection|array
+     */
     public function facilitators(): Collection|array
     {
         return User::query()

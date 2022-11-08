@@ -4,14 +4,16 @@ declare(strict_types=1);
 
 namespace App\Console\Commands;
 
-use App\Events\AdminEvent;
 use App\Models\ProfileUser;
 use App\Models\User;
 use Illuminate\Console\Command;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
-use LaravelIdea\Helper\App\Models\_IH_User_QB;
 
+/**
+ * @class CreateAdminCommand
+ *
+ * @author scott-tresor <scotttresor@gmail.com>
+ */
 class CreateAdminCommand extends Command
 {
     protected $signature = 'ngoma:add-user';
