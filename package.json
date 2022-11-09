@@ -21,7 +21,11 @@
         "axios": "^1.1.2",
         "ckeditor4": "^4.20.0",
         "filepond": "^4.30.4",
+        "filepond-plugin-file-validate-type": "^1.2.8",
+        "filepond-plugin-image-crop": "^2.0.6",
+        "filepond-plugin-image-edit": "^1.6.3",
         "filepond-plugin-image-preview": "^4.6.11",
+        "filepond-plugin-image-resize": "^2.0.10",
         "laravel-mix-purgecss": "^6.0.0",
         "simplemde": "^1.11.2",
         "sweetalert2": "^11.6.5"

@@ -151,7 +151,7 @@
                             <div class="bq-note-item">
                                 <div class="bq-note-text">
                                     <p>
-                                        {{ $user->description }}
+                                        {!! $user->description !!}
                                     </p>
                                 </div>
                             </div>
@@ -166,13 +166,17 @@
                             <div class="profile-ud-item">
                                 <div class="profile-ud wider">
                                     <span class="profile-ud-label">Date de creation</span>
-                                    <span class="profile-ud-value">{{ $user->created_at->format('Y-m-d') }}</span>
+                                    <span class="profile-ud-value">
+                                        {{ $user->created_at->format('Y-m-d') }}
+                                    </span>
                                 </div>
                             </div>
                             <div class="profile-ud-item">
                                 <div class="profile-ud wider">
                                     <span class="profile-ud-label">Dernière mise à jour</span>
-                                    <span class="profile-ud-value">{{ $user->updated_at->format('Y-m-d') }}</span>
+                                    <span class="profile-ud-value">
+                                        {{ $user->updated_at->format('Y-m-d') }}
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -196,7 +200,6 @@
                 'Content-type': 'application/json; charset=UTF-8',
                 'x-csrf-token': _token,
             }
-
             await fetch('{{ route('admins.users.status') }}', {
                 method: "POST",
                 body: JSON.stringify(data),

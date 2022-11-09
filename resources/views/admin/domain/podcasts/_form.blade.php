@@ -20,22 +20,6 @@
 
         <div class="col-md-6">
             <div class="form-group">
-                <label class="form-label" for="thumbnail">Thumbnail</label>
-                <div class="form-control-wrap">
-                    <input
-                        type="file"
-                        class="form-control @error('thumbnail') error @enderror"
-                        id="thumbnail"
-                        name="thumbnail"
-                        value="{{ old('thumbnail') }}"
-                        placeholder="Enter thumbnail"
-                        required>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="form-group">
                 <label class="form-label" for="type_podcast_id">Type podcast</label>
                 <div class="form-control-wrap">
                     <select
@@ -93,11 +77,27 @@
 
         <div class="col-md-6">
             <div class="form-group">
+                <label class="form-label" for="thumbnail">Thumbnail</label>
+                <div class="form-control-wrap">
+                    <input
+                        type="file"
+                        class=" @error('thumbnail') error @enderror"
+                        id="thumbnail"
+                        name="thumbnail"
+                        value="{{ old('thumbnail') }}"
+                        placeholder="Enter thumbnail"
+                        required>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
                 <label class="form-label" for="images_video">Audio or Video</label>
                 <div class="form-control-wrap">
                     <input
                         type="file"
-                        class="form-control @error('images_video') error @enderror"
+                        class="@error('images_video') error @enderror"
                         id="images_video"
                         name="images_video"
                         value="{{ old('images_video') }}"

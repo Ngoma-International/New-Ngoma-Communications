@@ -196,7 +196,7 @@
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="form-group">
                 <label class="form-label" for="images">
                     Seminar Poster
@@ -204,12 +204,12 @@
                 <div class="form-control-wrap">
                     <input
                             type="file"
-                            class="form-control @error('images') error @enderror"
+                            class=" @error('images') error @enderror"
                             id="images"
                             name="images"
                             value="{{ old('images') }}"
                             placeholder="Enter images"
-                            required>
+                            >
                 </div>
             </div>
         </div>

@@ -24,9 +24,9 @@ return new class extends Migration
             $table->foreignIdFor(User::class)
                 ->constrained()
                 ->cascadeOnDelete();
-            $table->string('title')->unique();
+            $table->string('title')->unique()->nullable();
             $table->string('thumbnail')->nullable();
-            $table->string('images_video');
+            $table->string('images_video')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
         });

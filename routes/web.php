@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\Booking\BookingBackendController;
 use App\Http\Controllers\Admin\Booking\SearchBookingBackendController;
 use App\Http\Controllers\Admin\HomeBackendController;
 use App\Http\Controllers\Admin\Podcast\PodcastBackendController;
+use App\Http\Controllers\Admin\Podcast\UploadBackendController;
+use App\Http\Controllers\Admin\Podcast\UploadThumbnailBackendController;
 use App\Http\Controllers\Admin\Profile\PasswordUpdateBackendController;
 use App\Http\Controllers\Admin\Profile\ProfileBackendController;
 use App\Http\Controllers\Admin\Profile\UpdateProfileBackendController;
@@ -41,8 +43,8 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::get('profile', ProfileBackendController::class)->name('profile.index');
         // upload images
-        Route::post('profile/upload', UploadImageBackendController::class)->name('profile.upload');
-        Route::delete('profile/remove', [UploadImageBackendController::class, 'remove']);
+        Route::post('profile-upload', UploadImageBackendController::class)->name('profile.upload');
+        Route::delete('profile-remove', [UploadImageBackendController::class, 'remove']);
         Route::put('profile/{user}/update', [ProfileBackendController::class, 'update'])->name('profile.update');
         // update password
         Route::get('profile/password', PasswordUpdateBackendController::class)->name('profile.password');
@@ -53,6 +55,13 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::get('profile/security', [ProfileBackendController::class, 'security'])->name('profile.security');
         Route::get('profile/cursus', [ProfileBackendController::class, 'cursus'])->name('profile.cursus');
+
+        Route::post('upload-video', UploadBackendController::class);
+        Route::delete('remove-video', [UploadBackendController::class, 'destroy']);
+
+        Route::post('upload-thumbnail', UploadThumbnailBackendController::class);
+        Route::delete('remove-images', [UploadThumbnailBackendController::class, 'destroy']);
+
     });
 
 });

@@ -41,15 +41,6 @@ class StorePodcastRequest extends FormRequest
                 'string',
                 'max:255',
                 Rule::unique(Podcast::class, 'title')
-            ],
-            'thumbnail' => [
-                'required',
-                'image',
-                'mimes:jpeg,jpg,png'
-            ],
-            'images_video' => [
-                'required',
-                'file',
             ]
         ];
     }

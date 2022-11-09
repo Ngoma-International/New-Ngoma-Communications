@@ -40,6 +40,8 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Podcast whereUpdatedAt($value)
  * @method static Builder|Podcast whereUserId($value)
  * @mixin Eloquent
+ * @property int $status
+ * @method static Builder|Podcast whereStatus($value)
  */
 class Podcast extends Model
 {

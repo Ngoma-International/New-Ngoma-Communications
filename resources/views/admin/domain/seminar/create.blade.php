@@ -47,6 +47,7 @@
     <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
     <script src="https://unpkg.com/filepond-plugin-image-crop/dist/filepond-plugin-image-crop.js"></script>
     <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.3.0/super-build/ckeditor.js"></script>
     <script>
         const inputElement = document.querySelector('input[id="images"]');
         let _token = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
@@ -57,30 +58,18 @@
 
         pont.setOptions({
             server: {
-                url: '/admins/profile/upload',
+                url: '/admins/profile-upload',
                 headers: {
                     'X-CSRF-Token': _token
                 }
             }
         })
     </script>
-@endsection
-
-
-
-@section('scripts')
-    <script src="https://cdn.ckeditor.com/ckeditor5/35.3.0/super-build/ckeditor.js"></script>
     <script>
         CKEDITOR.ClassicEditor.create(document.querySelector('#description'), {
             toolbar: {
                 items: [
-                    'heading', '|',
-                    'bold', 'italic', 'strikethrough', 'underline', '|',
-                    'bulletedList', 'numberedList', 'todoList','alignment',  '|',
-                    'outdent', 'indent', 'undo', 'redo', '|',
-                    'fontSize', 'fontFamily','highlight', '|',
-                    'link', 'insertImage', 'blockQuote', 'insertTable', '|',
-                    'specialCharacters', 'horizontalLine', 'pageBreak', '|',
+                    'bold', 'italic', 'strikethrough', 'underline', 'bulletedList', 'numberedList','alignment', 'fontSize', 'fontFamily', 'link', 'insertImage', 'blockQuote', 'insertTable'
                 ],
                 shouldNotGroupWhenFull: true
             },
@@ -140,5 +129,4 @@
         });
     </script>
 @endsection
-
 

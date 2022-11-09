@@ -88,11 +88,6 @@ class StoreSeminarRequest extends FormRequest
                 'required',
                 'string',
                 'min:30'
-            ],
-            "images" => [
-                'required',
-                'image',
-                'mimes:jpeg,jpg,png'
             ]
         ];
     }

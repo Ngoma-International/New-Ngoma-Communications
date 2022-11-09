@@ -46,7 +46,7 @@ class UsersBackendController extends Controller
         return redirect()->route('admins.users.index');
     }
 
-    public function show(User $user): Factory|View|Application
+    public function show(User $user): Renderable
     {
         return view('admin.domain.users.show', compact('user'));
     }

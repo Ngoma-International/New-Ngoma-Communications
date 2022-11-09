@@ -87,11 +87,6 @@ class UpdateSeminarRequest extends FormRequest
                 'string',
                 'min:30'
             ],
-            "images" => [
-                'required',
-                'image',
-                'mimes:jpeg,jpg,png'
-            ]
         ];
     }
 }

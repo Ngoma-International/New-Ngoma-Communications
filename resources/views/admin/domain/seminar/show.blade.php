@@ -27,7 +27,7 @@
                                         class="custom-control-input"
                                         name="activated"
                                         data-id="{{ $viewModels->seminar->id }}"
-                                        {{ $viewModels->seminar->status ? "checked" : "" }}
+                                        @checked($viewModels->seminar->status )
                                         onclick="changeRoomStatus(event.target, {{ $viewModels->seminar->id }});"
                                         id="activated">
                                     <label class="custom-control-label" for="activated"></label>
@@ -126,7 +126,7 @@
                                 <div class="profile-ud wider">
                                     <span class="profile-ud-label">Seminar Prices</span>
                                     <span class="profile-ud-value">
-                                        $ {{ ucfirst($viewModels->seminar()->prices) ?? "" }}
+                                        $ {{ $viewModels->seminar()->prices ?? "" }}
                                     </span>
                                 </div>
                             </div>
@@ -134,7 +134,7 @@
                                 <div class="profile-ud wider">
                                     <span class="profile-ud-label">Seminar Start Time</span>
                                     <span class="profile-ud-value">
-                                        {{ ucfirst($viewModels->seminar()->start_time) ?? "" }}
+                                        {{ $viewModels->seminar()->start_time ?? "" }}
                                     </span>
                                 </div>
                             </div>
@@ -142,7 +142,7 @@
                                 <div class="profile-ud wider">
                                     <span class="profile-ud-label">Seminar End Time</span>
                                     <span class="profile-ud-value">
-                                        {{ ucfirst($viewModels->seminar()->end_time) ?? "" }}
+                                        {{ $viewModels->seminar()->end_time ?? "" }}
                                     </span>
                                 </div>
                             </div>
@@ -158,7 +158,7 @@
                                 <div class="profile-ud wider">
                                     <span class="profile-ud-label">Seminar Duration</span>
                                     <span class="profile-ud-value">
-                                        {{ ucfirst($viewModels->seminar()->duration) ?? "" }} Minutes
+                                        {{ $viewModels->seminar()->duration ?? "" }} Minutes
                                     </span>
                                 </div>
                             </div>
@@ -223,7 +223,7 @@
                             <div class="bq-note-item">
                                 <div class="bq-note-text">
                                     <p>
-                                        {{ $viewModels->seminar()->description }}
+                                        {!! $viewModels->seminar()->description !!}
                                     </p>
                                 </div>
                             </div>

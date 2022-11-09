@@ -57,13 +57,7 @@
         CKEDITOR.ClassicEditor.create(document.querySelector('#description'), {
             toolbar: {
                 items: [
-                    'heading', '|',
-                    'bold', 'italic', 'strikethrough', 'underline', '|',
-                    'bulletedList', 'numberedList', 'todoList','alignment',  '|',
-                    'outdent', 'indent', 'undo', 'redo', '|',
-                    'fontSize', 'fontFamily','highlight', '|',
-                    'link', 'insertImage', 'blockQuote', 'insertTable', '|',
-                    'specialCharacters', 'horizontalLine', 'pageBreak', '|',
+                    'bold', 'italic', 'strikethrough', 'underline', 'bulletedList', 'numberedList','alignment', 'fontSize', 'fontFamily', 'link', 'insertImage', 'blockQuote', 'insertTable'
                 ],
                 shouldNotGroupWhenFull: true
             },

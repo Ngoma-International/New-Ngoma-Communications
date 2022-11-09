@@ -8,8 +8,12 @@ use App\Events\CreatePodcastEvent;
 use App\Events\UpdatePodcastEvent;
 use App\Http\Requests\Backend\Podcast\StorePodcastRequest;
 use App\Http\Requests\Backend\Podcast\UpdatePodcastRequest;
+use App\Models\MediaTemporary;
 use App\Models\Podcast;
+use App\Models\TemporaryImage;
+use App\Models\User;
 use App\Traits\HasImagesUploads;
+use App\Traits\HasTemporary;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
@@ -17,6 +21,7 @@ use Illuminate\Database\Eloquent\Model;
 class PodcastBackendRepository
 {
     use HasImagesUploads;
+    use HasTemporary;
 
     public function getPodcasts(): Collection|array
     {
@@ -34,23 +39,21 @@ class PodcastBackendRepository
 
     public function store(StorePodcastRequest $request): Model|Builder
     {
-        $validate = $request->all();
-        $validate['thumbnail'] = $this->uploadThumbnail($request);
-        $validate['images_video'] = $this->uploadAudioOrVideo($request);
-        return Podcast::query()
+        $validate = $request->validated();
+        $podcast = Podcast::query()
             ->create($validate);
+        /**@var TemporaryImage|Model $temporary */
+        return $this->uploadMediaToPodcast($request, $podcast);
     }
 
     public function update(Podcast $podcast, UpdatePodcastRequest $request): Podcast
     {
-        $edit = $request->all();
-        $edit['thumbnail'] = $this->uploadThumbnail($request);
-        $edit['images_video'] = $this->uploadAudioOrVideo($request);
+        $edit = $request->validated();
         $podcast->thumbnail !== null ? $this->removePathOfThumbnail($podcast) : "";
         $podcast->images_video !== null ? $this->removeAudioOrVideo($podcast) : "";
         $podcast->update($edit);
-        //UpdatePodcastEvent::dispatch($podcast);
-        return $podcast;
+        /**@var TemporaryImage|Model $temporary */
+        return $this->uploadMediaToPodcast($request, $podcast);
     }
 
     public function delete(Podcast $podcast): Podcast
@@ -58,6 +61,24 @@ class PodcastBackendRepository
         $podcast->thumbnail !== null ? $this->removePathOfThumbnail($podcast) : "";
         $podcast->images_video !== null ? $this->removeAudioOrVideo($podcast) : "";
         $podcast->delete();
+        return $podcast;
+    }
+
+    private function getVideoTemporary(User $user): Model|Builder|null
+    {
+        return MediaTemporary::query()
+            ->where('user_id', '=', $user->id)
+            ->first();
+    }
+
+    private function uploadMediaToPodcast($request, Podcast $podcast): Podcast
+    {
+        $temporary = $this->getTemporaryImages($request->user());
+        $video = $this->getVideoTemporary($request->user());
+        $temporary !== null ? $podcast->update(['thumbnail' => $temporary->images]) : null;
+        $video !== null ? $podcast->update(['images_video' => $video->path]) : null;
+        $temporary->delete();
+        $video->delete();
         return $podcast;
     }
 }

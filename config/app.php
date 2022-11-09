@@ -170,6 +170,7 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Clockwork\Support\Laravel\ClockworkServiceProvider::class,
+        Owenoj\LaravelGetId3\GetId3ServiceProvider::class,
         /*
          * Application Services Providers...
          */
