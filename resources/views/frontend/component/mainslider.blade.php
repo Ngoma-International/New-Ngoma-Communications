@@ -11,14 +11,16 @@
                             <div class="slide_description_wrapper">
                                 <div class="slide_description">
                                     <div class="intro-layer to_animate" data-animation="fadeInUp">
-                                        <h1>Big Data <span class="thin">Finance</span></h1>
+                                        <h1>Ngoma<span class="thin">Communications</span></h1>
                                     </div>
                                     <div class="intro-layer to_animate" data-animation="fadeInUp">
-                                        <p>We provide consulting for banks, industries and businesses, both new ventures and investments in existing companies. </p>
+                                        <p>We Inspire and Equip Individuals and Organisations to Progress and Develop to Their Full Potential.</p>
                                     </div>
                                     <div class="intro-layer to_animate" data-animation="fadeInUp">
                                         <div class="slide_buttons">
-                                            <a href="#" class="theme_button inverse min_width_button">Request a quote</a>
+                                            <a
+                                                href="{{ route('podcast.index') }}"
+                                                class="theme_button inverse min_width_button">Visite ours Podcast</a>
                                         </div>
                                     </div>
                                 </div>

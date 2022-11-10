@@ -7,11 +7,10 @@
                         <img src="" alt="">
                     </div>
                     <ul class="topmargin_40 inline-content small-text darklinks">
-                        <li> <a href="#0" class="socicon-facebook text-icon">Facebook</a> </li>
-                        <li> <a href="#0" class="socicon-twitter text-icon">Twitter</a> </li>
-                        <li> <a href="#0" class="socicon-instagram text-icon">Instagram</a> </li>
-                        <li> <a href="#0" class="socicon-google text-icon">Google</a> </li>
-                        <li> <a href="#0" class="socicon-youtube text-icon">Youtube</a> </li>
+                        <li> <a href="https://www.facebook.com/NgoCommunications" class="socicon-facebook text-icon">Facebook</a> </li>
+                        <li><a href="https://www.linkedin.com/in/ngoma-communications/" class="socicon-linkedin text-icon">LinkedIn</a></li>
+                        <li> <a href="https://twitter.com/Ngomacomms" class="socicon-twitter text-icon">Twitter</a> </li>
+                        <li> <a href="https://www.instagram.com/Ngomacomms/" class="socicon-instagram text-icon">Instagram</a> </li>
                     </ul>
                 </div>
             </div>

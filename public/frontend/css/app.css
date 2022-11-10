@@ -411,7 +411,7 @@ hatch
 
 	transform-origin: 50% 100%;
 	-ms-transform-origin: 50% 100%;
-	-webkit-transform-origin: 50% 100%; 
+	-webkit-transform-origin: 50% 100%;
 
 	visibility: visible;
 }
@@ -437,7 +437,7 @@ hatch
 	}
 	100% {
 		transform: rotate(0deg);
-	}					
+	}
 }
 
 
@@ -460,7 +460,7 @@ bounce
 
 	transform-origin: 50% 100%;
 	-ms-transform-origin: 50% 100%;
-	-webkit-transform-origin: 50% 100%; 
+	-webkit-transform-origin: 50% 100%;
 }
 
 @keyframes bounce {
@@ -572,7 +572,7 @@ tossing
 	}
 	100% {
 		transform: rotate(-4deg);
-	}		
+	}
 }
 
 /*
@@ -593,7 +593,7 @@ pullUp
 
 	transform-origin: 50% 100%;
 	-ms-transform-origin: 50% 100%;
-	-webkit-transform-origin: 50% 100%; 
+	-webkit-transform-origin: 50% 100%;
 }
 
 @keyframes pullUp {
@@ -617,7 +617,7 @@ pullUp
 	}
 	100% {
 		transform: scaleY(1);
-	}			
+	}
 }
 
 /*
@@ -638,7 +638,7 @@ pullDown
 
 	transform-origin: 50% 0%;
 	-ms-transform-origin: 50% 0%;
-	-webkit-transform-origin: 50% 0%; 
+	-webkit-transform-origin: 50% 0%;
 }
 
 @keyframes pullDown {
@@ -662,7 +662,7 @@ pullDown
 	}
 	100% {
 		transform: scaleY(1);
-	}			
+	}
 }
 
 /*
@@ -683,7 +683,7 @@ stretchLeft
 
 	transform-origin: 100% 0%;
 	-ms-transform-origin: 100% 0%;
-	-webkit-transform-origin: 100% 0%; 
+	-webkit-transform-origin: 100% 0%;
 }
 
 @keyframes stretchLeft {
@@ -707,7 +707,7 @@ stretchLeft
 	}
 	100% {
 		transform: scaleX(1);
-	}			
+	}
 }
 
 /*
@@ -728,7 +728,7 @@ stretchRight
 
 	transform-origin: 0% 0%;
 	-ms-transform-origin: 0% 0%;
-	-webkit-transform-origin: 0% 0%; 
+	-webkit-transform-origin: 0% 0%;
 }
 
 @keyframes stretchRight {
@@ -752,7 +752,7 @@ stretchRight
 	}
 	100% {
 		transform: scaleX(1);
-	}			
+	}
 }
 
 
@@ -7121,10 +7121,6 @@ header [class*="col-"] {
 	opacity: 0.9;
 }
 
-.texture_bg {
-	background-image: url(../img/parallax/texture.html);
-}
-
 .muted_section:before {
 	background-color: rgba(39, 45, 52, 0.1);
 	opacity: 1;
@@ -7356,36 +7352,10 @@ h2.section_header + hr {
 	display: none;
 }
 
-.preloader_image {
-	width: 100px;
-	height: 100px;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	background: url(../img/preloader.gif) no-repeat 50% 50% transparent;
-	margin: -50px 0 0 -50px;
-}
-
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	.preloader_image {
-		background: url(../img/preloader.gif) no-repeat 50% 50% transparent;
-	}
-}
 
 /* animated elements */
 .to_animate {
 	visibility: hidden;
-}
-
-.no-js .to_animate,
-.lt-ie10 .to_animate,
-.lt-ie9 .to_animate {
-	visibility: visible;
-}
-
-.animated {
-  /*IE7 fix*/
-	visibility: visible !important;
 }
 
 /* boxed layout */

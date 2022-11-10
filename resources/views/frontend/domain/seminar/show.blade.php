@@ -24,6 +24,9 @@
                                 <span class="categories-links">
                                     <span>{{ ucfirst($viewModel->seminar->seminarType->name) ?? "" }}</span>
                                 </span>
+                                <span class="categories-links" style="background: #138f6e !important; color: white;">
+                                    <span>{{ ucfirst($viewModel->seminar->category->name) ?? "" }}</span>
+                                </span>
                                 <h3 class="entry-title big">
                                     <span>
                                         {{ ucfirst($viewModel->seminar->name) ?? "" }}
@@ -48,6 +51,9 @@
                                     </div>
                                 </div>
                             </header>
+                            <span class="categories-links" style="background: transparent !important;">
+                                    <span>{{ ucfirst($viewModel->seminar->category->name) ?? "" }}</span>
+                                </span>
                             <div class="entry-content">
                                 <span style="font-size: 16px; color: #0b1219;font-family: 'Roboto Medium',sans-serif; ">
                                     Attend

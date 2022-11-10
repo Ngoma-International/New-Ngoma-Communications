@@ -70,5 +70,5 @@ Route::get('podcast', PodcastFrontendController::class)->name('podcast.index');
 Route::get('seminar', SeminarFrontendController::class)->name('seminar.index');
 Route::get('seminar/{seminar}', [SeminarFrontendController::class, 'show'])->name('seminar.show');
 Route::get('member', MemberFrontendController::class)->name('membre.index');
-Route::get('about', fn() => view('frontend.domain.about.index'))->name('about.index');
+Route::get('about', [HomeFrontendController::class, 'about'])->name('about.index');
 Route::get('/', HomeFrontendController::class)->name('app.name');
