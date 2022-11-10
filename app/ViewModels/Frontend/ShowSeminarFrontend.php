@@ -10,7 +10,7 @@ use Spatie\ViewModels\ViewModel;
 class ShowSeminarFrontend extends ViewModel
 {
     public function __construct(
-        protected readonly Seminar $seminar
+        public readonly Seminar $seminar
     ) {
     }
 

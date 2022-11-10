@@ -90,7 +90,7 @@
                         <div class="nk-block-head">
                             <span class="title"></span>
                         </div>
-                        @if($postViewModel->getTypePodcast() === 1)
+                        @if($postViewModel->getTypePodcast()->id === 1)
                             <div class="col-lg-5 justify-content-center">
                                 <div class="video text-center">
                                     <audio controls>
@@ -105,12 +105,17 @@
                         @else
                             <div class="col-lg-5 justify-content-center">
                                 <div class="video text-center">
-                                    <video width="320" height="260" controls
-                                           poster="{{ asset('storage/'.$postViewModel->podcast->thumbnail) }}">
-                                        <source src="{{ asset('storage/'.$postViewModel->podcast->images_video) }}"
-                                                type="video/mp4">
-                                        <source src="{{ asset('storage/'.$postViewModel->podcast->images_video) }}"
-                                                type="video/ogg">
+                                    <video
+                                        width="320"
+                                        height="260"
+                                        controls
+                                        poster="{{ asset('storage/'.$postViewModel->podcast->thumbnail) }}">
+                                        <source
+                                            src="{{ asset('storage/'.$postViewModel->podcast->images_video) }}"
+                                            type="video/mp4">
+                                        <source
+                                            src="{{ asset('storage/'.$postViewModel->podcast->images_video) }}"
+                                            type="video/ogg">
                                     </video>
                                 </div>
                             </div>
@@ -144,4 +149,10 @@
             @endcomponent
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+
+    </script>
 @endsection

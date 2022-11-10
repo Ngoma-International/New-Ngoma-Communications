@@ -4,19 +4,19 @@
             <img
                 src="{{ asset('storage/'.$seminar->images) }}"
                 alt="">
-            <a href="" class="abs-link"></a>
+            <a href="{{ route('seminar.show', $seminar->id) }}" class="abs-link"></a>
         </div>
     </div>
     <div class="item-content">
         <div class="entry-meta small-text inline-content with_dividers highlight highlightlinks">
             <span>
                 By
-                <a href="">
+                <a href="{{ route('seminar.show', $seminar->id) }}">
                     {{ ucfirst($seminar->user->name) ?? "" }}
                 </a>
             </span>
             <span>
-                <a href="">
+                <a href="{{ route('seminar.show', $seminar->id) }}">
                     <time datetime="{{ $seminar->created_at }}">
                         {{ $seminar->created_at->diffForHumans() }}
                     </time>
@@ -24,7 +24,7 @@
             </span>
         </div>
         <h3 class="entry-title">
-            <a href="">{{ ucfirst($seminar->name) ?? "" }}</a>
+            <a href="{{ route('seminar.show', $seminar->id) }}">{{ ucfirst($seminar->name) ?? "" }}</a>
         </h3>
     </div>
 </article>
