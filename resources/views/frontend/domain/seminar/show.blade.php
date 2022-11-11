@@ -21,7 +21,10 @@
                         </div>
                         <div class="item-content">
                             <header class="entry-header">
-                                <span class="categories-links">
+                                <span class="categories-links small" style="background: #2c3782 !important; color: white;">
+                                    <span>{{ $viewModel->seminar->created_at->diffForHumans() ?? "" }}</span>
+                                </span>
+                                <span class="categories-links small">
                                     <span>{{ ucfirst($viewModel->seminar->seminarType->name) ?? "" }}</span>
                                 </span>
                                 <span class="categories-links" style="background: #138f6e !important; color: white;">
@@ -32,41 +35,69 @@
                                         {{ ucfirst($viewModel->seminar->name) ?? "" }}
                                     </span>
                                 </h3>
-                                <div class="entry-meta content-justify v-spacing small-text big-spacing">
-                                    <div>
-                                        <div class="inline-content highlightlinks">
-                                            <span>
-                                                <i class="tmi-user grey"></i>
-                                                <a>{{ ucfirst($viewModel->seminar->user->name) ?? "" }}</a>
-                                            </span>
-                                            <span>
-                                                <i class="tmi-calendar grey"></i>
-                                                <a href="">
-                                                    <time datetime="{{ $viewModel->seminar->created_at->diffForHumans() ?? "" }}">
-                                                        {{ $viewModel->seminar->created_at->diffForHumans() ?? "" }}
-                                                    </time>
-                                                </a>
-                                            </span>
-                                        </div>
+                            </header>
+                            <div class="entry-content">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul class="list2 grey">
+                                            <li>
+                                                Pays : {{ ucfirst($viewModel->seminar->country) ?? "" }}
+                                            </li>
+                                            <li>
+                                                Date de l'evenement : {{ ucfirst($viewModel->seminar->date) ?? "" }}
+                                            </li>
+                                            <li>
+                                                Heure de fin : {{ $viewModel->seminar->end_time ?? "" }}
+                                            </li>
+                                            <li>
+                                                Adresse : {{ ucfirst($viewModel->seminar->address_seminar) ?? "" }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="list2 grey">
+                                            <li>
+                                                Ville : {{ ucfirst($viewModel->seminar->city) ?? "" }}
+                                            </li>
+                                            <li>
+                                                Heure de debut : {{ $viewModel->seminar->end_time ?? "" }}
+                                            </li>
+                                            <li>
+                                                Adresse : {{ ucfirst($viewModel->seminar->address_seminar) ?? "" }}
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
-                            </header>
-                            <span class="categories-links" style="background: transparent !important;">
-                                    <span>{{ ucfirst($viewModel->seminar->category->name) ?? "" }}</span>
-                                </span>
-                            <div class="entry-content">
-                                <span style="font-size: 16px; color: #0b1219;font-family: 'Roboto Medium',sans-serif; ">
-                                    Attend
-                                </span>
-                                <p>
-                                    {{ ucfirst($viewModel->seminar->attend) ?? "" }}
-                                </p>
+                                <h6 class="topmargin_0">Description</h6>
                                 <p>
                                     {!! $viewModel->seminar->description ?? "" !!}
                                 </p>
                             </div>
                         </div>
                     </article>
+                    <div class="comments-area">
+                        <div class="comment-respond" id="respond">
+                            <form class="comment-form columns_padding_10" method="post" action="">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group margin_0">
+                                            <label for="author">Name<span class="required">*</span></label>
+                                            <input
+                                                type="text"
+                                                value=""
+                                                name="author"
+                                                id="author"
+                                                class="form-control"
+                                                placeholder="Name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-submit topmargin_35">
+                                    <button type="submit" class="theme_button min_width_button">Reserver</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

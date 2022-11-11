@@ -13,12 +13,16 @@ use App\Services\MediaMetaData;
 use App\Traits\HasImagesUploads;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class UploadBackendController extends Controller
 {
     use HasImagesUploads;
 
-    public function __invoke(UploadVideoOrAudioRequest $request, ExtractMetaDataRepository $metaData): Builder|Model
+    public function __invoke(
+        UploadVideoOrAudioRequest $request,
+        ExtractMetaDataRepository $metaData
+    ): Builder|Model
     {
         $temporary = $request->validated();
         $media = $metaData->extracts($temporary['images_video']);
@@ -29,8 +33,14 @@ class UploadBackendController extends Controller
             ->create($temporary);
     }
 
-    public function destroy()
+    public function destroy(Request $request): Model|Builder|MediaTemporary|null
     {
-
+        $temporary = json_decode($request->getContent());
+        $media = MediaTemporary::query()
+            ->where('id', '=', $temporary->id)
+            ->first();
+        $this->removeAudioOrVideo($media);
+        $media->delete();
+        return $media;
     }
 }
