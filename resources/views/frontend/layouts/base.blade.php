@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" xmlns:livewire="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -13,16 +13,18 @@
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('frontend/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/fonts.css') }}">
+    <livewire:styles />
 </head>
 <body>
-<div id="canvas">
-    <div id="box_wrapper">
-        @include('frontend.shared.header')
-        @yield('content')
-        @include('frontend.shared.footer')
+    <div id="canvas">
+        <div id="box_wrapper">
+            @include('frontend.shared.header')
+            @yield('content')
+            @include('frontend.shared.footer')
+        </div>
     </div>
-</div>
     <script src="{{ asset('assets/js/compressed.js') }}"></script>
     <script src="{{ asset('frontend/js/app.js') }}"></script>
+    <livewire:scripts />
 </body>
 </html>

@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('phone_number')->nullable();
             $table->boolean('status')->default(0);
             $table->date('booking_at')->nullable();
-            $table->unsignedBigInteger('transaction_code')->unique();
+            $table->unsignedBigInteger('transaction_code')->default(0);
             $table->unsignedInteger('ticket_number')->default(0);
             $table->timestamps();
         });

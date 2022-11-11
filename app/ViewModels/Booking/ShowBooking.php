@@ -17,8 +17,8 @@ class ShowBooking extends ViewModel
 
     public function __construct(public Booking $booking)
     {
-        $this->indexUrl = action([BookingBackendController::class, '__invoke']);
-        $this->deleteUrl = action([BookingBackendController::class, 'delete'], $this->booking);
+        $this->indexUrl = action([BookingBackendController::class]);
+        $this->deleteUrl = action([BookingBackendController::class, 'destroy'], $this->booking);
     }
 
 

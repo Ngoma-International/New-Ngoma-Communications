@@ -24,8 +24,13 @@ class BookingBackendController extends Controller
 
     public function show(Booking $booking): Factory|View|Application
     {
-        $viewModels = new ShowBooking($booking);
+        $viewModel = new ShowBooking($booking);
 
-        return view('admin.domain.booking.show', compact('viewModels'));
+        return view('admin.domain.booking.show', compact('viewModel'));
+    }
+
+    public function destroy(Booking $booking)
+    {
+
     }
 }

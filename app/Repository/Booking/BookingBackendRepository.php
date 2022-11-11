@@ -14,12 +14,6 @@ class BookingBackendRepository
         return Booking::query()
             ->with('seminar')
             ->orderByDesc('created_at')
-            ->get([
-                'id',
-                'seminar_id',
-                'username',
-                'ticket_number',
-                'status'
-            ]);
+            ->get();
     }
 }

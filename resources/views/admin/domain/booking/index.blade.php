@@ -51,13 +51,13 @@
                                 <td class="nk-tb-col tb-col-sm">
                                     <span class="tb-product text-center">
                                         <img
-                                                src="{{ $booking->seminar->renderThumbnail() }}"
+                                                src="{{ $booking->seminar->renderPoster() }}"
                                                 alt="{{ $booking->title }}"
                                                 class="thumb">
                                     </span>
                                 </td>
                                 <td class="nk-tb-col tb-col-md">
-                                    <span>{{ ucfirst($booking->seminar->title) ?? "" }}</span>
+                                    <span>{{ ucfirst($booking->seminar->name) ?? "" }}</span>
                                 </td>
                                 <td class="nk-tb-col tb-col-md">
                                     <span>{{ ucfirst($booking->seminar->date) ?? "" }}</span>

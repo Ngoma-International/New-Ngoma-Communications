@@ -41,26 +41,26 @@
                                     <div class="col-md-6">
                                         <ul class="list2 grey">
                                             <li>
-                                                Pays : {{ ucfirst($viewModel->seminar->country) ?? "" }}
-                                            </li>
-                                            <li>
                                                 Date de l'evenement : {{ ucfirst($viewModel->seminar->date) ?? "" }}
                                             </li>
                                             <li>
-                                                Heure de fin : {{ $viewModel->seminar->end_time ?? "" }}
+                                                Heure de debut : {{ $viewModel->seminar->renderStartTimeFormat() ?? "" }}
                                             </li>
                                             <li>
-                                                Adresse : {{ ucfirst($viewModel->seminar->address_seminar) ?? "" }}
+                                                Heure de fin : {{ $viewModel->seminar->renderEndTimeFormat() ?? "" }}
+                                            </li>
+                                            <li>
+                                                Prix de billet : ${{ $viewModel->seminar->prices ?? "" }}
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="col-md-6">
                                         <ul class="list2 grey">
                                             <li>
-                                                Ville : {{ ucfirst($viewModel->seminar->city) ?? "" }}
+                                                Pays : {{ ucfirst($viewModel->seminar->country) ?? "" }}
                                             </li>
                                             <li>
-                                                Heure de debut : {{ $viewModel->seminar->end_time ?? "" }}
+                                                Ville : {{ ucfirst($viewModel->seminar->city) ?? "" }}
                                             </li>
                                             <li>
                                                 Adresse : {{ ucfirst($viewModel->seminar->address_seminar) ?? "" }}
@@ -68,6 +68,14 @@
                                         </ul>
                                     </div>
                                 </div>
+                                <h6 class="topmargin_0">Pour Participer</h6>
+                                <p>
+                                    {{ $viewModel->seminar->attend ?? "" }}
+                                </p>
+                                <h6 class="topmargin_0">Vue d'ensemble</h6>
+                                <p>
+                                    {{ $viewModel->seminar->overview ?? "" }}
+                                </p>
                                 <h6 class="topmargin_0">Description</h6>
                                 <p>
                                     {!! $viewModel->seminar->description ?? "" !!}
@@ -77,25 +85,7 @@
                     </article>
                     <div class="comments-area">
                         <div class="comment-respond" id="respond">
-                            <form class="comment-form columns_padding_10" method="post" action="">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6">
-                                        <div class="form-group margin_0">
-                                            <label for="author">Name<span class="required">*</span></label>
-                                            <input
-                                                type="text"
-                                                value=""
-                                                name="author"
-                                                id="author"
-                                                class="form-control"
-                                                placeholder="Name">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-submit topmargin_35">
-                                    <button type="submit" class="theme_button min_width_button">Reserver</button>
-                                </div>
-                            </form>
+                            <livewire:frontend.store-booking :seminar="$viewModel->seminar->id" />
                         </div>
                     </div>
                 </div>

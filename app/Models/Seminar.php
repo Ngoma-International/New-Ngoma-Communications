@@ -92,6 +92,17 @@ class Seminar extends Model
         'status'
     ];
 
+    public function renderStartTimeFormat(): string
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $this->start_time)->format('H:i');
+    }
+
+    public function renderEndTimeFormat(): string
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $this->end_time)->format('H:i');
+    }
+
+
     public function renderPoster(): string
     {
         return asset('storage/' . $this->images);
