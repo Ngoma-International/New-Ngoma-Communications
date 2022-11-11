@@ -5,23 +5,30 @@ declare(strict_types=1);
 namespace App\ViewModels\Frontend;
 
 use App\Enums\SeminarEnum;
+use App\Models\Podcast;
 use App\Models\PodcastOffering;
-use App\Models\Seminar;
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Spatie\ViewModels\ViewModel;
 
-class HomeViewModel extends ViewModel
+class PodcastViewModel extends ViewModel
 {
     public function __construct()
     {
     }
 
-    public function seminars(): LengthAwarePaginator
+    public function podcasts(): LengthAwarePaginator
     {
-        return Seminar::query()
+        return Podcast::query()
             ->where('status', '=', SeminarEnum::SEMINAR_CONFIRMED)
             ->inRandomOrder()
             ->paginate();
+    }
+
+    public function offerings(): array|Collection|\Illuminate\Support\Collection
+    {
+        return PodcastOffering::query()
+            ->orderByDesc('created_at')
+            ->get();
     }
 }

@@ -10,19 +10,16 @@
             <div class="row flex-wrap v-content-equalize">
                 <div class="col-xs-12 col-sm-6 col-md-4 text-center text-sm-left">
                     <div class="with_padding big-padding bg_teaser after_cover gradient_bg_color1">
-                        <img src="" alt="">
                         <h3 class="topmargin_0">Leading Youself<br> <span class="thin big">Services</span></h3>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4 text-center text-sm-left">
                     <div class="with_padding big-padding bg_teaser after_cover gradient_bg_color2">
-                        <img src="" alt="">
                         <h3 class="topmargin_0">Leading People<br> <span class="thin big">Solutions</span></h3>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4 text-center text-sm-left">
                     <div class="with_padding big-padding bg_teaser after_cover gradient_bg_color3">
-                        <img src="" alt="">
                         <h3 class="topmargin_0">Leading Organisations<br> <span class="thin big">Research</span></h3>
                     </div>
                 </div>

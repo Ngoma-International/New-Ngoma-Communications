@@ -18,9 +18,7 @@
                                     </div>
                                     <div class="intro-layer to_animate" data-animation="fadeInUp">
                                         <div class="slide_buttons">
-                                            <a
-                                                href="{{ route('podcast.index') }}"
-                                                class="theme_button inverse min_width_button">Visite ours Podcast</a>
+                                            <a href="{{ route('seminar.index') }}" class="theme_button inverse min_width_button">View Ours Seminar</a>
                                         </div>
                                     </div>
                                 </div>

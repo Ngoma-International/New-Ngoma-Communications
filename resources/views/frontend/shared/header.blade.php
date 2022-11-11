@@ -97,7 +97,7 @@
         </header>
     @endif
 
-    @if(Request::url() === route('app.name'))
+    @if(Request::url() == route('app.name'))
         @include('frontend.component.mainslider')
     @endif
 </div>
