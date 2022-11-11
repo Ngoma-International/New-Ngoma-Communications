@@ -1,5 +1,4 @@
-<form action="{{ route('admins.podcasts.store') }}" method="post" class="form-validate mt-2"
-      enctype="multipart/form-data">
+<form action="{{ route('admins.podcasts.store') }}" method="post" class="form-validate mt-2" enctype="multipart/form-data">
     @csrf
     <div class="row g-gs">
         <div class="col-md-6">
@@ -109,8 +108,8 @@
 
         <div class="col-md-12">
             <div class="form-group text-center">
-                <button type="submit" class="btn btn-md btn-primary">
-                    Save
+                <button type="submit" class="btn btn-md btn-outline-primary">
+                    Store Podcast
                 </button>
             </div>
         </div>

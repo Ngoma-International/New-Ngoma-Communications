@@ -18,15 +18,7 @@
             </div>
         </div>
     </section>
-    <section id="team" class="ds section_padding_top_90 section_padding_bottom_90">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <h2 class="section_header">Our Team</h2>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <section class="ls section_padding_bottom_130 fluid_padding_0 columns_padding_0 columns_margin_0">
         <div class="container-fluid">
             <div class="row">

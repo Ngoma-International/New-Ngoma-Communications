@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\Booking\BookingBackendController;
 use App\Http\Controllers\Admin\Booking\SearchBookingBackendController;
 use App\Http\Controllers\Admin\HomeBackendController;
 use App\Http\Controllers\Admin\Podcast\PodcastBackendController;
+use App\Http\Controllers\Admin\Podcast\StatusPodcastBackendController;
 use App\Http\Controllers\Admin\Podcast\UploadBackendController;
 use App\Http\Controllers\Admin\Podcast\UploadThumbnailBackendController;
 use App\Http\Controllers\Admin\Profile\PasswordUpdateBackendController;
@@ -34,6 +35,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('users', UsersBackendController::class);
         Route::post('user-status', StatusUserBackendController::class)->name('users.status');
         Route::resource('podcasts', PodcastBackendController::class);
+        Route::post('podcast-status', StatusPodcastBackendController::class)->name('podcast.status');
         Route::resource('seminar', SeminarBackendController::class);
         Route::post('seminar-status', SeminarStatusBackendController::class);
         Route::get('bookings', BookingBackendController::class)->name('booking.index');
@@ -42,9 +44,6 @@ Route::group(['middleware' => ['auth']], function () {
 
 
         Route::get('profile', ProfileBackendController::class)->name('profile.index');
-        // upload images
-        Route::post('profile-upload', UploadImageBackendController::class)->name('profile.upload');
-        Route::delete('profile-remove', [UploadImageBackendController::class, 'remove']);
         Route::put('profile/{user}/update', [ProfileBackendController::class, 'update'])->name('profile.update');
         // update password
         Route::get('profile/password', PasswordUpdateBackendController::class)->name('profile.password');
@@ -55,15 +54,16 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::get('profile/security', [ProfileBackendController::class, 'security'])->name('profile.security');
         Route::get('profile/cursus', [ProfileBackendController::class, 'cursus'])->name('profile.cursus');
-
+        //upload audio
+        Route::post('profile-upload', UploadImageBackendController::class);
+        Route::delete('profile-remove', [UploadImageBackendController::class, 'destroy']);
+        //upload video
         Route::post('upload-video', UploadBackendController::class);
         Route::delete('remove-video', [UploadBackendController::class, 'destroy']);
-
+        //upload thumbnail
         Route::post('upload-thumbnail', UploadThumbnailBackendController::class);
-        Route::delete('remove-images', [UploadThumbnailBackendController::class, 'destroy']);
-
+        Route::delete('remove-thumbnail', [UploadThumbnailBackendController::class, 'destroy']);
     });
-
 });
 
 Route::get('podcast', PodcastFrontendController::class)->name('podcast.index');

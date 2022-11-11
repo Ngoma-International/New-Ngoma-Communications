@@ -8,6 +8,7 @@ use App\Enums\SeminarEnum;
 use App\Models\PodcastOffering;
 use App\Models\Seminar;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Spatie\ViewModels\ViewModel;
 
@@ -17,11 +18,12 @@ class HomeViewModel extends ViewModel
     {
     }
 
-    public function seminars(): LengthAwarePaginator
+    public function seminars(): array|Collection|\Illuminate\Support\Collection
     {
         return Seminar::query()
             ->where('status', '=', SeminarEnum::SEMINAR_CONFIRMED)
             ->inRandomOrder()
-            ->paginate();
+            ->limit(6)
+            ->get();
     }
 }

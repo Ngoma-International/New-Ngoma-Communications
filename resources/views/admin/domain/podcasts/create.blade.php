@@ -14,10 +14,9 @@
 
                 @component('admin.shared.banner')
                     <div class="nk-block-head-content">
-                        <a href="{{ $viewModels->indexUrl }}"
-                           class="btn btn-outline-light btn-sm bg-white d-none d-sm-inline-flex">
-                            <em class="icon ni ni-arrow-left"></em>
-                            <span>Back</span>
+                        <a href="{{ $viewModels->indexUrl }}" class="btn btn-outline-primary btn-sm">
+                            <em class="icon ni ni-arrow-long-left"></em>
+                            <span>All Podcasts</span>
                         </a>
                     </div>
                 @endcomponent
@@ -35,41 +34,3 @@
         @endcomponent
     </div>
 @endsection
-
-
-@section('styles')
-    <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet"/>
-    <link
-        href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
-        rel="stylesheet"
-    />
-@endsection
-
-@section('scripts')
-    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-image-crop/dist/filepond-plugin-image-crop.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
-    <script>
-        const inputElement = document.querySelector('input[id="images_video"]');
-        let _token = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-
-        const pont = FilePond.create(inputElement, {
-            labelFileLoading: 'Chargement ...',
-            allowImageCrop: true,
-            acceptedFileTypes: ['image/*'],
-        });
-
-        FilePond.registerPlugin(FilePondPluginImagePreview, FilePondPluginImageCrop);
-
-        pont.setOptions({
-            server: {
-                url: '/admins/upload-video',
-                revert: '/admins/remove-video',
-                headers: {
-                    'X-CSRF-Token': _token
-                }
-            }
-        })
-    </script>
-@endsection
-

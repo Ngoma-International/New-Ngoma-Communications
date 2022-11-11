@@ -27,20 +27,37 @@
         </div>
     </section>
 
-    <section class="ls section_padding_top_130 section_padding_bottom_130">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="isotope_container isotope row masonry-layout columns_margin_bottom_20">
-                        @forelse($viewModel->seminars() as $seminar)
-                            <div class="isotope-item col-xs-12 col-sm-6 col-md-4">
-                                @include('frontend.component._seminar', with($seminar))
-                            </div>
-                        @empty
-                        @endforelse
+    @if($viewModel->seminars()->count() > 0)
+        <section class="ls section_padding_top_130 section_padding_bottom_130">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="isotope_container isotope row masonry-layout columns_margin_bottom_20">
+                            @forelse($viewModel->seminars() as $seminar)
+                                <div class="isotope-item col-xs-12 col-sm-6 col-md-4">
+                                    @include('frontend.component._seminar', with($seminar))
+                                </div>
+                            @empty
+                            @endforelse
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @else
+        <section class="ls ms section_404 section_padding_top_130 section_padding_bottom_130">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center">
+                        <h1>Oops, Content Not</h1>
+                        <p>
+                            <a href="{{ route('app.name') }}" class="theme_button min_width_button">
+                                Refresh page
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
 @endsection

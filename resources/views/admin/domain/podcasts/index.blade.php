@@ -15,7 +15,7 @@
 
                     @component('admin.shared.banner')
                         <li class="preview-item">
-                            <a href="{{ route('admins.podcasts.create') }}" class="btn btn-dim btn-primary btn-sm">
+                            <a href="{{ route('admins.podcasts.create') }}" class="btn btn-outline-primary btn-sm">
                                 <em class="icon ni ni-plus mr-1"></em> Create
                             </a>
                         </li>
@@ -41,6 +41,9 @@
                             </th>
                             <th class="nk-tb-col tb-col-md">
                                 <span class="sub-text">Podcast Offering</span>
+                            </th>
+                            <th class="nk-tb-col tb-col-md">
+                                <span class="sub-text">Status</span>
                             </th>
                             <th class="nk-tb-col">
                                 <span class="sub-text">Actions</span>
@@ -70,11 +73,18 @@
                                 <td class="nk-tb-col tb-col-md">
                                     <span>{{ ucfirst($podcast->offering->name) ?? "" }}</span>
                                 </td>
+                                <td class="nk-tb-col tb-col-md">
+                                    @if($podcast->status)
+                                        <span class="badge badge-success ms-0">Activée</span>
+                                    @else
+                                        <span class="badge badge-danger ms-0">Désactivée</span>
+                                    @endif
+                                </td>
                                 <td class="nk-tb-col">
                                     <div class="tb-lead justify-content-center">
                                         <a
                                             href="{{ route('admins.podcasts.show', $podcast->id) }}"
-                                            class="btn btn-dim btn-primary btn-sm"
+                                            class="btn btn-outline-primary btn-sm"
                                             title="{{ $podcast->title }}">
                                             <em class="icon ni ni-eye-alt-fill"></em>
                                             <span>Detail podcast</span>

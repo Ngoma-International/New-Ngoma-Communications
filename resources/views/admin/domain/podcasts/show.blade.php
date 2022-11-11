@@ -10,20 +10,33 @@
             <div class="nk-block-head nk-block-head-sm">
                 <div class="nk-block-between">
                     @component('admin.shared.content')
-                        {{ ucfirst($postViewModel->podcast->title) ?? "" }}
+                        Detail Podcast
                     @endcomponent
 
                     @component('admin.shared.banner')
                         <li class="preview-item">
-                            <a class="btn btn-primary btn-dim btn-sm" href="{{ $postViewModel->indexUrl }}">
+                            <a class="btn btn-outline-primary btn-sm" href="{{ $postViewModel->indexUrl }}">
                                 <em class="icon ni ni-arrow-long-left"></em>
                                 <span>Tout les podcasts</span>
                             </a>
                         </li>
+                            <li class="preview-item">
+                                <div class="custom-control custom-control-md custom-switch">
+                                    <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        name="activated"
+                                        data-id="{{ $postViewModel->podcast->id }}"
+                                        @checked($postViewModel->podcast->status )
+                                        onclick="changePodcastStatus(event.target, {{ $postViewModel->podcast->id }});"
+                                        id="activated">
+                                    <label class="custom-control-label" for="activated"></label>
+                                </div>
+                            </li>
                         <li class="preview-item">
                             <a
                                     href="{{ $postViewModel->editUrl }}"
-                                    class="btn btn-dim btn-primary btn-sm">
+                                    class="btn btn-outline-primary btn-sm">
                                 <em class="icon ni ni-edit mr-1"></em>
                                 Editer
                             </a>
@@ -37,7 +50,7 @@
                             >
                                 @method('DELETE')
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <button type="submit" class="btn btn-dim btn-danger btn-sm">
+                                <button type="submit" class="btn btn-outline-danger btn-sm">
                                     <em class="icon ni ni-trash-empty-fill"></em>
                                     Supprimer le Podcast
                                 </button>
@@ -83,6 +96,18 @@
                                     <span class="profile-ud-value">{{ ucfirst($postViewModel->getPodcastOffering()->name) ?? "" }}</span>
                                 </div>
                             </div>
+                            <div class="profile-ud-item">
+                                <div class="profile-ud wider">
+                                    <span class="profile-ud-label">Status Podcast</span>
+                                    <span class="profile-ud-value">
+                                        @if($postViewModel->podcast()->status)
+                                            <span class="badge badge-success ms-0">Activée</span>
+                                        @else
+                                            <span class="badge badge-danger ms-0">Désactivée</span>
+                                        @endif
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="nk-divider divider md"></div>
@@ -94,10 +119,12 @@
                             <div class="col-lg-5 justify-content-center">
                                 <div class="video text-center">
                                     <audio controls>
-                                        <source src="{{ asset('storage/'.$postViewModel->podcast->images_video) }}"
-                                                type="audio/ogg">
-                                        <source src="{{ asset('storage/'.$postViewModel->podcast->images_video) }}"
-                                                type="audio/mpeg">
+                                        <source
+                                            src="{{ asset('storage/'.$postViewModel->podcast->images_video) }}"
+                                            type="audio/ogg">
+                                        <source
+                                            src="{{ asset('storage/'.$postViewModel->podcast->images_video) }}"
+                                            type="audio/mpeg">
                                     </audio>
                                 </div>
                             </div>
@@ -106,8 +133,8 @@
                             <div class="col-lg-5 justify-content-center">
                                 <div class="video text-center">
                                     <video
-                                        width="320"
-                                        height="260"
+                                        width="350"
+                                        height="270"
                                         controls
                                         poster="{{ asset('storage/'.$postViewModel->podcast->thumbnail) }}">
                                         <source
@@ -151,8 +178,35 @@
     </div>
 @endsection
 
+
 @section('scripts')
     <script>
+        window.changePodcastStatus = async (_this, id) => {
+            const status = $(_this).prop('checked') === true ? 1 : 0;
+            let _token = $('meta[name="csrf-token"]').attr('content');
+            let data = {
+                status: status,
+                podcast: id
+            }
+            let headers = {
+                'Content-type': 'application/json; charset=UTF-8',
+                'x-csrf-token': _token,
+            }
 
+            await fetch('/admins/podcast-status', {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: headers
+            })
+                .then(response => response.json())
+                .then((data) => {
+                    var result = Object.values(data)
+
+                    Swal.fire(`Status ${result[1].title}`, `${result[0]}`, 'success')
+                })
+                .catch((error) => {
+                    Swal.fire("Erreur ", "Une erreur a ete observer lors de l'execution de cette tache", "error")
+                })
+        }
     </script>
 @endsection

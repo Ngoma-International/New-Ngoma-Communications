@@ -89,7 +89,7 @@
                                 <td class="nk-tb-col">
                                     <div class="tb-lead justify-content-center">
                                         <a href="{{ route('admins.seminar.show', $seminar->id) }}"
-                                           class="btn btn-dim btn-primary btn-sm" title="">
+                                           class="btn btn-outline-primary btn-sm" title="">
                                             <em class="icon ni ni-eye-alt-fill"></em>
                                             <span>Detail seminar</span>
                                         </a>

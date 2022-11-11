@@ -3200,6 +3200,71 @@ var toast = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./resources/js/backend/util/VideoUpload.js":
+/*!**************************************************!*\
+  !*** ./resources/js/backend/util/VideoUpload.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "VideoUpload": () => (/* binding */ VideoUpload)
+/* harmony export */ });
+/* harmony import */ var filepond__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! filepond */ "./node_modules/filepond/dist/filepond.js");
+/* harmony import */ var filepond__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(filepond__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var filepond_plugin_image_preview__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! filepond-plugin-image-preview */ "./node_modules/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js");
+/* harmony import */ var filepond_plugin_image_preview__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(filepond_plugin_image_preview__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+/**
+ * @param elements
+ */
+
+var VideoUpload = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(elements) {
+    var _token, pont;
+
+    return _regeneratorRuntime().wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            filepond__WEBPACK_IMPORTED_MODULE_0__.registerPlugin((filepond_plugin_image_preview__WEBPACK_IMPORTED_MODULE_1___default()));
+            _token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+            pont = filepond__WEBPACK_IMPORTED_MODULE_0__.create(elements);
+            pont.setOptions({
+              server: {
+                url: '/admins/upload-video',
+                revert: '/admins/remove-video',
+                headers: {
+                  'X-CSRF-Token': _token
+                }
+              }
+            });
+
+          case 4:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function VideoUpload(_x) {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+/***/ }),
+
 /***/ "./resources/js/backend/util/upload.js":
 /*!*********************************************!*\
   !*** ./resources/js/backend/util/upload.js ***!
@@ -3219,19 +3284,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var filepond_plugin_image_preview__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(filepond_plugin_image_preview__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var filepond_plugin_image_resize__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! filepond-plugin-image-resize */ "./node_modules/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js");
 /* harmony import */ var filepond_plugin_image_resize__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(filepond_plugin_image_resize__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var filepond_plugin_image_edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! filepond-plugin-image-edit */ "./node_modules/filepond-plugin-image-edit/dist/filepond-plugin-image-edit.js");
-/* harmony import */ var filepond_plugin_image_edit__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(filepond_plugin_image_edit__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var filepond_plugin_file_validate_type__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! filepond-plugin-file-validate-type */ "./node_modules/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js");
-/* harmony import */ var filepond_plugin_file_validate_type__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(filepond_plugin_file_validate_type__WEBPACK_IMPORTED_MODULE_5__);
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-
-function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-
+/* harmony import */ var filepond_plugin_file_validate_type__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! filepond-plugin-file-validate-type */ "./node_modules/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js");
+/* harmony import */ var filepond_plugin_file_validate_type__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(filepond_plugin_file_validate_type__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
@@ -3241,45 +3295,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
  * @param elements
  */
 
-var uploadAudio = /*#__PURE__*/function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(elements) {
-    var _token, pond;
+var uploadAudio = function uploadAudio(elements) {
+  filepond__WEBPACK_IMPORTED_MODULE_0__.registerPlugin((filepond_plugin_image_preview__WEBPACK_IMPORTED_MODULE_2___default()), (filepond_plugin_image_crop__WEBPACK_IMPORTED_MODULE_1___default()), (filepond_plugin_image_resize__WEBPACK_IMPORTED_MODULE_3___default()), (filepond_plugin_file_validate_type__WEBPACK_IMPORTED_MODULE_4___default()));
 
-    return _regeneratorRuntime().wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            filepond__WEBPACK_IMPORTED_MODULE_0__.registerPlugin((filepond_plugin_image_preview__WEBPACK_IMPORTED_MODULE_2___default()), (filepond_plugin_image_crop__WEBPACK_IMPORTED_MODULE_1___default()), (filepond_plugin_image_resize__WEBPACK_IMPORTED_MODULE_3___default()), (filepond_plugin_image_edit__WEBPACK_IMPORTED_MODULE_4___default()), (filepond_plugin_file_validate_type__WEBPACK_IMPORTED_MODULE_5___default()));
-            _token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-            pond = filepond__WEBPACK_IMPORTED_MODULE_0__.create(elements, {
-              labelIdle: "Glissez et d\xE9posez vos fichiers",
-              labelFileLoading: 'Chargement ...',
-              allowImageCrop: true,
-              acceptedFileTypes: ['image/*']
-            });
-            _context.next = 5;
-            return pond.setOptions({
-              server: {
-                url: '/admins/upload-thumbnail',
-                revert: '/admins/remove-images',
-                headers: {
-                  'X-CSRF-Token': _token
-                }
-              }
-            });
+  var _token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-          case 5:
-          case "end":
-            return _context.stop();
-        }
+  var pond = filepond__WEBPACK_IMPORTED_MODULE_0__.create(elements, {
+    labelIdle: "Glissez et d\xE9posez vos fichiers",
+    labelFileLoading: 'Chargement ...',
+    allowImageCrop: true,
+    acceptedFileTypes: ['image/*']
+  });
+  pond.setOptions({
+    server: {
+      url: '/admins/upload-thumbnail',
+      revert: "/admins/remove-thumbnail",
+      headers: {
+        'X-CSRF-Token': _token
       }
-    }, _callee);
-  }));
-
-  return function uploadAudio(_x) {
-    return _ref.apply(this, arguments);
-  };
-}();
+    }
+  });
+};
 
 /***/ }),
 
@@ -3708,472 +3744,6 @@ var uploadAudio = /*#__PURE__*/function () {
 
         // the aspect ratio of the crop ('1:1', '16:9', etc)
         imageCropAspectRatio: [null, Type.STRING]
-      }
-    };
-  };
-
-  // fire pluginloaded event if running in browser, this allows registering the plugin when using async script tags
-  var isBrowser =
-    typeof window !== 'undefined' && typeof window.document !== 'undefined';
-  if (isBrowser) {
-    document.dispatchEvent(
-      new CustomEvent('FilePond:pluginloaded', { detail: plugin })
-    );
-  }
-
-  return plugin;
-});
-
-
-/***/ }),
-
-/***/ "./node_modules/filepond-plugin-image-edit/dist/filepond-plugin-image-edit.js":
-/*!************************************************************************************!*\
-  !*** ./node_modules/filepond-plugin-image-edit/dist/filepond-plugin-image-edit.js ***!
-  \************************************************************************************/
-/***/ (function(module) {
-
-/*!
- * FilePondPluginImageEdit 1.6.3
- * Licensed under MIT, https://opensource.org/licenses/MIT/
- * Please visit https://pqina.nl/filepond/ for details.
- */
-
-/* eslint-disable */
-
-(function(global, factory) {
-   true
-    ? (module.exports = factory())
-    : 0;
-})(this, function() {
-  'use strict';
-
-  var isPreviewableImage = function isPreviewableImage(file) {
-    return /^image/.test(file.type);
-  };
-
-  /**
-   * Image Edit Proxy Plugin
-   */
-  var plugin = function plugin(_) {
-    var addFilter = _.addFilter,
-      utils = _.utils,
-      views = _.views;
-    var Type = utils.Type,
-      createRoute = utils.createRoute,
-      _utils$createItemAPI = utils.createItemAPI,
-      createItemAPI =
-        _utils$createItemAPI === void 0
-          ? function(item) {
-              return item;
-            }
-          : _utils$createItemAPI;
-    var fileActionButton = views.fileActionButton;
-
-    addFilter('SHOULD_REMOVE_ON_REVERT', function(shouldRemove, _ref) {
-      var item = _ref.item,
-        query = _ref.query;
-      return new Promise(function(resolve) {
-        var file = item.file;
-
-        // if this file is editable it shouldn't be removed immidiately even when instant uploading
-        var canEdit =
-          query('GET_ALLOW_IMAGE_EDIT') &&
-          query('GET_IMAGE_EDIT_ALLOW_EDIT') &&
-          isPreviewableImage(file);
-
-        // if the file cannot be edited it should be removed on revert
-        resolve(!canEdit);
-      });
-    });
-
-    // open editor when loading a new item
-    addFilter('DID_LOAD_ITEM', function(item, _ref2) {
-      var query = _ref2.query,
-        dispatch = _ref2.dispatch;
-      return new Promise(function(resolve, reject) {
-        // if is temp or local file
-        if (item.origin > 1) {
-          resolve(item);
-          return;
-        }
-
-        // get file reference
-        var file = item.file;
-        if (
-          !query('GET_ALLOW_IMAGE_EDIT') ||
-          !query('GET_IMAGE_EDIT_INSTANT_EDIT')
-        ) {
-          resolve(item);
-          return;
-        }
-
-        // exit if this is not an image
-        if (!isPreviewableImage(file)) {
-          resolve(item);
-          return;
-        }
-
-        var createEditorResponseHandler = function createEditorResponseHandler(
-          item,
-          resolve,
-          reject
-        ) {
-          return function(userDidConfirm) {
-            // remove item
-            editRequestQueue.shift();
-
-            // handle item
-            if (userDidConfirm) {
-              resolve(item);
-            } else {
-              reject(item);
-            }
-
-            // TODO: Fix, should not be needed to kick the internal loop in case no processes are running
-            dispatch('KICK');
-
-            // handle next item!
-            requestEdit();
-          };
-        };
-
-        var requestEdit = function requestEdit() {
-          if (!editRequestQueue.length) return;
-          var _editRequestQueue$ = editRequestQueue[0],
-            item = _editRequestQueue$.item,
-            resolve = _editRequestQueue$.resolve,
-            reject = _editRequestQueue$.reject;
-
-          dispatch('EDIT_ITEM', {
-            id: item.id,
-            handleEditorResponse: createEditorResponseHandler(
-              item,
-              resolve,
-              reject
-            )
-          });
-        };
-
-        queueEditRequest({ item: item, resolve: resolve, reject: reject });
-
-        if (editRequestQueue.length === 1) {
-          requestEdit();
-        }
-      });
-    });
-
-    // extend item methods
-    addFilter('DID_CREATE_ITEM', function(item, _ref3) {
-      var query = _ref3.query,
-        dispatch = _ref3.dispatch;
-      item.extend('edit', function() {
-        dispatch('EDIT_ITEM', { id: item.id });
-      });
-    });
-
-    var editRequestQueue = [];
-    var queueEditRequest = function queueEditRequest(editRequest) {
-      editRequestQueue.push(editRequest);
-      return editRequest;
-    };
-
-    // called for each view that is created right after the 'create' method
-    addFilter('CREATE_VIEW', function(viewAPI) {
-      // get reference to created view
-      var is = viewAPI.is,
-        view = viewAPI.view,
-        query = viewAPI.query;
-
-      if (!query('GET_ALLOW_IMAGE_EDIT')) return;
-
-      var canShowImagePreview = query('GET_ALLOW_IMAGE_PREVIEW');
-
-      // only run for either the file or the file info panel
-      var shouldExtendView =
-        (is('file-info') && !canShowImagePreview) ||
-        (is('file') && canShowImagePreview);
-
-      if (!shouldExtendView) return;
-
-      // no editor defined, then exit
-      var editor = query('GET_IMAGE_EDIT_EDITOR');
-      if (!editor) return;
-
-      // set default FilePond options and add bridge once
-      if (!editor.filepondCallbackBridge) {
-        editor.outputData = true;
-        editor.outputFile = false;
-        editor.filepondCallbackBridge = {
-          onconfirm: editor.onconfirm || function() {},
-          oncancel: editor.oncancel || function() {}
-        };
-      }
-
-      // opens the editor, if it does not already exist, it creates the editor
-      var openEditor = function openEditor(_ref4) {
-        var root = _ref4.root,
-          props = _ref4.props,
-          action = _ref4.action;
-        var id = props.id;
-        var handleEditorResponse = action.handleEditorResponse;
-
-        // update editor props that could have changed
-        editor.cropAspectRatio =
-          root.query('GET_IMAGE_CROP_ASPECT_RATIO') || editor.cropAspectRatio;
-        editor.outputCanvasBackgroundColor =
-          root.query('GET_IMAGE_TRANSFORM_CANVAS_BACKGROUND_COLOR') ||
-          editor.outputCanvasBackgroundColor;
-
-        // get item
-        var item = root.query('GET_ITEM', id);
-        if (!item) return;
-
-        // file to open
-        var file = item.file;
-
-        // crop data to pass to editor
-        var crop = item.getMetadata('crop');
-        var cropDefault = {
-          center: {
-            x: 0.5,
-            y: 0.5
-          },
-
-          flip: {
-            horizontal: false,
-            vertical: false
-          },
-
-          zoom: 1,
-          rotation: 0,
-          aspectRatio: null
-        };
-
-        // size data to pass to editor
-        var resize = item.getMetadata('resize');
-
-        // filter and color data to pass to editor
-        var filter = item.getMetadata('filter') || null;
-        var filters = item.getMetadata('filters') || null;
-        var colors = item.getMetadata('colors') || null;
-        var markup = item.getMetadata('markup') || null;
-
-        // build parameters object
-        var imageParameters = {
-          crop: crop || cropDefault,
-          size: resize
-            ? {
-                upscale: resize.upscale,
-                mode: resize.mode,
-                width: resize.size.width,
-                height: resize.size.height
-              }
-            : null,
-          filter: filters
-            ? filters.id || filters.matrix
-            : root.query('GET_ALLOW_IMAGE_FILTER') &&
-              root.query('GET_IMAGE_FILTER_COLOR_MATRIX') &&
-              !colors
-            ? filter
-            : null,
-          color: colors,
-          markup: markup
-        };
-
-        editor.onconfirm = function(_ref5) {
-          var data = _ref5.data;
-          var crop = data.crop,
-            size = data.size,
-            filter = data.filter,
-            color = data.color,
-            colorMatrix = data.colorMatrix,
-            markup = data.markup;
-
-          // create new metadata object
-          var metadata = {};
-
-          // append crop data
-          if (crop) {
-            metadata.crop = crop;
-          }
-
-          // append size data
-          if (size) {
-            var initialSize = (item.getMetadata('resize') || {}).size;
-            var targetSize = {
-              width: size.width,
-              height: size.height
-            };
-
-            if (!(targetSize.width && targetSize.height) && initialSize) {
-              targetSize.width = initialSize.width;
-              targetSize.height = initialSize.height;
-            }
-
-            if (targetSize.width || targetSize.height) {
-              metadata.resize = {
-                upscale: size.upscale,
-                mode: size.mode,
-                size: targetSize
-              };
-            }
-          }
-
-          if (markup) {
-            metadata.markup = markup;
-          }
-
-          // set filters and colors so we can restore them when re-editing the image
-          metadata.colors = color;
-          metadata.filters = filter;
-
-          // set merged color matrix to use in preview plugin
-          metadata.filter = colorMatrix;
-
-          // update crop metadata
-          item.setMetadata(metadata);
-
-          // call
-          editor.filepondCallbackBridge.onconfirm(data, createItemAPI(item));
-
-          // used in instant edit mode
-          if (!handleEditorResponse) return;
-          editor.onclose = function() {
-            handleEditorResponse(true);
-            editor.onclose = null;
-          };
-        };
-
-        editor.oncancel = function() {
-          // call
-          editor.filepondCallbackBridge.oncancel(createItemAPI(item));
-
-          // used in instant edit mode
-          if (!handleEditorResponse) return;
-          editor.onclose = function() {
-            handleEditorResponse(false);
-            editor.onclose = null;
-          };
-        };
-
-        editor.open(file, imageParameters);
-      };
-
-      /**
-       * Image Preview related
-       */
-
-      // create the image edit plugin, but only do so if the item is an image
-      var didLoadItem = function didLoadItem(_ref6) {
-        var root = _ref6.root,
-          props = _ref6.props;
-
-        if (!query('GET_IMAGE_EDIT_ALLOW_EDIT')) return;
-        var id = props.id;
-
-        // try to access item
-        var item = query('GET_ITEM', id);
-        if (!item) return;
-
-        // get the file object
-        var file = item.file;
-
-        // exit if this is not an image
-        if (!isPreviewableImage(file)) return;
-
-        // handle interactions
-        root.ref.handleEdit = function(e) {
-          e.stopPropagation();
-          root.dispatch('EDIT_ITEM', { id: id });
-        };
-
-        if (canShowImagePreview) {
-          // add edit button to preview
-          var buttonView = view.createChildView(fileActionButton, {
-            label: 'edit',
-            icon: query('GET_IMAGE_EDIT_ICON_EDIT'),
-            opacity: 0
-          });
-
-          // edit item classname
-          buttonView.element.classList.add('filepond--action-edit-item');
-          buttonView.element.dataset.align = query(
-            'GET_STYLE_IMAGE_EDIT_BUTTON_EDIT_ITEM_POSITION'
-          );
-          buttonView.on('click', root.ref.handleEdit);
-
-          root.ref.buttonEditItem = view.appendChildView(buttonView);
-        } else {
-          // view is file info
-          var filenameElement = view.element.querySelector(
-            '.filepond--file-info-main'
-          );
-          var editButton = document.createElement('button');
-          editButton.className = 'filepond--action-edit-item-alt';
-          editButton.innerHTML =
-            query('GET_IMAGE_EDIT_ICON_EDIT') + '<span>edit</span>';
-          editButton.addEventListener('click', root.ref.handleEdit);
-          filenameElement.appendChild(editButton);
-
-          root.ref.editButton = editButton;
-        }
-      };
-
-      view.registerDestroyer(function(_ref7) {
-        var root = _ref7.root;
-        if (root.ref.buttonEditItem) {
-          root.ref.buttonEditItem.off('click', root.ref.handleEdit);
-        }
-        if (root.ref.editButton) {
-          root.ref.editButton.removeEventListener('click', root.ref.handleEdit);
-        }
-      });
-
-      var routes = {
-        EDIT_ITEM: openEditor,
-        DID_LOAD_ITEM: didLoadItem
-      };
-
-      if (canShowImagePreview) {
-        // view is file
-        var didPreviewUpdate = function didPreviewUpdate(_ref8) {
-          var root = _ref8.root;
-          if (!root.ref.buttonEditItem) return;
-          root.ref.buttonEditItem.opacity = 1;
-        };
-
-        routes.DID_IMAGE_PREVIEW_SHOW = didPreviewUpdate;
-      } else {
-      }
-
-      // start writing
-      view.registerWriter(createRoute(routes));
-    });
-
-    // Expose plugin options
-    return {
-      options: {
-        // enable or disable image editing
-        allowImageEdit: [true, Type.BOOLEAN],
-
-        // location of processing button
-        styleImageEditButtonEditItemPosition: ['bottom center', Type.STRING],
-
-        // open editor when image is dropped
-        imageEditInstantEdit: [false, Type.BOOLEAN],
-
-        // allow editing
-        imageEditAllowEdit: [true, Type.BOOLEAN],
-
-        // the icon to use for the edit button
-        imageEditIconEdit: [
-          '<svg width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M8.5 17h1.586l7-7L15.5 8.414l-7 7V17zm-1.707-2.707l8-8a1 1 0 0 1 1.414 0l3 3a1 1 0 0 1 0 1.414l-8 8A1 1 0 0 1 10.5 19h-3a1 1 0 0 1-1-1v-3a1 1 0 0 1 .293-.707z" fill="currentColor" fill-rule="nonzero"/></svg>',
-          Type.STRING
-        ],
-
-        // editor object
-        imageEditEditor: [null, Type.OBJECT]
       }
     };
   };
@@ -24904,12 +24474,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/module.esm.js");
 /* harmony import */ var _Shared_element_Toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Shared/element /Toastr */ "./resources/js/Shared/element /Toastr.js");
 /* harmony import */ var _util_upload__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util/upload */ "./resources/js/backend/util/upload.js");
+/* harmony import */ var _util_VideoUpload__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./util/VideoUpload */ "./resources/js/backend/util/VideoUpload.js");
 
 
 
-(0,_util_upload__WEBPACK_IMPORTED_MODULE_2__.uploadAudio)(document.querySelector('#thumbnail'));
+
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
 customElements.define('app-toast', _Shared_element_Toastr__WEBPACK_IMPORTED_MODULE_1__["default"]);
+var uploadThumbnail = document.querySelector('input[name="thumbnail"]');
+
+if (uploadThumbnail) {
+  Promise.resolve(/*! import() */).then(__webpack_require__.bind(__webpack_require__, /*! ./util/upload */ "./resources/js/backend/util/upload.js")).then(function (module) {
+    return (0,_util_upload__WEBPACK_IMPORTED_MODULE_2__.uploadAudio)(uploadThumbnail);
+  })["catch"](function (e) {
+    return console.log(e);
+  });
+}
+
+var uploadVideo = document.querySelector('input[name="images_video"]');
+
+if (uploadVideo) {
+  Promise.resolve(/*! import() */).then(__webpack_require__.bind(__webpack_require__, /*! ./util/VideoUpload */ "./resources/js/backend/util/VideoUpload.js")).then(function (module) {
+    return (0,_util_VideoUpload__WEBPACK_IMPORTED_MODULE_3__.VideoUpload)(uploadVideo);
+  })["catch"](function (e) {
+    return console.log(e);
+  });
+}
 })();
 
 /******/ })()

@@ -33,7 +33,8 @@ class PodcastBackendRepository
                 'thumbnail',
                 'title',
                 'type_podcast_id',
-                'podcast_offering_id'
+                'podcast_offering_id',
+                'status',
             ]);
     }
 

@@ -4,7 +4,7 @@
     <div class="row g-gs">
         <div class="col-md-6">
             <div class="form-group">
-                <label class="form-label" for="title">Title</label>
+                <label class="form-label" for="title">Title Podcast</label>
                 <div class="form-control-wrap">
                     <input
                         type="text"
@@ -13,22 +13,6 @@
                         name="title"
                         value="{{ old('title') ?? $viewModels->podcast->title }}"
                         placeholder="Enter title"
-                        required>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="form-group">
-                <label class="form-label" for="thumbnail">Thumbnail</label>
-                <div class="form-control-wrap">
-                    <input
-                        type="file"
-                        class="form-control @error('thumbnail') error @enderror"
-                        id="thumbnail"
-                        name="thumbnail"
-                        value="{{ old('thumbnail') }}"
-                        placeholder="Enter thumbnail"
                         required>
                 </div>
             </div>
@@ -93,11 +77,27 @@
 
         <div class="col-md-6">
             <div class="form-group">
+                <label class="form-label" for="thumbnail">Thumbnail</label>
+                <div class="form-control-wrap">
+                    <input
+                        type="file"
+                        class=" @error('thumbnail') error @enderror"
+                        id="thumbnail"
+                        name="thumbnail"
+                        value="{{ old('thumbnail') }}"
+                        placeholder="Enter thumbnail"
+                        required>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
                 <label class="form-label" for="images_video">Audio or Video</label>
                 <div class="form-control-wrap">
                     <input
                         type="file"
-                        class="form-control @error('images_video') error @enderror"
+                        class="@error('images_video') error @enderror"
                         id="images_video"
                         name="images_video"
                         value="{{ old('images_video') }}"
@@ -109,8 +109,8 @@
 
         <div class="col-md-12">
             <div class="form-group text-center">
-                <button type="submit" class="btn btn-md btn-primary">
-                    Save
+                <button type="submit" class="btn btn-md btn-outline-primary">
+                    Update Podcast
                 </button>
             </div>
         </div>
