@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('backend/css/app.css') }}">
     <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
     @yield('styles')
+    <livewire:styles />
 </head>
 
 <body class="nk-body bg-lighter npc-default has-sidebar no-touch nk-nio-theme ui-bordered light-mode">
@@ -31,6 +32,7 @@
 <script src="{{ asset('backend/js/bundle.js') }}" data-turbolinks-track="true"></script>
 <script src="{{ asset('backend/js/scripts.js') }}" data-turbolinks-track="true"></script>
 <script src="{{ asset('backend/js/app.js') }}" data-turbolinks-track="true"></script>
+<livewire:scripts />
 @include('sweetalert::alert')
 @yield('scripts')
 </body>

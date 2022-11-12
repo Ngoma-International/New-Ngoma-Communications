@@ -11,17 +11,7 @@
                 <div class="card-inner">
                     <div class="row justify-content-center">
                         <div class="col-md-6">
-                            <div class="nk-header-search ms-3 ms-xl-0 border-dark">
-                                <em class="icon ni ni-search"></em>
-                                <input
-                                        type="text"
-                                        name="search"
-                                        id="search"
-                                        x-model="searchData()"
-                                        @keydown.enter="addTodo()"
-                                        class="form-control form-focus-none"
-                                        placeholder="Search anything">
-                            </div>
+                            <livewire:backend.ticket-verify />
                         </div>
                     </div>
 

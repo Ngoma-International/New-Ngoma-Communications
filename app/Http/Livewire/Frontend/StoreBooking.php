@@ -6,6 +6,8 @@ namespace App\Http\Livewire\Frontend;
 
 use App\Enums\BookingStatus;
 use App\Models\Booking;
+use App\Models\Seminar;
+use App\Repository\Booking\StoreBookingRepository;
 use App\Traits\HasTransaction;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -22,6 +24,7 @@ class StoreBooking extends Component
     public $ticket_number;
     public $country;
     public $seminar;
+    public StoreBookingRepository $repository;
 
     protected $rules = [
         'username' => [
@@ -36,7 +39,7 @@ class StoreBooking extends Component
         ],
         'email' => [
             'required',
-            'email:rfc,dns',
+            'email',
         ],
         'phone_number' => [
             'required',
@@ -50,6 +53,15 @@ class StoreBooking extends Component
             'string'
         ],
     ];
+
+    public function mount(
+        StoreBookingRepository $repository,
+        Seminar $seminar
+    )
+    {
+        $this->repository = $repository;
+        $this->seminar = $seminar;
+    }
 
     public function render(): Factory|View|Application
     {
