@@ -4,10 +4,14 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use Database\Factories\CurriculumFactory;
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 
 /**
  * App\Models\Curriculum
@@ -21,25 +25,25 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property string|null $formation
  * @property string|null $competence
  * @property string|null $language
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\User $user
- * @method static \Database\Factories\CurriculumFactory factory(...$parameters)
- * @method static \Illuminate\Database\Eloquent\Builder|Curriculum newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Curriculum newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Curriculum query()
- * @method static \Illuminate\Database\Eloquent\Builder|Curriculum whereAddress($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Curriculum whereCompetence($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Curriculum whereContact($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Curriculum whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Curriculum whereExperience($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Curriculum whereFormation($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Curriculum whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Curriculum whereLanguage($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Curriculum whereTitle($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Curriculum whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Curriculum whereUserId($value)
- * @mixin \Eloquent
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property-read User $user
+ * @method static CurriculumFactory factory(...$parameters)
+ * @method static Builder|Curriculum newModelQuery()
+ * @method static Builder|Curriculum newQuery()
+ * @method static Builder|Curriculum query()
+ * @method static Builder|Curriculum whereAddress($value)
+ * @method static Builder|Curriculum whereCompetence($value)
+ * @method static Builder|Curriculum whereContact($value)
+ * @method static Builder|Curriculum whereCreatedAt($value)
+ * @method static Builder|Curriculum whereExperience($value)
+ * @method static Builder|Curriculum whereFormation($value)
+ * @method static Builder|Curriculum whereId($value)
+ * @method static Builder|Curriculum whereLanguage($value)
+ * @method static Builder|Curriculum whereTitle($value)
+ * @method static Builder|Curriculum whereUpdatedAt($value)
+ * @method static Builder|Curriculum whereUserId($value)
+ * @mixin Eloquent
  */
 class Curriculum extends Model
 {

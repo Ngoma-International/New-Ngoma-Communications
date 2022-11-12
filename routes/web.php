@@ -39,6 +39,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('seminar', SeminarBackendController::class);
         Route::post('seminar-status', SeminarStatusBackendController::class);
         Route::get('bookings', BookingBackendController::class)->name('booking.index');
+        Route::delete('booking/{booking}', [BookingBackendController::class, 'destroy']);
         Route::get('bookings/{booking}', [BookingBackendController::class, 'show'])->name('booking.show');
         Route::get('search/', SearchBookingBackendController::class)->name('ticket.search');
 

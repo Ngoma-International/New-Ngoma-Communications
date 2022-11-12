@@ -30,7 +30,7 @@ class ShowBooking extends ViewModel
     public function seminar(): Model|Builder|Seminar|null
     {
         $seminar = Seminar::query()
-            ->where('id', '=', $this->booking->id)
+            ->where('id', '=', $this->booking->seminar_id)
             ->first();
         return $seminar->load(['category', 'seminarType', 'user']);
     }

@@ -16,4 +16,8 @@ class BookingBackendRepository
             ->orderByDesc('created_at')
             ->get();
     }
+
+    public function destroy(Booking $booking)
+    {
+    }
 }

@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Events\BookingEvent;
+use App\Events\ConfirmBooking;
 use Database\Factories\BookingFactory;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
 
 /**
@@ -51,6 +54,7 @@ use Illuminate\Support\Carbon;
 class Booking extends Model
 {
     use HasFactory;
+    use Notifiable;
 
     protected $fillable = [
         'username',
@@ -63,6 +67,11 @@ class Booking extends Model
         'transaction_code',
         'seminar_id',
         'ticket_number'
+    ];
+
+    protected $dispatchesEvents = [
+        'stored' => BookingEvent::class,
+        'updated' => ConfirmBooking::class
     ];
 
     public function seminar(): BelongsTo

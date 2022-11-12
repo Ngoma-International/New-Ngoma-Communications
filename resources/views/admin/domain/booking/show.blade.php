@@ -13,13 +13,26 @@
                         {{ ucfirst($viewModel->seminar()->name) ?? "" }}
                     @endcomponent
 
-                    @component('shared.banner')
+                    @component('admin.shared.banner')
                         <li class="preview-item">
                             <a class="btn btn-primary btn-dim btn-sm" href="{{ $viewModel->indexUrl }}">
                                 <em class="icon ni ni-arrow-long-left"></em>
                                 <span>Tout les Bookings</span>
                             </a>
                         </li>
+                            <li class="preview-item">
+                                <div class="custom-control custom-control-md custom-switch">
+                                    <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        name="activated"
+                                        data-id="{{ $viewModel->booking->id }}"
+                                        @checked($viewModel->booking->status )
+                                        onclick="changeBookingStatus(event.target, {{ $viewModel->booking->id }});"
+                                        id="activated">
+                                    <label class="custom-control-label" for="activated"></label>
+                                </div>
+                            </li>
                         <li class="preview-item">
                             <form
                                     action="{{ $viewModel->deleteUrl }}"
@@ -57,7 +70,7 @@
                                 <div class="profile-ud wider">
                                     <span class="profile-ud-label">Seminar Prices</span>
                                     <span class="profile-ud-value">
-                                        {{ ucfirst($viewModel->seminar()->pricecs) ?? "" }}
+                                       $ {{ ucfirst($viewModel->seminar()->prices) ?? "" }}
                                     </span>
                                 </div>
                             </div>
@@ -73,7 +86,7 @@
                                 <div class="profile-ud wider">
                                     <span class="profile-ud-label">Seminar Facilitator</span>
                                     <span class="profile-ud-value">
-                                        {{ ucfirst($viewModel->seminar()->user->username) ?? "" }}
+                                        {{ ucfirst($viewModel->seminar()->user->name) ?? "" }}
                                     </span>
                                 </div>
                             </div>
@@ -137,7 +150,7 @@
                                 <div class="profile-ud wider">
                                     <span class="profile-ud-label">Ticket Booking at</span>
                                     <span class="profile-ud-value">
-                                        {{ $viewModel->booking->booking_at ?? 0 }}
+                                        {{ $viewModel->booking->booking_at ?? "" }}
                                     </span>
                                 </div>
                             </div>
@@ -153,7 +166,7 @@
                                 <div class="profile-ud wider">
                                     <span class="profile-ud-label">Ticket Status</span>
                                     <span class="profile-ud-value">
-                                        @if($viewModels->booking->status)
+                                        @if($viewModel->booking->status)
                                             <span class="badge badge-success ms-0">Activée</span>
                                         @else
                                             <span class="badge badge-danger ms-0">Désactivée</span>

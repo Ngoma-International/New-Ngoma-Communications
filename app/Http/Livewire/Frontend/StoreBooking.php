@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Livewire\Frontend;
 
 use App\Enums\BookingStatus;
+use App\Events\BookingEvent;
 use App\Models\Booking;
 use App\Models\Seminar;
 use App\Repository\Booking\StoreBookingRepository;
@@ -73,12 +74,13 @@ class StoreBooking extends Component
         $validation = $this->validate();
 
         try {
-            Booking::query()
+            $booking = Booking::query()
                 ->create(array_merge($validation, [
                     'status' => BookingStatus::Booking_pending,
                     'seminar_id' => $this->seminar,
                     'transaction_code' => 0
                 ]));
+            BookingEvent::dispatch($booking);
             $this->dispatchBrowserEvent('booking-store', [
                 'type' => "success",
                 'message' => "Votre reservation a ete effectuer"

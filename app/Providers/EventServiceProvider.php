@@ -6,9 +6,13 @@ namespace App\Providers;
 
 use App\Events\AdminEvent;
 use App\Events\AdminUpdateEvent;
+use App\Events\BookingEvent;
+use App\Events\ConfirmBooking;
 use App\Events\UpdatePodcastEvent;
 use App\Listeners\AdminListener;
 use App\Listeners\AdminUpdateListener;
+use App\Listeners\BookingListener;
+use App\Listeners\COnfirmBookingListener;
 use App\Listeners\CreatePodcastListener;
 use App\Listeners\UpdatePodcastListener;
 use App\ViewModels\Podcast\CreatePodcast;
@@ -33,6 +37,12 @@ class EventServiceProvider extends ServiceProvider
         ],
         UpdatePodcastEvent::class => [
             UpdatePodcastListener::class
+        ],
+        BookingEvent::class => [
+            BookingListener::class
+        ],
+        ConfirmBooking::class => [
+            COnfirmBookingListener::class
         ]
     ];
 

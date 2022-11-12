@@ -12,6 +12,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class BookingBackendController extends Controller
 {
@@ -29,8 +30,10 @@ class BookingBackendController extends Controller
         return view('admin.domain.booking.show', compact('viewModel'));
     }
 
-    public function destroy(Booking $booking)
+    public function destroy(Booking $booking, BookingBackendRepository $repository): RedirectResponse
     {
+        $repository->destroy($booking);
 
+        return redirect()->route('');
     }
 }
