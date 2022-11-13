@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Seminar;
 use App\Models\SeminaryType;
 use App\Models\User;
+use App\Rules\SeminarAppointment;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -58,12 +59,14 @@ class StoreSeminarRequest extends FormRequest
             ],
             "start_time" => [
                 'required',
-                'date_format:h:i A'
+                'date_format:h:i A',
+                new SeminarAppointment()
             ],
             "end_time" => [
                 'required',
                 'date_format:h:i A',
                 'after:start_time',
+                new SeminarAppointment()
             ],
             "date" => [
                 'required',

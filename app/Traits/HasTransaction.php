@@ -6,9 +6,9 @@ namespace App\Traits;
 
 trait HasTransaction
 {
-    public function generateTransaction($values): string
+    public function generateTransaction(int $values): string
     {
-        $characters = '0123456789#ABCDEFGHILKMNOPQRSTUVWXYZ';
+        $characters = '0123456789';
         $randomString = '';
         for ($i = 0; $i < $values; $i++) {
             $index = rand(0, strlen($characters) - 1);

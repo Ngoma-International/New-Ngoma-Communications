@@ -20,19 +20,10 @@
                                 <span>Tout les Bookings</span>
                             </a>
                         </li>
-                            <li class="preview-item">
-                                <div class="custom-control custom-control-md custom-switch">
-                                    <input
-                                        type="checkbox"
-                                        class="custom-control-input"
-                                        name="activated"
-                                        data-id="{{ $viewModel->booking->id }}"
-                                        @checked($viewModel->booking->status )
-                                        onclick="changeBookingStatus(event.target, {{ $viewModel->booking->id }});"
-                                        id="activated">
-                                    <label class="custom-control-label" for="activated"></label>
-                                </div>
-                            </li>
+                        <livewire:backend.toggle-component
+                            key="{{ $viewModel->booking->id }}"
+                            field="status"
+                            :booking="$viewModel->booking" />
                         <li class="preview-item">
                             <form
                                     action="{{ $viewModel->deleteUrl }}"

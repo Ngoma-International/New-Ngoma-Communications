@@ -13,10 +13,12 @@ use App\Traits\HasTransaction;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
 class StoreBooking extends Component
 {
+    use LivewireAlert;
     use HasTransaction;
     public $username;
     public $firstname;
@@ -81,15 +83,13 @@ class StoreBooking extends Component
                     'transaction_code' => 0
                 ]));
             BookingEvent::dispatch($booking);
-            $this->dispatchBrowserEvent('booking-store', [
-                'type' => "success",
-                'message' => "Votre reservation a ete effectuer"
+            $this->alert('success', 'Votre reservation a ete effectuer', [
+                'position' => 'top-center'
             ]);
             $this->resetForm();
         } catch (\Throwable $exception) {
-            $this->dispatchBrowserEvent('booking-store', [
-                'type' => "success",
-                'message' => $exception->getMessage()
+            $this->alert('danger', $this->getMessages(), [
+                'position' => 'top-center'
             ]);
             $this->resetForm();
         }
