@@ -53,7 +53,7 @@
                 <ul class="slides">
                     <li>
                         <div class="slide-image-wrap">
-                            <img src="{{ asset('assets/images/Triplex 3.svg') }}" alt="" />
+                            <img src="{{ asset('assets/images/') }}" alt="" />
                         </div>
                         <div class="container">
                             <div class="row">
@@ -61,10 +61,14 @@
                                     <div class="slide_description_wrapper">
                                         <div class="slide_description">
                                             <div class="intro-layer to_animate" data-animation="fadeInUp">
-                                                <h1>Ngoma<span class="thin">Communications</span></h1>
+                                                <p>We help organisations and individuals to reach a higher level of excellence.</p>
                                             </div>
-                                            <div class="intro-layer to_animate" data-animation="fadeInUp">
-                                                <p>We Inspire and Equip Individuals and Organisations to Progress and Develop to Their Full Potential.</p>
+                                            <div style="padding-bottom: .5rem; margin-top: .2rem;" >
+                                                <p style="font-size: 16px; color: #fff;font-weight: 200;font-family: 'Roboto Black',sans-serif;">
+                                                    Grounded in ongoing research and 15 years of experience developing successful business leaders,
+                                                    our offerings address the three aspects of leadership: Leading Youself;
+                                                    Leading People; Leading Organisations.
+                                                </p>
                                             </div>
                                             <div class="intro-layer to_animate" data-animation="fadeInUp">
                                                 <div class="slide_buttons">

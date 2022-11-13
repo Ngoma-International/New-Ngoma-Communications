@@ -12,11 +12,11 @@
                         <div class="inline-content">
                             <span class="hidden-md">
                                 <i class="tmi-map-marker highlight2 rightpadding_5" aria-hidden="true"></i>
-                                Sandton, Johannesburg, RSA
+                                8 Meadowbrook Lane, Epsom Downs, Sandton, 2196 Johannesburg
                             </span>
                             <span>
                                 <i class="tmi-telephone highlight2 rightpadding_5" aria-hidden="true"></i>
-                                <span>+27 66 266 9364</span>
+                                <span>+27110836004</span>
                             </span>
                         </div>
                     </div>
