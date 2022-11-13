@@ -91,7 +91,7 @@
                                 <p>"I had an overall amazing experience at RCA's Lighthouse location. The building and physical amenities were well beyond.</p>
                                 <footer class="media inline-block">
                                     <div class="media-left media-middle">
-                                        <img src="{{ asset('assets/images/image4.jpg') }}" alt="">
+                                        <img src="{{ asset('assets/images/image4.png') }}" alt="">
                                     </div>
                                     <div class="media-body media-middle">
                                         <cite>

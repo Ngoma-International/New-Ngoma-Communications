@@ -27,7 +27,6 @@ class StoreBooking extends Component
     public $ticket_number;
     public $country;
     public $seminar;
-    public StoreBookingRepository $repository;
 
     protected $rules = [
         'username' => [
@@ -58,11 +57,9 @@ class StoreBooking extends Component
     ];
 
     public function mount(
-        StoreBookingRepository $repository,
         Seminar $seminar
     )
     {
-        $this->repository = $repository;
         $this->seminar = $seminar;
     }
 
