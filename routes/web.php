@@ -35,9 +35,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('users', UsersBackendController::class);
         Route::post('user-status', StatusUserBackendController::class)->name('users.status');
         Route::resource('podcasts', PodcastBackendController::class);
-        Route::post('podcast-status', StatusPodcastBackendController::class)->name('podcast.status');
         Route::resource('seminar', SeminarBackendController::class);
-        Route::post('seminar-status', SeminarStatusBackendController::class);
+        Route::post('seminar-status', SeminarStatusBackendController::class)->name('seminar.status');
         Route::get('bookings', BookingBackendController::class)->name('booking.index');
         Route::delete('booking/{booking}', [BookingBackendController::class, 'destroy']);
         Route::get('bookings/{booking}', [BookingBackendController::class, 'show'])->name('booking.show');
@@ -64,6 +63,10 @@ Route::group(['middleware' => ['auth']], function () {
         //upload thumbnail
         Route::post('upload-thumbnail', UploadThumbnailBackendController::class);
         Route::delete('remove-thumbnail', [UploadThumbnailBackendController::class, 'destroy']);
+
+
+        Route::post('podcast-status', StatusPodcastBackendController::class)
+            ->name('podcast.status');
     });
 });
 

@@ -282,7 +282,7 @@
                 'x-csrf-token': _token,
             }
 
-            await fetch('{{ route('admins.podcast.status') }}', {
+            await fetch('{{ route('admins.seminar.status') }}', {
                 method: "POST",
                 body: JSON.stringify(data),
                 headers: headers

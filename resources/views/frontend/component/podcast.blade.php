@@ -6,12 +6,6 @@
                     src="{{ asset('storage/'. $podcast->thumbnail) }}"
                     class="img-fluid"
                     alt="{{ $podcast->title ?? "" }}">
-                <a
-                    class="abs-link"
-                    title="{{ $podcast->title ?? "" }}"
-                    href="{{ route('podcast.show', $podcast->id) }}">
-                    {{ $podcast->title ?? "" }}
-                </a>
             </div>
         </div>
         <div class="col-sm-7">
