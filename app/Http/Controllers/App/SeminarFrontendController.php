@@ -7,6 +7,7 @@ namespace App\Http\Controllers\App;
 use App\Http\Controllers\Controller;
 use App\Models\Seminar;
 use App\ViewModels\Frontend\HomeViewModel;
+use App\ViewModels\Frontend\SeminarViewModel;
 use App\ViewModels\Frontend\ShowSeminarFrontend;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Support\Renderable;
@@ -17,7 +18,7 @@ class SeminarFrontendController extends Controller
 {
     public function __invoke(): Renderable
     {
-        $viewModel = new HomeViewModel();
+        $viewModel = new SeminarViewModel();
 
         return  view('frontend.domain.seminar.index', compact('viewModel'));
     }

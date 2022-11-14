@@ -42,7 +42,13 @@
                     @endcomponent
                 </div>
             </div>
-            @component('admin.shared.section')
+        </div>
+        @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+        @component('admin.shared.section')
                 <div class="card-inner">
                     <div class="nk-block">
                         <div class="nk-block-head">

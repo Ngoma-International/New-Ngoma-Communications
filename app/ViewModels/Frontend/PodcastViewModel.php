@@ -21,8 +21,8 @@ class PodcastViewModel extends ViewModel
     {
         return Podcast::query()
             ->where('status', '=', SeminarEnum::SEMINAR_CONFIRMED)
-            ->inRandomOrder()
-            ->paginate();
+            ->orderByDesc('created_at')
+            ->paginate(6);
     }
 
     public function offerings(): array|Collection|\Illuminate\Support\Collection

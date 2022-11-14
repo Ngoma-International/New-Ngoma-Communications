@@ -41,6 +41,11 @@ class StorePodcastRequest extends FormRequest
                 'string',
                 'max:255',
                 Rule::unique(Podcast::class, 'title')
+            ],
+            'description' => [
+                'nullable',
+                'string',
+                'min:10'
             ]
         ];
     }

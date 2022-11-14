@@ -108,6 +108,20 @@
         </div>
 
         <div class="col-md-12">
+            <div class="form-group">
+                <label class="form-label" for="description">Description</label>
+                <div class="form-control-wrap">
+                    <textarea
+                        class="form-control form-control-sm @error('description') error @enderror"
+                        id="description"
+                        name="description"
+                        placeholder="Write the description"
+                    >{{ old('description') ?? $viewModels->podcast->description }}</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
             <div class="form-group text-center">
                 <button type="submit" class="btn btn-md btn-outline-primary">
                     Update Podcast

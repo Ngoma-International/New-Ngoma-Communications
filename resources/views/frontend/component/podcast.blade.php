@@ -2,13 +2,21 @@
     <div class="row">
         <div class="col-sm-5">
             <div class="item-media">
-                <img src="" alt="">
-                <a class="abs-link" title="" href=""></a>
+                <img
+                    src="{{ asset('storage/'. $podcast->thumbnail) }}"
+                    class="img-fluid"
+                    alt="{{ $podcast->title ?? "" }}">
+                <a
+                    class="abs-link"
+                    title="{{ $podcast->title ?? "" }}"
+                    href="{{ route('podcast.show', $podcast->id) }}">
+                    {{ $podcast->title ?? "" }}
+                </a>
             </div>
         </div>
         <div class="col-sm-7">
             <div class="item-content">
-                <header class="entry-header">
+                <header class="mb-2">
                     <div class="entry-meta small-text">
                         <div class="grey">
                             <time datetime="{{ $podcast->created_at->format('H:i') }}">
@@ -22,6 +30,11 @@
                         </a>
                     </h3>
                 </header>
+                <div class="content-3lines-ellipsis">
+                    <p>
+                        {{ $podcast->description ?? "" }}
+                    </p>
+                </div>
             </div>
         </div>
     </div>

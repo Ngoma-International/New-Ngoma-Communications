@@ -151,6 +151,21 @@
                     <div class="nk-divider divider md"></div>
                     <div class="nk-block">
                         <div class="nk-block-head">
+                            <span class="title">Seminar Description</span>
+                        </div>
+                        <div class="bq-note">
+                            <div class="bq-note-item">
+                                <div class="bq-note-text">
+                                    <p>
+                                        {!! $postViewModel->podcast->description !!}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nk-divider divider md"></div>
+                    <div class="nk-block">
+                        <div class="nk-block-head">
                             <span class="title">Informations supplémentaires</span>
                         </div>
                         <div class="profile-ud-list">

@@ -37,10 +37,7 @@ class ToggleComponent extends Component
             'booking_at' => now()
         ]);
 
-        $this->emit('booking-update', [
-            'type' => 'success',
-            'message' => "Une action a ete executer avec success"
-        ]);
+        session()->flash('message', "La mise a jours a ete effectuer sur cette reservation");
     }
 
 }

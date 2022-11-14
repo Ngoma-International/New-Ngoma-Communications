@@ -54,7 +54,8 @@ class Podcast extends Model
         'user_id',
         'type_podcast_id',
         'podcast_offering_id',
-        'status'
+        'status',
+        'description'
     ];
 
     public function renderThumbnail(): string

@@ -48,6 +48,11 @@ class UpdatePodcastRequest extends FormRequest
             'images_video' => [
                 'required',
                 'file',
+            ],
+            'description' => [
+                'nullable',
+                'string',
+                'min:10'
             ]
         ];
     }
