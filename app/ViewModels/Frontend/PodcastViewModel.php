@@ -17,11 +17,12 @@ class PodcastViewModel extends ViewModel
     {
     }
 
-    public function podcasts(): LengthAwarePaginator
+    public function podcasts(): \Illuminate\Contracts\Pagination\LengthAwarePaginator
     {
-        return Podcast::query()
+         return Podcast::query()
             ->where('status', '=', SeminarEnum::SEMINAR_CONFIRMED)
             ->orderByDesc('created_at')
+            ->with('type')
             ->paginate(6);
     }
 

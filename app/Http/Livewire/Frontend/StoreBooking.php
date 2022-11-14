@@ -80,14 +80,10 @@ class StoreBooking extends Component
                     'transaction_code' => 0
                 ]));
             BookingEvent::dispatch($booking);
-            $this->alert('success', 'Votre reservation a ete effectuer', [
-                'position' => 'top-center'
-            ]);
+            session()->flash('success', "Votre reservation a ete effectuer");
             $this->resetForm();
         } catch (\Throwable $exception) {
-            $this->alert('danger', $this->getMessages(), [
-                'position' => 'top-center'
-            ]);
+            session()->flash('success', $exception->getMessage());
             $this->resetForm();
         }
     }

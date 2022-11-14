@@ -84,6 +84,16 @@
                         </div>
                     </article>
                     <div class="comments-area">
+                        @if(session()->has('success'))
+                            <div class="alert alert-success" role="alert">
+                                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <span aria-hidden="true">×</span>
+                                    <span class="sr-only">Close</span>
+                                </button>
+                                <strong>{{ session('success') }}</strong>
+                            </div>
+                        @endif
                         <div class="comment-respond" id="respond">
                             <livewire:frontend.store-booking :seminar="$viewModel->seminar->id" />
                         </div>

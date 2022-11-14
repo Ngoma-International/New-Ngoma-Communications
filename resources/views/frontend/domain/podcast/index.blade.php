@@ -21,7 +21,7 @@
                             <ul class="greylinks">
                                 @foreach($viewModel->offerings() as $offering)
                                     <li>
-                                        <a href="offering={{ $offering->id }}">{{ ucfirst($offering->name) ?? "" }}</a>
+                                        <a href="#">{{ ucfirst($offering->name) ?? "" }}</a>
                                     </li>
                                 @endforeach
                             </ul>
