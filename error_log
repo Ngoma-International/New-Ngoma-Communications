@@ -1,0 +1,12 @@
+[13-Nov-2022 03:14:42 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/lasogsyh/triplexleadership.com/_ide_helper.php:19494
+Stack trace:
+#0 {main}
+  thrown in /home/lasogsyh/triplexleadership.com/_ide_helper.php on line 19494
+[13-Nov-2022 23:08:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/lasogsyh/triplexleadership.com/_ide_helper.php:19494
+Stack trace:
+#0 {main}
+  thrown in /home/lasogsyh/triplexleadership.com/_ide_helper.php on line 19494
+[14-Nov-2022 10:23:42 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/lasogsyh/triplexleadership.com/_ide_helper.php:19494
+Stack trace:
+#0 {main}
+  thrown in /home/lasogsyh/triplexleadership.com/_ide_helper.php on line 19494
