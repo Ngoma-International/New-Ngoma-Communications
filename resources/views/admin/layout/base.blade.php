@@ -33,8 +33,6 @@
 <script src="{{ asset('backend/js/scripts.js') }}" data-turbolinks-track="true"></script>
 <script src="{{ asset('backend/js/app.js') }}" data-turbolinks-track="true"></script>
 <livewire:scripts />
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11" data-turbolinks-track="true"></script>
-<x-livewire-alert::scripts />
 @include('sweetalert::alert')
 @yield('scripts')
 </body>
