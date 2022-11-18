@@ -208,7 +208,7 @@
                             name="images"
                             value="{{ old('images') }}"
                             placeholder="Enter images"
-                            required>
+                            >
                 </div>
             </div>
         </div>

@@ -2,8 +2,14 @@
     <div class="nk-sidebar-element nk-sidebar-head">
         <div class="nk-sidebar-brand">
             <a href="{{ route('admins.backend.index') }}" class="logo-link nk-sidebar-logo">
-                <img class="logo-light logo-img" src="" srcset=" 2x" alt="logo">
-                <img class="logo-small logo-img logo-img-small" src="" srcset=" 2x" alt="logo-small">
+                <img class="logo-light logo-img"
+                     src="{{ asset('assets/images/Triplex.svg') }}"
+                     srcset="{{ asset('assets/images/Triplex.svg') }} 2x"
+                     alt="logo">
+                <img class="logo-small logo-img logo-img-small"
+                     src="{{ asset('assets/images/Triplex.svg') }}"
+                     srcset="{{ asset('assets/images/Triplex.svg') }} 2x"
+                     alt="logo-small">
             </a>
         </div>
         <div class="nk-menu-trigger mr-n2">

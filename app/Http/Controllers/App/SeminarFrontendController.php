@@ -20,13 +20,13 @@ class SeminarFrontendController extends Controller
     {
         $viewModel = new SeminarViewModel();
 
-        return  view('frontend.domain.seminar.index', compact('viewModel'));
+        return  view('app.domain.seminar.index', compact('viewModel'));
     }
 
     public function show(Seminar $seminar): Factory|View|Application
     {
         $viewModel = new ShowSeminarFrontend($seminar);
 
-        return view('frontend.domain.seminar.show', compact('viewModel'));
+        return view('app.domain.seminar.show', compact('viewModel'));
     }
 }

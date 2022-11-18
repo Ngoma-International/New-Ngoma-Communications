@@ -8,8 +8,8 @@
             </div>
             <div class="nk-header-brand d-xl-none">
                 <a href="{{ route('admins.backend.index') }}" class="logo-link">
-                    <img class="logo-light logo-img" src="{{ asset('frontend/images/icon.png') }}" srcset="{{ asset('frontend/images/icon.png') }} 2x" alt="logo">
-                    <img class="logo-dark logo-img" src="{{ asset('frontend/images/icon.png') }}" srcset="{{ asset('frontend/images/icon.png') }} 2x" alt="logo-dark">
+                    <img class="logo-light logo-img" src="{{ asset('assets/images/Triplex.svg') }}" srcset="{{ asset('assets/images/Triplex.svg') }} 2x" alt="logo">
+                    <img class="logo-dark logo-img" src="{{ asset('assets/images/Triplex.svg') }}" srcset="{{ asset('assets/images/Triplex.svg') }} 2x" alt="logo-dark">
                 </a>
             </div>
             <div class="nk-header-search ml-3 ml-xl-0"></div>

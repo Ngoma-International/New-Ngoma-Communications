@@ -7,6 +7,7 @@ namespace App\Repository\User;
 use App\Events\AdminEvent;
 use App\Events\AdminUpdateEvent;
 use App\Models\ProfileUser;
+use App\Models\TemporaryImage;
 use App\Models\User;
 use App\Traits\HasImagesUploads;
 use Illuminate\Database\Eloquent\Builder;
@@ -18,9 +19,6 @@ class UserRepository
 {
     use HasImagesUploads;
 
-    /**
-     * @return Collection
-     */
     public function getElements(): Collection
     {
         return User::query()
@@ -54,8 +52,8 @@ class UserRepository
     {
         /**@var User $model  */
         $model->images !== null ? $this->removePathOfImages($model) : "";
-        $manage = $attributes->all();
-        $manage['images'] = self::uploadFiles($attributes);
+        $manage = $attributes->validated();
+        $manage['images'] = $this->getProfileImages()->images;
         $manage['firstname'] = $attributes->input("firstname");
         $manage['role_id'] = $attributes->input('role');
         $manage['password'] = Hash::make($attributes->input('password'));
@@ -74,8 +72,8 @@ class UserRepository
 
     private function storeFacilitator($attributes): Model
     {
-        $manager = $attributes->all();
-        $manager['images'] = self::uploadFiles($attributes);
+        $manager = $attributes->validated();
+        $manager['images'] = $this->getProfileImages()->images;
         $manager['firstname'] = $attributes->input("firstname");
         $manager['role_id'] = $attributes->input('role');
         $manager['status'] = 1;
@@ -83,6 +81,7 @@ class UserRepository
         $admin = User::query()
             ->create($manager);
         AdminEvent::dispatch($admin);
+        $this->getProfileImages()->delete();
         return $admin;
     }
 
@@ -92,5 +91,12 @@ class UserRepository
             ->create([
                 'user_id' => $partners->id
             ]);
+    }
+
+    private function getProfileImages(): Model|Builder|TemporaryImage|null
+    {
+        return TemporaryImage::query()
+            ->where('user_id', '=', auth()->id())
+            ->first();
     }
 }

@@ -14,6 +14,6 @@ class MemberFrontendController extends Controller
     {
         $viewModel = new MemberViewModel();
 
-        return view('frontend.domain.membre.index', compact('viewModel'));
+        return view('app.domain.membre.index', compact('viewModel'));
     }
 }

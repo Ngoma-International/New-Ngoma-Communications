@@ -15,7 +15,7 @@ class HomeFrontendController extends Controller
     {
         $viewModel = new HomeViewModel();
 
-        return view('frontend.home', compact('viewModel'));
+        return view('app.home', compact('viewModel'));
     }
 
     public function about(): Renderable
@@ -23,6 +23,6 @@ class HomeFrontendController extends Controller
         $teams = User::query()
             ->where('status', '=', true)
             ->get();
-        return view('frontend.domain.about.index', compact('teams'));
+        return view('app.domain.about.index', compact('teams'));
     }
 }

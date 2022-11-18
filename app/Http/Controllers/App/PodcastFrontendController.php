@@ -16,13 +16,13 @@ class PodcastFrontendController extends Controller
     {
         $viewModel = new PodcastViewModel();
 
-        return view('frontend.domain.podcast.index', compact('viewModel'));
+        return view('app.domain.podcast.index', compact('viewModel'));
     }
 
     public function show(Podcast $podcast): Renderable
     {
         $viewModel = new ShowPodcastFrontend($podcast);
 
-        return view('frontend.domain.podcast.show', compact('viewModel'));
+        return view('app.domain.podcast.show', compact('viewModel'));
     }
 }

@@ -54,11 +54,6 @@ class UserRequest extends FormRequest
                 'required',
                 'min:8',
             ],
-            "images" => [
-                'required',
-                'image',
-                'mimes:jpeg,jpg,png'
-            ],
             "description" => [
                 'required',
                 'string'

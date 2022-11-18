@@ -72,7 +72,7 @@
                 <div class="form-control-wrap">
                     <input
                         type="file"
-                        class="form-control @error('images') error @enderror"
+                        class=" @error('images') error @enderror"
                         id="images"
                         name="images"
                         value="{{ old('images') }}"
