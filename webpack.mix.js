@@ -22,10 +22,6 @@ mix
     .css('resources/css/backend/app.css', 'public/backend/css')
     .css('resources/css/app.css', 'public/frontend/css')
 
-mix.alias({
-    ziggy: path.resolve('vendor/tightenco/ziggy/dist')
-})
-
 mix.scripts([
     'public/backend/js/bundle.js',
     'public/backend/js/scripts.js'

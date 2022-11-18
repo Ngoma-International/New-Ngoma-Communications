@@ -64,7 +64,6 @@ Route::group(['middleware' => ['auth']], function () {
         //upload thumbnail
         Route::post('upload-thumbnail', UploadThumbnailBackendController::class);
         Route::delete('remove-thumbnail', [UploadThumbnailBackendController::class, 'destroy']);
-
         Route::post('upload-seminar', SeminarUploaderController::class);
         Route::delete('remove-seminar', [SeminarUploaderController::class, 'delete']);
 
