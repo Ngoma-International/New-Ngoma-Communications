@@ -16,6 +16,7 @@
         "postcss": "^8.1.14"
     },
     "dependencies": {
+        "@ckeditor/ckeditor5-build-classic": "^35.3.1",
         "@ckeditor/ckeditor5-editor-classic": "^35.3.0",
         "alpinejs": "^3.10.5",
         "axios": "^1.1.2",
@@ -26,8 +27,10 @@
         "filepond-plugin-image-edit": "^1.6.3",
         "filepond-plugin-image-preview": "^4.6.11",
         "filepond-plugin-image-resize": "^2.0.10",
+        "flatpickr": "^4.6.13",
         "laravel-mix-purgecss": "^6.0.0",
-        "simplemde": "^1.11.2",
-        "sweetalert2": "^11.6.5"
+        "quill": "^1.3.6",
+        "sweetalert2": "^11.6.5",
+        "trumbowyg": "^2.26.0"
     }
 }

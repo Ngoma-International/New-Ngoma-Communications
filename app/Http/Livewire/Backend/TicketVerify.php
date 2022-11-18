@@ -11,7 +11,7 @@ use Livewire\Component;
 
 class TicketVerify extends Component
 {
-    public  $query = "";
+    public $query = "";
     public $records;
 
     public function render(): Renderable

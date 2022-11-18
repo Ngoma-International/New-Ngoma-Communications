@@ -169,10 +169,9 @@
                 <div class="form-control-wrap">
                     <input
                             type="text"
-                            class="form-control date-picker @error('date') error @enderror"
+                            class="form-control @error('date') error @enderror"
                             id="date"
                             name="date"
-                            data-date-format="yyyy-mm-dd"
                             value="{{ old('date') }}"
                             placeholder="Enter prices"
                             required>

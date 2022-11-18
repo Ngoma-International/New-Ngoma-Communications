@@ -15204,7 +15204,7 @@ body.dark-mode.ui-shady, body.dark-mode.ui-clean, body.dark-mode.bg-lighter, bod
 /** 01. FONTS */
 .ck-editor__editable[role="textbox"] {
     /* editing area */
-    min-height: 200px;
+    min-height: 100px;
 }
 .ck-content .image {
     /* block images */

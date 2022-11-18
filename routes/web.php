@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\Profile\UpdateProfileBackendController;
 use App\Http\Controllers\Admin\Profile\UploadImageBackendController;
 use App\Http\Controllers\Admin\Seminar\SeminarBackendController;
 use App\Http\Controllers\Admin\Seminar\SeminarStatusBackendController;
+use App\Http\Controllers\Admin\Seminar\SeminarUploaderController;
 use App\Http\Controllers\Admin\Users\StatusUserBackendController;
 use App\Http\Controllers\Admin\Users\UsersBackendController;
 use App\Http\Controllers\App\HomeFrontendController;
@@ -64,6 +65,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('upload-thumbnail', UploadThumbnailBackendController::class);
         Route::delete('remove-thumbnail', [UploadThumbnailBackendController::class, 'destroy']);
 
+        Route::post('upload-seminar', SeminarUploaderController::class);
+        Route::delete('remove-seminar', [SeminarUploaderController::class, 'delete']);
 
         Route::post('podcast-status', StatusPodcastBackendController::class)
             ->name('podcast.status');

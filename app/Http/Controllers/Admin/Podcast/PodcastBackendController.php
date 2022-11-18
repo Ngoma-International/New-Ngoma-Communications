@@ -57,7 +57,7 @@ class PodcastBackendController extends BaseController
     public function show(Podcast $podcast): Factory|View|Application
     {
         $postViewModel = new ShowPodcast($podcast);
-        
+
         return view('admin.domain.podcasts.show', compact('postViewModel'));
     }
 

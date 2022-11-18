@@ -22,8 +22,7 @@ class UploadBackendController extends Controller
     public function __invoke(
         UploadVideoOrAudioRequest $request,
         ExtractMetaDataRepository $metaData
-    ): Builder|Model
-    {
+    ): Builder|Model {
         $temporary = $request->validated();
         $media = $metaData->extracts($temporary['images_video']);
         $temporary['extensions'] = $media->extractInfo()['mime_type'];

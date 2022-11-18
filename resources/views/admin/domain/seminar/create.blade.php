@@ -35,36 +35,8 @@
     </div>
 @endsection
 
-@section('styles')
-    <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet"/>
-    <link
-        href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
-        rel="stylesheet"
-    />
-@endsection
-
 @section('scripts')
-    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-image-crop/dist/filepond-plugin-image-crop.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/35.3.0/super-build/ckeditor.js"></script>
-    <script>
-        const inputElement = document.querySelector('input[id="images"]');
-        let _token = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-
-        const pont = FilePond.create(inputElement);
-
-        FilePond.registerPlugin(FilePondPluginImagePreview, FilePondPluginImageCrop);
-
-        pont.setOptions({
-            server: {
-                url: '/admins/profile-upload',
-                headers: {
-                    'X-CSRF-Token': _token
-                }
-            }
-        })
-    </script>
     <script>
         CKEDITOR.ClassicEditor.create(document.querySelector('#description'), {
             toolbar: {
@@ -92,20 +64,6 @@
                 ]
             },
             placeholder: 'Description utilisateur',
-            fontFamily: {
-                options: [
-                    'default',
-                    'Arial, Helvetica, sans-serif',
-                    'Courier New, Courier, monospace',
-                    'Georgia, serif',
-                    'Lucida Sans Unicode, Lucida Grande, sans-serif',
-                    'Tahoma, Geneva, sans-serif',
-                    'Times New Roman, Times, serif',
-                    'Trebuchet MS, Helvetica, sans-serif',
-                    'Verdana, Geneva, sans-serif'
-                ],
-                supportAllValues: true
-            },
             fontSize: {
                 options: [ 10, 11,'default', 12, 14, 16, 18, 20, 22 ],
                 supportAllValues: true

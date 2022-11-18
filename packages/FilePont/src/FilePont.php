@@ -8,11 +8,9 @@ class FilePont
 {
     public function download()
     {
-        
     }
 
     public function remove()
     {
-        
     }
 }

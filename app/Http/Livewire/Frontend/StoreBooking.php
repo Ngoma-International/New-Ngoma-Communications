@@ -20,6 +20,7 @@ class StoreBooking extends Component
 {
     use LivewireAlert;
     use HasTransaction;
+
     public $username;
     public $firstname;
     public $email;
@@ -58,8 +59,7 @@ class StoreBooking extends Component
 
     public function mount(
         Seminar $seminar
-    )
-    {
+    ) {
         $this->seminar = $seminar;
     }
 

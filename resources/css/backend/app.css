@@ -3,7 +3,7 @@
 @import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css";
 .ck-editor__editable[role="textbox"] {
     /* editing area */
-    min-height: 200px;
+    min-height: 100px;
 }
 .ck-content .image {
     /* block images */

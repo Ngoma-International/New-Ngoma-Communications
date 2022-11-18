@@ -12,6 +12,7 @@ use Livewire\Component;
 class ToggleComponent extends Component
 {
     use HasTransaction;
+
     public Booking $booking;
     public $toggleBooking;
     public $field;
@@ -39,5 +40,4 @@ class ToggleComponent extends Component
 
         session()->flash('message', "La mise a jours a ete effectuer sur cette reservation");
     }
-
 }

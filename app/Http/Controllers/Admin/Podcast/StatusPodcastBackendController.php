@@ -14,8 +14,7 @@ class StatusPodcastBackendController extends Controller
     public function __invoke(
         StatusPodcastRequest $request,
         StatusPodcastRepository $repository
-    ): JsonResponse
-    {
+    ): JsonResponse {
         $podcast = $repository->handle($request);
 
         return response()->json([
