@@ -15,10 +15,7 @@
                                 <div class="nk-block-head nk-block-head-lg">
                                     <div class="nk-block-between">
                                         <div class="nk-block-head-content">
-                                            <h4 class="nk-block-title">Mettre à jour vos informations personnelles</h4>
-                                            <div class="nk-block-des">
-                                                <p>Ces paramètres vous aident à assurer la sécurité de votre compte.</p>
-                                            </div>
+                                            <h4 class="nk-block-title">Cursus du membre</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -26,8 +23,7 @@
                                     <div class="card border border-light">
                                         <div class="card-inner-group">
                                             <div class="card-body">
-                                                @include('admin.shared._alert')
-
+                                                
                                             </div>
                                         </div>
                                     </div>
