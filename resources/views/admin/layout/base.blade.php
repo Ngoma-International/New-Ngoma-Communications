@@ -10,6 +10,7 @@
     <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" data-turbolinks-track="true" />
     <title>Ngoma-Communication | @yield('title')</title>
     <link rel="stylesheet" href="{{ asset('backend/css/app.css') }}" data-turbolinks-track="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     @yield('styles')
     <livewire:styles />
 </head>

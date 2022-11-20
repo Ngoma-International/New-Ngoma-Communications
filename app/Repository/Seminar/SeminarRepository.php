@@ -44,8 +44,8 @@ class SeminarRepository
         $seminar = $request->validated();
         $seminar['status'] = SeminarEnum::SEMINAR_PENDING;
         $seminar['duration'] = $this->getDiffInMinutes($request);
-        $seminar['start_time'] = $request->input('start_time');
-        $seminar['end_time'] = $request->input('end_time');
+        $seminar['start_time'] = Carbon::createFromFormat('h:i A', $request->input('start_time'));
+        $seminar['end_time'] = Carbon::createFromFormat('h:i A', $request->input('end_time'));
         $seminar['address_seminar'] = $request->input('address_seminar');
         $result = Seminar::query()
             ->create($seminar);

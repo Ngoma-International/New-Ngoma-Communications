@@ -92,11 +92,6 @@ class Seminar extends Model
         'status'
     ];
 
-    protected $casts = [
-        'start_time' => 'date:hh:mm',
-        'end_time' => 'date:hh:mm',
-    ];
-
     public function renderStartTimeFormat(): string
     {
         return Carbon::createFromFormat('Y-m-d H:i:s', $this->start_time)->format('H:i');

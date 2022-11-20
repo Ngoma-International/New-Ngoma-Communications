@@ -15,18 +15,18 @@
                     ])
                     @include('admin.shared._statistic', [
                         'username' => "Podcast",
-                        'amount' => \App\Models\User::count()
+                        'amount' => \App\Models\Podcast::count()
                     ])
                     @include('admin.shared._statistic', [
                         'username' => "Seminars",
-                        'amount' => \App\Models\User::count()
+                        'amount' => \App\Models\Seminar::count()
                     ])
                     @include('admin.shared._statistic', [
                         'username' => "Bookings",
-                        'amount' => \App\Models\User::count()
+                        'amount' => \App\Models\Booking::count()
                     ])
                 </div>
-                
+
                 <div class="row g-gs">
                     <div class="col-xxl-6 mb-2">
                         <div class="card card-full">
