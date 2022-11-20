@@ -28,8 +28,8 @@ return new class extends Migration
             $table->string('country')->nullable();
             $table->string('city')->nullable();
             $table->unsignedInteger('prices')->nullable();
-            $table->time('start_time')->nullable();
-            $table->time('end_time')->nullable();
+            $table->timestamp('start_time')->nullable();
+            $table->timestamp('end_time')->nullable();
             $table->date('date')->nullable();
             $table->unsignedInteger('duration')->default(0);
             $table->string('address_seminar')->nullable();
