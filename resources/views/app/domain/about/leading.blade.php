@@ -1,45 +1,45 @@
 @extends('app.layouts.base')
 
 @section('title')
-
+    Leading People
 @endsection
 
 @section('content')
-    <div class="card-inner active" id="blog-card">
+    <div class="card-inner active" id="blog">
         <div class="row card-container">
             <div class="card-wrap col col-m-12 col-t-12 col-d-8 col-d-lg-6" data-simplebar>
-                <div class="card-image col col-m-12 col-t-12 col-d-4 col-d-lg-6" style="background-image: url(images/bg1.jpg);">
+                <div class="card-image col col-m-12 col-t-12 col-d-4 col-d-lg-6" style="background-image: url({{ asset('assets/images/bg1.jpg') }});">
                     <div class="row" style="position: absolute;bottom: 12vh;">
-                        <div class="col col-m-12 col-t-12 col-d-6 col-d-lg-6" style="padding-right: 0">
-                            <div class="box-item card-box" style="padding-right: 0">
-                                <div class="desc" style="padding-right: 0">
-                                    <a href="leading.php"  style="font-weight: 200; font-size:20px; text-align: left; border-bottom:none !important;border-radius: 50px; cursor: pointer;"> <i class="far fa-compass" style="background-color: red; color:white; height: 10%; border-radius: 50px;"></i><br><span style="font-size: 12px; color: #fff; ">Leading Yourself</span></a>
+                        <div class="col col-m-12 col-t-12 col-d-6 col-d-lg-6">
+                            <div class="box-item card-box">
+                                <div class="desc" style="text-align: center; justify-items: center; justify-content: center">
+                                    <a href="{{ route('leading.index') }}"  style="font-weight: 600; font-size:25px; border-bottom:none !important;border-radius: 50px; cursor: pointer;">
+                                        <i class="far fa-compass" style="background-color: red; color:white; height: 10%; border-radius: 50px;"></i><br>
+                                        <span style="font-size: 12px; color: #fff; ">Leading Yourself</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col col-m-12 col-t-12 col-d-6 col-d-lg-6" style="padding-right: 0px">
-                            <div class="box-item card-box " style="padding-right: 0px; padding-right: 0px">
-                                <div class="desc" style="padding-right: 0px; padding-right: 0px">
+                        <div class="col col-m-12 col-t-12 col-d-6 col-d-lg-6">
+                            <div class="box-item card-box ">
+                                <div class="desc" style="text-align: center; justify-content: center;">
                                     <i class="far fa-compass" style="background-color: blue; color:white; height: 20%; border-radius: 50px;"></i><br>
-                                    <a href="leadingPeople.php"  style="font-weight: 200; font-size:20px; text-align: left; border-bottom:none !important; cursor: pointer;border-radius: 50px;"><span style="font-size: 12px; color: #fff; border-radius: 50px;">Leading People</span></a>
+                                    <a href="{{ route('people.index') }}"  style="font-weight: 600; font-size:25px; border-bottom:none !important; cursor: pointer;border-radius: 50px;">
+                                        <span style="font-size: 12px; color: #fff; border-radius: 50px;">Leading People</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col col-m-12 col-t-12 col-d-6 col-d-lg-6" style="padding-right: 0px; padding-right: 0px">
-                            <div class="box-item card-box " style="padding-left: 0px; padding-right: 0px;min-width: 10rem">
-                                <div class="desc" style="padding-left: 0px; padding-right: 0px">
+                        <div class="col col-m-12 col-t-12 col-d-6 col-d-lg-6">
+                            <div class="box-item card-box " style="min-width: 10rem">
+                                <div class="desc" style="text-align: center; justify-content: center">
                                     <i class="far fa-compass" style="background-color: green; color:white; height: 20%; border-radius: 50px;"></i><br>
-                                    <a href="leadingOrganisations.php"  style="font-weight: 200; font-size:20px; text-align: left; border-bottom:none !important; cursor: pointer;border-radius: 50px;"><span style="font-size: 12px; color: #fff; border-radius: 50px;">Leading Organisation</span></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col col-m-12 col-t-12 col-d-6 col-d-lg-6" style="padding-right: 0px; padding-right: 0px">
-                            <div class="box-item card-box " style="padding-left: 0px; padding-right: 0px;min-width: 10rem">
-                                <div class="desc" style="padding-left: 0px; padding-right: 0px">
-                                    <i class="far fa-compass" style="background-color: #FACB3D; color:white; height: 20%; border-radius: 50px;"></i><br>
-                                    <a href="lifeskills.php"  style="font-weight: 200; font-size:20px; text-align: left; border-bottom:none !important; cursor: pointer;border-radius: 50px;"><span style="font-size: 12px; color: #fff; border-radius: 50px;">Life Skills</span></a>
+                                    <a
+                                        href="{{ route('organisation.index') }}"
+                                        style="font-weight: 600; font-size:25px; border-bottom:none !important; cursor: pointer;border-radius: 50px;">
+                                        <span style="font-size: 12px; color: #fff; border-radius: 50px;">Leading Organisation</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                 <div class="content inner-top">
                     <div class="row">
                         <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
-                            <div class="title-bg" style="font-size: 60px;">Leading Yourself</div>
+                            <div class="title-bg" style="font-size: 60px; font-weight: 400">Leading Yourself</div>
                         </div>
                     </div>
                 </div>
@@ -87,13 +87,6 @@
                 </div>
             </div>
         </div>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
-
-
-        <a href="javascript:history.go(-1)" class="float">
-            <i class="fa fa-reply my-float"></i>
-        </a>
     </div>
     <div class="lines-grid">
         <div class="row">

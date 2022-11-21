@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-    <div class="card-inner blogs active" id="blog-card">
+    <div class="card-inner blogs active" id="blog">
         <div class="row card-container" data-simplebar="init">
             <div class="simplebar-track vertical" style="visibility: visible;">
                 <div class="simplebar-scrollbar" style="visibility: visible; top: 0px; height: 43px;"></div>

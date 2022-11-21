@@ -5,127 +5,89 @@
 @endsection
 
 @section('content')
-    <div class="card-inner active" id="blog-card">
+    <div class="card-inner active" id="blog">
         <div class="row card-container">
-
-            <!--
-                Card Wrap
-            -->
             <div class="card-wrap col col-m-12 col-t-12 col-d-8 col-d-lg-6" data-simplebar>
-
-                <!-- Blog Image -->
-                <div class="card-image col col-m-12 col-t-12 col-d-4 col-d-lg-6" style="background-image: url(images/bg1.jpg);">
-
+                <div class="card-image col col-m-12 col-t-12 col-d-4 col-d-lg-6" style="background-image: url({{ asset('assets/images/bg1.jpg') }});">
                     <div class="row" style="position: absolute;bottom: 12vh;">
-                        <div class="col col-m-12 col-t-12 col-d-6 col-d-lg-6" style="padding-right: 0px; padding-right: 0px">
-                            <div class="box-item card-box" style="padding-right: 0px; padding-right: 0px">
-
-                                <div class="desc" style="padding-right: 0px; padding-right: 0px">
-                                    <a href="leading.php"  style="font-weight: 200; font-size:20px; text-align: left; border-bottom:none !important;border-radius: 50px; cursor: pointer;"> <i class="far fa-compass" style="background-color: red; color:white; height: 10%; border-radius: 50px;"></i><br><span style="font-size: 12px; color: #fff; ">Leading Yourself</span></a>
+                        <div class="col col-m-12 col-t-12 col-d-6 col-d-lg-6">
+                            <div class="box-item card-box">
+                                <div class="desc" style="text-align: center; justify-items: center; justify-content: center">
+                                    <a href="{{ route('leading.index') }}"  style="font-weight: 600; font-size:25px; border-bottom:none !important;border-radius: 50px; cursor: pointer;">
+                                        <i class="far fa-compass" style="background-color: red; color:white; height: 10%; border-radius: 50px;"></i><br>
+                                        <span style="font-size: 12px; color: #fff; ">Leading Yourself</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col col-m-12 col-t-12 col-d-6 col-d-lg-6" style="padding-right: 0px; padding-right: 0px">
-                            <div class="box-item card-box " style="padding-right: 0px; padding-right: 0px">
-
-                                <div class="desc" style="padding-right: 0px; padding-right: 0px">
+                        <div class="col col-m-12 col-t-12 col-d-6 col-d-lg-6">
+                            <div class="box-item card-box ">
+                                <div class="desc" style="text-align: center; justify-content: center;">
                                     <i class="far fa-compass" style="background-color: blue; color:white; height: 20%; border-radius: 50px;"></i><br>
-                                    <a href="leadingPeople.php"  style="font-weight: 200; font-size:20px; text-align: left; border-bottom:none !important; cursor: pointer;border-radius: 50px;"><span style="font-size: 12px; color: #fff; border-radius: 50px;">Leading People</span></a>
+                                    <a href="{{ route('people.index') }}"  style="font-weight: 600; font-size:25px; border-bottom:none !important; cursor: pointer;border-radius: 50px;">
+                                        <span style="font-size: 12px; color: #fff; border-radius: 50px;">Leading People</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col col-m-12 col-t-12 col-d-6 col-d-lg-6" style="padding-right: 0px; padding-right: 0px">
-                            <div class="box-item card-box " style="padding-left: 0px; padding-right: 0px;min-width: 10rem">
-
-                                <div class="desc" style="padding-left: 0px; padding-right: 0px">
+                        <div class="col col-m-12 col-t-12 col-d-6 col-d-lg-6">
+                            <div class="box-item card-box " style="min-width: 10rem">
+                                <div class="desc" style="text-align: center; justify-content: center">
                                     <i class="far fa-compass" style="background-color: green; color:white; height: 20%; border-radius: 50px;"></i><br>
-                                    <a href="leadingOrganisations.php"  style="font-weight: 200; font-size:20px; text-align: left; border-bottom:none !important; cursor: pointer;border-radius: 50px;"><span style="font-size: 12px; color: #fff; border-radius: 50px;">Leading Organisations</span></a>
+                                    <a
+                                        href="{{ route('organisation.index') }}"
+                                        style="font-weight: 600; font-size:25px; border-bottom:none !important; cursor: pointer;border-radius: 50px;">
+                                        <span style="font-size: 12px; color: #fff; border-radius: 50px;">Leading Organisation</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col col-m-12 col-t-12 col-d-6 col-d-lg-6" style="padding-right: 0px; padding-right: 0px">
-                            <div class="box-item card-box " style="padding-left: 0px; padding-right: 0px;min-width: 10rem">
-
-                                <div class="desc" style="padding-left: 0px; padding-right: 0px">
-                                    <i class="far fa-compass" style="background-color: #FACB3D; color:white; height: 20%; border-radius: 50px;"></i><br>
-                                    <a href="lifeskills.php"  style="font-weight: 200; font-size:20px; text-align: left; border-bottom:none !important; cursor: pointer;border-radius: 50px;"><span style="font-size: 12px; color: #fff; border-radius: 50px;">Life Skills</span></a>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
-
-
                 </div>
 
-                <!--
-                    Inner Top
-                -->
                 <div class="content inner-top">
                     <div class="row">
                         <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
-                            <div class="title-bg" style="font-size: 45px;">Leading Organisations</div>
+                            <div class="title-bg" style="font-size: 60px; font-weight: 400">Leading Yourself</div>
                         </div>
                     </div>
                 </div>
 
-                <!--
-                    Blog Single
-                -->
                 <div class="content blog-single">
-
-                    <!-- content -->
                     <div class="row">
                         <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
-                            <div class="post-box card-box">
-
-
-
-
-                                <!-- blog content -->
+                            <div class="post-box card-box">>
                                 <div class="blog-content">
-                                    <p>Do you have the right acumen to contribute or lead your business to success?
-                                    </p>
                                     <p>
-
-                                        Seminars in this category will help you to implement a compelling vision, to empower and release human and organisational potential, to shape organisational culture through a powerful combination of message, matched by action.
+                                        To be a great leader, manager, supervisor, assistant, or support staff, you need to understanding, motivate, organise and empower yourself.
                                     </p>
 
                                     <p>
-
-                                        All seminars provide each valuable insights, proven to work in a “real world” environment.
+                                        You also need to ensure you have the right skills for your position and responsibilities. Do you know how to work with your colleagues and peers? What is your preferred communication style? How do you communicate in the best way with senior management? What is the best way to negotiate a win-win deal? Do you have the right influence skills for your role?  How do you persuade your colleagues to focus on common goals? How can you be the best in your job? How can find fulfillment at work and progress in your career?
                                     </p>
 
+                                    <p>Sessions in this category will help you to improve self-awareness, personal strengths, self-management, expertise in communication, negotiation, influencing, selling your ideas, persuading others, negotiating and resolving conflicts as well</p>
 
-                                    <p>Please refer to this <i class="far fa-compass" style="background-color: #4caf50; border-radius: 50px;  color:white;" aria-hidden="true"></i> icon when searching for Leading Organisations events.</p>
+                                    <p>
+                                        Each of these skills helps you to perform at your best in your organisation or business.
+                                    </p>
+                                    <p>Please refr to this <i class="far fa-compass" style="background-color: red; border-radius: 50px;  color:white;" aria-hidden="true"></i>  icon when searching for Leading Yourself Events.</p>
+
                                     <div class="flex" style="font-size: 12px; margin-top: 2rem;">
                                         <a href="events.php" class="btn2" style="background-color: #318342; font-size: 10px; padding: .5rem 1.1rem; color: #fff">Public Training</a>
-                                        <a href="events.php" class="btn2" style="background-color: #318342; font-size: 10px; padding: .5rem 1.1rem; color: #fff">In-House Traning</a>
-
+                                        <a href="events.php" class="btn2" style="background-color: #318342; font-size: 10px; padding: .5rem 1.1rem; color: #fff">In-House Training</a>
                                         <a href="podcast.php" class="btn2" style="background-color: #318342; font-size: 10px; padding: .5rem 1.1rem; color: #fff">Podcasts</a>
                                         <a href="https://ngomacommunications.com/index.php?page=contact" class="btn2" style="background-color: #FACB3D; font-size: 10px; padding: .5rem 1.1rem; color: #fff">Contact Us</a>
-
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-
             </div>
-
         </div>
-
-        <?php require_once("back.php");?>
     </div>
-
-    <!--
-        Lines Grid
-    -->
     <div class="lines-grid">
         <div class="row">
             <div class="col col-m-12 col-t-6 col-d-4 col-d-lg-3"></div>

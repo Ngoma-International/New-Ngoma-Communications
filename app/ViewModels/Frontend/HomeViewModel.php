@@ -23,7 +23,7 @@ class HomeViewModel extends ViewModel
         return Seminar::query()
             ->where('status', '=', SeminarEnum::SEMINAR_CONFIRMED)
             ->inRandomOrder()
-            ->limit(6)
+            ->limit(4)
             ->get();
     }
 }

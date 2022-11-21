@@ -20,9 +20,21 @@ class HomeFrontendController extends Controller
 
     public function about(): Renderable
     {
-        $teams = User::query()
-            ->where('status', '=', true)
-            ->get();
-        return view('app.domain.about.index', compact('teams'));
+        return view('app.domain.about.index');
+    }
+
+    public function leading(): Renderable
+    {
+        return view('app.domain.about.leading');
+    }
+
+    public function organisation(): Renderable
+    {
+        return view('app.domain.about.organisation');
+    }
+
+    public function people(): Renderable
+    {
+        return view('app.domain.about.peopleLeading');
     }
 }
