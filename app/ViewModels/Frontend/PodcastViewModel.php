@@ -22,7 +22,7 @@ class PodcastViewModel extends ViewModel
          return Podcast::query()
             ->where('status', '=', SeminarEnum::SEMINAR_CONFIRMED)
             ->orderByDesc('created_at')
-            ->with('type')
+            ->with(['type', 'offering'])
             ->paginate(6);
     }
 

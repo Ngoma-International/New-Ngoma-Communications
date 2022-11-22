@@ -7,6 +7,7 @@ namespace App\Http\Controllers\App;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\ViewModels\Frontend\HomeViewModel;
+use App\ViewModels\Frontend\PodcastViewModel;
 use App\ViewModels\Frontend\SeminarViewModel;
 use Illuminate\Contracts\Support\Renderable;
 
@@ -16,8 +17,9 @@ class HomeFrontendController extends Controller
     {
         $viewModel = new HomeViewModel();
         $seminarsViewModel = new SeminarViewModel();
+        $podcastModel = new PodcastViewModel();
 
-        return view('app.home', compact('viewModel', 'seminarsViewModel'));
+        return view('app.home', compact('viewModel', 'seminarsViewModel', 'podcastModel'));
     }
 
     public function about(): Renderable

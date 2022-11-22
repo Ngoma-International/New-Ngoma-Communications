@@ -12,13 +12,6 @@ use Illuminate\Contracts\Support\Renderable;
 
 class PodcastFrontendController extends Controller
 {
-    public function __invoke(): Renderable
-    {
-        $viewModel = new PodcastViewModel();
-
-        return view('app.domain.podcast.index', compact('viewModel'));
-    }
-
     public function show(Podcast $podcast): Renderable
     {
         $viewModel = new ShowPodcastFrontend($podcast);

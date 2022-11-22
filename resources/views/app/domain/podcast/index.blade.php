@@ -1,5 +1,5 @@
 <div class="card-wrap col col-m-12 col-t-12 col-d-8 col-d-lg-8" data-simplebar>
-    <div class="card-image col col-m-12 col-t-12 col-d-4 col-d-lg-4" style="background-image: url();"></div>
+    <div class="card-image col col-m-12 col-t-12 col-d-4 col-d-lg-4" style="background-image: url('');"></div>
     <div class="content inner-top">
         <div class="row">
             <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
@@ -30,90 +30,24 @@
             </div>
         </div>
         <div class="row grid-items">
-            <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6 grid-item photo">
-                <div class="box-item card-box">
-                    <div class="image">
-                        <a href="images/works/work1.jpg" class="has-popup-image">
-                            <img src="images/works/work1.jpg" alt="" />
-                            <span class="info">
+            @foreach($podcastModel->podcasts() as $podcast)
+                <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6 grid-item {{ $podcast->type->name }}">
+                    <div class="box-item card-box">
+                        <div class="image">
+                            <a href="{{ route('podcast.show', $podcast->id) }}" class="has-popup-image">
+                                <img src="{{ asset('storage/'. $podcast->thumbnail) }}" alt="{{ $podcast->title }}" />
+                                <span class="info">
                                 <span class="icon la la-camera-retro"></span>
                             </span>
-                        </a>
-                    </div>
-                    <div class="desc">
-                        <a href="images/works/work1.jpg" class="name has-popup-image">Motorcycle Helmet</a>
-                        <div class="category">Photo</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6 grid-item video">
-                <div class="box-item card-box">
-                    <div class="image">
-                        <a href="https://vimeo.com/97102654" class="has-popup-video">
-                            <img src="images/works/work2.jpg" alt="" />
-                            <span class="info">
-													<span class="icon la la-video-camera"></span>
-												</span>
-                        </a>
-                    </div>
-                    <div class="desc">
-                        <a href="https://vimeo.com/97102654" class="name has-popup-video">Minimalism Shapes</a>
-                        <div class="category">Video</div>
+                            </a>
+                        </div>
+                        <div class="desc">
+                            <a href="{{ route('podcast.show', $podcast->id) }}" class="name has-popup-image">{{ ucfirst($podcast->title) ?? "" }}</a>
+                            <div class="category">{{ ucfirst($podcast->offering->name) ?? "" }}</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6 grid-item music">
-                <div class="box-item card-box">
-                    <div class="image">
-                        <a href="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F221650664&amp;show_artwork=true" class="has-popup-music">
-                            <img src="images/works/work3.jpg" alt="" />
-                            <span class="info">
-													<span class="icon la la-music"></span>
-												</span>
-                        </a>
-                    </div>
-                    <div class="desc">
-                        <a href="#" class="name has-popup">Staircase</a>
-                        <div class="category">Music</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6 grid-item music">
-                <div class="box-item card-box">
-                    <div class="image">
-                        <a href="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F221650664&amp;show_artwork=true" class="has-popup-music">
-                            <img src="images/works/work8.jpg" alt="" />
-                            <span class="info">
-													<span class="icon la la-music"></span>
-												</span>
-                        </a>
-                    </div>
-                    <div class="desc">
-                        <a href="#" class="name has-popup">Daylight Entrance</a>
-                        <div class="category">Music</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6 grid-item video">
-                <div class="box-item card-box">
-                    <div class="image">
-                        <a href="https://vimeo.com/97102654" class="has-popup-video">
-                            <img src="images/works/work6.jpg" alt="" />
-                            <span class="info">
-													<span class="icon la la-video-camera"></span>
-												</span>
-                        </a>
-                    </div>
-                    <div class="desc">
-                        <a href="https://vimeo.com/97102654" class="name has-popup-video">Architecture</a>
-                        <div class="category">Video</div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
