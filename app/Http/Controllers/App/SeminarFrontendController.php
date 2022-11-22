@@ -16,13 +16,6 @@ use Illuminate\Contracts\View\View;
 
 class SeminarFrontendController extends Controller
 {
-    public function __invoke(): Renderable
-    {
-        $viewModel = new SeminarViewModel();
-
-        return  view('app.domain.seminar.index', compact('viewModel'));
-    }
-
     public function show(Seminar $seminar): Factory|View|Application
     {
         $viewModel = new ShowSeminarFrontend($seminar);

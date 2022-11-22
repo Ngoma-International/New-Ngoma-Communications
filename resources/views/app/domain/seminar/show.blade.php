@@ -1,9 +1,9 @@
 @extends('app.layouts.base')
 
 @section('title')
-
+    Detail du seminaire
 @endsection
 
-@section('title')
+@section('content')
 
 @endsection

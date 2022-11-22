@@ -21,7 +21,8 @@ class SeminarViewModel extends ViewModel
     {
         return Seminar::query()
             ->where('status', '=', SeminarEnum::SEMINAR_CONFIRMED)
-            ->orderByDesc('created_at')
+            ->join('categories', 'seminars.category_id', '=', 'categories.id')
+            ->orderByDesc('seminars.created_at')
             ->paginate(9);
     }
 }

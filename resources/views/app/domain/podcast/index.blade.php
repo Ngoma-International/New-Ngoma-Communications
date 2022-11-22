@@ -1,128 +1,119 @@
-@extends('app.layouts.base')
-
-@section('title')
-
-@endsection
-
-@section('title')
-    <div class="card-inner blogs active" id="blog-card">
-        <div class="row card-container" data-simplebar="init"><div class="simplebar-track vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="visibility: visible; top: 0px; height: 43px;"></div></div><div class="simplebar-track horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar"></div></div><div class="simplebar-scroll-content" style="padding-right: 12px; margin-bottom: -24px;"><div class="simplebar-content" style="padding-bottom: 12px; margin-right: -12px;">
-
-                    <!--
-                      Card Wrap
-                    -->
-                    <div class="card-wrap blogs-content col col-m-12 col-t-12 col-d-12 col-d-lg-12">
-
-                        <!--
-                          Inner Top
-                        -->
-                        <div class="content inner-top">
-                            <div class="row">
-                                <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
-                                    <div style="margin-top: -3rem;">
-
-
-                                        <a href="in-house.php" class="btn2" style="height: 30%; font-size: 12px; background-color: #318342;padding: 8px 8px; border-radius: 5px;">In-House Training</a>
-                                        <a href="podcast.php" class="btn2" style="height: 30%; font-size: 12px; background-color: #318342; margin-left: 10rem; padding: 8px 8px; border-radius: 5px;">Podcasts</a>
-
-
-                                    </div>
-                                    <div class="title-bg" style="margin-top: 5rem; font-size: 7rem;">Podcasts</div><br><br>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <!--
-                          Blog
-                        -->
-                        <div class="content blog" style="margin-top: -4rem;">
-                            <div class="row">
-                                <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
-                                    <form id="cform" method="post" novalidate="novalidate">
-                                        <div class="row">
-
-
-
-                                            <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
-
-                                                <br>
-                                                <p style="text-align: center;">
-                                                    <i class="far fa-compass" style="background-color: red; color:white;"></i> Leading Yourself
-                                                    <i class="far fa-compass" style="background-color: blue; color:white; margin-left:10px;"></i> Leading People
-                                                    <i class="far fa-compass" style="background-color: #4caf50; color:white; margin-left:10px;"></i> Leading Organisation
-
-                                                    <i class="far fa-compass" style="background-color: #FACB3D; color:white; margin-left:10px;"></i> Life Skills
-                                                </p>
-
-
-
-                                                <div class="group-val">
-                                                    <select id="country" onchange="change()"class="filter" style="width:50%; margin-top:30px; margin-left: 24%;margin-right: 24%; height:50px !important; background-color: #383a3d; color:white; border: none; padding: 10px;" class="btn btn-info">
-                                                        <option value="">-- Filter per Category --</option>
-                                                        <option value="all">All Podcasts</option>
-                                                        <?php echo getPodcast($con); ?>
-                                                    </select>
-                                                    <script type="text/javascript">
-                                                        function change(){
-
-                                                            var all = document.getElementById('country').value;
-
-                                                            if(all == 'all'){
-
-                                                                window.location = "podcast.php";
-
-                                                            }
-
-                                                        }
-                                                    </script>
-
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-
-                                </div>
-                            </div>
-
-                            <!-- items -->
-                            <div class="row filtered" id="display">
-                                <!-- workshop item -->
-
-                            </div>
-
-                            <div class="pager">
-                                <input type="hidden" id="next_content" value="2">
-                                <a href="#" class="button">
-                                    <!-- <span class="text" id="loadMore">Load More</span> -->
-                                    <span class="icon"></span>
-                                </a>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                </div></div></div>
-    </div>
-    <div class="lines-grid loaded">
+<div class="card-wrap col col-m-12 col-t-12 col-d-8 col-d-lg-8" data-simplebar>
+    <div class="card-image col col-m-12 col-t-12 col-d-4 col-d-lg-4" style="background-image: url();"></div>
+    <div class="content inner-top">
         <div class="row">
-            <div class="col col-m-12 col-t-6 col-d-4 col-d-lg-3"></div>
-            <div class="col col-m-12 col-t-6 col-d-4 col-d-lg-3"></div>
-            <div class="col col-m-12 col-t-6 col-d-4 col-d-lg-3"></div>
-            <div class="col col-m-0 col-t-0 col-d-0 col-d-lg-3"></div>
+            <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+                <div class="title-bg">Podcast</div>
+            </div>
         </div>
     </div>
+    <div class="content works">
+        <div class="row">
+            <div class="col col-m-12 col-t-5 col-d-5 col-d-lg-5">
+                <div class="title">
+                    <span>My</span> Podcast
+                </div>
+            </div>
+            <div class="col col-m-12 col-t-7 col-d-7 col-d-lg-7">
+                <div class="filter-menu filter-button-group">
+                    <div class="f_btn active">
+                        <label><input type="radio" name="fl_radio" value="grid-item" />All</label>
+                    </div>
+                    <div class="f_btn">
+                        <label><input type="radio" name="fl_radio" value="video" />Video</label>
+                    </div>
+                    <div class="f_btn">
+                        <label><input type="radio" name="fl_radio" value="music" />Music</label>
+                    </div>
+                </div>
 
-
-    <!--Popup modal-->
-    <div class="overlay" id="popup1" >
-        <div class="popup popBlock">
-            <!--Pop up -->
+            </div>
         </div>
+        <div class="row grid-items">
+            <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6 grid-item photo">
+                <div class="box-item card-box">
+                    <div class="image">
+                        <a href="images/works/work1.jpg" class="has-popup-image">
+                            <img src="images/works/work1.jpg" alt="" />
+                            <span class="info">
+                                <span class="icon la la-camera-retro"></span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="desc">
+                        <a href="images/works/work1.jpg" class="name has-popup-image">Motorcycle Helmet</a>
+                        <div class="category">Photo</div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6 grid-item video">
+                <div class="box-item card-box">
+                    <div class="image">
+                        <a href="https://vimeo.com/97102654" class="has-popup-video">
+                            <img src="images/works/work2.jpg" alt="" />
+                            <span class="info">
+													<span class="icon la la-video-camera"></span>
+												</span>
+                        </a>
+                    </div>
+                    <div class="desc">
+                        <a href="https://vimeo.com/97102654" class="name has-popup-video">Minimalism Shapes</a>
+                        <div class="category">Video</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6 grid-item music">
+                <div class="box-item card-box">
+                    <div class="image">
+                        <a href="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F221650664&amp;show_artwork=true" class="has-popup-music">
+                            <img src="images/works/work3.jpg" alt="" />
+                            <span class="info">
+													<span class="icon la la-music"></span>
+												</span>
+                        </a>
+                    </div>
+                    <div class="desc">
+                        <a href="#" class="name has-popup">Staircase</a>
+                        <div class="category">Music</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6 grid-item music">
+                <div class="box-item card-box">
+                    <div class="image">
+                        <a href="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F221650664&amp;show_artwork=true" class="has-popup-music">
+                            <img src="images/works/work8.jpg" alt="" />
+                            <span class="info">
+													<span class="icon la la-music"></span>
+												</span>
+                        </a>
+                    </div>
+                    <div class="desc">
+                        <a href="#" class="name has-popup">Daylight Entrance</a>
+                        <div class="category">Music</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6 grid-item video">
+                <div class="box-item card-box">
+                    <div class="image">
+                        <a href="https://vimeo.com/97102654" class="has-popup-video">
+                            <img src="images/works/work6.jpg" alt="" />
+                            <span class="info">
+													<span class="icon la la-video-camera"></span>
+												</span>
+                        </a>
+                    </div>
+                    <div class="desc">
+                        <a href="https://vimeo.com/97102654" class="name has-popup-video">Architecture</a>
+                        <div class="category">Video</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-@endsection
+</div>

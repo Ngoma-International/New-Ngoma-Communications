@@ -72,11 +72,7 @@ Route::group(['middleware' => ['auth']], function () {
     });
 });
 
-Route::get('podcast', PodcastFrontendController::class)->name('podcast.index');
 Route::get('podcast/{podcast}', [PodcastFrontendController::class, 'show'])->name('podcast.show');
-Route::get('seminar', SeminarFrontendController::class)->name('seminar.index');
-Route::get('seminar/{seminar}', [SeminarFrontendController::class, 'show'])->name('seminar.show');
-Route::get('member', MemberFrontendController::class)->name('membre.index');
 Route::get('member/{user}', [MemberFrontendController::class, 'show'])->name('membre.show');
 Route::get('about', [HomeFrontendController::class, 'about'])->name('about.index');
 Route::get('leading', [HomeFrontendController::class, 'leading'])->name('leading.index');
@@ -90,3 +86,5 @@ Route::get('inquire', fn() => view('app.domain.program.inquire'))->name('inquire
 Route::get('keynote', fn() => view('app.domain.membre.keynote'))->name('keynote.page');
 Route::get('executive', fn() => view('app.domain.membre.executive'))->name('executive.page');
 Route::get('/', HomeFrontendController::class)->name('app.name');
+
+Route::get('seminar/{seminar}', [SeminarFrontendController::class, 'show'])->name('seminar.show');

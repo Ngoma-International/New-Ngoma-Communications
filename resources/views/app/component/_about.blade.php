@@ -1,4 +1,4 @@
-<div class="card-wrap col col-m-12 col-t-12 col-d-8 col-d-lg-7">
+<div class="card-wrap col col-m-12 col-t-12 col-d-8 col-d-lg-7" data-simplebar>
     <div class="card-image card-image1 col col-m-12 col-t-12 col-d-4 col-d-lg-6" style="background-image: url({{ asset('assets/images/bg1.jpg') }}); background-size: cover;  overflow-y: scroll;">
         <p class="mobile4" style="font-weight: 400; letter-spacing: inherit">
             We maintain a pool of highly qualified facilitators, coaches, and
@@ -72,21 +72,8 @@
 
     <div class="content inner-top" style="margin-top: 0 !important; padding-top: 10px !important;">
         <div class="row">
-            <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12" style="">
-                <div style="margin-top: 1rem; margin-bottom: 2rem; justify-items: center; display: flex; ">
-                    <a href="events.php" class="btn2" style="height: 30%; font-size: 12px; background-color: #318342; padding: 8px 8px; border-radius: 5px;">
-                        Public Training
-                    </a>
-
-                    <a href="in-house.php" class="btn2" style="height: 30%; font-size: 12px; background-color: #318342; padding: 8px 8px; border-radius: 5px;">
-                        In-House Training
-                    </a>
-                    <a href="podcast.php" class="btn2" style="height: 30%; font-size: 12px; background-color: #318342; padding: 8px 8px; border-radius: 5px;">
-                        Podcasts
-                    </a>
-                </div>
-
-                <div class="title-bg mobile1" style="margin-top: 7rem;margin-bottom: 3rem; text-align: left !important">
+            <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+                <div class="title-bg mobile1" style="padding: 3rem 2rem; text-align: match-parent !important">
                     About Us
                 </div>
                 <div class="text aboutText" style="margin-top: 150px;">
@@ -102,14 +89,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-<div class="lines-grid loaded">
-    <div class="row">
-        <div class="col col-m-12 col-t-6 col-d-4 col-d-lg-3"></div>
-        <div class="col col-m-12 col-t-6 col-d-4 col-d-lg-3"></div>
-        <div class="col col-m-12 col-t-6 col-d-4 col-d-lg-3"></div>
-        <div class="col col-m-0 col-t-0 col-d-0 col-d-lg-3"></div>
     </div>
 </div>

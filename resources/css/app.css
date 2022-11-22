@@ -4,7 +4,7 @@
     bottom: 0;
     position: fixed;
     margin: 1em;
-    right: 0px;
+    right: 0;
 }
 
 .float{
@@ -360,6 +360,22 @@
     margin-bottom: 1rem;
 }
 
+@media only screen and (max-width: 630px) {
+    .card1 {
+        display: flex;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        font-weight: 200;
+        max-height: 130px;
+        position: relative;
+        margin-bottom: 1rem;
+        align-content: center;
+        justify-items: center;
+    }
+}
+
+
 .card-block {
     background-color: rgba(0, 0, 0, 0.5);
     border-top-right-radius: 20px;
@@ -419,6 +435,7 @@
 
 .text {
     margin-top: 8rem;
+    margin-left: 2rem !important;
 }
 
 @media only screen and (max-width: 1085px) {
@@ -428,6 +445,7 @@
 
     .text {
         margin-top: 2rem !important;
+        margin-left: 2rem !important;
     }
 
     .logo {
