@@ -11,8 +11,8 @@
             </div>
             <div class="desc">
                 <div style="display: flex; justify-content: space-between; align-items: center">
-                    <a href="{{ route('podcast.show', $podcast->id) }}" class="name">{{ ucfirst($podcast->title) ?? "" }}</a>
-                    <span style="color: white; font-weight: bold; font-family: Roboto,sans-serif, Arial">{{ $seminar->user->name ?? 0 }}</span>
+                    <a href="{{ route('podcast.show', $podcast->id) }}" class="name">{{ ucfirst(substr($podcast->title, 0, 25)) ?? "" }}...</a>
+                    <span style="color: white; font-weight: 500; font-family: Roboto,sans-serif, Arial">{{ $podcast->type->name ?? "" }}</span>
                 </div>
 
                 <div class="category">{{ ucfirst($podcast->offering->name) ?? "" }}</div>

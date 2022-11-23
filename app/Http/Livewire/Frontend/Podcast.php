@@ -13,7 +13,7 @@ class Podcast extends Component
         $podcasts = \App\Models\Podcast::query()
             ->where('status', '=', SeminarEnum::SEMINAR_CONFIRMED)
             ->orderByDesc('created_at')
-            ->with(['type', 'offering'])
+            ->with(['type', 'offering', 'user'])
             ->paginate(6);
         return view('livewire.frontend.podcast', [
             'podcasts' => $podcasts

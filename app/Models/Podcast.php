@@ -72,4 +72,9 @@ class Podcast extends Model
     {
         return $this->belongsTo(PodcastOffering::class, 'podcast_offering_id');
     }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

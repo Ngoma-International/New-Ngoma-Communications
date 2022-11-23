@@ -20,10 +20,12 @@
         <div class="row">
             <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
                 <div class="box-item card-box">
-                    <div class="image">
+                    <div>
                         <a href="{{ route('in.house') }}">
-                            <img src="{{ asset('assets/images/in-house.jpg') }}" style="height: 350px; margin-top:5%; width: 350px; object-fit:cover;"  alt=""/>
-                            <span class="info"></span>
+                            <img
+                                src="{{ asset('assets/images/in-house.jpg') }}"
+                                style="height: 200px; margin-top:5%; width: 100%; object-fit:cover; justify-content: center; border-radius: 10%"
+                                alt="in-house"/>
                         </a>
                     </div>
                     <div class="desc">
@@ -35,10 +37,12 @@
             </div>
             <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
                 <div class="box-item card-box">
-                    <div class="image">
+                    <div>
                         <a href="{{ route('keynote.page') }}">
-                            <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" style="height: 350px; margin-top:5%; width: 300px; object-fit:cover; border-bottom-left-radius: 15px; border-bottom-right-radius: 15"  alt=""/>
-                            <span class="info"></span>
+                            <img
+                                src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+                                style="height: 200px; margin-top:5%; width: 100%; object-fit:cover; justify-content: center; border-radius: 10%"
+                                alt="keynote"/>
                         </a>
                     </div>
                     <div class="desc">
@@ -49,10 +53,12 @@
             </div>
             <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6 card3" id="card4">
                 <div class="box-item card-box">
-                    <div class="image">
+                    <div>
                         <a href="{{ route('executive.page') }}">
-                            <img src="{{ asset('assets/images/profile4.jpg') }}" style="height: 350px; margin-top:5%; width: 300px; object-fit:cover; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px"  alt=""/>
-                            <span class="info"></span>
+                            <img
+                                src="{{ asset('assets/images/profile4.jpg') }}"
+                                style="height: 200px; margin-top:5%; width: 100%; object-fit:cover; justify-content: center; border-radius: 10%"
+                                alt="executive"/>
                         </a>
                     </div>
                     <div class="desc">
