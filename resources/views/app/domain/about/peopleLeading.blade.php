@@ -73,13 +73,6 @@
                                         Each of these skills helps you to perform at your best in your organisation or business.
                                     </p>
                                     <p>Please refr to this <i class="far fa-compass" style="background-color: red; border-radius: 50px;  color:white;" aria-hidden="true"></i>  icon when searching for Leading Yourself Events.</p>
-
-                                    <div class="flex" style="font-size: 12px; margin-top: 2rem;">
-                                        <a href="events.php" class="btn2" style="background-color: #318342; font-size: 10px; padding: .5rem 1.1rem; color: #fff">Public Training</a>
-                                        <a href="events.php" class="btn2" style="background-color: #318342; font-size: 10px; padding: .5rem 1.1rem; color: #fff">In-House Training</a>
-                                        <a href="podcast.php" class="btn2" style="background-color: #318342; font-size: 10px; padding: .5rem 1.1rem; color: #fff">Podcasts</a>
-                                        <a href="https://ngomacommunications.com/index.php?page=contact" class="btn2" style="background-color: #FACB3D; font-size: 10px; padding: .5rem 1.1rem; color: #fff">Contact Us</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>

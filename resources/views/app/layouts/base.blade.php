@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:liviwire="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -42,6 +42,7 @@
     <noscript>
         <img height="1" width="1" src="https://www.facebook.com/tr?id=345083379773116&ev=PageView&noscript=1"  alt=""/>
     </noscript>
+    <livewire:styles />
 </head>
 <body>
 <div class="page">
@@ -62,5 +63,6 @@
     <script src="{{ asset('frontend/js/scripts.min.js') }}"></script>
     <script src="{{ asset('frontend/js/modal-video.min.js') }}"></script>
     <script src="{{ asset('frontend/js/app.js') }}"></script>
+    <livewire:scripts />
 </body>
 </html>

@@ -76,14 +76,21 @@ class StoreBooking extends Component
             $booking = Booking::query()
                 ->create(array_merge($validation, [
                     'status' => BookingStatus::Booking_pending,
-                    'seminar_id' => $this->seminar,
+                    'seminar_id' => $this->seminar->id,
                     'transaction_code' => 0
                 ]));
             BookingEvent::dispatch($booking);
-            session()->flash('success', "Votre reservation a ete effectuer");
+
+            $this->dispatchBrowserEvent('booking', [
+                'type' => 'success',
+                'message' => 'Votre réservation a été effectuer avec succès'
+            ]);
             $this->resetForm();
         } catch (\Throwable $exception) {
-            session()->flash('success', $exception->getMessage());
+            $this->dispatchBrowserEvent('booking', [
+                'type' => 'error',
+                'message' => $exception->getMessage()
+            ]);
             $this->resetForm();
         }
     }

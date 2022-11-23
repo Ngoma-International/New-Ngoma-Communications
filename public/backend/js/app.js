@@ -3113,7 +3113,7 @@ __webpack_require__.r(__webpack_exports__);
 var toastSwalMixin = sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().mixin({
   toast: true,
   position: "top-end",
-  timer: 5000,
+  timer: 100000,
   icon: 'error',
   showCloseButton: true,
   timerProgressBar: true,

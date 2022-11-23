@@ -20,11 +20,11 @@ class ShowSeminarFrontend extends ViewModel
         $seminar = Seminar::query()
             ->where('id', '=', $this->seminar->id)
             ->where('status', '=', SeminarEnum::SEMINAR_CONFIRMED)
-            ->with('seminarType')
             ->first();
         return $seminar->load([
             'category',
-            'user'
+            'user',
+            'seminarType'
         ]);
     }
 }

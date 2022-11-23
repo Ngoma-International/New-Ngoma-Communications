@@ -1,86 +1,76 @@
-
-<form class="comment-form columns_padding_10" wire:submit.prevent="storeBooking">
+<form wire:submit.prevent="storeBooking">
     <div class="row">
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group margin_0">
-                <label for="username">Name<span class="required">*</span></label>
+        <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+            <div class="group-val">
                 <input
                     type="text"
-                    value="{{ old('username') }}"
                     name="username"
-                    id="username"
                     wire:model.lazy="username"
-                    class="form-control "
-                    placeholder="username"
-                >
+                    id="username"
+                    value="{{ old('username') }}"
+                    placeholder="Username" />
             </div>
+            @error('username') <span style="color: rgb(239 68 68); font-size: 12px; font-weight: bold">{{ $message }}</span>@enderror
         </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group margin_0">
-                <label for="firstname">Prenom<span class="required">*</span></label>
+        <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+            <div class="group-val">
                 <input
                     type="text"
-                    value="{{ old('firstname') }}"
                     name="firstname"
-                    id="firstname"
                     wire:model.lazy="firstname"
-                    class="form-control"
-                    placeholder="firstname"
-                >
+                    id="firstname"
+                    value="{{ old('firstname') }}"
+                    placeholder="Firstname" />
             </div>
+            @error('firstname') <span style="color: rgb(239 68 68); font-size: 12px; font-weight: bold">{{ $message }}</span>@enderror
         </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group margin_0">
-                <label for="email">Email<span class="required">*</span></label>
+        <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+            <div class="group-val">
                 <input
                     type="email"
                     value="{{ old('email') }}"
                     name="email"
                     id="email"
                     wire:model.lazy="email"
-                    class="form-control"
-                    placeholder="email"
-                >
+                    placeholder="email" />
             </div>
+            @error('email') <span style="color: rgb(239 68 68); font-size: 12px; font-weight: bold">{{ $message }}</span>@enderror
         </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group margin_0">
-                <label for="phone_number">Telephone<span class="required">*</span></label>
+        <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+            <div class="group-val">
                 <input
                     type="text"
-                    value="{{ old('phone_number') }}"
                     name="phone_number"
+                    value="{{ old('phone_number') }}"
                     id="phone_number"
                     wire:model.lazy="phone_number"
-                    class="form-control"
-                    placeholder="phone number"
-                >
+                    placeholder="Phone Number" />
             </div>
+            @error('phone_number') <span style="color: rgb(239 68 68); font-size: 12px; font-weight: bold">{{ $message }}</span>@enderror
         </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group margin_0">
-                <label for="ticket_number">Nb Ticket<span class="required">*</span></label>
+        <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+            <div class="group-val">
                 <input
-                    type="text"
+                    type="number"
                     value="{{ old('ticket_number') }}"
                     name="ticket_number"
                     id="ticket_number"
                     wire:model.lazy="ticket_number"
-                    class="form-control"
-                    placeholder="ticket number"
-                >
+                    placeholder="Ticket Number" />
             </div>
+            @error('ticket_number') <span style="color: rgb(239 68 68); font-size: 12px; font-weight: bold">{{ $message }}</span>@enderror
         </div>
-        <div class="col-xs-12 col-sm-6">
-            <div class="form-group margin_0">
-                <label for="country">Nb Ticket<span class="required">*</span></label>
-                <select name="country" wire:model.lazy="country" id="country">
+        <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+            <div class="group-val">
+                <select name="country" wire:model.lazy="country" id="country" style="width: 100%; height: 60px; background: #606265; color: white; border: none; border-bottom: 1px solid #777; margin: 1%; padding-bottom: 1%">
                     @include('admin.shared.seminar._country')
                 </select>
             </div>
         </div>
     </div>
-    <div class="form-submit topmargin_35">
-        <button type="submit" class="theme_button min_width_button">Reserver</button>
+    <div style="padding: 0; margin: 0; text-align: center">
+        <button type="submit" style="background:#5ac24e; padding-right: 2rem; padding-left: 2rem">
+            <span>Booking Ticket</span>
+        </button>
     </div>
 </form>
