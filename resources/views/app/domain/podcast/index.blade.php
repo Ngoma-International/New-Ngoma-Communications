@@ -30,24 +30,7 @@
             </div>
         </div>
         <div class="row grid-items">
-            @foreach($podcastModel->podcasts() as $podcast)
-                <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6 grid-item {{ $podcast->type->name }}">
-                    <div class="box-item card-box">
-                        <div class="image">
-                            <a href="{{ route('podcast.show', $podcast->id) }}" class="has-popup-image">
-                                <img src="{{ asset('storage/'. $podcast->thumbnail) }}" alt="{{ $podcast->title }}" />
-                                <span class="info">
-                                <span class="icon la la-camera-retro"></span>
-                            </span>
-                            </a>
-                        </div>
-                        <div class="desc">
-                            <a href="{{ route('podcast.show', $podcast->id) }}" class="name has-popup-image">{{ ucfirst($podcast->title) ?? "" }}</a>
-                            <div class="category">{{ ucfirst($podcast->offering->name) ?? "" }}</div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+            <livewire:frontend.podcast />
         </div>
     </div>
 </div>

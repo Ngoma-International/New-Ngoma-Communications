@@ -16,10 +16,9 @@ class HomeFrontendController extends Controller
     public function __invoke(): Renderable
     {
         $viewModel = new HomeViewModel();
-        $seminarsViewModel = new SeminarViewModel();
         $podcastModel = new PodcastViewModel();
 
-        return view('app.home', compact('viewModel', 'seminarsViewModel', 'podcastModel'));
+        return view('app.home', compact('viewModel', 'podcastModel'));
     }
 
     public function about(): Renderable
