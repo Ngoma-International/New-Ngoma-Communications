@@ -11,7 +11,7 @@
                 <div class="brand-logo pb-5">
                     <a href="{{ route('app.name') }}" class="logo-link">
                         <img
-                                src="{{ asset('assets/images/Triplex 3.svg')  }}"
+                                src="{{ asset('assets/images/Triplex all-03.png')  }}"
                                 alt="logo"
                                 style="height: 40%; width: 40%;"
                                 class="img-fluid text-center">

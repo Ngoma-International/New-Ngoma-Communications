@@ -3,7 +3,7 @@
         <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12" style="align-content: center; align-items: center">
             <div class="row">
                 <a href="{{ route('app.name') }}">
-                    <img src="{{ asset('assets/images/Triplex.svg') }}" style="width: 10%; height: 10%; color: white" class="logo" alt="">
+                    <img src="{{ asset('assets/images/Triplex all-03.png') }}" style="width: 10%; height: 10%; color: white" class="logo" alt="">
                 </a>
             </div>
             <div class="text">
