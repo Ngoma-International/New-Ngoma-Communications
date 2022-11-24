@@ -23,7 +23,7 @@
             </div>
         </div>
 
-        <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-4">
+        <div class="col col-m-12 col-t-4 col-d-4 col-d-lg-4">
             <div class="service-item card-box">
                 <div class="icon">
                     <i class="far fa-compass" style="background-color: red; color:white; height: 20%;border-radius: 50px"></i>
@@ -36,7 +36,7 @@
             </div>
         </div>
 
-        <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-4">
+        <div class="col col-m-12 col-t-4 col-d-4 col-d-lg-4">
             <div class="service-item card-box">
                 <div class="icon">
                     <i class="far fa-compass" style="background-color: blue; color:white; height: 10%;border-radius: 50px"></i>
@@ -49,7 +49,7 @@
             </div>
         </div>
 
-        <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-4">
+        <div class="col col-m-12 col-t-4 col-d-4 col-d-lg-4">
             <div class="service-item card-box">
                 <div class="icon">
                     <i class="far fa-compass" style="background-color: #4caf50; color:white;border-radius: 50px"></i>
