@@ -1,5 +1,5 @@
 import Alpine from 'alpinejs'
-import Toastr from "../Shared/element /Toastr"
+import Toastr from '../Shared/element/Toastr';
 import {uploadAudio} from "./util/upload";
 import {VideoUpload} from "./util/VideoUpload";
 import {picker} from "../Shared/util/picker";

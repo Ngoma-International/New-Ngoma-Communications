@@ -16,10 +16,10 @@
         </div>
     </div>
 
-    <div class="content resume" style="margin-top: 60px">
+    <div class="content resume" style="margin-top: 20px">
         <div class="row">
             <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
-                <div class="box-item card-box">
+                <div class="box-item card-box" style="padding: 5px">
                     <div>
                         <a href="{{ route('in.house') }}">
                             <img
@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
-                <div class="box-item card-box">
+                <div class="box-item card-box" style="padding: 5px">
                     <div>
                         <a href="{{ route('keynote.page') }}">
                             <img
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6 card3" id="card4">
-                <div class="box-item card-box">
+                <div class="box-item card-box" style="padding: 5px">
                     <div>
                         <a href="{{ route('executive.page') }}">
                             <img

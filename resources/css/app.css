@@ -401,7 +401,7 @@
 
 .card-inner .card-box {
     position: relative;
-    padding: 30px;
+    padding: 10px;
     background: rgba(255, 255, 255, .2);
     box-shadow: 0 0 50px rgba(0, 0, 0, .2);
     -moz-box-shadow: 0 0 50px rgba(0, 0, 0, .2);
