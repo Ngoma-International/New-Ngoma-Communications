@@ -1,14 +1,14 @@
 <header class="header">
     <div class="top-menu">
         <ul>
-            <li>
-                <a href="#home">
-                    <span class="icon " style=" text-align: center">
-                        <img src="french.png" style="max-height: 1.5rem">
-                    </span>
-                    <span class="link">🇫🇷</span>
-                </a>
-            </li>
+{{--            <li>--}}
+{{--                <a href="#home">--}}
+{{--                    <span class="icon " style=" text-align: center">--}}
+{{--                        <img src="french.png" style="max-height: 1.5rem">--}}
+{{--                    </span>--}}
+{{--                    <span class="link">🇫🇷</span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
 
             <li>
                 <a href="#home">
