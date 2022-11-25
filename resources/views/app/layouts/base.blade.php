@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/app.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/b8977c7e2a.js"></script>
-    <link rel="shortcut icon" href="images/logo.png">
+    <link rel="shortcut icon" href="{{asset('favicon.png')}}">
     <script>
         ! function(f, b, e, v, n, t, s) {
             if (f.fbq) return;
