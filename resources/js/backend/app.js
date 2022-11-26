@@ -4,6 +4,7 @@ import {uploadAudio} from "./util/upload";
 import {VideoUpload} from "./util/VideoUpload";
 import {picker} from "../Shared/util/picker";
 import {uploadImages} from "./util/seminar";
+import {toast} from "../Shared/util/toastr";
 
 Alpine.start()
 customElements.define('app-toast', Toastr)
@@ -33,3 +34,8 @@ if (images) {
     import('./util/seminar')
         .then(module => uploadImages(images))
 }
+
+window.addEventListener('backend', event => {
+    toast(event.detail.type, event.detail.message)
+})
+

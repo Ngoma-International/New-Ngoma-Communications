@@ -14,11 +14,10 @@ const toastSwalMixin = Swal.mixin({
     }
 })
 
-export const toast = (type, message, timer= 1500) => {
+export const toast = (type, message, timer= 3000) => {
     toastSwalMixin.fire({
         icon: true,
         html: message,
         timer: timer
-
     })
 }

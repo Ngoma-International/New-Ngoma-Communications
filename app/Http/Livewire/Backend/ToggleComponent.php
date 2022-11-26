@@ -17,6 +17,9 @@ class ToggleComponent extends Component
     public $toggleBooking;
     public $field;
 
+    protected $listeners = [
+        'updating' => 'updating'
+    ];
 
     public function mount()
     {
@@ -32,12 +35,26 @@ class ToggleComponent extends Component
 
     public function updating($field, $value)
     {
-        $this->booking->update([
-            'status' => $value,
-            'transaction_code' => $this->generateTransaction(8),
-            'booking_at' => now()
-        ]);
-
-        session()->flash('message', "La mise a jours a ete effectuer sur cette reservation");
+        if ($value) {
+            $this->booking->update([
+                'status' => true,
+                'transaction_code' => $this->generateTransaction(8),
+                'booking_at' => now()
+            ]);
+            $this->emit('updating', $this->booking);
+            $this->dispatchBrowserEvent('backend', [
+                'type' => 'success',
+                'message' => 'Reservation to be confirmed with success'
+            ]);
+        } else {
+            $this->booking->update([
+                'status' => $value,
+            ]);
+            $this->emit('updating', $this->booking);
+            $this->dispatchBrowserEvent('backend', [
+                'type' => 'danger',
+                'message' => 'Reservation cancel'
+            ]);
+        }
     }
 }

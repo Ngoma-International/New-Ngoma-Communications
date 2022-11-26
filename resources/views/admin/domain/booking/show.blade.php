@@ -198,7 +198,6 @@
                         </div>
                     </div>
                 </div>
-            @endcomponent
-        </div>
+        @endcomponent
     </div>
 @endsection
