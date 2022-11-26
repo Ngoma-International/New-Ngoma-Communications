@@ -78,13 +78,10 @@ Route::get('about', [HomeFrontendController::class, 'about'])->name('about.index
 Route::get('leading', [HomeFrontendController::class, 'leading'])->name('leading.index');
 Route::get('organisation', [HomeFrontendController::class, 'organisation'])->name('organisation.index');
 Route::get('people', [HomeFrontendController::class, 'people'])->name('people.index');
-Route::get('in-house', function () {
-   return view('app.domain.membre.in-house');
-})->name('in.house');
+Route::get('in-house', fn() => view('app.domain.membre.in-house'))->name('in.house');
 Route::get('select-page', fn() => view('app.domain.program.selectPage'))->name('select.page');
 Route::get('inquire', fn() => view('app.domain.program.inquire'))->name('inquire.page');
 Route::get('keynote', fn() => view('app.domain.membre.keynote'))->name('keynote.page');
 Route::get('executive', fn() => view('app.domain.membre.executive'))->name('executive.page');
 Route::get('/', HomeFrontendController::class)->name('app.name');
-
 Route::get('seminar/{seminar}', [SeminarFrontendController::class, 'show'])->name('seminar.show');
