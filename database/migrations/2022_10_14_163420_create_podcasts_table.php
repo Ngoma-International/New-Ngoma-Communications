@@ -28,6 +28,8 @@ return new class extends Migration
             $table->string('thumbnail')->nullable();
             $table->string('images_video')->nullable();
             $table->boolean('status')->default(0);
+            $table->longText('description')
+                ->nullable();
             $table->timestamps();
         });
     }

@@ -17,17 +17,15 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        $seminary_types = [
-            'Open Seminar',
-            'CSR Event',
-            'Online event',
+        $events_types = [
+            'Leader conference',
+            'Private',
+            'Publique'
         ];
 
-        foreach ($seminary_types as $seminary) {
+        foreach ($events_types as $event) {
             SeminaryType::query()
-                ->create([
-                    'name' => $seminary
-                ]);
+                ->create(['name' => $event]);
         }
     }
 

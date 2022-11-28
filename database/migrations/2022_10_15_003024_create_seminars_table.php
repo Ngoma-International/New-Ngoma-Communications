@@ -21,22 +21,17 @@ return new class extends Migration
             $table->foreignIdFor(SeminaryType::class)
                 ->constrained()
                 ->cascadeOnDelete();
-            $table->foreignIdFor(User::class)
-                ->constrained()
-                ->cascadeOnDelete();
             $table->string('name')->unique();
-            $table->string('country')->nullable();
             $table->string('city')->nullable();
-            $table->unsignedInteger('prices')->nullable();
+            $table->unsignedInteger('prices')
+                ->default(0)
+                ->nullable();
             $table->timestamp('start_time')->nullable();
             $table->timestamp('end_time')->nullable();
             $table->date('date')->nullable();
-            $table->unsignedInteger('duration')->default(0);
-            $table->string('address_seminar')->nullable();
-            $table->string('attend')->nullable();
-            $table->text('overview')->nullable();
-            $table->string('images')->nullable();
-            $table->boolean('status')->default(0);
+            $table->string('address')->nullable();
+            $table->boolean('status')
+                ->default(0);
             $table->longText('description')->nullable();
             $table->timestamps();
         });

@@ -1,14 +1,6 @@
 <header class="header">
     <div class="top-menu">
         <ul>
-{{--            <li>--}}
-{{--                <a href="#home">--}}
-{{--                    <span class="icon " style=" text-align: center">--}}
-{{--                        <img src="french.png" style="max-height: 1.5rem">--}}
-{{--                    </span>--}}
-{{--                    <span class="link">🇫🇷</span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
 
             <li>
                 <a href="#home">
@@ -47,6 +39,13 @@
             </li>
 
             <li>
+                <a  href="#leaders">
+                    <span class="icon fa fa-user-shield" style="text-align: center"></span>
+                    <span class="link">Leaders club</span>
+                </a>
+            </li>
+
+            <li>
                 <a href="#contact">
                     <i class="icon fa fa-envelope" style="text-align: center"></i>
                     <span class="link">Contact Us</span>
@@ -54,7 +53,7 @@
             </li>
             <li>
                 <a href="{{ route('login') }}">
-                    <i class="icon fa fa-user" style="text-align: center"></i>
+                    <i class="icon fa fa-sign-in" style="text-align: center"></i>
                     <span class="link">Admin</span>
                 </a>
             </li>

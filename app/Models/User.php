@@ -10,6 +10,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -113,9 +114,10 @@ class User extends Authenticatable
         };
     }
 
-    public function seminars(): HasMany
+    public function seminars(): BelongsToMany
     {
-        return $this->hasMany(Seminar::class);
+        return $this->belongsToMany(Seminar::class, 'user_seminary')
+            ->withTimestamps();
     }
 
     public function getId(): int

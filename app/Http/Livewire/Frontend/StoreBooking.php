@@ -8,28 +8,25 @@ use App\Enums\BookingStatus;
 use App\Events\BookingEvent;
 use App\Models\Booking;
 use App\Models\Seminar;
-use App\Repository\Booking\StoreBookingRepository;
 use App\Traits\HasTransaction;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
 class StoreBooking extends Component
 {
-    use LivewireAlert;
     use HasTransaction;
 
-    public $username;
-    public $firstname;
-    public $email;
-    public $phone_number;
-    public $ticket_number;
-    public $country;
-    public $seminar;
+    public $username = null;
+    public $firstname = null;
+    public $email = null;
+    public $phone_number = null;
+    public $ticket_number = null;
+    public $country = null;
+    public $seminar = null;
 
-    protected $rules = [
+    protected array $rules = [
         'username' => [
             'required',
             'string',

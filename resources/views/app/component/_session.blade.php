@@ -10,62 +10,20 @@
 
     <div class="content inner-top" style="margin-top: 0 !important; padding-top: 15px !important">
         <div class="row">
-            <div class=" col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+            <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
                 <div class="title-bg mobile1" style="font-size: 60px">Private Sessions</div>
             </div>
-        </div>
-    </div>
-
-    <div class="content resume" style="margin-top: 20px">
-        <div class="row">
-            <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
-                <div class="box-item card-box" style="padding: 5px">
-                    <div>
-                        <a href="{{ route('in.house') }}">
-                            <img
-                                src="{{ asset('assets/images/in-house.jpg') }}"
-                                style="height: 200px; margin-top:5%; width: 100%; object-fit:cover; justify-content: center; border-radius: 10%"
-                                alt="in-house"/>
-                        </a>
-                    </div>
-                    <div class="desc">
-                        <a href="{{ route('in.house') }}" class="link" style="font-weight: 200; font-size:20px; text-align: center; border-bottom:none !important; cursor: pointer;">
-                            In-House Seminars
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
-                <div class="box-item card-box" style="padding: 5px">
-                    <div>
-                        <a href="{{ route('keynote.page') }}">
-                            <img
-                                src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-                                style="height: 200px; margin-top:5%; width: 100%; object-fit:cover; justify-content: center; border-radius: 10%"
-                                alt="keynote"/>
-                        </a>
-                    </div>
-                    <div class="desc">
-                        <a href="{{ route('keynote.page') }}" class="link" style="font-weight: 200; font-size:20px; text-align: center; border-bottom:none !important; cursor: pointer;">
-                            Keynote Speaking</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6 card3" id="card4">
-                <div class="box-item card-box" style="padding: 5px">
-                    <div>
-                        <a href="{{ route('executive.page') }}">
-                            <img
-                                src="{{ asset('assets/images/profile4.jpg') }}"
-                                style="height: 200px; margin-top:5%; width: 100%; object-fit:cover; justify-content: center; border-radius: 10%"
-                                alt="executive"/>
-                        </a>
-                    </div>
-                    <div class="desc">
-                        <a href="{{ route('executive.page') }}" class="link" style="font-weight: 200; font-size:20px; text-align: left; border-bottom:none !important; cursor: pointer;">
-                            Executive Coaching</a>
-                    </div>
-                </div>
+            <p class="col mobile1" style="margin-top: 10%">
+                Sometimes off-the-shelf seminars are not what you need for you and your teams. Your organisation might have specific competences you need to develop or you need to customise a seminar that focuses on your organisation specific challenges. Then the ideal solution for your organisation is a Customised Seminar.<br><br>
+                Please send us your enquiry so that we can engage with you regarding your organisation's leadership development needs our team will make contact within 24 hours.
+            </p>
+            <div style="text-align: center;">
+                <p>
+                    <a
+                        href="{{ route('inquire.page') }}"
+                        style="border-radius: 10px; background: rgba(15,72,58,0.98); padding: 10px 10px; font-weight: 400"
+                    >Send an Enquiry</a>
+                </p>
             </div>
         </div>
     </div>

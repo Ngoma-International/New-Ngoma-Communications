@@ -77,6 +77,20 @@
         </div>
     </div>
 
+    <div class="card-inner" id="leaders">
+        <div class="row card-container" data-simplebar>
+            @include('app.domain.membre.index')
+        </div>
+        <div class="lines-grid loaded">
+            <div class="row">
+                <div class="col col-m-12 col-t-6 col-d-4 col-d-lg-3"></div>
+                <div class="col col-m-12 col-t-6 col-d-4 col-d-lg-3"></div>
+                <div class="col col-m-12 col-t-6 col-d-4 col-d-lg-3"></div>
+                <div class="col col-m-0 col-t-0 col-d-0 col-d-lg-3"></div>
+            </div>
+        </div>
+    </div>
+
     <div class="card-inner" id="events">
         <div class="row card-container" data-simplebar>
             @include('app.domain.seminar.index')

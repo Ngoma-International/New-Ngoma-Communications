@@ -7,12 +7,6 @@
 @section('content')
     <div class="card-inner blogs active" id="blog">
         <div class="row card-container" data-simplebar="init">
-            <div class="simplebar-track vertical" style="visibility: visible;">
-                <div class="simplebar-scrollbar" style="visibility: visible; top: 0px; height: 43px;"></div>
-            </div>
-            <div class="simplebar-track horizontal" style="visibility: hidden;">
-                <div class="simplebar-scrollbar"></div>
-            </div>
             <div class="simplebar-scroll-content" style="padding-right: 12px; margin-bottom: -24px;">
                 <div class="simplebar-content" style="padding-bottom: 12px; margin-right: -12px;">
                     <div class="card-wrap blogs-content col col-m-12 col-t-12 col-d-12 col-d-lg-12">
