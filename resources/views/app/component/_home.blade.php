@@ -3,6 +3,7 @@
         background-image: url({{asset('images/background.jpg')}});
         background-size: cover;
         background-repeat: no-repeat; margin-top: -2rem;
+        object-fit: cover;
     }
     .logo-triplex{
         width: 30%;
@@ -94,7 +95,7 @@
 <div class="card-image Mobile col col-m-12 col-t-12 col-d-4 col-d-lg-4"
      style="background-image: url({{ asset('assets/images/bg1.jpg') }});">
     <div class="" style="color: #9e9e9e;font-size: 20px; text-align: left;">
-        <span>Upcoming</span> Public Training
+        <span>Upcoming</span> Public Events
     </div>
     <br>
     @include('app.component._card')

@@ -22,9 +22,6 @@ return new class extends Migration
             $table->foreignIdFor(SeminaryType::class)
                 ->constrained()
                 ->cascadeOnDelete();
-            $table->foreignIdFor(User::class)
-                ->constrained()
-                ->cascadeOnDelete();
             $table->string('title')->unique();
             $table->string('sub_title')->unique();
             $table->string('duration')->nullable();

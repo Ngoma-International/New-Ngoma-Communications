@@ -79,33 +79,8 @@
         </div>
         <div class="row">
             <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
-                <div class="contact_form card-box">
-                    <form method="post" action="javascript:void(0)" id="contactForm">
-                        <div class="row">
-                            <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
-                                <div class="group-val">
-                                    <input type="text" name="name" placeholder="Full Name" />
-                                </div>
-                            </div>
-                            <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
-                                <div class="group-val">
-                                    <input type="text" name="email" placeholder="Email Address" />
-                                    <input type="Hidden" name="action" value="message" />
-                                </div>
-                            </div>
-                            <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
-                                <div class="group-val">
-                                    <textarea name="message" placeholder="Your Message"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="align-center">
-                            <input type='submit' class="button text" style="cursor: pointer;" value="Send Message">
-                        </div>
-                    </form>
-                    <div class="alert-success">
-                        <p style="text-align: center;" class="confirmationBox"></p>
-                    </div>
+                <div class="contact_form card-box" style="padding: 5px">
+                    <livewire:frontend.store-contact />
                 </div>
             </div>
         </div>
