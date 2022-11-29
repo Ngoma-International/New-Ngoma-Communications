@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Hash;
  *
  * @author scott-tresor <scotttresor@gmail.com>
  */
-class CreateAdminCommand extends Command
+final class CreateAdminCommand extends Command
 {
     protected $signature = 'ngoma:add-user';
 
