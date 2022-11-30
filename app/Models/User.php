@@ -65,6 +65,7 @@ use Laravel\Sanctum\PersonalAccessToken;
  * @mixin Eloquent
  * @property-read Collection|Seminar[] $seminars
  * @property-read int|null $seminars_count
+ * @property-read ProfileUser|null $profile
  */
 class User extends Authenticatable
 {

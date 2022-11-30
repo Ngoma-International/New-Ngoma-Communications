@@ -42,6 +42,9 @@ use Illuminate\Support\Carbon;
  * @mixin Eloquent
  * @property int $status
  * @method static Builder|Podcast whereStatus($value)
+ * @property string|null $description
+ * @property-read User $user
+ * @method static Builder|Podcast whereDescription($value)
  */
 class Podcast extends Model
 {
@@ -56,6 +59,10 @@ class Podcast extends Model
         'podcast_offering_id',
         'status',
         'description'
+    ];
+
+    protected $casts = [
+        'status' => 'bool'
     ];
 
     public function renderThumbnail(): string

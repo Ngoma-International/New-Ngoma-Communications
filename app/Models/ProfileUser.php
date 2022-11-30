@@ -45,6 +45,8 @@ use Illuminate\Support\Carbon;
  * @method static Builder|ProfileUser whereUpdatedAt($value)
  * @method static Builder|ProfileUser whereUserId($value)
  * @mixin Eloquent
+ * @property string|null $role
+ * @method static Builder|ProfileUser whereRole($value)
  */
 class ProfileUser extends Model
 {
@@ -57,7 +59,7 @@ class ProfileUser extends Model
         'city',
         'town',
         'enterprise',
-        'role_enterprise',
+        'role',
         'department',
         'sector'
     ];

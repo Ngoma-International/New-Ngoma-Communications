@@ -12,6 +12,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Notifications\DatabaseNotification;
+use Illuminate\Notifications\DatabaseNotificationCollection;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
 
@@ -50,6 +52,8 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Booking whereUpdatedAt($value)
  * @method static Builder|Booking whereUsername($value)
  * @mixin Eloquent
+ * @property-read DatabaseNotificationCollection|DatabaseNotification[] $notifications
+ * @property-read int|null $notifications_count
  */
 class Booking extends Model
 {
@@ -72,6 +76,10 @@ class Booking extends Model
     protected $dispatchesEvents = [
         'stored' => BookingEvent::class,
         'updated' => ConfirmBooking::class
+    ];
+
+    protected $casts = [
+        'status' => 'bool'
     ];
 
     public function seminar(): BelongsTo

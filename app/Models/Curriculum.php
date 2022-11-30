@@ -50,6 +50,26 @@ class Curriculum extends Model
     use HasFactory;
     use HasUuids;
 
+    protected $fillable = [
+        'user_id',
+        'title',
+        'address',
+        'contact',
+        'experience',
+        'formation',
+        'competence',
+        'language'
+    ];
+
+    protected $casts = [
+        'contact' => [],
+        'address' => [],
+        'experience' => [],
+        'formation' => [],
+        'competence' => [],
+        'language' => []
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

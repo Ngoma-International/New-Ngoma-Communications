@@ -58,7 +58,6 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('facilitator', FacilitatorController::class);
         Route::resource('programs', EventProgramsAdminController::class);
 
-
         Route::get('profile', ProfileBackendController::class)->name('profile.index');
         Route::put('profile/{user}/update', [ProfileBackendController::class, 'update'])->name('profile.update');
         // update password
