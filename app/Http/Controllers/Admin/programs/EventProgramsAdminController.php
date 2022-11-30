@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Admin\Members;
+namespace App\Http\Controllers\Admin\programs;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\StoreFacilitatorRequest;
 use App\Models\Facilitator;
 use Illuminate\Contracts\Support\Renderable;
 
-class FacilitatorController extends Controller
+class EventProgramsAdminController extends Controller
 {
     public function index(): Renderable
     {
-        return  view('admin.domain.facilitator.index');
+        return  view('admin.domain.programs.index');
     }
 
     /**

@@ -3,12 +3,12 @@
         <div class="nk-sidebar-brand">
             <a href="{{ route('admins.backend.index') }}" class="logo-link nk-sidebar-logo">
                 <img class="logo-light logo-img"
-                     src="{{ asset('assets/images/Triplex.svg') }}"
-                     srcset="{{ asset('assets/images/Triplex.svg') }} 2x"
+                     src="{{ asset('images/logo-text.png') }}"
+                     srcset="{{ asset('images/logo-text.png') }} 2x"
                      alt="logo">
                 <img class="logo-small logo-img logo-img-small"
-                     src="{{ asset('assets/images/Triplex.svg') }}"
-                     srcset="{{ asset('assets/images/Triplex.svg') }} 2x"
+                     src="{{ asset('images/logo-text.png') }}"
+                     srcset="{{ asset('images/logo-text.png') }} 2x"
                      alt="logo-small">
             </a>
         </div>
@@ -45,7 +45,7 @@
                                     'name' => "Events"
                                 ])
                                 @include('admin.shared._link', [
-                                        'route' => route('admins.seminar.index'),
+                                        'route' => route('admins.programs.index'),
                                         'icons' => "ni-share-alt",
                                         'name' => "Event Programs"
                                 ])
@@ -73,19 +73,19 @@
                             </a>
                             <ul class="nk-menu-sub">
                                 @include('admin.shared._link', [
-                                    'route' => route('admins.users.index'),
+                                    'route' => route('admins.member.index'),
                                     'icons' => "ni-users",
-                                    'name' => "Individual"
+                                    'name' => "Membre Individual"
                                 ])
                                 @include('admin.shared._link', [
-                                    'route' => route('admins.users.index'),
+                                    'route' => route('admins.collective.index'),
                                     'icons' => "ni-users",
-                                    'name' => "Collectif"
+                                    'name' => "Member Collectif"
                                 ])
                                 @include('admin.shared._link', [
-                                    'route' => route('admins.users.index'),
+                                    'route' => route('admins.facilitator.index'),
                                     'icons' => "ni-users",
-                                    'name' => "Facilitator"
+                                    'name' => "Animateur"
                                 ])
                                 @include('admin.shared._link', [
                                     'route' => route('admins.users.index'),

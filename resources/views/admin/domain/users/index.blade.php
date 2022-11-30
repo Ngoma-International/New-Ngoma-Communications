@@ -62,9 +62,9 @@
                                 <td class="nk-tb-col tb-col-sm">
                                     <span class="tb-product text-center">
                                         <img
-                                                src="{{ $user->renderImages() }}"
-                                                alt="{{ $user->name }}"
-                                                class="thumb">
+                                            src="{{ $user->renderImages() }}"
+                                            alt="{{ $user->name }}"
+                                            class="thumb">
                                     </span>
                                 </td>
                                 <td class="nk-tb-col tb-col-md">
