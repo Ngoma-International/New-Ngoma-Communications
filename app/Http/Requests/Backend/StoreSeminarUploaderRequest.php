@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Backend;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ThumbnailRequest extends FormRequest
+class StoreSeminarUploaderRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,7 +26,7 @@ class ThumbnailRequest extends FormRequest
     public function rules()
     {
         return [
-            'thumbnail' => [
+            'images' => [
                 'required',
                 'image',
             ]

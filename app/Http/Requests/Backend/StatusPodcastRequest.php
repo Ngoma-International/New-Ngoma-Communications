@@ -2,11 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Backend;
 
+use App\Models\Podcast;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class StoreSeminarUploaderRequest extends FormRequest
+class StatusPodcastRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,9 +28,15 @@ class StoreSeminarUploaderRequest extends FormRequest
     public function rules()
     {
         return [
-            'images' => [
+            'podcast' => [
                 'required',
-                'image',
+                'integer',
+                Rule::exists(Podcast::class, 'id'),
+                $this->exists(Podcast::class)
+            ],
+            'status' => [
+                'required',
+                'bool'
             ]
         ];
     }

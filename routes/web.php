@@ -22,6 +22,8 @@ use App\Http\Controllers\App\HomeFrontendController;
 use App\Http\Controllers\App\MemberFrontendController;
 use App\Http\Controllers\App\PodcastFrontendController;
 use App\Http\Controllers\App\SeminarFrontendController;
+use App\Http\Controllers\App\StoreCollectifMemberController;
+use App\Http\Controllers\App\StoreIndividualMemberController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -78,6 +80,8 @@ Route::get('about', [HomeFrontendController::class, 'about'])->name('about.index
 Route::get('leading', [HomeFrontendController::class, 'leading'])->name('leading.index');
 Route::get('organisation', [HomeFrontendController::class, 'organisation'])->name('organisation.index');
 Route::get('people', [HomeFrontendController::class, 'people'])->name('people.index');
+Route::get('individual/create', StoreIndividualMemberController::class)->name('individual.create');
+Route::get('collectif/create', StoreCollectifMemberController::class)->name('collectif.create');
 Route::get('in-house', fn() => view('app.domain.membre.in-house'))->name('in.house');
 Route::get('select-page', fn() => view('app.domain.program.selectPage'))->name('select.page');
 Route::get('inquire', fn() => view('app.domain.program.inquire'))->name('inquire.page');
