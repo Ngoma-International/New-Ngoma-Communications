@@ -26,16 +26,36 @@
             <div class="nk-sidebar-menu" data-simplebar>
                 <ul class="nk-menu">
                     @include('admin.shared._link', [
-                        'route' => route('admins.profile.index'),
-                        'icons' => "ni-user-alt",
-                        'name' => "Profile"
+                        'route' => route('admins.backend.index'),
+                        'icons' => "ni-grid-alt",
+                        'name' => "Dashboard"
                     ])
                     @if(auth()->user()->role_id = \App\Enums\RoleEnum::Role_Admin)
-                        @include('admin.shared._link', [
-                            'route' => route('admins.seminar.index'),
-                            'icons' => "ni-share-alt",
-                            'name' => "Seminars"
-                        ])
+                        <li class="nk-menu-item has-sub">
+                            <a href="#" class="nk-menu-link nk-menu-toggle">
+                                <span class="nk-menu-icon">
+                                    <em class="icon ni ni-users-fill"></em>
+                                </span>
+                                <span class="nk-menu-text">Event Managers</span>
+                            </a>
+                            <ul class="nk-menu-sub">
+                                @include('admin.shared._link', [
+                                    'route' => route('admins.seminar.index'),
+                                    'icons' => "ni-share-alt",
+                                    'name' => "Events"
+                                ])
+                                @include('admin.shared._link', [
+                                        'route' => route('admins.seminar.index'),
+                                        'icons' => "ni-share-alt",
+                                        'name' => "Event Programs"
+                                ])
+                                @include('.admin.shared._link', [
+                                    'route' => route('admins.booking.index'),
+                                    'icons' => "ni-calendar-booking",
+                                    'name' => "Bookings"
+                                ])
+                            </ul>
+                        </li>
                         @include('admin.shared._link', [
                             'route' => route('admins.podcasts.index'),
                             'icons' => "ni-mic",
@@ -46,16 +66,39 @@
                             'icons' => "ni-search",
                             'name' => "Ticket verify"
                         ])
-                        @include('.admin.shared._link', [
-                            'route' => route('admins.booking.index'),
-                            'icons' => "ni-calendar-booking",
-                            'name' => "Bookings"
-                        ])
-                        @include('admin.shared._link', [
-                            'route' => route('admins.users.index'),
-                            'icons' => "ni-users",
-                            'name' => "Users & Partners"
-                        ])
+                        <li class="nk-menu-item has-sub">
+                            <a href="#" class="nk-menu-link nk-menu-toggle">
+                                <span class="nk-menu-icon"><em class="icon ni ni-users-fill"></em></span>
+                                <span class="nk-menu-text">User Manage</span>
+                            </a>
+                            <ul class="nk-menu-sub">
+                                @include('admin.shared._link', [
+                                    'route' => route('admins.users.index'),
+                                    'icons' => "ni-users",
+                                    'name' => "Individual"
+                                ])
+                                @include('admin.shared._link', [
+                                    'route' => route('admins.users.index'),
+                                    'icons' => "ni-users",
+                                    'name' => "Collectif"
+                                ])
+                                @include('admin.shared._link', [
+                                    'route' => route('admins.users.index'),
+                                    'icons' => "ni-users",
+                                    'name' => "Facilitator"
+                                ])
+                                @include('admin.shared._link', [
+                                    'route' => route('admins.users.index'),
+                                    'icons' => "ni-users",
+                                    'name' => "Users"
+                                ])
+                                @include('admin.shared._link', [
+                                    'route' => route('admins.profile.index'),
+                                    'icons' => "ni-user-alt",
+                                    'name' => "Profile"
+                                ])
+                            </ul>
+                        </li>
                     @endif
                 </ul>
             </div>

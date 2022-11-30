@@ -1,4 +1,4 @@
-<form wire:click.prevent.lazy="submitCollectifMember">
+<form >
     <div class="col col-m-11 col-t-11 col-d-10 col-d-lg-10" style="margin-left:5%; margin-right:5%;">
         <div class="row">
             <h1 style="margin-left: 20px">
@@ -278,7 +278,7 @@
             </div>
 
             <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12" style="text-align: center">
-                <button type="submit" style="background: #0f2828; color: white; padding: 8px 15px; border: none; border-radius: 10px">submit</button>
+                <button wire:click.prevent.lazy="submitCollectifMember" type="submit" style="background: #0f2828; color: white; padding: 8px 15px; border: none; border-radius: 10px">submit</button>
             </div>
         </div>
     </div>

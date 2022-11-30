@@ -17,14 +17,14 @@ return new class extends Migration
     {
         Schema::create('facilitators', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
-            $table->string('firstname');
-            $table->string('organisation');
-            $table->string('position');
-            $table->string('email');
-            $table->string('phone');
-            $table->string('country');
-            $table->string('description');
+            $table->string('username')->nullable();
+            $table->string('firstname')->nullable();
+            $table->string('organisation')->nullable();
+            $table->string('position')->nullable();
+            $table->string('email')->unique()->nullable();
+            $table->string('phone')->unique()->nullable();
+            $table->string('country')->nullable();
+            $table->string('description')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
         });
