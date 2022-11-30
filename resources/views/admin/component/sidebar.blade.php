@@ -34,9 +34,9 @@
                         <li class="nk-menu-item has-sub">
                             <a href="#" class="nk-menu-link nk-menu-toggle">
                                 <span class="nk-menu-icon">
-                                    <em class="icon ni ni-users-fill"></em>
+                                    <em class="icon ni ni-calendar"></em>
                                 </span>
-                                <span class="nk-menu-text">Event Managers</span>
+                                <span class="nk-menu-text">Seminaires</span>
                             </a>
                             <ul class="nk-menu-sub">
                                 @include('admin.shared._link', [
@@ -45,9 +45,9 @@
                                     'name' => "Events"
                                 ])
                                 @include('admin.shared._link', [
-                                        'route' => route('admins.programs.index'),
-                                        'icons' => "ni-share-alt",
-                                        'name' => "Event Programs"
+                                    'route' => route('admins.programs.index'),
+                                    'icons' => "ni-calendar-alt",
+                                    'name' => "Event Programs"
                                 ])
                                 @include('.admin.shared._link', [
                                     'route' => route('admins.booking.index'),
@@ -68,23 +68,25 @@
                         ])
                         <li class="nk-menu-item has-sub">
                             <a href="#" class="nk-menu-link nk-menu-toggle">
-                                <span class="nk-menu-icon"><em class="icon ni ni-users-fill"></em></span>
+                                <span class="nk-menu-icon">
+                                    <em class="icon ni ni-users-fill"></em>
+                                </span>
                                 <span class="nk-menu-text">User Manage</span>
                             </a>
                             <ul class="nk-menu-sub">
                                 @include('admin.shared._link', [
                                     'route' => route('admins.member.index'),
-                                    'icons' => "ni-users",
+                                    'icons' => "ni-user",
                                     'name' => "Membre Individual"
                                 ])
                                 @include('admin.shared._link', [
                                     'route' => route('admins.collective.index'),
-                                    'icons' => "ni-users",
+                                    'icons' => "ni-award",
                                     'name' => "Member Collectif"
                                 ])
                                 @include('admin.shared._link', [
                                     'route' => route('admins.facilitator.index'),
-                                    'icons' => "ni-users",
+                                    'icons' => "ni-user-list",
                                     'name' => "Animateur"
                                 ])
                                 @include('admin.shared._link', [
@@ -94,7 +96,7 @@
                                 ])
                                 @include('admin.shared._link', [
                                     'route' => route('admins.profile.index'),
-                                    'icons' => "ni-user-alt",
+                                    'icons' => "ni-user-round",
                                     'name' => "Profile"
                                 ])
                             </ul>
