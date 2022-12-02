@@ -15,6 +15,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
 /**
  * App\Models\Seminar
@@ -62,9 +64,10 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Seminar whereUpdatedAt($value)
  * @mixin Eloquent
  */
-class Seminar extends Model
+class Seminar extends Model implements HasMedia
 {
     use HasFactory;
+    use InteractsWithMedia;
 
     protected $fillable = [
         'type_id',

@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace App\Http\Livewire\Frontend;
 
+use App\Enums\EventEnum;
+use App\Events\EventStore;
+use App\Models\Event;
 use Illuminate\Contracts\Support\Renderable;
 use Livewire\Component;
 use App\Models\Seminar;
@@ -76,16 +79,29 @@ class StoreEvent extends Component
 
     public function submitPrivateEvent()
     {
-        $event = $this->validate();
+        $validation = $this->validate();
+        $booking = Event::query()
+            ->create(array_merge($validation, [
+                'status' => EventEnum::PENDING,
+            ]));
+        EventStore::dispatch($booking);
         $this->dispatchBrowserEvent('booking', [
             'type' => 'success',
-            'message' => 'Votre réservation a été effectuer avec succès'
+            'message' => 'Votre evenement a ete envoyer avec success'
         ]);
         $this->resetForm();
     }
 
     public function resetForm()
     {
-
+        $this->firstname = null;
+        $this->username =  null;
+        $this->email = null;
+        $this->company = null;
+        $this->jobTitle = null;
+        $this->phone = null;
+        $this->city = null;
+        $this->category = null;
+        $this->comments = null;
     }
 }

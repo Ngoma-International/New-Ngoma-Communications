@@ -28,15 +28,7 @@ class SeminarRepository
     {
         return Seminar::query()
             ->orderByDesc('created_at')
-            ->get([
-                'id',
-                'name',
-                'date',
-                'prices',
-                'status',
-                'images',
-                'duration'
-            ]);
+            ->get();
     }
 
     public function create(StoreSeminarRequest $request): Model|Builder

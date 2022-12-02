@@ -8,12 +8,14 @@ use App\Events\AdminEvent;
 use App\Events\AdminUpdateEvent;
 use App\Events\BookingEvent;
 use App\Events\ConfirmBooking;
+use App\Events\EventStore;
 use App\Events\UpdatePodcastEvent;
 use App\Listeners\AdminListener;
 use App\Listeners\AdminUpdateListener;
 use App\Listeners\BookingListener;
 use App\Listeners\COnfirmBookingListener;
 use App\Listeners\CreatePodcastListener;
+use App\Listeners\EventListener;
 use App\Listeners\UpdatePodcastListener;
 use App\ViewModels\Podcast\CreatePodcast;
 use Illuminate\Auth\Events\Registered;
@@ -43,6 +45,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         ConfirmBooking::class => [
             COnfirmBookingListener::class
+        ],
+        EventStore::class => [
+            EventListener::class
         ]
     ];
 

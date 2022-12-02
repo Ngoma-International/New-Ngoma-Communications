@@ -54,17 +54,17 @@
                                     'icons' => "ni-calendar-booking",
                                     'name' => "Bookings"
                                 ])
+                                @include('admin.shared._link', [
+                                    'route' => route('admins.ticket.search'),
+                                    'icons' => "ni-search",
+                                    'name' => "Ticket verify"
+                                ])
                             </ul>
                         </li>
                         @include('admin.shared._link', [
                             'route' => route('admins.podcasts.index'),
                             'icons' => "ni-mic",
                             'name' => "Podcasts"
-                        ])
-                        @include('admin.shared._link', [
-                            'route' => route('admins.ticket.search'),
-                            'icons' => "ni-search",
-                            'name' => "Ticket verify"
                         ])
                         <li class="nk-menu-item has-sub">
                             <a href="#" class="nk-menu-link nk-menu-toggle">
