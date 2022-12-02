@@ -45,7 +45,7 @@
                     <a
                         href="{{ route('individual.create') }}"
                         style="border-radius: 10px; background: rgba(15,72,58,0.98); padding: 10px 10px; font-weight: 400"
-                    >Become member</a>
+                    >Individual member</a>
                     <a
                         href="{{ route('collectif.create') }}"
                         style="border-radius: 10px; background: rgba(15,72,58,0.98); padding: 10px 10px; font-weight: 400"

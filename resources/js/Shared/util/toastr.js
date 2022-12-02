@@ -9,8 +9,8 @@ const toastSwalMixin = Swal.mixin({
     timerProgressBar: true,
     showConfirmButton: false,
     didOpen: (toast) => {
-        toast.addEventListener('mouseenter', swal.stopTimer)
-        toast.addEventListener('mouseleave', swal.resumeTimer)
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
     }
 })
 

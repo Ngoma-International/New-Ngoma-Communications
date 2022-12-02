@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Enums\EventEnum;
 use Database\Factories\MemberFactory;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
@@ -78,6 +79,6 @@ class Member extends Model implements HasMedia
 
     protected $casts = [
         'birthday' => 'date',
-        'status' => 'bool'
+        'status' => EventEnum::class
     ];
 }

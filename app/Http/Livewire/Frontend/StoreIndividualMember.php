@@ -4,12 +4,19 @@ declare(strict_types=1);
 
 namespace App\Http\Livewire\Frontend;
 
+use App\Enums\EventEnum;
+use App\Events\StoreMemberEvent;
 use App\Models\Member;
+use App\Traits\HasTransaction;
 use Illuminate\Contracts\Support\Renderable;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class StoreIndividualMember extends Component
 {
+    use HasTransaction;
+    use WithFileUploads;
+
     public string|null $username = null;
     public string|null $firstname = null;
     public string|null $email = null;
@@ -20,7 +27,7 @@ class StoreIndividualMember extends Component
     public string|null $department = null;
     public string|null $sector = null;
     public string|null $phone_number = null;
-    public Member $member;
+    public string|null $images = null;
 
     protected array $rules = [
         'username' => [
@@ -70,14 +77,11 @@ class StoreIndividualMember extends Component
             'required',
             'string',
             'unique:members'
+        ],
+        'images' => [
+            'required',
         ]
     ];
-
-
-    public function mount(Member $member)
-    {
-        $this->member = $member;
-    }
 
     public function render(): Renderable
     {
@@ -86,16 +90,31 @@ class StoreIndividualMember extends Component
 
     public function submitIndividualMember()
     {
-        $member = $this->validate();
+        $validation = $this->validate();
+        $member = Member::query()
+            ->create(array_merge($validation, [
+                'status' => EventEnum::PENDING
+            ]));
+        StoreMemberEvent::dispatch($member);
         $this->dispatchBrowserEvent('booking', [
             'type' => 'success',
-            'message' => 'Votre réservation a été effectuer avec succès'
+            'message' => 'Votre enregistrement a ete effectuer vous allez recevoir un mail de confirmation avec votre code de member'
         ]);
         $this->resetForm();
     }
 
     public function resetForm()
     {
-
+        $this->username = null;
+        $this->firstname = null;
+        $this->email = null;
+        $this->birthday = null;
+        $this->country = null;
+        $this->city = null;
+        $this->position = null;
+        $this->department = null;
+        $this->sector = null;
+        $this->phone_number = null;
+        $this->images = null;
     }
 }

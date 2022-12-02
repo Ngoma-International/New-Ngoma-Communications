@@ -44,11 +44,11 @@
             <div class="col col-m-6 col-d-6 col-d-lg-6">
                 <select
                     class="form-group fiftyPercent"
-                    wire:model.lazy="organisation_position"
-                    name="organisation_position" style="margin-top: 9%; background: transparent; border: none; width: 100%; color: gray; border-bottom: 1px solid #777;">
+                    wire:model.lazy="organisation_country"
+                    name="organisation_country" style="margin-top: 9%; background: transparent; border: none; width: 100%; color: gray; border-bottom: 1px solid #777;">
                     @include('app.component._country')
                 </select>
-                @error('organisation_position')
+                @error('organisation_country')
                 <span style="color: red; font-size: 12px">{{ $message }}</span>
                 @enderror
             </div>

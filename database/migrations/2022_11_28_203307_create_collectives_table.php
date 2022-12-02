@@ -30,10 +30,10 @@ return new class extends Migration
             $table->string('member_email')->unique()->nullable();
             $table->string('member_phone')->unique()->nullable();
             $table->string('member_job_title')->nullable();
-            $table->integer('member_number')->unique()->nullable();
+            $table->integer('member_number')->nullable();
             $table->string('contact_username')->nullable();
             $table->string('contact_firstname')->nullable();
-            $table->string('contact_email')->nullable();
+            $table->string('contact_email')->unique()->nullable();
             $table->string('contact_phone')->unique()->nullable();
             $table->string('matricule')->unique()->nullable();
             $table->string('contact_job_title')->nullable();

@@ -3119,8 +3119,8 @@ var toastSwalMixin = sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().mixin({
   timerProgressBar: true,
   showConfirmButton: false,
   didOpen: function didOpen(toast) {
-    toast.addEventListener('mouseenter', swal.stopTimer);
-    toast.addEventListener('mouseleave', swal.resumeTimer);
+    toast.addEventListener('mouseenter', (sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().stopTimer));
+    toast.addEventListener('mouseleave', (sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().resumeTimer));
   }
 });
 var toast = function toast(type, message) {

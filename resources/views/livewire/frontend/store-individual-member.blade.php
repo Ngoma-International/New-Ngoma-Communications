@@ -1,4 +1,4 @@
-<form>
+<form enctype="multipart/form-data">
     <div class="col col-m-11 col-t-11 col-d-10 col-d-lg-10" style="margin-left:5%; margin-right:5%;">
         <div class="row">
             <div class="col col-m-6 col-d-6 col-d-lg-6">
@@ -116,6 +116,18 @@
                     placeholder="phone_number"
                 >
                 @error('phone_number')
+                <span style="color: red; font-size: 12px">{{ $message }}</span>
+                @enderror
+            </div>
+            <div class="col col-m-6 col-d-6 col-d-lg-6">
+                <input
+                    type="file"
+                    class="form-group fiftyPercent"
+                    name="images"
+                    wire:model.lazy="images"
+                    placeholder="images"
+                >
+                @error('images')
                 <span style="color: red; font-size: 12px">{{ $message }}</span>
                 @enderror
             </div>
