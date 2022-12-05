@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('frontend/css/styles.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('frontend/css/theme-colors/green.css') }}" />
-    <link rel="stylesheet" href="{{ asset('frontend/css/theme-colors/modal-video.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('frontend/css/app.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/b8977c7e2a.js"></script>

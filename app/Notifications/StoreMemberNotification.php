@@ -25,7 +25,7 @@ class StoreMemberNotification extends Notification implements ShouldQueue
 
     public function toMail($notifiable): MailMessage
     {
-        return (new MailMessage)
+        return (new MailMessage())
             ->greeting('Chers member')
                     ->line('The introduction to the notification.')
                     ->action('Notification Action', url('/'))

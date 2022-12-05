@@ -13,6 +13,7 @@ class Event extends Model
 {
     use HasFactory;
     use Notifiable;
+
     protected $fillable = [
         'firstname',
         'username',

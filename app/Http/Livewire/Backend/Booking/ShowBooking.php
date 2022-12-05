@@ -7,7 +7,6 @@ use Livewire\Component;
 
 class ShowBooking extends Component
 {
-
     protected $listeners = [
         'update' => 'updating'
     ];

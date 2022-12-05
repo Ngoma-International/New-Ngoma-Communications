@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\HomeBackendController;
 use App\Http\Controllers\Admin\Members\CollectiveController;
 use App\Http\Controllers\Admin\Members\FacilitatorController;
 use App\Http\Controllers\Admin\Members\MemberController;
+use App\Http\Controllers\Admin\Members\MemberStatusController;
 use App\Http\Controllers\Admin\Podcast\PodcastBackendController;
 use App\Http\Controllers\Admin\Podcast\StatusPodcastBackendController;
 use App\Http\Controllers\Admin\Podcast\UploadBackendController;
@@ -53,7 +54,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('collective/{collective}', [CollectiveController::class, 'show'])->name('collective.show');
 
         Route::get('individual', MemberController::class)->name('member.index');
-        Route::get('individual/{individual}', [MemberController::class, 'show'])->name('member.show');
+        Route::get('individual/{member}', [MemberController::class, 'show'])->name('member.show');
+        Route::delete('individual/{member}', [MemberController::class, 'destroy'])->name('member.destroy');
 
         Route::resource('facilitator', FacilitatorController::class);
         Route::resource('programs', EventProgramsAdminController::class);
@@ -83,6 +85,8 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::post('podcast-status', StatusPodcastBackendController::class)
             ->name('podcast.status');
+
+        Route::post('member-status', MemberStatusController::class)->name('member.status');
     });
 });
 

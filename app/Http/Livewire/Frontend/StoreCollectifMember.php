@@ -14,6 +14,7 @@ use Livewire\WithFileUploads;
 class StoreCollectifMember extends Component
 {
     use WithFileUploads;
+
     public string|null $organisation_name = null;
     public string|null $organisation_register_number = null;
     public string|null $organisation_industry = null;

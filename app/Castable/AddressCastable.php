@@ -6,7 +6,7 @@ namespace App\Castable;
 
 use JessArcher\CastableDataTransferObject\CastableDataTransferObject;
 
-class AddressCastable extends  CastableDataTransferObject
+class AddressCastable extends CastableDataTransferObject
 {
     public string $street;
     public string $venue;

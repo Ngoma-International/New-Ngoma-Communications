@@ -25,7 +25,7 @@ class EventNotification extends Notification implements ShouldQueue
 
     public function toMail(mixed $notifiable): MailMessage
     {
-        return (new MailMessage)
+        return (new MailMessage())
                     ->greeting('Bonjour')
                     ->line('The introduction to the notification.')
                     ->action('Notification Action', url('/'))

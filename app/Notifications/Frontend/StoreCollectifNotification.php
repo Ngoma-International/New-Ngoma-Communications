@@ -25,7 +25,7 @@ class StoreCollectifNotification extends Notification
 
     public function toMail(mixed $notifiable): MailMessage
     {
-        return (new MailMessage)
+        return (new MailMessage())
             ->greeting('Felicitation')
             ->line('The introduction to the notification.')
             ->action('Notification Action', url('/'))
