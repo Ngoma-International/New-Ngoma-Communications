@@ -151,7 +151,7 @@
             let _token = $('meta[name="csrf-token"]').attr('content');
             let data = {
                 status: status,
-                user: id
+                member: id
             }
             let headers = {
                 'Content-type': 'application/json; charset=UTF-8',

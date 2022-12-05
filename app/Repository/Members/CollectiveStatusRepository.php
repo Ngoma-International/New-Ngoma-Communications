@@ -4,31 +4,31 @@ declare(strict_types=1);
 
 namespace App\Repository\Members;
 
-use App\Http\Requests\MemberStatusRequest;
-use App\Models\Member;
+use App\Http\Requests\Backend\CollectiveStatusRequest;
+use App\Models\Collective;
 use App\Traits\HasTransaction;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
-class MemberStatusRepository
+class CollectiveStatusRepository
 {
     use HasTransaction;
-    public function handle(MemberStatusRequest $request): Model|Builder|Member|null
+
+    public function handle(CollectiveStatusRequest $request): Model|Builder|Collective|null
     {
-        $member = Member::query()
-            ->where('id', '=', $request->input('member'))
+        $collective = Collective::query()
+            ->where('id', '=', $request->input('collective'))
             ->first();
         if ($request->input('status') === true) {
-            $member->update([
+            $collective->update([
                 'status' => $request->input('status'),
                 'matricule' => $this->generateTransaction(8)
             ]);
         } else {
-            $member->update([
+            $collective->update([
                 'status' => $request->input('status')
             ]);
         }
-
-        return $member;
+        return $collective;
     }
 }

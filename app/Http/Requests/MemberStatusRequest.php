@@ -18,7 +18,7 @@ class MemberStatusRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'phone_number' => [
+            'member' => [
                 'required',
                 Rule::exists(Member::class, 'phone_number')
             ],

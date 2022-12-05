@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\Booking\BookingBackendController;
 use App\Http\Controllers\Admin\Booking\SearchBookingBackendController;
 use App\Http\Controllers\Admin\HomeBackendController;
 use App\Http\Controllers\Admin\Members\CollectiveController;
+use App\Http\Controllers\Admin\Members\CollectiveStatusController;
 use App\Http\Controllers\Admin\Members\FacilitatorController;
 use App\Http\Controllers\Admin\Members\MemberController;
 use App\Http\Controllers\Admin\Members\MemberStatusController;
@@ -52,6 +53,7 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::get('collective', CollectiveController::class)->name('collective.index');
         Route::get('collective/{collective}', [CollectiveController::class, 'show'])->name('collective.show');
+        Route::delete('collective/{collective}', [CollectiveController::class, 'destroy'])->name('collective.destroy');
 
         Route::get('individual', MemberController::class)->name('member.index');
         Route::get('individual/{member}', [MemberController::class, 'show'])->name('member.show');
@@ -87,6 +89,8 @@ Route::group(['middleware' => ['auth']], function () {
             ->name('podcast.status');
 
         Route::post('member-status', MemberStatusController::class)->name('member.status');
+
+        Route::post('collective-status', CollectiveStatusController::class)->name('collective.status');
     });
 });
 

@@ -16,7 +16,6 @@ use Illuminate\Http\RedirectResponse;
 class MemberController extends Controller
 {
     public function __construct(
-
         protected FlashMessagesServices $flashMessagesServices
     ){}
 
@@ -27,16 +26,13 @@ class MemberController extends Controller
         return view('admin.domain.individual.index', compact('members'));
     }
 
-    public function show($member): Factory|View|Application
+    public function show(Member $member): Factory|View|Application
     {
-        $member = Member::query()->where('id', '=', $member)->first();
-
         return view('admin.domain.individual.show', compact('member'));
     }
 
-    public function destroy($member): RedirectResponse
+    public function destroy(Member $member): RedirectResponse
     {
-        $member = Member::query()->where('id', '=', $member)->first();
         $member->delete();
         $this->flashMessagesServices->success('success', "Member supprimer avec success");
         return redirect()->route('admins.member.index');
