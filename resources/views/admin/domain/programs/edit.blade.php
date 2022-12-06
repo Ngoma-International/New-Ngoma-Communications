@@ -1,7 +1,7 @@
 @extends('admin.layout.base')
 
 @section('title')
-    Editer un podcast # {{ $viewModels->seminar->name }}
+    Editer un podcast # {{ $viewModel->program->title }}
 @endsection
 
 @section('content')
@@ -9,15 +9,15 @@
         <div class="nk-block-head nk-block-head-sm">
             <div class="nk-block-between g-3">
                 @component('admin.shared.content')
-                    {{ $viewModels->seminar->name }}
+                    Editer le programme
                 @endcomponent
 
                 @component('admin.shared.banner')
                     <div class="nk-block-head-content">
-                        <a href="{{ $viewModels->indexUrl }}"
+                        <a href="{{ $viewModel->indexUrl }}"
                            class="btn btn-outline-primary btn-sm bg-white d-none d-sm-inline-flex">
                             <em class="icon ni ni-arrow-left"></em>
-                            <span>Tous les podcasts</span>
+                            <span>Tous les programs</span>
                         </a>
                     </div>
                 @endcomponent
@@ -28,7 +28,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         @include('admin.shared._alert')
-                        @include('admin.domain.seminar._edit')
+                        @include('admin.domain.programs._edit')
                     </div>
                 </div>
             </div>

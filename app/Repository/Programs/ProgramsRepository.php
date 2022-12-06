@@ -14,33 +14,23 @@ use Spatie\MediaLibrary\MediaCollections\Exceptions\FileIsTooBig;
 
 class ProgramsRepository
 {
-    /**
-     * @throws FileIsTooBig
-     * @throws FileDoesNotExist
-     */
     public function store(StoreProgramRequest $request): Model|EventProgram|Builder
     {
         $validated = $request->validated();
-
+        $validated['status'] = true;
         $program = EventProgram::query()
             ->create($validated);
-        $program->addMediaFromRequest('image')
-            ->toMediaCollection('images');
+       // $program->addMediaFromRequest('image')->toMediaCollection('images');
 
         return $program;
     }
 
-    /**
-     * @throws FileDoesNotExist
-     * @throws FileIsTooBig
-     */
     public function update(UpdateProgramRequest $request, EventProgram $program): EventProgram
     {
         $validated = $request->validated();
         $program->clearMediaCollection('image');
         $program->update($validated);
-        $program->addMediaFromRequest('image')
-            ->toMediaCollection('images');
+        //$program->addMediaFromRequest('image')->toMediaCollection('images');
         return $program;
     }
 

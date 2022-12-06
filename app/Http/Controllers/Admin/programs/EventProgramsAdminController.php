@@ -18,6 +18,8 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Spatie\MediaLibrary\MediaCollections\Exceptions\FileDoesNotExist;
+use Spatie\MediaLibrary\MediaCollections\Exceptions\FileIsTooBig;
 
 class EventProgramsAdminController extends Controller
 {
@@ -60,9 +62,8 @@ class EventProgramsAdminController extends Controller
 
     public function edit(EventProgram $program): View|Factory|Application
     {
-        $program = new EditEventPrograms($program);
-
-        return \view('admin.domain.programs.edit', compact('program'));
+        $viewModel = new EditEventPrograms($program);
+        return \view('admin.domain.programs.edit', compact('viewModel'));
     }
 
     public function update(UpdateProgramRequest $request, EventProgram $program): RedirectResponse

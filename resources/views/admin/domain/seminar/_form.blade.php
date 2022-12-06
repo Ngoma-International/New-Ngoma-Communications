@@ -56,7 +56,7 @@
                             required>
                         @foreach($viewModels->facilitators() as $facilitators)
                             <option value="{{ $facilitators->id }}">
-                                {{ ucfirst($facilitators->name) ?? "" }}
+                                {{ ucfirst($facilitators->username) ?? "" }}
                             </option>
                         @endforeach
                     </select>

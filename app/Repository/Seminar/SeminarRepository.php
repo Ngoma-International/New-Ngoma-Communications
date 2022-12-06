@@ -32,7 +32,7 @@ class SeminarRepository
     public function create(StoreSeminarRequest $request): Model|Builder
     {
         $seminar = $request->validated();
-        $seminar['status'] = SeminarEnum::SEMINAR_PENDING;
+        $seminar['status'] = SeminarEnum::SEMINAR_PENDING->value;
         $seminar['facilitator_id'] = $request->input('user_id');
         $seminar['address'] = [
             'country' => $request->input('country'),

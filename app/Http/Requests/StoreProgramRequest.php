@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace App\Http\Requests;
 
+use App\Models\EventProgram;
 use App\Models\Facilitator;
 use App\Models\Seminar;
 use App\Rules\SeminarAppointment;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Exists;
+use Illuminate\Validation\Rules\Unique;
 
 class StoreProgramRequest extends FormRequest
 {
@@ -33,7 +35,8 @@ class StoreProgramRequest extends FormRequest
             'title' => [
                 'required',
                 'string',
-                'min:3'
+                'min:3',
+                new Unique(EventProgram::class, 'title')
             ],
             'date' => [
                 'required',

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Requests\Backend\Seminar;
 
+use App\Models\Facilitator;
 use App\Models\Seminar;
 use App\Models\SeminaryType;
 use App\Models\Type;
@@ -36,7 +37,7 @@ class StoreSeminarRequest extends FormRequest
             "user_id" => [
                 'required',
                 'integer',
-                Rule::exists(User::class, 'id')
+                Rule::exists(Facilitator::class, 'id')
             ],
             "title" => [
                 'required',

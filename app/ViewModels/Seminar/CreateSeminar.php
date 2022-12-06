@@ -7,6 +7,7 @@ namespace App\ViewModels\Seminar;
 use App\Enums\RoleEnum;
 use App\Http\Controllers\Admin\Seminar\SeminarBackendController;
 use App\Models\Category;
+use App\Models\Facilitator;
 use App\Models\SeminaryType;
 use App\Models\Type;
 use App\Models\User;
@@ -38,8 +39,7 @@ class CreateSeminar extends ViewModel
 
     public function facilitators(): Collection|array
     {
-        return User::query()
-            ->select(['id', 'name', 'firstname'])
+        return Facilitator::query()
             ->get();
     }
 }

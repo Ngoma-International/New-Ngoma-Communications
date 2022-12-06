@@ -20,6 +20,7 @@ use App\Http\Controllers\Admin\Profile\ProfileBackendController;
 use App\Http\Controllers\Admin\Profile\UpdateProfileBackendController;
 use App\Http\Controllers\Admin\Profile\UploadImageBackendController;
 use App\Http\Controllers\Admin\programs\EventProgramsAdminController;
+use App\Http\Controllers\Admin\programs\EventProgramStatusController;
 use App\Http\Controllers\Admin\Seminar\SeminarBackendController;
 use App\Http\Controllers\Admin\Seminar\SeminarStatusBackendController;
 use App\Http\Controllers\Admin\Seminar\SeminarUploaderController;
@@ -94,6 +95,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('collective-status', CollectiveStatusController::class)->name('collective.status');
 
         Route::post('facilitator-status', FacilitatorStatusAdminController::class)->name('facilitator.status');
+
+        Route::post('event-status', EventProgramStatusController::class)->name('program.status');
     });
 });
 

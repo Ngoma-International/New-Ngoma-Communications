@@ -27,12 +27,6 @@
                     <table class="datatable-init nowrap nk-tb-list nk-tb-ulist" data-auto-responsive="true">
                         <thead>
                         <tr class="nk-tb-item nk-tb-head text-center">
-                            <th class="nk-tb-col tb-col-mb">
-                                <span class="sub-text">Id</span>
-                            </th>
-                            <th class="nk-tb-col tb-col-md">
-                                <span class="sub-text">Photo</span>
-                            </th>
                             <th class="nk-tb-col tb-col-md">
                                 <span class="sub-text">Event</span>
                             </th>
@@ -54,24 +48,13 @@
                         @foreach($programs->programs() as $program)
                             <tr class="nk-tb-item text-center">
                                 <td class="nk-tb-col tb-col-md">
-                                    <span>{{ $program->id ?? "" }}</span>
-                                </td>
-                                <td class="nk-tb-col tb-col-sm">
-                                    <span class="tb-product justify-content-center">
-                                        <img
-                                            src="{{ $program->getFirstMediaUrl('images') }}"
-                                            alt="{{ $program->title }}"
-                                            class="thumb">
-                                    </span>
-                                </td>
-                                <td class="nk-tb-col tb-col-md">
                                     <span>{{ ucfirst($program->seminar->title) ?? "" }}</span>
                                 </td>
                                 <td class="nk-tb-col tb-col-md">
                                     <span>{{ $program->title ?? "" }}</span>
                                 </td>
                                 <td class="nk-tb-col tb-col-md">
-                                    <span>$ {{ $program->date ?? "" }}</span>
+                                    <span>{{ $program->date ?? "" }}</span>
                                 </td>
                                 <td class="nk-tb-col tb-col-md">
                                     @if($program->status)
