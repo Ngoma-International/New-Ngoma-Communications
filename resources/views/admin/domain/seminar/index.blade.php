@@ -59,7 +59,7 @@
                                 <td class="nk-tb-col tb-col-sm">
                                     <span class="tb-product justify-content-center">
                                         <img
-                                                src="{{ $seminar->getFirstMediaUrl('image') }}"
+                                                src="{{ $seminar->getFirstMediaUrl('images') }}"
                                                 alt="{{ $seminar->sub_title }}"
                                                 class="thumb">
                                     </span>

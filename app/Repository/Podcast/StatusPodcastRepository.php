@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Repository\Podcast;
 
-use App\Http\Requests\StatusPodcastRequest;
+use App\Http\Requests\Backend\StatusPodcastRequest;
 use App\Models\Podcast;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;

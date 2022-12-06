@@ -8,8 +8,10 @@ use App\Http\Controllers\Admin\Seminar\SeminarBackendController;
 use App\Models\Category;
 use App\Models\Seminar;
 use App\Models\SeminaryType;
+use App\Models\Type;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\ViewModels\ViewModel;
 
@@ -38,16 +40,12 @@ class ShowSeminar extends ViewModel
         return $this->seminar;
     }
 
-    /**
-     * @return Category|null
-     */
-    public function getCategory(): Category|null
+    public function type(): Model|Type|Builder|\Illuminate\Database\Query\Builder|null
     {
-        return Category::query()
-            ->where('id', '=', $this->seminar->category_id)
+        return Type::query()
+            ->where('id', '=', $this->seminar->type_id)
             ->first();
     }
-
 
     /**
      * @return User|null
@@ -55,7 +53,7 @@ class ShowSeminar extends ViewModel
     public function getAuthor(): User|null
     {
         return User::query()
-            ->where('id', '=', $this->seminar->user_id)
+            ->where('id', '=', $this->seminar->facilitator_id)
             ->first();
     }
 

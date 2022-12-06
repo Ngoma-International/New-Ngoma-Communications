@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Admin\Podcast;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ThumbnailRequest;
+use App\Http\Requests\Backend\ThumbnailRequest;
 use App\Models\TemporaryImage;
 use App\Traits\HasImagesUploads;
 use Illuminate\Database\Eloquent\Builder;

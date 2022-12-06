@@ -1,7 +1,7 @@
 @extends('admin.layout.base')
 
 @section('title')
-    Detail utilisateur {{ $viewModels->seminar->name }}
+    Detail evenement
 @endsection
 
 @section('content')
@@ -10,14 +10,14 @@
             <div class="nk-block-head nk-block-head-sm">
                 <div class="nk-block-between">
                     @component('admin.shared.content')
-                        {{ ucfirst($viewModels->seminar->name) ?? "" }}
+                        {{ ucfirst($viewModels->seminar->title) ?? "" }}
                     @endcomponent
 
                     @component('admin.shared.banner')
                         <li class="preview-item">
                             <a class="btn btn-outline-primary btn-sm" href="{{ $viewModels->indexUrl }}">
                                 <em class="icon ni ni-arrow-long-left"></em>
-                                <span>All Seminars</span>
+                                <span>All Events</span>
                             </a>
                         </li>
                             <li class="preview-item">
@@ -38,7 +38,7 @@
                                     href="{{ $viewModels->editUrl }}"
                                     class="btn btn-outline-primary btn-sm">
                                 <em class="icon ni ni-edit mr-1"></em>
-                                Editer
+                                Edit
                             </a>
                         </li>
                         <li class="preview-item">
@@ -52,7 +52,7 @@
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <button type="submit" class="btn btn-outline-danger btn-sm">
                                     <em class="icon ni ni-trash-empty-fill"></em>
-                                    Delete Seminar
+                                    Delete
                                 </button>
                             </form>
                         </li>
@@ -68,33 +68,25 @@
                         <div class="profile-ud-list">
                             <div class="profile-ud-item">
                                 <div class="profile-ud wider">
-                                    <span class="profile-ud-label">Seminar Name</span>
+                                    <span class="profile-ud-label">Event Title</span>
                                     <span class="profile-ud-value">
-                                        {{ ucfirst($viewModels->seminar->name) ?? "" }}
+                                        {{ ucfirst($viewModels->seminar->title) ?? "" }}
                                     </span>
                                 </div>
                             </div>
                             <div class="profile-ud-item">
                                 <div class="profile-ud wider">
-                                    <span class="profile-ud-label">Name Facilitator</span>
+                                    <span class="profile-ud-label">Event Sub title</span>
                                     <span class="profile-ud-value">
-                                        {{ ucfirst($viewModels->getAuthor()->name) ?? "" }}
+                                        {{ ucfirst($viewModels->seminar->sub_title) ?? "" }}
                                     </span>
                                 </div>
                             </div>
                             <div class="profile-ud-item">
                                 <div class="profile-ud wider">
-                                    <span class="profile-ud-label">Firstname Facilitator</span>
+                                    <span class="profile-ud-label">Event Type</span>
                                     <span class="profile-ud-value">
-                                        {{ $viewModels->getAuthor()->firstname ?? "" }}
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="profile-ud-item">
-                                <div class="profile-ud wider">
-                                    <span class="profile-ud-label">Category</span>
-                                    <span class="profile-ud-value">
-                                        {{ ucfirst($viewModels->getCategory()->name) ?? "" }}
+                                        {{ $viewModels->type()->name ?? "" }}
                                     </span>
                                 </div>
                             </div>
@@ -108,46 +100,6 @@
                             </div>
                             <div class="profile-ud-item">
                                 <div class="profile-ud wider">
-                                    <span class="profile-ud-label">Seminar Country</span>
-                                    <span class="profile-ud-value">
-                                        {{ ucfirst($viewModels->seminar()->country) ?? "" }}
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="profile-ud-item">
-                                <div class="profile-ud wider">
-                                    <span class="profile-ud-label">Seminar City</span>
-                                    <span class="profile-ud-value">
-                                        {{ ucfirst($viewModels->seminar()->city) ?? "" }}
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="profile-ud-item">
-                                <div class="profile-ud wider">
-                                    <span class="profile-ud-label">Seminar Prices</span>
-                                    <span class="profile-ud-value">
-                                        $ {{ $viewModels->seminar()->prices ?? "" }}
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="profile-ud-item">
-                                <div class="profile-ud wider">
-                                    <span class="profile-ud-label">Seminar Start Time</span>
-                                    <span class="profile-ud-value">
-                                        {{ $viewModels->seminar()->start_time ?? "" }}
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="profile-ud-item">
-                                <div class="profile-ud wider">
-                                    <span class="profile-ud-label">Seminar End Time</span>
-                                    <span class="profile-ud-value">
-                                        {{ $viewModels->seminar()->end_time ?? "" }}
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="profile-ud-item">
-                                <div class="profile-ud wider">
                                     <span class="profile-ud-label">Seminar Date</span>
                                     <span class="profile-ud-value">
                                         {{ ucfirst($viewModels->seminar()->date) ?? "" }}
@@ -156,17 +108,33 @@
                             </div>
                             <div class="profile-ud-item">
                                 <div class="profile-ud wider">
-                                    <span class="profile-ud-label">Seminar Duration</span>
+                                    <span class="profile-ud-label">Event Duration</span>
                                     <span class="profile-ud-value">
-                                        {{ $viewModels->seminar()->duration ?? "" }} Minutes
+                                        {{ $viewModels->seminar->duration ?? "" }} Heures
                                     </span>
                                 </div>
                             </div>
                             <div class="profile-ud-item">
                                 <div class="profile-ud wider">
-                                    <span class="profile-ud-label">Seminar Address</span>
+                                    <span class="profile-ud-label">Seminar Country</span>
                                     <span class="profile-ud-value">
-                                        {{ ucfirst($viewModels->seminar()->address_seminar) ?? "" }}
+                                        {{ ucfirst($viewModels->seminar->address->country) ?? "" }}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="profile-ud-item">
+                                <div class="profile-ud wider">
+                                    <span class="profile-ud-label">Event City</span>
+                                    <span class="profile-ud-value">
+                                        {{ ucfirst($viewModels->seminar->address->city) ?? "" }}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="profile-ud-item">
+                                <div class="profile-ud wider">
+                                    <span class="profile-ud-label">Seminar Prices</span>
+                                    <span class="profile-ud-value">
+                                        $ {{ $viewModels->seminar()->prices ?? "" }}
                                     </span>
                                 </div>
                             </div>
@@ -187,13 +155,13 @@
                     <div class="nk-divider divider md"></div>
                     <div class="nk-block">
                         <div class="nk-block-head">
-                            <span class="title">Seminar Attend</span>
+                            <span class="title">Event Overview</span>
                         </div>
                         <div class="bq-note">
                             <div class="bq-note-item">
                                 <div class="bq-note-text">
                                     <p>
-                                        {{ $viewModels->seminar()->attend ?? "" }}
+                                        {{ $viewModels->seminar->overview ?? "" }}
                                     </p>
                                 </div>
                             </div>
@@ -202,13 +170,13 @@
                     <div class="nk-divider divider md"></div>
                     <div class="nk-block">
                         <div class="nk-block-head">
-                            <span class="title">Seminar Overview</span>
+                            <span class="title">Event Participate</span>
                         </div>
                         <div class="bq-note">
                             <div class="bq-note-item">
                                 <div class="bq-note-text">
                                     <p>
-                                        {{ $viewModels->seminar()->overview }}
+                                        {{ $viewModels->seminar->participate }}
                                     </p>
                                 </div>
                             </div>
@@ -223,7 +191,7 @@
                             <div class="bq-note-item">
                                 <div class="bq-note-text">
                                     <p>
-                                        {!! $viewModels->seminar()->description !!}
+                                        {!! $viewModels->seminar->description !!}
                                     </p>
                                 </div>
                             </div>
@@ -270,7 +238,7 @@
 @section('scripts')
     <script>
 
-        window.changeRoomStatus = async (_this, id) => {
+        let changeRoomStatus = async (_this, id) => {
             const status = $(_this).prop('checked') === true ? 1 : 0;
             let _token = $('meta[name="csrf-token"]').attr('content');
             let data = {

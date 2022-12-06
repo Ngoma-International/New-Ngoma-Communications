@@ -10,7 +10,6 @@ use App\Events\Backend\Seminar\UpdateSeminarSeminarEvent;
 use App\Http\Requests\Backend\Seminar\StoreSeminarRequest;
 use App\Http\Requests\Backend\Seminar\UpdateSeminarRequest;
 use App\Models\Seminar;
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;

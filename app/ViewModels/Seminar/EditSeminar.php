@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace App\ViewModels\Seminar;
 
-use App\Enums\RoleEnum;
 use App\Http\Controllers\Admin\Seminar\SeminarBackendController;
-use App\Models\Category;
 use App\Models\Seminar;
 use App\Models\SeminaryType;
+use App\Models\Type;
 use App\Models\User;
 use Illuminate\Support\Collection;
 use Spatie\ViewModels\ViewModel;
@@ -28,9 +27,9 @@ class EditSeminar extends ViewModel
         return $this->seminar ?? new Seminar();
     }
 
-    public function categories(): array|\Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection
+    public function types(): array|\Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection
     {
-        return Category::query()
+        return Type::query()
             ->select(['id', 'name'])
             ->get();
     }
@@ -49,7 +48,6 @@ class EditSeminar extends ViewModel
     {
         return User::query()
             ->select(['id', 'name', 'firstname'])
-            ->where('role_id', '=', RoleEnum::Role_Facilitators)
             ->get();
     }
 }

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Admin\Podcast;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StatusPodcastRequest;
+use App\Http\Requests\Backend\StatusPodcastRequest;
 use App\Repository\Podcast\StatusPodcastRepository;
 use Illuminate\Http\JsonResponse;
 

@@ -6,7 +6,7 @@ namespace App\Http\Controllers\Admin\Podcast;
 
 use App\Contrat\ExtractMetaDataRepository;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UploadVideoOrAudioRequest;
+use App\Http\Requests\Backend\UploadVideoOrAudioRequest;
 use App\Models\MediaTemporary;
 use App\Models\TemporaryImage;
 use App\Services\MediaMetaData;
