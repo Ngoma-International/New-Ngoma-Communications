@@ -25,7 +25,6 @@ analyse: vendor/autoload.php
 .PHONY: clear
 clear: vendor/autoload.php ## vide le cache de l'application
 	php artisan cache:clear && php artisan view:clear && php artisan route:clear
-	php artisan media-library:clear
 
 .PHONY: serve
 serve: vendor/autoload.php ## lance, le serve de development
