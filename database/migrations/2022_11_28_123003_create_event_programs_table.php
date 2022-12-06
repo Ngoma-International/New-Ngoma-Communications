@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->longText('description')->nullable();
             $table->date('date')->nullable();
-            $table->timestamp('start_time')->nullable();
+            $table->string('start_time')->nullable();
             $table->string('end_time')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();

@@ -5,80 +5,87 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Admin\programs;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Backend\StoreFacilitatorRequest;
-use App\Models\Facilitator;
+use App\Http\Requests\StoreProgramRequest;
+use App\Http\Requests\UpdateProgramRequest;
+use App\Models\EventProgram;
+use App\Repository\Programs\ProgramsRepository;
+use App\Services\FlashMessagesServices;
+use App\ViewModels\CreateProgramsViewModel;
+use App\ViewModels\EditEventPrograms;
+use App\ViewModels\EventProgramsViewModel;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class EventProgramsAdminController extends Controller
 {
+    public function __construct(
+        protected readonly ProgramsRepository $repository,
+        protected readonly FlashMessagesServices $flashMessagesServices
+    ) {
+    }
+
     public function index(): Renderable
     {
-        return  view('admin.domain.programs.index');
+        $programs = new EventProgramsViewModel();
+
+        return  view('admin.domain.programs.index', compact('programs'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function create(): Factory|View|Application
     {
-        //
+        $viewModel = new CreateProgramsViewModel();
+
+        return view('admin.domain.programs.create', compact('viewModel'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\Backend\StoreFacilitatorRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreFacilitatorRequest $request)
+    public function store(StoreProgramRequest $request): RedirectResponse
     {
-        //
+        $this->repository->store($request);
+
+        $this->flashMessagesServices->success(
+            'success',
+            "Un programme ajouter a l'evenement"
+        );
+
+        return redirect()->route('admins.programs.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Facilitator  $facilitator
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Facilitator $facilitator)
+    public function show(EventProgram $program): View|Factory|Application
     {
-        //
+        return \view('admin.domain.programs.show', compact('program'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Facilitator  $facilitator
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Facilitator $facilitator)
+    public function edit(EventProgram $program): View|Factory|Application
     {
-        //
+        $program = new EditEventPrograms($program);
+
+        return \view('admin.domain.programs.edit', compact('program'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateFacilitatorRequest  $request
-     * @param  \App\Models\Facilitator  $facilitator
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateFacilitatorRequest $request, Facilitator $facilitator)
+    public function update(UpdateProgramRequest $request, EventProgram $program): RedirectResponse
     {
-        //
+        $this->repository->update($request, $program);
+
+        $this->flashMessagesServices->success(
+            'success',
+            "Un programme modifier avec success"
+        );
+
+        return redirect()->route('admins.programs.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Facilitator  $facilitator
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Facilitator $facilitator)
+    public function destroy(EventProgram $program): RedirectResponse
     {
-        //
+        $this->repository->delete($program);
+
+        $this->flashMessagesServices->success(
+            'success',
+            "Un programme supprimer avec success"
+        );
+
+        return redirect()->route('admins.programs.index');
     }
 }

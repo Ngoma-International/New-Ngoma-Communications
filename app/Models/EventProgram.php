@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
 /**
  * App\Models\EventProgram
@@ -41,10 +43,11 @@ use Illuminate\Support\Carbon;
  * @method static Builder|EventProgram whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class EventProgram extends Model
+class EventProgram extends Model implements HasMedia
 {
     use HasFactory;
     use HasUuids;
+    use InteractsWithMedia;
 
     protected $fillable = [
         'seminar_id',

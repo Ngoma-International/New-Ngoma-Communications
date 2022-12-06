@@ -5,6 +5,7 @@ import {VideoUpload} from "./util/VideoUpload";
 import {picker} from "../Shared/util/picker";
 import {uploadImages} from "./util/seminar";
 import {toast} from "../Shared/util/toastr";
+import {time_picker} from "../Shared/util/time-picker";
 
 Alpine.start()
 customElements.define('app-toast', Toastr)
@@ -23,10 +24,23 @@ if (uploadVideo) {
         .catch(e => console.log(e))
 }
 
-const start_time = document.querySelector('#date')
-if (start_time) {
+const date_time = document.querySelector('#date')
+if (date_time) {
     import('../Shared/util/picker')
-        .then(module => picker(start_time))
+        .then(module => picker(date_time))
+}
+
+const start_time = document.querySelector('#start_time')
+const end_time = document.querySelector('#end_time')
+
+if (start_time) {
+    import('../Shared/util/time-picker')
+        .then(module => time_picker(start_time))
+}
+
+if (end_time) {
+    import('../Shared/util/time-picker')
+        .then(module => time_picker(end_time))
 }
 
 const images = document.querySelector('#images')

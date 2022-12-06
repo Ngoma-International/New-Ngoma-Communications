@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Rules;
 
+use App\Models\EventProgram;
 use App\Models\Seminar;
 use Illuminate\Contracts\Validation\Rule;
 
@@ -28,7 +29,7 @@ class SeminarAppointment implements Rule
      */
     public function passes($attribute, $value): bool
     {
-        return Seminar::query()
+        return EventProgram::query()
             ->where('start_time', '<=', $value)
             ->where('end_time', '>=', $value)
             ->count() === 0;
