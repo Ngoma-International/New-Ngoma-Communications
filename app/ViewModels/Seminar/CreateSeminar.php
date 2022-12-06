@@ -8,6 +8,7 @@ use App\Enums\RoleEnum;
 use App\Http\Controllers\Admin\Seminar\SeminarBackendController;
 use App\Models\Category;
 use App\Models\SeminaryType;
+use App\Models\Type;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 use Spatie\ViewModels\ViewModel;
@@ -21,9 +22,9 @@ class CreateSeminar extends ViewModel
         $this->indexUrl = action([SeminarBackendController::class, 'index']);
     }
 
-    public function categories(): array|Collection|\Illuminate\Support\Collection
+    public function types(): array|Collection|\Illuminate\Support\Collection
     {
-        return Category::query()
+        return Type::query()
             ->select(['id', 'name'])
             ->get();
     }
@@ -39,7 +40,6 @@ class CreateSeminar extends ViewModel
     {
         return User::query()
             ->select(['id', 'name', 'firstname'])
-            ->where('role_id', '=', RoleEnum::Role_Facilitators)
             ->get();
     }
 }

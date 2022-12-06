@@ -18,6 +18,8 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Spatie\MediaLibrary\MediaCollections\Exceptions\FileDoesNotExist;
+use Spatie\MediaLibrary\MediaCollections\Exceptions\FileIsTooBig;
 
 class SeminarBackendController extends BaseController
 {
@@ -42,6 +44,10 @@ class SeminarBackendController extends BaseController
         return view('admin.domain.seminar.create', compact('viewModels'));
     }
 
+    /**
+     * @throws FileDoesNotExist
+     * @throws FileIsTooBig
+     */
     public function store(StoreSeminarRequest $request): RedirectResponse
     {
         $this->repository->create($request);
@@ -68,6 +74,10 @@ class SeminarBackendController extends BaseController
         return view('admin.domain.seminar.edit', compact('viewModels'));
     }
 
+    /**
+     * @throws FileDoesNotExist
+     * @throws FileIsTooBig
+     */
     public function update(UpdateSeminarRequest $request, Seminar $seminar): RedirectResponse
     {
         $seminar = $this->repository->update($request, $seminar);

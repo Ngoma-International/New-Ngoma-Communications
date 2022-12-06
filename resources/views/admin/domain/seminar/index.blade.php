@@ -43,9 +43,6 @@
                                 <span class="sub-text">Prices</span>
                             </th>
                             <th class="nk-tb-col tb-col-md">
-                                <span class="sub-text">Duration</span>
-                            </th>
-                            <th class="nk-tb-col tb-col-md">
                                 <span class="sub-text">Status</span>
                             </th>
                             <th class="nk-tb-col">
@@ -62,22 +59,19 @@
                                 <td class="nk-tb-col tb-col-sm">
                                     <span class="tb-product justify-content-center">
                                         <img
-                                                src="{{ $seminar->renderPoster() }}"
-                                                alt="{{ $seminar->name }}"
+                                                src="{{ $seminar->getFirstMediaUrl('image') }}"
+                                                alt="{{ $seminar->sub_title }}"
                                                 class="thumb">
                                     </span>
                                 </td>
                                 <td class="nk-tb-col tb-col-md">
-                                    <span>{{ ucfirst($seminar->name) ?? "" }}</span>
+                                    <span>{{ ucfirst($seminar->title) ?? "" }}</span>
                                 </td>
                                 <td class="nk-tb-col tb-col-md">
                                     <span>{{ $seminar->date ?? "" }}</span>
                                 </td>
                                 <td class="nk-tb-col tb-col-md">
                                     <span>$ {{ $seminar->prices ?? "" }}</span>
-                                </td>
-                                <td class="nk-tb-col tb-col-md">
-                                    <span>{{ $seminar->duration ?? "" }} Minutes</span>
                                 </td>
                                 <td class="nk-tb-col tb-col-md">
                                     @if($seminar->status)

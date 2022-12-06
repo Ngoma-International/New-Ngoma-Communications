@@ -1,21 +1,20 @@
-<form action="{{ route('admins.seminar.store') }}" method="post" class="form-validate mt-2"
-      enctype="multipart/form-data">
+<form action="{{ route('admins.seminar.store') }}" method="post" class="form-validate mt-2" enctype="multipart/form-data">
     @csrf
     <div class="row g-gs">
         <div class="col-md-6">
             <div class="form-group">
-                <label class="form-label" for="category_id">Categorie</label>
+                <label class="form-label" for="type_id">Type</label>
                 <div class="form-control-wrap">
                     <select
-                            class="form-control js-select2 select2-hidden-accessible @error('category_id') error @enderror"
-                            id="category_id"
+                            class="form-control js-select2 select2-hidden-accessible @error('type_id') error @enderror"
+                            id="type_id"
                             data-search="on"
-                            name="category_id"
-                            data-placeholder="Select a categorie"
+                            name="type_id"
+                            data-placeholder="Select a type d'evenement"
                             required>
-                        @foreach($viewModels->categories() as $category)
-                            <option value="{{ $category->id }}">
-                                {{ ucfirst($category->name) ?? "" }}
+                        @foreach($viewModels->types() as $type)
+                            <option value="{{ $type->id }}">
+                                {{ ucfirst($type->name) ?? "" }}
                             </option>
                         @endforeach
                     </select>
@@ -25,7 +24,7 @@
 
         <div class="col-md-6">
             <div class="form-group">
-                <label class="form-label" for="seminary_type_id">Type de Seminaire</label>
+                <label class="form-label" for="seminary_type_id">Type d'evenement</label>
                 <div class="form-control-wrap">
                     <select
                             class="form-control js-select2 select2-hidden-accessible @error('seminary_type_id') error @enderror"
@@ -67,16 +66,64 @@
 
         <div class="col-md-6">
             <div class="form-group">
-                <label class="form-label" for="name">Seminar Name</label>
+                <label class="form-label" for="title">Titre de l'evenement</label>
                 <div class="form-control-wrap">
                     <input
-                            type="text"
-                            class="form-control @error('name') error @enderror"
-                            id="name"
-                            name="name"
-                            value="{{ old('name') }}"
-                            placeholder="Enter name"
-                            required>
+                        type="text"
+                        class="form-control @error('title') error @enderror"
+                        id="title"
+                        name="title"
+                        value="{{ old('title') }}"
+                        placeholder="Enter title"
+                        required>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-label" for="sub_title">Sous title evenement</label>
+                <div class="form-control-wrap">
+                    <input
+                        type="text"
+                        class="form-control @error('sub_title') error @enderror"
+                        id="sub_title"
+                        name="sub_title"
+                        value="{{ old('sub_title') }}"
+                        placeholder="Enter sub title"
+                        required>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-label" for="duration">Duree de l'evenement</label>
+                <div class="form-control-wrap">
+                    <input
+                        type="number"
+                        class="form-control @error('duration') error @enderror"
+                        id="duration"
+                        name="duration"
+                        value="{{ old('duration') }}"
+                        placeholder="Enter event duration"
+                        required>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-label" for="date">Date de l'evenement</label>
+                <div class="form-control-wrap">
+                    <input
+                        type="text"
+                        class="form-control @error('date') error @enderror"
+                        id="date"
+                        name="date"
+                        value="{{ old('date') }}"
+                        placeholder="Enter date"
+                        required>
                 </div>
             </div>
         </div>
@@ -130,113 +177,48 @@
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="form-group">
-                <label class="form-label" for="start_time">Start Time</label>
-                <div class="form-control-wrap">
-                    <input
-                            type="text"
-                            class="form-control time-picker @error('start_time') error @enderror"
-                            id="start_time"
-                            name="start_time"
-                            value="{{ old('start_time') }}"
-                            placeholder="Enter start time"
-                            required>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="form-group">
-                <label class="form-label" for="end_time">End Time</label>
-                <div class="form-control-wrap">
-                    <input
-                            type="text"
-                            class="form-control time-picker @error('end_time') error @enderror"
-                            id="end_time"
-                            name="end_time"
-                            value="{{ old('end_time') }}"
-                            placeholder="Enter end time"
-                            required>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-md-6">
-            <div class="form-group">
-                <label class="form-label" for="date">Date</label>
-                <div class="form-control-wrap">
-                    <input
-                            type="text"
-                            class="form-control @error('date') error @enderror"
-                            id="date"
-                            name="date"
-                            value="{{ old('date') }}"
-                            placeholder="Enter prices"
-                            required>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="form-group">
-                <label class="form-label" for="address_seminary">Event venue</label>
-                <div class="form-control-wrap">
-                    <input
-                            type="text"
-                            class="form-control @error('address_seminary') error @enderror"
-                            id="address_seminary"
-                            name="address_seminary"
-                            value="{{ old('address_seminary') }}"
-                            placeholder="Enter address seminary"
-                            required>
-                </div>
-            </div>
-        </div>
-
         <div class="col-md-12">
             <div class="form-group">
-                <label class="form-label" for="images">
-                    Seminar Poster
+                <label class="form-label" for="image">
+                    Event Poster
                 </label>
                 <div class="">
                     <input
-                            type="file"
-                            class=" @error('images') error @enderror"
-                            id="images"
-                            name="images"
-                            value="{{ old('images') }}"
-                            placeholder="Enter images"
-                            >
+                        type="file"
+                        class="form-control @error('image') error @enderror"
+                        id="image"
+                        name="image"
+                        value="{{ old('image') }}"
+                        placeholder="Enter image"
+                    >
                 </div>
             </div>
         </div>
 
         <div class="col-md-6">
             <div class="form-group">
-                <label class="form-label" for="attend">Seminar Outline</label>
-                <div class="form-control-wrap">
-                    <textarea
-                            class="form-control form-control-sm @error('attend') error @enderror"
-                            id="attend"
-                            name="attend"
-                            placeholder="Write the attend"
-                    >{{ old('attend') }}</textarea>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="form-group">
-                <label class="form-label" for="overview">Who should attend</label>
+                <label class="form-label" for="overview">Overview</label>
                 <div class="form-control-wrap">
                     <textarea
                             class="form-control form-control-sm @error('overview') error @enderror"
                             id="overview"
                             name="overview"
-                            placeholder="Write the overview"
+                            placeholder="Write overview"
                     >{{ old('overview') }}</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-label" for="participate">Who should attend</label>
+                <div class="form-control-wrap">
+                    <textarea
+                            class="form-control form-control-sm @error('participate') error @enderror"
+                            id="participate"
+                            name="participate"
+                            placeholder="Write the participate"
+                    >{{ old('participate') }}</textarea>
                 </div>
             </div>
         </div>
@@ -259,7 +241,7 @@
             <div class="form-group text-center">
                 <button type="submit" class="btn btn-md btn-outline-primary">
                     <em class="icon ni ni-save-fill mr-2"></em>
-                    Save
+                    Save Event
                 </button>
             </div>
         </div>

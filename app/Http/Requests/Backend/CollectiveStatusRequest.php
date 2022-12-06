@@ -5,6 +5,7 @@ namespace App\Http\Requests\Backend;
 use App\Models\Collective;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules\Exists;
 
 class CollectiveStatusRequest extends FormRequest
 {
@@ -28,7 +29,7 @@ class CollectiveStatusRequest extends FormRequest
         return [
             'collective' => [
                 'required',
-                Rule::exists(Collective::class, 'organisation_register_number')
+                new Exists(Collective::class, 'organisation_register_number')
             ],
             'status' => [
                 'required',

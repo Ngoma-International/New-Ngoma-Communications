@@ -20,6 +20,11 @@ class CollectiveStatusRepository
             ->where('id', '=', $request->input('collective'))
             ->first();
         if ($request->input('status') === true) {
+            if (!$collective->matricule) {
+                $collective->update([
+                    'status' => $request->input('status')
+                ]);
+            }
             $collective->update([
                 'status' => $request->input('status'),
                 'matricule' => $this->generateTransaction(8)

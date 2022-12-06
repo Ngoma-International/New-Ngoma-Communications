@@ -19,6 +19,11 @@ class MemberStatusRepository
             ->where('id', '=', $request->input('member'))
             ->first();
         if ($request->input('status') === true) {
+            if (!$member->matricule) {
+                $member->update([
+                    'status' => $request->input('status')
+                ]);
+            }
             $member->update([
                 'status' => $request->input('status'),
                 'matricule' => $this->generateTransaction(8)

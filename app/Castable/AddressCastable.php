@@ -8,16 +8,14 @@ use JessArcher\CastableDataTransferObject\CastableDataTransferObject;
 
 class AddressCastable extends CastableDataTransferObject
 {
-    public string $street;
-    public string $venue;
-    public string $state;
+    public string $country;
+    public string $city;
 
     public function fromString(): string
     {
         return implode(', ', [
-            $this->street,
-            $this->venue,
-            $this->state
+            $this->country,
+            $this->city,
         ]);
     }
 }

@@ -168,7 +168,7 @@
                     Swal.fire(`Status ${result[1].name}`, `${result[0]}`, 'success')
                 })
                 .catch((error) => {
-                    Swal.fire("Bonne nouvelle", "Operation executez avec success", "success")
+                    Swal.fire("Bonne nouvelle", "Erreur d'execuation", "error")
                 })
         }
     </script>
