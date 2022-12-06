@@ -6,7 +6,7 @@ namespace App\Http\Controllers\Admin\Seminar;
 
 use App\Contrat\App\FileStorageRepository;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreSeminarUploaderRequest;
+use App\Http\Requests\Backend\StoreSeminarUploaderRequest;
 use Illuminate\Http\Request;
 
 class SeminarUploaderController extends Controller

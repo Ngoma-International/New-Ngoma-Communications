@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\HomeBackendController;
 use App\Http\Controllers\Admin\Members\CollectiveController;
 use App\Http\Controllers\Admin\Members\CollectiveStatusController;
 use App\Http\Controllers\Admin\Members\FacilitatorController;
+use App\Http\Controllers\Admin\Members\FacilitatorStatusAdminController;
 use App\Http\Controllers\Admin\Members\MemberController;
 use App\Http\Controllers\Admin\Members\MemberStatusController;
 use App\Http\Controllers\Admin\Podcast\PodcastBackendController;
@@ -91,6 +92,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('member-status', MemberStatusController::class)->name('member.status');
 
         Route::post('collective-status', CollectiveStatusController::class)->name('collective.status');
+
+        Route::post('facilitator-status', FacilitatorStatusAdminController::class)->name('facilitator.status');
     });
 });
 

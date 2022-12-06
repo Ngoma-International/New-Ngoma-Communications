@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Requests\Backend;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -11,9 +13,9 @@ class UpdateFacilitatorRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +26,48 @@ class UpdateFacilitatorRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'username' => [
+                'required',
+                'string',
+                'min:3'
+            ],
+            'firstname' => [
+                'required',
+                'string',
+                'min:3'
+            ],
+            'organisation' => [
+                'required',
+                'string',
+                'min:3'
+            ],
+            'position' => [
+                'required',
+                'string',
+                'min:3'
+            ],
+            'email' => [
+                'required',
+                'email:rfc,dns',
+            ],
+            'phone' => [
+                'required',
+                'min:10',
+            ],
+            'country' => [
+                'required',
+                'string',
+                'min:3'
+            ],
+            'description' => [
+                'required',
+                'string',
+                'min:10'
+            ],
+            'image' => [
+                'required',
+                'image'
+            ]
         ];
     }
 }

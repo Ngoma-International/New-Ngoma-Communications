@@ -1,6 +1,5 @@
-<form action="{{ route('admins.facilitator.update', $facilitator->id) }}" method="post" class="form-validate mt-2" enctype="multipart/form-data">
+<form action="{{ route('admins.facilitator.store') }}" method="post" class="form-validate mt-2" enctype="multipart/form-data">
     @csrf
-    @method('PUT')
     <div class="row g-gs">
         <div class="col-md-6">
             <div class="form-group">
@@ -11,7 +10,7 @@
                         class="form-control @error('username') error @enderror"
                         id="username"
                         name="username"
-                        value="{{ old('username') ?? $facilitator->username }}"
+                        value="{{ old('username') }}"
                         placeholder="Enter username"
                         required>
                 </div>
@@ -27,7 +26,7 @@
                         class="form-control @error('firstname') error @enderror"
                         id="firstname"
                         name="firstname"
-                        value="{{ old('firstname') ?? $facilitator->firstname }}"
+                        value="{{ old('firstname') }}"
                         placeholder="Enter firstname"
                         required>
                 </div>
@@ -43,7 +42,7 @@
                         class="form-control @error('organisation') error @enderror"
                         id="organisation"
                         name="organisation"
-                        value="{{ old('organisation') ?? $facilitator->organisation }}"
+                        value="{{ old('organisation') }}"
                         placeholder="Enter organisation name"
                         required>
                 </div>
@@ -59,7 +58,7 @@
                         class="form-control @error('position') error @enderror"
                         id="position"
                         name="position"
-                        value="{{ old('position') ?? $facilitator->position }}"
+                        value="{{ old('position') }}"
                         placeholder="Enter your position"
                         required>
                 </div>
@@ -75,7 +74,7 @@
                         class="form-control @error('email') error @enderror"
                         id="email"
                         name="email"
-                        value="{{ old('email') ?? $facilitator->email }}"
+                        value="{{ old('email') }}"
                         pattern="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b"
                         placeholder="Enter email"
                         required>
@@ -92,7 +91,7 @@
                         class="form-control @error('phone') error @enderror"
                         id="phone"
                         name="phone"
-                        value="{{ old('phone') ?? $facilitator->phone }}"
+                        value="{{ old('phone') }}"
                         placeholder="Enter your phone"
                         required>
                 </div>
@@ -142,7 +141,7 @@
                         id="description"
                         name="description"
                         placeholder="Write the description"
-                    >{{ old('description') ?? $facilitator->description }}</textarea>
+                    >{{ old('description') }}</textarea>
                 </div>
             </div>
         </div>
@@ -151,7 +150,7 @@
             <div class="form-group text-center">
                 <button type="submit" class="btn btn-outline-primary">
                     <em class="icon ni ni-save mr-2"></em>
-                    Update Facilitator
+                    Save Facilitator
                 </button>
             </div>
         </div>

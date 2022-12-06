@@ -6,79 +6,81 @@ namespace App\Http\Controllers\Admin\Members;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\StoreFacilitatorRequest;
+use App\Http\Requests\Backend\UpdateFacilitatorRequest;
 use App\Models\Facilitator;
+use App\Repository\Members\FacilitatorRepository;
+use App\Services\FlashMessagesServices;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
+use Spatie\MediaLibrary\MediaCollections\Exceptions\FileDoesNotExist;
+use Spatie\MediaLibrary\MediaCollections\Exceptions\FileIsTooBig;
 
 class FacilitatorController extends Controller
 {
+    public function __construct(
+        protected FacilitatorRepository $repository,
+        protected FlashMessagesServices $flashMessagesServices
+    ) {
+    }
+
     public function index(): Renderable
     {
-        return  view('admin.domain.facilitator.index');
+        $facilitators = $this->repository->getFacilitators();
+
+        return  view('admin.domain.facilitator.index', compact('facilitators'));
+    }
+
+    public function create(): Factory|View|Application
+    {
+        return view('admin.domain.facilitator.create');
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @throws FileIsTooBig
+     * @throws FileDoesNotExist
      */
-    public function create()
+    public function store(StoreFacilitatorRequest $request): RedirectResponse
     {
-        //
+        $this->repository->store($request);
+
+        $this->flashMessagesServices->success('success', "Animateur ajouter avec success");
+
+        return redirect()->route('admins.facilitator.index');
+    }
+
+    public function show(Facilitator $facilitator): View|Factory|Application
+    {
+        return \view('admin.domain.facilitator.show', compact('facilitator'));
+    }
+
+    public function edit(Facilitator $facilitator): View|Factory|Application
+    {
+        return \view('admin.domain.facilitator.edit', compact('facilitator'));
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\Backend\StoreFacilitatorRequest  $request
-     * @return \Illuminate\Http\Response
+     * @throws FileDoesNotExist
+     * @throws FileIsTooBig
      */
-    public function store(StoreFacilitatorRequest $request)
+    public function update(UpdateFacilitatorRequest $request, Facilitator $facilitator): RedirectResponse
     {
-        //
+        $this->repository->update($request, $facilitator);
+
+        $this->flashMessagesServices->success('success', "Animateur modifier avec success");
+
+        return redirect()->route('admins.facilitator.index');
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Facilitator  $facilitator
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Facilitator $facilitator)
+    public function destroy(Facilitator $facilitator): RedirectResponse
     {
-        //
-    }
+        $this->repository->delete($facilitator);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Facilitator  $facilitator
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Facilitator $facilitator)
-    {
-        //
-    }
+        $this->flashMessagesServices->success('success', "Animateur supprimer avec success");
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateFacilitatorRequest  $request
-     * @param  \App\Models\Facilitator  $facilitator
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateFacilitatorRequest $request, Facilitator $facilitator)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Facilitator  $facilitator
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Facilitator $facilitator)
-    {
-        //
+        return redirect()->route('admins.facilitator.index');
     }
 }

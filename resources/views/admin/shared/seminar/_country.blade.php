@@ -1,4 +1,3 @@
-<option value="" style="color: white; font-weight: bold">Please Select Country</option>
 <option value="Online event">Online event</option>
 <option value="Afghanistan">Afghanistan</option>
 <option value="Albania">Albania</option>
