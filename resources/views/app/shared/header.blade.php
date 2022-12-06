@@ -51,12 +51,21 @@
                     <span class="link">Contact Us</span>
                 </a>
             </li>
-            <li>
-                <a href="{{ route('login') }}">
-                    <i class="icon fa fa-sign-in" style="text-align: center"></i>
-                    <span class="link">Admin</span>
-                </a>
-            </li>
+            @auth
+                <li>
+                    <a href="{{ route('admins.backend.index') }}">
+                        <i class="icon fa fa-user" style="text-align: center"></i>
+                        <span class="link">Admin</span>
+                    </a>
+                </li>
+            @else
+                <li>
+                    <a href="{{ route('login') }}">
+                        <i class="icon fa fa-sign-in" style="text-align: center"></i>
+                        <span class="link">Login</span>
+                    </a>
+                </li>
+            @endauth
         </ul>
     </div>
 
