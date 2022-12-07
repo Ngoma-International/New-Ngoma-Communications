@@ -37,7 +37,7 @@ class SeminarRepository
         $seminar = $request->validated();
         $seminar['status'] = SeminarEnum::SEMINAR_PENDING->value;
         $seminar['facilitator_id'] = $request->input('user_id');
-        $seminar['images'] = self::uploadFiles($request);
+        $seminar['images'] = self::uploadImages($request);
         $seminar['address'] = [
             'country' => $request->input('country'),
             'city' => $request->input('city')

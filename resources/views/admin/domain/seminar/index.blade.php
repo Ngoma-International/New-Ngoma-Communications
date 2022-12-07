@@ -59,7 +59,7 @@
                                 <td class="nk-tb-col tb-col-sm">
                                     <span class="tb-product justify-content-center">
                                         <img
-                                                src="{{ $seminar->getFirstMediaUrl('images') }}"
+                                                src="{{ $seminar->renderPoster() }}"
                                                 alt="{{ $seminar->sub_title }}"
                                                 class="thumb">
                                     </span>
@@ -68,10 +68,10 @@
                                     <span>{{ ucfirst($seminar->title) ?? "" }}</span>
                                 </td>
                                 <td class="nk-tb-col tb-col-md">
-                                    <span>{{ $seminar->date ?? "" }}</span>
+                                    <span>{{ $seminar->date->format('Y-m-d') ?? "" }}</span>
                                 </td>
                                 <td class="nk-tb-col tb-col-md">
-                                    <span>$ {{ $seminar->prices ?? "" }}</span>
+                                    <span class="text-blue font-weight-bold">$ {{ $seminar->prices ?? "" }}</span>
                                 </td>
                                 <td class="nk-tb-col tb-col-md">
                                     @if($seminar->status)

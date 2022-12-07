@@ -19,7 +19,7 @@
         "owen-oj/laravel-getid3": "^2.1",
         "realrashid/sweet-alert": "^5.1",
         "simplesoftwareio/simple-qrcode": "^4.2",
-        "spatie/laravel-medialibrary": "^10.0.0",
+        "spatie/laravel-medialibrary": "^9.6.0",
         "spatie/laravel-view-models": "^1.5",
         "spatie/period": "^2.3",
         "symfony/filesystem": "^6.1",

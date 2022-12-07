@@ -27,7 +27,7 @@
                                         class="custom-control-input"
                                         name="activated"
                                         data-id="{{ $program->title }}"
-                                        @checked($program->status )
+                                        @checked($program->status)
                                         onclick="changeProgramStatus(event.target, {{ $program->title }});"
                                         id="activated">
                                     <label class="custom-control-label" for="activated"></label>
@@ -118,7 +118,7 @@
                                 <div class="profile-ud wider">
                                     <span class="profile-ud-label">Seminar Status</span>
                                     <span class="profile-ud-value">
-                                        @if($program->status === true)
+                                        @if($program->status === 1)
                                             <span class="badge badge-success ms-0">Activée</span>
                                         @else
                                             <span class="badge badge-danger ms-0">Désactivée</span>

@@ -1,4 +1,3 @@
-@php use App\Enums\RoleEnum; @endphp
 @extends('admin.layout.base')
 
 @section('title')
@@ -53,7 +52,7 @@
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <button type="submit" class="btn btn-outline-danger btn-sm">
                                         <em class="icon ni ni-trash-empty-fill"></em>
-                                        Supprimer l'utilisateur
+                                        Supprimer
                                     </button>
                                 </form>
                             </li>

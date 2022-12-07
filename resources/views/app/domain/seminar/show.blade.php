@@ -21,7 +21,7 @@
                     <div class="row">
                         <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
                             <div class="post-box card-box">
-                                <h1>{{ ucfirst($viewModel->seminar->name) ?? "" }}</h1>
+                                <h1>{{ ucfirst($viewModel->seminar->title) ?? "" }}</h1>
                                 <div class="blog-detail">{{ $viewModel->seminar->created_at->diffForHumans() ?? "" }}</div>
                                 <div class="blog-content">
                                     <img
@@ -29,7 +29,7 @@
                                         height="250px"
                                         width="100%"
                                         style="object-fit: cover; border-radius: 10px; margin-top: -1%;"
-                                        alt="{{ $viewModel->seminar->name ?? "" }}">
+                                        alt="{{ $viewModel->seminar->title ?? "" }}">
                                     <p style="margin-top: 1%">
                                         {{ $viewModel->seminar->attend ?? "" }}
                                     </p>
@@ -37,18 +37,14 @@
                                     <ul class="list-style">
                                         <div style="display: flex; flex-shrink: inherit; justify-content:space-between; align-items: inherit">
                                             <div>
-                                                <li>Country : <span style="color: #5ac24e; font-weight: bold">{{ ucfirst($viewModel->seminar->country) ?? "" }}</span></li>
-                                                <li>City : <span style="color: #5ac24e; font-weight: bold">{{ ucfirst($viewModel->seminar->city) ?? "" }}</span></li>
-                                                <li>Address : <span style="color: #5ac24e; font-weight: bold">{{ ucfirst($viewModel->seminar->address_seminar) ?? "" }}</span></li>
-                                                <li>Start Time : <span style="color: #5ac24e; font-weight: bold">{{ $viewModel->seminar->renderStartTimeFormat() ?? "" }}</span></li>
-                                                <li>End Time : <span style="color: #5ac24e; font-weight: bold">{{ $viewModel->seminar->renderEndTimeFormat() ?? "" }}</span></li>
+                                                <li>Country : <span style="color: #5ac24e; font-weight: bold">{{ ucfirst($viewModel->seminar->address->country) ?? "" }}</span></li>
+                                                <li>City : <span style="color: #5ac24e; font-weight: bold">{{ ucfirst($viewModel->seminar->address->city) ?? "" }}</span></li>
+                                                <li>City : <span style="color: #5ac24e; font-weight: bold">{{ ucfirst($viewModel->seminar->type->name) ?? "" }}</span></li>
                                             </div>
                                             <div>
                                                 <li>Prices : <span style="color: #5ac24e; font-weight: bold">$ {{ $viewModel->seminar->prices ?? 0 }}</span></li>
                                                 <li>Date : <span style="color: #5ac24e; font-weight: bold">{{ $viewModel->seminar->date ?? "" }}</span></li>
-                                                <li>Category : <span style="color: #5ac24e; font-weight: bold">{{ ucfirst($viewModel->seminar->category->name) ?? "" }}</span></li>
-                                                <li>Seminar Type : <span style="color: #5ac24e; font-weight: bold">{{ ucfirst($viewModel->seminar->seminarType->name) ?? "" }}</span></li>
-                                                <li>Facilitator : <span style="color: #5ac24e; font-weight: bold">{{ ucfirst($viewModel->seminar->user->name) ?? "" }}-{{ ucfirst($viewModel->seminar->user->firstname) ?? "" }}</span></li>
+                                                <li>Categorie : <span style="color: #5ac24e; font-weight: bold">{{ ucfirst($viewModel->seminar->seminarType->name) ?? "" }}</span></li>
                                             </div>
                                         </div>
                                     </ul>

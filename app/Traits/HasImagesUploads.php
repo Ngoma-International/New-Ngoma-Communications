@@ -15,6 +15,12 @@ trait HasImagesUploads
             ->storePublicly('/', ['disk' => 'public']);
     }
 
+    public static function uploadImages(Request $request): string
+    {
+        return $request->file('image')
+            ->storePublicly('/', ['disk' => 'public']);
+    }
+
     public function removePathOfImages($model): void
     {
         Storage::disk('public')

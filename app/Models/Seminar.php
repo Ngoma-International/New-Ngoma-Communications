@@ -102,6 +102,11 @@ class Seminar extends Model implements HasMedia
         return $this->belongsTo(SeminaryType::class, 'seminary_type_id');
     }
 
+    public function type(): BelongsTo
+    {
+        return $this->belongsTo(Type::class, 'type_id');
+    }
+
     public function users(): BelongsTo
     {
         return $this->belongsTo(Facilitator::class, 'facilitator_id');
