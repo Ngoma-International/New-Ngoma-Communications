@@ -72,7 +72,6 @@ class FacilitatorController extends Controller
         $this->flashMessagesServices->success('success', "Animateur modifier avec success");
 
         return redirect()->route('admins.facilitator.index');
-
     }
 
     public function destroy(Facilitator $facilitator): RedirectResponse

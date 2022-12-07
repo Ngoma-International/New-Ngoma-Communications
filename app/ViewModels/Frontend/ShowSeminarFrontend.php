@@ -10,10 +10,8 @@ use Spatie\ViewModels\ViewModel;
 
 class ShowSeminarFrontend extends ViewModel
 {
-    public function __construct(
-        public Seminar $seminar
-    ) {
-    }
+    public function __construct(public Seminar $seminar)
+    {}
 
     public function seminar(): Seminar
     {
@@ -21,10 +19,6 @@ class ShowSeminarFrontend extends ViewModel
             ->where('id', '=', $this->seminar->id)
             ->where('status', '=', SeminarEnum::SEMINAR_CONFIRMED)
             ->first();
-        return $seminar->load([
-            'category',
-            'user',
-            'seminarType'
-        ]);
+        return $seminar->load(['user', 'seminarType']);
     }
 }

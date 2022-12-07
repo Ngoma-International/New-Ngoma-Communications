@@ -9,6 +9,7 @@ use Spatie\ViewModels\ViewModel;
 
 class ShowPodcastFrontend extends ViewModel
 {
+
     public function __construct(
         public Podcast $podcast
     ) {

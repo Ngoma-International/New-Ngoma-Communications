@@ -28,14 +28,7 @@ class PodcastBackendRepository
         return Podcast::query()
             ->with(['type:id,name', 'offering:id,name'])
             ->orderByDesc('created_at')
-            ->get([
-                'id',
-                'thumbnail',
-                'title',
-                'type_podcast_id',
-                'podcast_offering_id',
-                'status',
-            ]);
+            ->get();
     }
 
     public function store(StorePodcastRequest $request): Model|Builder

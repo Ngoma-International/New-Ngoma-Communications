@@ -4,13 +4,10 @@ declare(strict_types=1);
 
 namespace App\ViewModels\Seminar;
 
-use App\Enums\RoleEnum;
 use App\Http\Controllers\Admin\Seminar\SeminarBackendController;
-use App\Models\Category;
 use App\Models\Facilitator;
 use App\Models\SeminaryType;
 use App\Models\Type;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 use Spatie\ViewModels\ViewModel;
 
@@ -40,6 +37,11 @@ class CreateSeminar extends ViewModel
     public function facilitators(): Collection|array
     {
         return Facilitator::query()
-            ->get();
+            ->orderByDesc('created_at')
+            ->get([
+                'id',
+                'username',
+                'firstname'
+            ]);
     }
 }

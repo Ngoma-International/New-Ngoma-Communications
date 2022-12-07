@@ -30,6 +30,6 @@ class CreateProgramsViewModel extends ViewModel
     {
         return Facilitator::query()
             ->orderByDesc('created_at')
-            ->get();
+            ->get(['id', 'username', 'firstname']);
     }
 }

@@ -82,7 +82,8 @@ class Seminar extends Model implements HasMedia
         'overview',
         'participate',
         'description',
-        'facilitator_id'
+        'facilitator_id',
+        'images'
     ];
 
     protected $casts = [

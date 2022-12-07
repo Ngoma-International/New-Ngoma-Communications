@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\ViewModels\Booking;
 
 use App\Http\Controllers\Admin\Booking\BookingBackendController;

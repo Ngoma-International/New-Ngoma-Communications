@@ -16,8 +16,8 @@ use Illuminate\Http\RedirectResponse;
 class CollectiveController extends Controller
 {
     public function __construct(
-        protected FlashMessagesServices $flashMessagesServices)
-    {
+        protected FlashMessagesServices $flashMessagesServices
+    ) {
     }
 
     public function __invoke(): Renderable
@@ -40,5 +40,4 @@ class CollectiveController extends Controller
         $this->flashMessagesServices->success('success', "Member supprimer avec success");
         return redirect()->route('admins.collective.index');
     }
-
 }

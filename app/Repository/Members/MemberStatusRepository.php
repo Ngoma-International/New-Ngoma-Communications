@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 class MemberStatusRepository
 {
     use HasTransaction;
+
     public function handle(MemberStatusRequest $request): Model|Builder|Member|null
     {
         $member = Member::query()

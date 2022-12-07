@@ -59,6 +59,7 @@ class SeminarRepository
         $event = $request->validated();
         $event['status'] = SeminarEnum::SEMINAR_PENDING;
         $event['facilitator_id'] = $request->input('user_id');
+        $seminar->images !== null ? $this->removePathOfImages($seminar) : null;
         $event['images'] = self::uploadFiles($request);
         $event['address'] = [
             'country' => $request->input('country'),
@@ -75,6 +76,7 @@ class SeminarRepository
     public function delete(Seminar $seminar): Seminar
     {
         $seminar->clearMediaCollection('image');
+        $this->removePathOfImages($seminar);
         $seminar->delete();
         return $seminar;
     }

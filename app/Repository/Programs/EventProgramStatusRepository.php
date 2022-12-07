@@ -9,7 +9,7 @@ use App\Models\EventProgram;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
-class EventProgramRepository
+class EventProgramStatusRepository
 {
     public function handle(EventProgramStatusRequest $request): Model|EventProgram|Builder|null
     {

@@ -19,6 +19,7 @@ class CollectiveStatusRepository
         $collective = Collective::query()
             ->where('id', '=', $request->input('collective'))
             ->first();
+
         if ($request->input('status') === true) {
             if (!$collective->matricule) {
                 $collective->update([

@@ -17,9 +17,8 @@ class EditePodcast extends ViewModel
 {
     public string $indexUrl;
 
-    public function __construct(
-        public Podcast $podcast
-    ) {
+    public function __construct(public Podcast $podcast)
+    {
         $this->indexUrl = action([PodcastBackendController::class, 'index']);
     }
 

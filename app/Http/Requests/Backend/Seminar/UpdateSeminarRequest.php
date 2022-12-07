@@ -66,7 +66,7 @@ class UpdateSeminarRequest extends FormRequest
                 'integer',
                 'min:4'
             ],
-            'image' =>[
+            'image' => [
                 'required',
                 'image'
             ],

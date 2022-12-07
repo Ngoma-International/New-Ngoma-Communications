@@ -16,9 +16,8 @@ class EditSeminar extends ViewModel
 {
     public string $indexUrl;
 
-    public function __construct(
-        public Seminar $seminar
-    ) {
+    public function __construct(public Seminar $seminar)
+    {
         $this->indexUrl = action([SeminarBackendController::class, 'index']);
     }
 
@@ -27,7 +26,7 @@ class EditSeminar extends ViewModel
         return $this->seminar ?? new Seminar();
     }
 
-    public function types(): array|\Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection
+    public function types(): array|\Illuminate\Database\Eloquent\Collection|Collection
     {
         return Type::query()
             ->select(['id', 'name'])

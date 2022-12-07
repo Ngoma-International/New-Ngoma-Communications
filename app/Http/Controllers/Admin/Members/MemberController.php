@@ -17,7 +17,8 @@ class MemberController extends Controller
 {
     public function __construct(
         protected FlashMessagesServices $flashMessagesServices
-    ){}
+    ) {
+    }
 
     public function __invoke(): Renderable
     {

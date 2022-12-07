@@ -23,15 +23,7 @@ class UserRepository
     {
         return User::query()
             ->orderByDesc('created_at')
-            ->get([
-                'id',
-                'name',
-                'firstname',
-                'email',
-                'phone_number',
-                'images',
-                'role_id'
-            ]);
+            ->get();
     }
 
     public function store($attributes): Model
@@ -51,7 +43,7 @@ class UserRepository
     public function update(Model $model, $attributes): Model
     {
         /**@var User $model  */
-        $model->images !== null ? $this->removePathOfImages($model) : "";
+        $model->images !== null ? $this->removePathOfImages($model) : null;
         $manage = $attributes->validated();
         $manage['images'] = $this->getProfileImages()->images;
         $manage['firstname'] = $attributes->input("firstname");
@@ -65,7 +57,7 @@ class UserRepository
     public function delete(Model $model): Model
     {
         /**@var User $model  */
-        $model->images !== null ? $this->removePathOfImages($model) : "";
+        $model->images !== null ? $this->removePathOfImages($model) : null;
         $model->delete();
         return $model;
     }

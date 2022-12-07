@@ -17,6 +17,8 @@ class EditEventPrograms extends ViewModel
 
     public string $updateUrl;
 
+    public string $editUrl;
+
     public function __construct(public EventProgram $program)
     {
         $this->indexUrl = action([EventProgramsAdminController::class, 'index']);
@@ -39,6 +41,6 @@ class EditEventPrograms extends ViewModel
     {
         return Facilitator::query()
             ->orderByDesc('created_at')
-            ->get();
+            ->get(['id', 'username', 'firstname']);
     }
 }

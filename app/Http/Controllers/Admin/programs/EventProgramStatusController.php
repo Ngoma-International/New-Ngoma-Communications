@@ -6,14 +6,14 @@ namespace App\Http\Controllers\Admin\programs;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EventProgramStatusRequest;
-use App\Repository\Programs\EventProgramRepository;
+use App\Repository\Programs\EventProgramStatusRepository;
 use Illuminate\Http\JsonResponse;
 
 class EventProgramStatusController extends Controller
 {
     public function __invoke(
         EventProgramStatusRequest $request,
-        EventProgramRepository $repository
+        EventProgramStatusRepository $repository
     ): JsonResponse {
         $program = $repository->handle($request);
 

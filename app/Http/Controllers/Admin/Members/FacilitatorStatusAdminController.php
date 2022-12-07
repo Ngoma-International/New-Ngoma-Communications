@@ -14,8 +14,7 @@ class FacilitatorStatusAdminController extends Controller
     public function __invoke(
         FacilitatorStatusRequest $request,
         FacilitatorStatusRepository $repository
-    ): JsonResponse
-    {
+    ): JsonResponse {
         $facilitator = $repository->handle($request);
 
         return response()->json([

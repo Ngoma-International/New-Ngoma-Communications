@@ -18,7 +18,8 @@ class FacilitatorRepository
     public function getFacilitators(): array|Collection|\Illuminate\Support\Collection
     {
         return Facilitator::query()
-            ->orderByDesc('created_at')->get();
+            ->orderByDesc('created_at')
+            ->get();
     }
 
     /**
@@ -31,7 +32,7 @@ class FacilitatorRepository
             ->create($request->validated());
 
         $facilitator->addMediaFromRequest('image')
-            ->toMediaCollection('image');
+            ->toMediaCollection('images');
 
         return $facilitator;
     }
@@ -45,7 +46,7 @@ class FacilitatorRepository
         $facilitator->clearMediaCollection('image');
         $facilitator->update($request->validated());
         $facilitator->addMediaFromRequest('image')
-            ->toMediaCollection('image');
+            ->toMediaCollection('images');
 
         return $facilitator;
     }

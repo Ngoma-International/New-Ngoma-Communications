@@ -5,13 +5,11 @@ declare(strict_types=1);
 namespace App\ViewModels\Seminar;
 
 use App\Http\Controllers\Admin\Seminar\SeminarBackendController;
-use App\Models\Category;
 use App\Models\Seminar;
 use App\Models\SeminaryType;
 use App\Models\Type;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\ViewModels\ViewModel;
 
