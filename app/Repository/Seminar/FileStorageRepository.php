@@ -14,9 +14,6 @@ class FileStorageRepository implements \App\Contrat\App\FileStorageRepository
 {
     use HasImagesUploads;
 
-    /**
-     * @inheritDoc
-     */
     public function storage($request): Model|Builder|TemporaryImage
     {
         $temporary = $request->validated();
@@ -26,9 +23,6 @@ class FileStorageRepository implements \App\Contrat\App\FileStorageRepository
             ->create($temporary);
     }
 
-    /**
-     * @inheritDoc
-     */
     public function delete(Request $request): Model|Builder|TemporaryImage|null
     {
         $temporary = json_decode($request->getContent());

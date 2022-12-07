@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('title')->unique();
             $table->string('sub_title')->unique();
             $table->string('duration')->nullable();
+            $table->string('images')->nullable();
             $table->date('date')->nullable();
             $table->json('address')->default('[]');
             $table->boolean('status')

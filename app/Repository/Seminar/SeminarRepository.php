@@ -10,6 +10,7 @@ use App\Events\Backend\Seminar\UpdateSeminarSeminarEvent;
 use App\Http\Requests\Backend\Seminar\StoreSeminarRequest;
 use App\Http\Requests\Backend\Seminar\UpdateSeminarRequest;
 use App\Models\Seminar;
+use App\Traits\HasImagesUploads;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
@@ -18,6 +19,8 @@ use Spatie\MediaLibrary\MediaCollections\Exceptions\FileIsTooBig;
 
 class SeminarRepository
 {
+    use HasImagesUploads;
+
     public function getSeminars(): Collection|array
     {
         return Seminar::query()
@@ -34,6 +37,7 @@ class SeminarRepository
         $seminar = $request->validated();
         $seminar['status'] = SeminarEnum::SEMINAR_PENDING->value;
         $seminar['facilitator_id'] = $request->input('user_id');
+        $seminar['images'] = self::uploadFiles($request);
         $seminar['address'] = [
             'country' => $request->input('country'),
             'city' => $request->input('city')
@@ -55,6 +59,7 @@ class SeminarRepository
         $event = $request->validated();
         $event['status'] = SeminarEnum::SEMINAR_PENDING;
         $event['facilitator_id'] = $request->input('user_id');
+        $event['images'] = self::uploadFiles($request);
         $event['address'] = [
             'country' => $request->input('country'),
             'city' => $request->input('city')

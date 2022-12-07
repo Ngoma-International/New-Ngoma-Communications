@@ -17,7 +17,6 @@ class Seminar extends Component
     {
         $seminars = \App\Models\Seminar::query()
             ->where('status', '=', SeminarEnum::SEMINAR_CONFIRMED)
-            ->with(['category'])
             ->orderByDesc('created_at')
             ->paginate(9);
 
