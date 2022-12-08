@@ -9,7 +9,7 @@ use App\Http\Requests\Backend\UserStatusRequest;
 use App\Repository\User\UserStatusRepository;
 use Illuminate\Http\JsonResponse;
 
-class StatusUserBackendController extends Controller
+final class StatusUserBackendController extends Controller
 {
     public function __invoke(
         UserStatusRequest $request,

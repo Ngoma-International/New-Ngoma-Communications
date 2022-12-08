@@ -18,7 +18,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
-class UsersBackendController extends Controller
+final class UsersBackendController extends Controller
 {
     public function __construct(
         protected readonly UserRepository $repository,
@@ -42,7 +42,6 @@ class UsersBackendController extends Controller
      */
     public function create(): Renderable
     {
-        $this->authorize('create', User::class);
         return view('admin.domain.users.create');
     }
 
@@ -60,8 +59,6 @@ class UsersBackendController extends Controller
      */
     public function show(User $user): Renderable
     {
-        $this->authorize('view', $user);
-
         return view('admin.domain.users.show', compact('user'));
     }
 
@@ -70,8 +67,6 @@ class UsersBackendController extends Controller
      */
     public function edit(User $user): Renderable
     {
-        $this->authorize('update', $user);
-
         return view('admin.domain.users.edit', compact('user'));
     }
 

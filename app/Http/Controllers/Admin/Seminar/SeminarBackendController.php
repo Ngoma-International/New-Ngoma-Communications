@@ -21,10 +21,10 @@ use Illuminate\Http\RedirectResponse;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileDoesNotExist;
 use Spatie\MediaLibrary\MediaCollections\Exceptions\FileIsTooBig;
 
-class SeminarBackendController extends BaseController
+final class SeminarBackendController extends BaseController
 {
     public function __construct(
-        FlashMessagesServices $services,
+        public FlashMessagesServices $services,
         protected readonly SeminarRepository $repository
     ) {
         parent::__construct($services);

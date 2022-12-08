@@ -35,43 +35,31 @@ class PodcastBackendRepository
     {
         $validate = $request->validated();
         $temporary = $this->getTemporaryImages($request->user());
-        $video = $this->getVideoTemporary($request->user());
+        $validate['images_video'] = self::uploadAudioOrVideo($request);
         $podcast = Podcast::query()
             ->create($validate);
         $temporary !== null ? $podcast->update(['thumbnail' => $temporary->images]) : null;
-        $video !== null ? $podcast->update(['images_video' => $video->path]) : null;
         $temporary->delete();
-        $video->delete();
         return $podcast;
     }
 
     public function update(Podcast $podcast, UpdatePodcastRequest $request): Podcast
     {
-        $edit = $request->validated();
         $temporary = $this->getTemporaryImages($request->user());
-        $video = $this->getVideoTemporary($request->user());
         $podcast->thumbnail !== null ? $this->removePathOfThumbnail($podcast) : "";
         $podcast->images_video !== null ? $this->removeAudioOrVideo($podcast) : "";
+        $edit = $request->validated();
+        $edit['images_video'] = self::uploadAudioOrVideo($request);
         $podcast->update($edit);
         $temporary !== null ? $podcast->update(['thumbnail' => $temporary->images]) : null;
-        $video !== null ? $podcast->update(['images_video' => $video->path]) : null;
         $temporary->delete();
-        $video->delete();
         return $podcast;
     }
 
     public function delete(Podcast $podcast): Podcast
     {
         $podcast->thumbnail !== null ? $this->removePathOfThumbnail($podcast) : "";
-        $podcast->images_video !== null ? $this->removeAudioOrVideo($podcast) : "";
         $podcast->delete();
         return $podcast;
-    }
-
-    private function getVideoTemporary(User $user): Model|Builder|null
-    {
-        return MediaTemporary::query()
-            ->where('user_id', '=', $user->id)
-            ->first();
     }
 }

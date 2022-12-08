@@ -46,6 +46,10 @@ class StorePodcastRequest extends FormRequest
                 'nullable',
                 'string',
                 'min:10'
+            ],
+            'images_video' => [
+                'required',
+                'file',
             ]
         ];
     }

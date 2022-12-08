@@ -9,7 +9,7 @@ use App\Http\Requests\Backend\Seminar\SeminarStatusRequest;
 use App\Repository\Seminar\SeminarStatusRepository;
 use Illuminate\Http\JsonResponse;
 
-class SeminarStatusBackendController extends Controller
+final class SeminarStatusBackendController extends Controller
 {
     public function __invoke(
         SeminarStatusRequest $request,

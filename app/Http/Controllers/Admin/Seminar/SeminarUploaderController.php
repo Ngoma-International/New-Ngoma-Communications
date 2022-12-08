@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\StoreSeminarUploaderRequest;
 use Illuminate\Http\Request;
 
-class SeminarUploaderController extends Controller
+final class SeminarUploaderController extends Controller
 {
     public function __invoke(
         StoreSeminarUploaderRequest $request,
