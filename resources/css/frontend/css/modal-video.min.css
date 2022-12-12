@@ -1,4 +1,4 @@
-@keyframes 
+@keyframes
 modal-video{
 	from{
 		opacity:0
@@ -7,14 +7,13 @@ modal-video{
 		{
 		opacity:1}
 }
-@keyframes 
+@keyframes
 modal-video-inner{
 	from{
 		transform:translate(0, 100px)
-		}
-		to{
-			transform:translate(0, 0)
-			}
+    } to {
+        transform:translate(0, 0)
+    }
 }
 .modal-video{
 	position:fixed;

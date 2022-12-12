@@ -20,14 +20,14 @@
             <li>
                 <a href="#sessions">
                     <span class="icon fa fa-door-closed" style="text-align: center"></span>
-                    <span class="link">Private Sessions</span>
+                    <span class="link" style="width: 120px">Private Sessions</span>
                 </a>
             </li>
 
             <li>
                 <a  href="#events">
                     <span class="icon fa fa-calendar" style="text-align: center"></span>
-                    <span class="link">Open Seminars</span>
+                    <span class="link">Seminars</span>
                 </a>
             </li>
 

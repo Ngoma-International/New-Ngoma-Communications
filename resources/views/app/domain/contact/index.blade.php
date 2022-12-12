@@ -13,13 +13,13 @@
     </div>
     <div class="content inner-top" style="margin-top: 0 !important; padding-top: 15px !important">
         <div class="row">
-            <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
-                <div class="title-bg mobile1">Contact Us</div>
+            <div class="title-bg mobile1" style="padding: 3rem 2rem; text-align: match-parent !important">
+                Contact Us
             </div>
         </div>
     </div>
 
-    <div class="content contacts-info" style="margin-top: 30px">
+    <div class="content contacts-info" style="margin-top: 70px">
         <div class="row">
             <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
                 <div class="title" style="font-weight: 300"><span>Get</span> in Touch</div>

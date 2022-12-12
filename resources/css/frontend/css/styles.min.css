@@ -1127,7 +1127,7 @@ input.error::-webkit-input-placeholder, textarea.error::-webkit-input-placeholde
     .header .top-menu ul li a .icon {
         margin: 0;
         display: block;
-        width: 50px;
+        width: 100px;
         height: 58px;
         line-height: 56px
     }
@@ -1549,21 +1549,21 @@ input.error::-webkit-input-placeholder, textarea.error::-webkit-input-placeholde
 
     .content.inner-top .text p {
         margin: 0 0 30px 0;
-        font-size: 19px
+        font-size: 19px;
     }
 
     .content.inner-top .text p br {
-        display: none
+        display: none;
     }
 
     .content.inner-top .circle-bts a:first-child {
         margin-bottom: 15px;
-        display: block
+        display: block;
     }
 }
 
 .service-items {
-    font-size: 0
+    font-size: 0;
 }
 
 .service-items .service-item {

@@ -11,7 +11,9 @@
     <div class="content inner-top" style="margin-top: 0 !important; padding-top: 15px !important">
         <div class="row">
             <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
-                <div class="title-bg mobile1" style="font-size: 60px">Private Sessions</div>
+                <div class="title-bg mobile1" style="padding: 3rem 2rem; text-align: match-parent !important">
+                    Private Sessions
+                </div>
             </div>
             <p class="col mobile1" style="margin-top: 10%">
                 Sometimes off-the-shelf seminars are not what you need for you and your teams. Your organisation might have specific competences you need to develop or you need to customise a seminar that focuses on your organisation specific challenges. Then the ideal solution for your organisation is a Customised Seminar.<br><br>

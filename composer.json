@@ -20,6 +20,7 @@
         "realrashid/sweet-alert": "^5.1",
         "simplesoftwareio/simple-qrcode": "^4.2",
         "spatie/laravel-medialibrary": "^9.6.0",
+        "spatie/laravel-sitemap": "^6.2",
         "spatie/laravel-view-models": "^1.5",
         "spatie/period": "^2.3",
         "symfony/filesystem": "^6.1",

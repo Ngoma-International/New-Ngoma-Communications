@@ -962,6 +962,7 @@ input.error::-webkit-input-placeholder, textarea.error::-webkit-input-placeholde
     padding: 0 8px;
     position: absolute;
     left: 120%;
+    width: 100px;
     top: 50%;
     height: 22px;
     line-height: 22px;
@@ -1444,9 +1445,8 @@ input.error::-webkit-input-placeholder, textarea.error::-webkit-input-placeholde
     overflow: hidden;
     left: 0;
     top: -50px;
-    width: 100%;
-    font-size: 120px;
-    line-height: 120px;
+    font-size: 80px;
+    line-height: 80px;
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;

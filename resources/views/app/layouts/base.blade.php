@@ -60,7 +60,6 @@
         @yield('content')
     </div>
     <script src="{{ asset('frontend/js/scripts.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/modal-video.min.js') }}"></script>
     <script src="{{ asset('frontend/js/app.js') }}"></script>
     <livewire:scripts />
 </body>
